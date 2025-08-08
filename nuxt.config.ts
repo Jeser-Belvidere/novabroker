@@ -6,7 +6,6 @@ export default defineNuxtConfig({
   modules: ["@nuxt/eslint", "@nuxt/image", "@nuxt/fonts", "nuxt-schema-org"],
   css: ["~/assets/css/main.css"],
   app: {
-    //TODO: Добавить микроразметку
     head: {
       title: "NOVABROKER",
       charset: "utf-8",
@@ -15,38 +14,64 @@ export default defineNuxtConfig({
         lang: "en",
       },
       link: [
-        { rel: "icon", type: "image/x-icon", href: "/favicon16x16.svg" },
-        { rel: 'preload', href: '/fonts/AdventPro-VariableFont_wdth,wght.ttf', as: 'font', type: 'font/ttf' }
+        { rel: "manifest", href: "/manifest.json" },
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+        { rel: 'preload', href: '/fonts/AdventPro-VariableFont_wdth,wght.ttf', as: 'font', type: 'font/ttf' },
+        { rel: "canonical", href: "https://новаброкер.рф/" },
+        {
+          rel: "icon",
+          type: "image/svg+xml",
+          sizes: "any",
+          href: "/icon64x64.svg",
+          media: "(prefers-color-scheme: light)"
+        },
+        {
+          rel: "icon",
+          type: "image/svg+xml",
+          sizes: "128x128",
+          href: "/icon128x128.svg",
+          media: "(prefers-color-scheme: light)"
+        },
+        {
+          rel: "apple-touch-icon",
+          type: "image/svg+xml",
+          sizes: "180x180",
+          href: "/icon180x180.svg",
+          media: "(prefers-color-scheme: light)"
+        },
+        {
+          rel: "icon",
+          type: "image/svg+xml",
+          sizes: "512x512",
+          href: "/icon512x512.svg",
+          media: "(prefers-color-scheme: light)"
+        },
       ],
       meta: [
         {
-          property: "title",
           name: "title",
           content: "NOVABROKER",
         },
-        //TODO: не более 2-4х ключевых слов
         {
-          property: "keywords",
           name: "keywords",
           content:
-            "Оформление ТС, Таможенное оформление, Перевозка ТС, Таможенный брокер, Таможня, оценка ТС, оценка машин, СБКТС, ЭПТС, УВЭОС, ГЛОНАСС ",
+            "ВЭД, консалтинг, Таможенный брокер, Сертификация, Сопровождение сделок",
         },
         {
-          property: "description",
           name: "description",
-          content: "Таможенный брокер",
+          content: "NOVABROKER - Мы предоставляем полный спектр услуг по ВЭД-консалтингу. Оптимизация логистики, таможенное оформление и сопровождение сделок. Снизьте риски и экономьте время с нашими экспертами.",
         },
         {
           property: "og:title",
-          content: "NOVABROKER",
+          content: "NOVABROKER - ВЭД консалтинг",
         },
         {
           property: "og:description",
-          content: "Таможенные услуги и оформление",
+          content: "NOVABROKER - Мы предоставляем полный спектр услуг по ВЭД-консалтингу. Оптимизация логистики, таможенное оформление и сопровождение сделок. Снизьте риски и экономьте время с нашими экспертами.",
         },
         {
           property: "og:image",
-          content: 'https://новаброкер.рф/favicon128x128.svg',
+          content: 'https://новаброкер.рф/icon512x512.svg',
         },
         {
           property: "og:url",

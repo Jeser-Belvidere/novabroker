@@ -9,7 +9,7 @@
             text-anchor="middle"
             dominant-baseline="middle"
             font-family="Arial"
-            font-size="9"
+            font-size="8"
             fill="rgb(218, 187, 141)"
           >
             ОЦЕНКА ТС
@@ -24,10 +24,10 @@
             text-anchor="middle"
             dominant-baseline="middle"
             font-family="Arial"
-            font-size="9"
+            font-size="8"
             fill="rgb(218, 187, 141)"
           >
-            ОФОРМЛЕНИЕ
+            Услуги сертификации
           </text>
         </svg>
       </div>
@@ -39,7 +39,7 @@
             text-anchor="middle"
             dominant-baseline="middle"
             font-family="Arial"
-            font-size="9"
+            font-size="8"
             fill="rgb(218, 187, 141)"
           >
             УВЭОС - ГЛОНАСС
@@ -54,7 +54,7 @@
             text-anchor="middle"
             dominant-baseline="middle"
             font-family="Arial"
-            font-size="9"
+            font-size="8"
             fill="rgb(218, 187, 141)"
           >
             ЛАБОРАТОРИЯ
@@ -69,7 +69,7 @@
             text-anchor="middle"
             dominant-baseline="middle"
             font-family="Arial"
-            font-size="9"
+            font-size="8"
             fill="rgb(218, 187, 141)"
           >
             СБКТС
@@ -84,7 +84,7 @@
             text-anchor="middle"
             dominant-baseline="middle"
             font-family="Arial"
-            font-size="9"
+            font-size="8"
             fill="rgb(218, 187, 141)"
           >
             ЭПТС
@@ -96,7 +96,7 @@
     <div class="title-wrapper">
       <div class="title">
         <h1>NOVABROKER</h1>
-        <h2>ТАМОЖЕННЫЕ УСЛУГИ</h2>
+        <h2>ВЭД КОНСАЛТИНГ</h2>
       </div>
     </div>
   </div>

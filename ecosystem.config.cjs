@@ -9,7 +9,9 @@ module.exports = {
             env: {
                 NODE_ENV: 'production',
                 PORT: 3000,
-                HOST: '0.0.0.0'
+                HOST: '0.0.0.0',
+                MAIL_USER: '',
+                MAIL_PASSWORD: ''
             }
         }
     ]
