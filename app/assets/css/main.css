@@ -1,0 +1,36 @@
+:root {
+  --dark-forest-green: rgb(5, 51, 38);
+  --warm-beige: rgb(218, 187, 141);
+  --light-grey: rgb(232, 232, 232);
+  --medium-taupe: rgb(130, 118, 103);
+  cursor: url("/cursor.svg"), auto;
+}
+
+@font-face {
+  font-family: "AdventPro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/AdventPro-VariableFont_wdth,wght.ttf") format("truetype");
+  font-display: swap;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "AdventPro", -apple-system, blinkmacsystemfont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  cursor: url("/cursor.svg"), default;
+}
+
+#app {
+  min-height: 100vh;
+}
