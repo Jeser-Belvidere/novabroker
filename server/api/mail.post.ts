@@ -1,4 +1,3 @@
-import nodemailer from "nodemailer";
 import { sendMailError } from "../utils/sendMailError";
 import { sendMailClientRequest } from "../utils/sendMailClientRequest";
 

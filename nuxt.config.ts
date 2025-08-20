@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   ssr: true,
-  modules: ["@nuxt/eslint", "@nuxt/image", "@nuxt/fonts", "nuxt-schema-org"],
+  modules: ["@nuxt/eslint", "@nuxt/image", "@nuxt/fonts", "nuxt-schema-org", "vue3-carousel-nuxt", "@nuxtjs/device"],
   css: ["~/assets/css/main.css"],
   app: {
     head: {
@@ -16,8 +16,8 @@ export default defineNuxtConfig({
       link: [
         { rel: "manifest", href: "/manifest.json" },
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-        { rel: 'preload', href: '/fonts/AdventPro-VariableFont_wdth,wght.ttf', as: 'font', type: 'font/ttf' },
-        { rel: "canonical", href: "https://новаброкер.рф/" },
+        { rel: 'preload', href: '/fonts/AdventPro-VariableFont_wdth,wght.ttf', as: 'font', type: 'font/ttf', crossorigin: 'anonymous' },
+        { rel: "canonical", href: "https://xn--80acboyohdrd.xn--p1ai/" },
         {
           rel: "icon",
           type: "image/svg+xml",
@@ -55,7 +55,7 @@ export default defineNuxtConfig({
         {
           name: "keywords",
           content:
-            "ВЭД, консалтинг, Таможенный брокер, Сертификация, Сопровождение сделок",
+            "ВЭД, консалтинг, Таможенный брокер, Сертификация, Сопровождение сделок, Новаброкер, Novabroker",
         },
         {
           name: "description",
@@ -71,7 +71,7 @@ export default defineNuxtConfig({
         },
         {
           property: "og:image",
-          content: 'https://новаброкер.рф/icon512x512.svg',
+          content: 'https://новаброкер.рф/icon300x300.jpg',
         },
         {
           property: "og:url",
@@ -84,5 +84,6 @@ export default defineNuxtConfig({
       ],
     },
     pageTransition: { name: "page", mode: "out-in" },
+    layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 });

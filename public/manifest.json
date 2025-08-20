@@ -1,7 +1,7 @@
 {
   "name": "NOVABROKER",
   "short_name": "NOVABROKER",
-  "start_url": "https://новаброкер.рф/",
+  "start_url": "https://xn--80acboyohdrd.xn--p1ai/",
   "icons": [
     {
       "src": "/icon64x64.svg",
@@ -29,8 +29,8 @@
       "type": "/image/svg+xml"
     }
   ],
-  "theme_color": "#000000",
-  "background_color": "#FFFFFF",
+  "theme_color": "#053326",
+  "background_color": "#053326",
   "display": "fullscreen",
   "orientation": "portrait"
 }

@@ -1,26 +1,31 @@
 import nodemailer from "nodemailer";
 
-export const sendMailClientRequest = async (
-    { name, mail, phone }:
-        { name: string, mail: string, phone: string }
-) => {
-    try {
-        const transporter = nodemailer.createTransport({
-            host: "smtp.yandex.ru",
-            port: 465,
-            secure: true, // true for 465, false for other ports
-            auth: {
-                user: process.env.MAIL_USER,
-                pass: process.env.MAIL_PASSWORD,
-            },
-        });
+export const sendMailClientRequest = async ({
+  name,
+  mail,
+  phone,
+}: {
+  name: string;
+  mail: string;
+  phone: string;
+}) => {
+  try {
+    const transporter = nodemailer.createTransport({
+      host: "smtp.yandex.ru",
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASSWORD,
+      },
+    });
 
-        const info = await transporter.sendMail({
-            from: '"novabroker" <novabroker@yandex.ru>',
-            to: "novabroker@yandex.ru",
-            subject: "Новая заявка",
-            text: "Новая заявка",
-            html: `
+    await transporter.sendMail({
+      from: '"novabroker" <novabroker@yandex.ru>',
+      to: "novabroker@yandex.ru",
+      subject: "Новая заявка",
+      text: "Новая заявка",
+      html: `
     <!DOCTYPE html>
     <html>
       <head>
@@ -82,9 +87,9 @@ export const sendMailClientRequest = async (
       </body>
     </html>
   `,
-        });
-    } catch (e) {
-        console.error(e)
-        throw e
-    }
-}
+    });
+  } catch (e) {
+    console.error(e);
+    throw e;
+  }
+};
