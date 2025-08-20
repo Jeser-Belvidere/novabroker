@@ -1,8 +1,7 @@
 <template>
   <Teleport to="#teleports">
     <div id="loader">
-      <div class="gradient-text">NOVABROKER</div>
-      <UISpinner />
+      <div class="loader" />
     </div>
   </Teleport>
 </template>
@@ -33,33 +32,37 @@
   }
 }
 
-.gradient-text {
-  font-size: 3em;
-  font-weight: bold;
-  text-align: center;
-  background: linear-gradient(
-    45deg,
-    var(--medium-taupe),
-    var(--warm-beige),
-    var(--warm-ligth),
-    var(--warm-beige)
-  );
-  background-size: 400% 400%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient 2s ease infinite;
+/* HTML: <div class="loader"></div> */
+.loader {
+  height: 80px;
+  aspect-ratio: 1;
+  padding: 10px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  position: relative;
+  mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
+  filter: blur(12px);
+  animation: l4-0 1.2s linear infinite alternate;
 }
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
+.loader:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-conic-gradient(
+    #0000 0 5%,
+    #0000,
+    var(--warm-beige) 20% 50%
+  );
+  animation: l4-1 1s linear infinite;
+}
+@keyframes l4-0 {
+  to {
+    border-radius: 50%;
   }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+}
+@keyframes l4-1 {
+  to {
+    rotate: 0.5turn;
   }
 }
 </style>
