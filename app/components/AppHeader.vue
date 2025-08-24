@@ -9,7 +9,7 @@
         <UILink href="/#advantages">Преимущества</UILink>
         <UILink href="/#stages">Этапы</UILink>
         <UILink href="/#rewievs">Отзывы</UILink>
-        <UILink href="/">Новости</UILink>
+        <UILink href="/#news">Новости</UILink>
       </div>
       <div class="header-content__contacts">
         <UILink href="#contacts" type="default">Контакты</UILink>

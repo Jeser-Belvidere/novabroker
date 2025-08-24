@@ -177,9 +177,7 @@ onMounted(() => {
     <canvas id="flashlight" ref="flashlight" />
     <div class="title-wrapper">
       <div class="title">
-        <h1>
-          NOVABROKER
-        </h1>
+        <h1>NOVABROKER</h1>
         <br >
         <h2>ВЭД КОНСАЛТИНГ</h2>
       </div>
@@ -195,6 +193,10 @@ onMounted(() => {
   height: 100vh;
   justify-content: center;
   align-items: center;
+  margin-top: -80px;
+  @media screen and (max-width: 852px) {
+    margin-top: -120px;
+  }
 
   .title {
     max-width: 1300px;
