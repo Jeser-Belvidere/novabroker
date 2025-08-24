@@ -41,7 +41,7 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   align-items: center;
   @media screen and (max-width: 868px) {

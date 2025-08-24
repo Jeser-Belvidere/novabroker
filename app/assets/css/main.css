@@ -59,3 +59,14 @@ body {
 .carousel__pagination {
   margin-top: 20px;
 }
+
+.svg-text_small {
+  font-size: 1rem;
+  fill: var(--medium-taupe);
+}
+
+.svg-text_big {
+  font-size: 1.4rem;
+  font-weight: 800;
+  fill: var(  --dark-forest-green);
+}
