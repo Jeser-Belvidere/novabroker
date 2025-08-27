@@ -5,7 +5,8 @@
     <SectionsAdvantages />
     <SectionsStages />
     <SectionsRewievs />
-    <SectionsContacts />
+    <SectionsNews />
+    <!-- <SectionsContacts /> -->
   </div>
 </template>
 

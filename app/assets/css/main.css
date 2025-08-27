@@ -2,11 +2,11 @@
   --dark-forest-green: rgb(5, 51, 38);
   --dark-green: rgb(4, 40, 29);
   --warm-beige: rgb(218, 187, 141);
-  --light-grey: rgb(232, 232, 232);
-  --medium-taupe: rgb(130, 118, 103);
-  --warm-ligth: rgb(255, 250, 232);
+  --light-grey: #e8e8e8;
+  --medium-taupe: #827667;
+  --warm-ligth: #fffae8;
   --black: rgb(0, 0, 0);
-  --white: rgb(249, 247, 243);
+  --white: #f9f7f3;
   --header-height: 80px;
   --footer-height: 120px;
   cursor: url("/cursor.svg"), auto;

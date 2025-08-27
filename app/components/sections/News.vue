@@ -18,17 +18,19 @@ const lastThreeNews = feed.slice(feed.length - 3, feed.length).reverse();
         :key="index"
         :class="`card card-${index + 1}`"
       >
-        <div class="card-image">
-          <img :src="news.imgSrc" loading="lazy" :alt="news.title" >
-        </div>
-        <div class="card-info">
-          <div class="card-title">{{ news.title }}</div>
-          <div class="card-date">{{ news.date }}</div>
-        </div>
+        <nuxt-link class="first-card" :to="`/news/${news.listIndex}`">
+          <div class="card-image">
+            <img :src="news.imgSrc" loading="lazy" :alt="news.title" />
+          </div>
+          <div class="card-info">
+            <div class="card-title">{{ news.title }}</div>
+            <div class="card-date">{{ news.date }}</div>
+          </div>
+        </nuxt-link>
       </div>
     </div>
     <div class="all-news-button">
-      <UILink href="/news">Читать больше новостей →</UILink>
+      <UILink to="/news">Читать больше новостей →</UILink>
     </div>
   </section>
 </template>
@@ -90,7 +92,7 @@ section {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.5);
+      filter: brightness(0.7);
       border-radius: 16px;
     }
   }
