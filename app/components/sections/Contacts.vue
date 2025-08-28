@@ -1,6 +1,7 @@
-<script setup lang="ts">
-import { ref } from "vue";
 
+<script setup lang="ts">
+import type { Map } from "maplibre-gl";
+import { ref } from "vue";
 const currentTab = ref(0);
 const isLoading = ref(false);
 const isModalVisible = ref(false);
@@ -12,6 +13,7 @@ const isAgreed = ref(false);
 
 const { isMobile } = useDevice();
 let mapLibre = null;
+let map: null | Map = null;
 
 if (!isMobile) {
   mapLibre = await import("maplibre-gl");
@@ -23,20 +25,34 @@ const INIT_ZOOM: number = 10;
 const INIT_PITCH: number = 45;
 const MARKER_BOUNDS: [number, number] = [37.464374, 55.596406];
 
-nuxtApp.hook("page:finish", () => {
-  if (mapLibre) {
-    const map = new mapLibre.Map({
-      container: "map",
-      style:
-        "https://api.maptiler.com/maps/0198bf23-3d83-729f-99dc-d37e37873f52/style.json?key=g3yRB9He8W6xRCD6CgML",
-      center: INIT_BOUNDS,
-      zoom: INIT_ZOOM,
-      pitch: INIT_PITCH,
-    });
+const renderMap = () => {
+  try {
+    if (mapLibre) {
+      map = new mapLibre.Map({
+        container: "map",
+        style:
+          "https://api.maptiler.com/maps/0198bf23-3d83-729f-99dc-d37e37873f52/style.json?key=g3yRB9He8W6xRCD6CgML",
+        center: INIT_BOUNDS,
+        zoom: INIT_ZOOM,
+        pitch: INIT_PITCH,
+      });
 
-    const marker = new mapLibre.Marker({ color: "#dabb8d" });
-    marker.setLngLat(MARKER_BOUNDS);
-    marker.addTo(map);
+      const marker = new mapLibre.Marker({ color: "#dabb8d" });
+      marker.setLngLat(MARKER_BOUNDS);
+      marker.addTo(map);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+//TODO: поправить повторный рендер при транзишенах
+nuxtApp.hook("page:finish", () => {
+  renderMap();
+});
+
+nuxtApp.hook("page:transition:finish", () => {
+  if (!map) {
+    renderMap();
   }
 });
 
@@ -82,7 +98,7 @@ async function handleFormSubmit() {
       <div class="contacts-head">
         <div class="contacts-head__title">Связаться с нами</div>
         <div class="contacts-head__description">
-          Свяжитесь с нами любым удобным для вас способом - <br >
+          Свяжитесь с нами любым удобным для вас способом - <br />
           мы ответим быстро
         </div>
       </div>
@@ -96,7 +112,7 @@ async function handleFormSubmit() {
                 <div class="item-text">
                   <div class="item-text__title">Адрес</div>
                   <div class="item-text__description">
-                    Город Москва,ш. Калужское, км 22-Й, <br >
+                    Город Москва,ш. Калужское, км 22-Й, <br />
                     дом 10, строение 23
                   </div>
                 </div>
@@ -107,7 +123,7 @@ async function handleFormSubmit() {
                 <div class="item-text">
                   <div class="item-text__title">График работы</div>
                   <div class="item-text__description">
-                    Пн-Пт, с 9:00 - 18:00 <br >
+                    Пн-Пт, с 9:00 - 18:00 <br />
                     Сб-Вс, выходные
                   </div>
                 </div>
@@ -150,7 +166,7 @@ async function handleFormSubmit() {
                     name="name"
                     type="text"
                     placeholder="Имя"
-                  >
+                  />
                   <input
                     v-model="phone"
                     :disabled="isLoading"
@@ -158,7 +174,7 @@ async function handleFormSubmit() {
                     name="phone"
                     type="tel"
                     placeholder="Телефон"
-                  >
+                  />
                   <input
                     v-model="mail"
                     :disabled="isLoading"
@@ -166,7 +182,7 @@ async function handleFormSubmit() {
                     name="mail"
                     type="email"
                     placeholder="Почта"
-                  >
+                  />
                 </div>
                 <div class="form-checkbox">
                   <input
@@ -175,7 +191,7 @@ async function handleFormSubmit() {
                     class="form-checkbox__input"
                     type="checkbox"
                     name="scales"
-                  >
+                  />
                   <label class="form-checkbox__label" for="scales"
                     >Я даю согласие на
                     <UILink to="/privacy">обработку персональных данных</UILink>
@@ -262,9 +278,9 @@ section {
   margin-top: 16px;
   text-align: center;
   @media screen and (max-width: 768px) {
-      background-color: rgba(255, 255, 255, 0);
-      box-shadow: none;
-    }
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: none;
+  }
 
   .contacts-head__title {
     font-size: 4rem;
