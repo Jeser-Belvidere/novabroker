@@ -2,17 +2,25 @@
 <template>
   <footer class="footer">
     <div class="footer-content">
-      <div class="footer-content__logo">NOVABROKER</div>
+      <div class="footer-content__heading">
+        <div class="footer-content__logo">NOVABROKER</div>
+        <div class="footer-content__policy">
+          <UILink type="primary" to="/privacy"
+            >Политика конфиденциальности</UILink
+          >
+        </div>
+        <div class="footer-content__rights">© Все права защищены</div>
+      </div>
       <div class="footer-content__links">
-        <UILink type="default" href="/#intro">Главная</UILink>
-        <UILink type="default" href="/#services">Услуги</UILink>
-        <UILink type="default" href="/#advantages">Преимущества</UILink>
-        <UILink type="default" href="/#stages">Этапы</UILink>
-        <UILink type="default" href="/#rewievs">Отзывы</UILink>
-        <UILink type="default" href="/">Новости</UILink>
+        <UILink type="default" :to="{ path: '/', hash: '#intro'}">Главная</UILink>
+        <UILink type="default" :to="{ path: '/', hash: '#services'}">Услуги</UILink>
+        <UILink type="default" :to="{ path: '/', hash: '#advantages'}">Преимущества</UILink>
+        <UILink type="default" :to="{ path: '/', hash: '#stages'}">Этапы</UILink>
+        <UILink type="default" :to="{ path: '/', hash: '#rewiews'}">Отзывы</UILink>
+        <UILink type="default" :to="{ path: '/', hash: '#news'}">Новости</UILink>
       </div>
       <div class="footer-content__llc">
-        <div>ООО "Новаброкер", {{ new Date().getFullYear() }}</div>
+        <div>ООО "НоваБрокер", {{ new Date().getFullYear() }}</div>
         <div class="footer-content__llc__info">
           <div>ОГРН 1247700249356</div>
           <div>ИНН 7751306330</div>
@@ -34,6 +42,8 @@ footer {
   width: 100% !important;
   background-color: var(--black);
   padding: 16px 32px;
+  @media screen and (max-width: 868px) {
+  }
 }
 
 .footer-content {
@@ -46,14 +56,33 @@ footer {
   align-items: center;
   @media screen and (max-width: 868px) {
     flex-direction: column;
-    gap:8px;
+    gap: 8px;
   }
+}
+
+.footer-content__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
 }
 
 .footer-content__logo {
   color: var(--warm-beige);
   font-size: 1.2rem;
   letter-spacing: 4px;
+}
+
+.footer-content__policy {
+  color: var(--warm-beige);
+  font-size: 0.8rem;
+  letter-spacing: 0;
+}
+
+.footer-content__rights {
+  color: var(--warm-beige);
+  font-size: 0.8rem;
+  letter-spacing: 0;
 }
 
 .footer-content__links {
@@ -64,18 +93,24 @@ footer {
   border-radius: 100px;
   color: var(--light-grey);
   background-color: rgba(108, 108, 108, 0.102);
-  @media screen and (max-width: 852px) {
+  @media screen and (max-width: 868px) {
     display: none;
   }
 }
 
 .footer-content__llc {
   color: var(--warm-beige);
+  @media screen and (max-width: 868px) {
+    display: none;
+  }
 }
 
 .footer-content__llc__info {
   margin-top: 6px;
   font-size: 0.7rem;
   color: #878583;
+  @media screen and (max-width: 868px) {
+    display: none;
+  }
 }
 </style>

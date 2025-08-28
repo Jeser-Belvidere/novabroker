@@ -9,6 +9,11 @@ const handleAgree = () => {
   isAgreed.value = true;
   browserStorage.set("agreement", true);
 };
+
+const handleDisagree = () => {
+  window.location.href = "https://yandex.ru/"
+  
+};
 </script>
 
 <template>
@@ -21,6 +26,7 @@ const handleAgree = () => {
         </div>
         <div class="agreement__action">
           <UIButton type="secondary" @click="handleAgree()">Хорошо</UIButton>
+          <UIButton type="outline" @click="handleDisagree()">Не согласен</UIButton>
         </div>
       </div>
     </Teleport>
@@ -38,6 +44,7 @@ const handleAgree = () => {
   margin-top: 10px;
   display: flex;
   justify-content: center;
+  gap: 16px;
 }
 
 #agreement {

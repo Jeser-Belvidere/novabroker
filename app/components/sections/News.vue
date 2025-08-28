@@ -74,7 +74,7 @@ section {
   grid-row-gap: 12px;
   margin-top: 40px;
   margin-bottom: 40px;
-  @media screen and (max-width: 440px) {
+  @media screen and (max-width: 868px) {
     grid-template-columns: auto;
     grid-template-rows: auto;
   }
@@ -101,10 +101,11 @@ section {
     bottom: 32px;
     left: 32px;
     .card-title {
+      text-overflow: ellipsis;
       font-size: 2rem;
       color: var(--white);
       margin-bottom: 5px;
-      @media screen and (max-width: 440px) {
+      @media screen and (max-width: 868px) {
         font-size: 1.5rem;
       }
     }
@@ -125,21 +126,38 @@ section {
 
 .card-1 {
   grid-area: 1 / 1 / 3 / 3;
-  @media screen and (max-width: 440px) {
+  @media screen and (max-width: 868px) {
     grid-area: auto;
   }
 }
 
 .card-2 {
   grid-area: 1 / 3 / 2 / 4;
-  @media screen and (max-width: 440px) {
+
+  .card-info {
+    .card-title {
+      @media screen and (max-width: 1200px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 868px) {
     grid-area: auto;
   }
 }
 
 .card-3 {
   grid-area: 2 / 3 / 3 / 4;
-  @media screen and (max-width: 440px) {
+  .card-info {
+    .card-title {
+      @media screen and (max-width: 1200px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 868px) {
     grid-area: auto;
   }
 }

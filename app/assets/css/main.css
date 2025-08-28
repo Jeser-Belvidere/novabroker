@@ -1,7 +1,7 @@
 :root {
-  --dark-forest-green: rgb(5, 51, 38);
+  --dark-forest-green: #053326;
   --dark-green: rgb(4, 40, 29);
-  --warm-beige: rgb(218, 187, 141);
+  --warm-beige: #dabb8d;
   --light-grey: #e8e8e8;
   --medium-taupe: #827667;
   --warm-ligth: #fffae8;
@@ -9,7 +9,7 @@
   --white: #f9f7f3;
   --header-height: 80px;
   --footer-height: 120px;
-  cursor: url("/cursor.svg"), auto;
+  cursor: url("/cursor.svg") 26 37, auto;
   font-size: 16px;
   letter-spacing: 1px;
   scroll-behavior: smooth;

@@ -25,7 +25,7 @@ const restNews = feed.slice(0, feed.length - 1);
 </script>
 
 <template>
-  <section>
+  <main>
     <div class="breadcrumbs margin-bottom">
       <nuxt-link class="breadcrumbs" to="/">{{ "< Назад" }}</nuxt-link>
     </div>
@@ -67,11 +67,11 @@ const restNews = feed.slice(0, feed.length - 1);
         </nuxt-link>
       </div>
     </div>
-  </section>
+  </main>
 </template>
 
 <style lang="css" scoped>
-section {
+main {
   min-height: 100vh;
   background-color: var(--light-grey);
   padding: 32px 32px;
@@ -145,6 +145,11 @@ section {
       font-size: 2rem;
       color: var(--black);
       margin-bottom: 5px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      overflow: hidden;
       @media screen and (max-width: 440px) {
         font-size: 1.5rem;
         color: var(--white);
@@ -192,9 +197,17 @@ section {
     display: flex;
     flex-direction: column;
     .card-title {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      overflow: hidden;
       font-size: 2rem;
       color: var(--black);
       margin-bottom: 5px;
+      @media screen and (max-width: 1300px) {
+        font-size: 1.2rem;
+      }
       @media screen and (max-width: 440px) {
         font-size: 1.5rem;
         color: var(--white);

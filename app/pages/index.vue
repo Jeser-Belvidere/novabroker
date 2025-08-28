@@ -1,17 +1,17 @@
 <template>
-  <div class="page">
+  <main class="page">
     <SectionsIntro />
     <SectionsServices />
     <SectionsAdvantages />
     <SectionsStages />
     <SectionsRewievs />
     <SectionsNews />
-    <!-- <SectionsContacts /> -->
-  </div>
+    <SectionsContacts />
+  </main>
 </template>
 
 <style lang="css" scoped>
-.page {
-  position: relative;
+main {
+  min-height: 100vh;
 }
 </style>

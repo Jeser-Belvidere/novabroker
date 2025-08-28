@@ -11,11 +11,18 @@ const addFlashlight = (canvas: HTMLCanvasElement | null) => {
 
   const sizes = {
     width: window.innerWidth,
-    heigth: window.innerHeight,
+    height: window.innerHeight,
   };
 
   canvas.width = sizes.width;
-  canvas.height = sizes.heigth;
+  canvas.height = sizes.height;
+
+  window.addEventListener("resize", () => {
+    sizes.width = window.innerWidth;
+    sizes.height = window.innerHeight;
+    canvas.width = sizes.width;
+    canvas.height = sizes.height;
+  });
 
   const ctx = canvas.getContext("2d");
 
@@ -178,7 +185,7 @@ onMounted(() => {
     <div class="title-wrapper">
       <div class="title">
         <h1>NOVABROKER</h1>
-        <br >
+        <br />
         <h2>ВЭД КОНСАЛТИНГ</h2>
       </div>
     </div>
@@ -267,6 +274,7 @@ onMounted(() => {
 }
 
 #flashlight {
+  display: hidden;
   position: absolute;
   top: 0;
   left: 0;

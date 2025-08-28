@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface IProps {
-  to?: string;
+  to?: string | { path: string; hash: string };
   type?: "primary" | "secondary" | "default";
   href?: string;
 }

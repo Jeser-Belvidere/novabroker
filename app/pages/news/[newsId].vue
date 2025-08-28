@@ -4,8 +4,6 @@ import type { INews } from "~/types/news";
 const route = useRoute();
 const idFromParams: string = route?.params?.newsId as string;
 
-console.log(idFromParams);
-
 if (
   !idFromParams ||
   typeof idFromParams !== "string" ||
@@ -78,6 +76,7 @@ section {
 }
 
 .breadcrumbs {
+  width: fit-content;
   text-decoration: none;
   font-size: 1.5rem;
   color: var(--black);
@@ -114,8 +113,13 @@ h1 {
 
 h2 {
   font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 p {
   font-size: 1.3rem;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+
 }
 </style>

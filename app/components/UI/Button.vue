@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface IProps {
-  type?: "primary" | "secondary";
+  type?: "primary" | "secondary" | "outline";
   href?: "_self" | "_blank" | "_parent" | "_top";
   loading?: boolean;
 }
@@ -27,16 +27,28 @@ const props = withDefaults(defineProps<IProps>(), {
   border-radius: 8px;
   font-size: 1rem;
   letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--dark-forest-green);
+  color: var(--warm-beige);
 }
 
 .secondary {
   background-color: var(--dark-forest-green);
   color: var(--warm-beige);
   border-color: var(--dark-green);
-} 
+}
 
 .primary {
   background-color: var(--warm-beige);
   color: var(--dark-green);
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--dark-green);
+  border-color: var(--dark-green);
 }
 </style>
