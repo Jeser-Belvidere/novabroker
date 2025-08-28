@@ -8,7 +8,7 @@
         <UILink :to="{ path: '/', hash: '#services'}">Услуги</UILink>
         <UILink :to="{ path: '/', hash: '#advantages'}">Преимущества</UILink>
         <UILink :to="{ path: '/', hash: '#stages'}">Этапы</UILink>
-        <UILink :to="{ path: '/', hash: '#rewiews'}">Отзывы</UILink>
+        <UILink :to="{ path: '/', hash: '#reviews'}">Отзывы</UILink>
         <UILink :to="{ path: '/', hash: '#news'}">Новости</UILink>
       </div>
       <div class="header-content__contacts">

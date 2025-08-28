@@ -16,7 +16,7 @@
         <UILink type="default" :to="{ path: '/', hash: '#services'}">Услуги</UILink>
         <UILink type="default" :to="{ path: '/', hash: '#advantages'}">Преимущества</UILink>
         <UILink type="default" :to="{ path: '/', hash: '#stages'}">Этапы</UILink>
-        <UILink type="default" :to="{ path: '/', hash: '#rewiews'}">Отзывы</UILink>
+        <UILink type="default" :to="{ path: '/', hash: '#reviews'}">Отзывы</UILink>
         <UILink type="default" :to="{ path: '/', hash: '#news'}">Новости</UILink>
       </div>
       <div class="footer-content__llc">

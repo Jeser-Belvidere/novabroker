@@ -43,7 +43,7 @@ const carouselConfig = {
 };
 </script>
 <template>
-  <section id="rewievs">
+  <section id="reviews">
     <div class="title">
       <p class="title-head">Отзывы клиентов</p>
       <p class="title-description">
