@@ -27,13 +27,16 @@ onClickOutside(menuRef, () => {
     </svg>
     <div v-if="isActive" class="dropdown">
       <div class="dropdown__content">
-        <UILink href="/#intro">Главная</UILink>
-        <UILink href="/#services">Услуги</UILink>
-        <UILink href="/#advantages">Преимущества</UILink>
-        <UILink href="/#stages">Этапы</UILink>
-        <UILink href="/#rewievs">Отзывы</UILink>
-        <UILink href="/">Новости</UILink>
-        <UILink href="#contacts" type="default">Контакты</UILink>
+        <UILink :to="{ path: '/', hash: '#intro' }">Главная</UILink>
+        <UILink :to="{ path: '/', hash: '#services' }">Услуги</UILink>
+        <UILink :to="{ path: '/', hash: '#advantages' }">Преимущества</UILink>
+        <UILink :to="{ path: '/', hash: '#stages' }">Этапы</UILink>
+        <UILink :to="{ path: '/', hash: '#reviews' }">Отзывы</UILink>
+        <UILink :to="{ path: '/', hash: '#news' }">Новости</UILink>
+        <UILink :to="{ path: '/', hash: '#application' }"
+          >Оставить заявку</UILink
+        >
+        <UILink to="/contacts" type="default">Контакты</UILink>
       </div>
     </div>
   </div>

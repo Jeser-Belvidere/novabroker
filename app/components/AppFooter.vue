@@ -12,12 +12,28 @@
         <div class="footer-content__rights">© Все права защищены</div>
       </div>
       <div class="footer-content__links">
-        <UILink type="default" :to="{ path: '/', hash: '#intro'}">Главная</UILink>
-        <UILink type="default" :to="{ path: '/', hash: '#services'}">Услуги</UILink>
-        <UILink type="default" :to="{ path: '/', hash: '#advantages'}">Преимущества</UILink>
-        <UILink type="default" :to="{ path: '/', hash: '#stages'}">Этапы</UILink>
-        <UILink type="default" :to="{ path: '/', hash: '#reviews'}">Отзывы</UILink>
-        <UILink type="default" :to="{ path: '/', hash: '#news'}">Новости</UILink>
+        <UILink type="default" :to="{ path: '/', hash: '#intro' }"
+          >Главная</UILink
+        >
+        <UILink type="default" :to="{ path: '/', hash: '#services' }"
+          >Услуги</UILink
+        >
+        <UILink type="default" :to="{ path: '/', hash: '#advantages' }"
+          >Преимущества</UILink
+        >
+        <UILink type="default" :to="{ path: '/', hash: '#stages' }"
+          >Этапы</UILink
+        >
+        <UILink type="default" :to="{ path: '/', hash: '#reviews' }"
+          >Отзывы</UILink
+        >
+        <UILink type="default" :to="{ path: '/', hash: '#news' }"
+          >Новости</UILink
+        >
+        <UILink :to="{ path: '/', hash: '#application' }"
+          >Оставить заявку</UILink
+        >
+        <UILink type="default" to="/contacts">Контакты</UILink>
       </div>
       <div class="footer-content__llc">
         <div>ООО "НоваБрокер", {{ new Date().getFullYear() }}</div>

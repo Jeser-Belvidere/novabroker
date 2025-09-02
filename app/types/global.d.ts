@@ -21,5 +21,6 @@ declare global {
     | "whatsapp"
     | "yandex-maps"
     | "vk"
+    | "mail"
     | "map-pin";
 }

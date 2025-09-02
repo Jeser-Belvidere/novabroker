@@ -1,36 +1,50 @@
 <script lang="ts" setup>
-const services: { icon: TIconNames; title: string; description: string }[] = [
+import {
+  UIIconsBadgeCheck,
+  UIIconsBookOpen,
+  UIIconsCardSim,
+  UIIconsCarGear,
+  UIIconsRubleRounded,
+  UIIconsSatteliteFly,
+} from "#components";
+
+const services: {
+  iconComponent: Component;
+  title: string;
+  description: string;
+}[] = [
   {
-    icon: "book-open",
-    title: "Консультации по таможенному оформлению ТС",
-    description: "Работаем с ТС из любой страны",
-  },
-  {
-    icon: "badge-check",
+    iconComponent: UIIconsBadgeCheck,
     title: "Сопровождение по растаможке автомобилей",
     description:
       "Пошлины, проверки, договоры - все берем на себя, вам не нужно беспокоиться",
   },
   {
-    icon: "ruble",
+    iconComponent: UIIconsBookOpen,
+    title: "Консультации по таможенному оформлению ТС",
+    description: "Работаем с ТС из любой страны",
+  },
+
+  {
+    iconComponent: UIIconsRubleRounded,
     title:
       "Услуги по оформлению документов по оценке транспортного средства и техническому заключению",
     description:
       "Определите реальную стоимость авто на рынке и защититесь от переплат",
   },
   {
-    icon: "card-sim",
+    iconComponent: UIIconsCardSim,
     title: "Консультированию по оформления СБКТС и ЭПТС",
     description: "Быстро. Надежно. С гарантией.",
   },
   {
-    icon: "satellite",
+    iconComponent: UIIconsSatteliteFly,
     title: "Консультации по установке УВЭОС - ГЛОНАСС",
     description:
       "Ваше надежное плечо в экстренных случаях. Будьте спокойны за местоположение вашего автомобиля",
   },
   {
-    icon: "car-gear",
+    iconComponent: UIIconsCarGear,
     title: "Помощь в оформлении технического заключения",
     description: "Будьте уверены в технических характеристиках вашего ТС",
   },
@@ -39,6 +53,7 @@ const services: { icon: TIconNames; title: string; description: string }[] = [
 const carouselConfig = {
   gap: 30,
   itemsToShow: 1,
+  autoPlay: true,
 };
 </script>
 
@@ -56,7 +71,7 @@ const carouselConfig = {
         <Slide v-for="(service, index) in services" :key="index">
           <div class="card carousel__item">
             <div class="card-image">
-              <UIIcon :name="service.icon" />
+              <component :is="service.iconComponent" />
             </div>
             <div class="card-title">{{ service.title }}</div>
             <div class="card-description">{{ service.description }}</div>
@@ -70,7 +85,7 @@ const carouselConfig = {
     </div>
     <div v-if="$device.isDesktop" class="cards-desktop">
       <div v-for="service in services" :key="service.title" class="card">
-        <UIIcon :name="service.icon" />
+        <component :is="service.iconComponent" />
         <div class="card-title">{{ service.title }}</div>
         <div class="card-description">{{ service.description }}</div>
       </div>
@@ -154,5 +169,8 @@ section {
 
 .card:hover {
   box-shadow: 0px 10px 10px var(--warm-beige);
+  @media screen and (max-width: 768px) {
+    box-shadow: none;
+  }
 }
 </style>

@@ -6,7 +6,7 @@
     <SectionsStages />
     <SectionsRewievs />
     <SectionsNews />
-    <SectionsContacts />
+    <SectionsApplication />
   </main>
 </template>
 

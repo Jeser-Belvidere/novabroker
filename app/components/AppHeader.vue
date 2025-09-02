@@ -10,9 +10,10 @@
         <UILink :to="{ path: '/', hash: '#stages'}">Этапы</UILink>
         <UILink :to="{ path: '/', hash: '#reviews'}">Отзывы</UILink>
         <UILink :to="{ path: '/', hash: '#news'}">Новости</UILink>
+        <UILink :to="{ path: '/', hash: '#application'}">Оставить заявку</UILink>
       </div>
       <div class="header-content__contacts">
-        <UILink href="#contacts" type="default">Контакты</UILink>
+        <UILink to="/contacts" type="default">Контакты</UILink>
       </div>
       <div class="mobile-menu">
         <UIMenu />

@@ -2,6 +2,7 @@
 <script setup lang="ts">
 import type { Map } from "maplibre-gl";
 import { ref } from "vue";
+
 const currentTab = ref(0);
 const isLoading = ref(false);
 const isModalVisible = ref(false);
@@ -93,7 +94,7 @@ async function handleFormSubmit() {
 }
 </script>
 <template>
-  <section id="contacts">
+  <section id="application">
     <div class="contacts-container">
       <div class="contacts-head">
         <div class="contacts-head__title">Связаться с нами</div>
@@ -123,8 +124,8 @@ async function handleFormSubmit() {
                 <div class="item-text">
                   <div class="item-text__title">График работы</div>
                   <div class="item-text__description">
-                    Пн-Пт, с 9:00 - 18:00 <br />
-                    Сб-Вс, выходные
+                    с 8:00 по 20:00 <br />
+                    Без выходных
                   </div>
                 </div>
               </div>

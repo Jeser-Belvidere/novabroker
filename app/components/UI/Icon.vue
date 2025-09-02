@@ -122,4 +122,8 @@ const className = computed(() => {
 .vk {
   background-image: url("~/assets/icons/vk.svg");
 }
+
+.mail {
+  background-image: url("~/assets/icons/mail.svg");
+}
 </style>
