@@ -38,7 +38,7 @@ const openVK = () => {
             <div class="managers-item bottom-border">
               <div class="managers-item__name">Анна</div>
               <div class="managers-item__contacts">
-                <a class="link" href="tel:+79955550691">+7 995 555-06-91</a>
+                <a class="link" href="tel: +79585000286">+7 958 500-02-86</a>
                 <a class="link" href="mailto:anna@novabroker.ru"
                   >anna@novabroker.ru</a
                 >
@@ -98,7 +98,7 @@ const openVK = () => {
             <div class="item-text">
               <div class="item-text__title">Телефон</div>
               <div class="item-text__description">
-                <a class="link" href="tel:+79955550691">+7 995 555-06-91</a>
+                <a class="link" href="tel: +79585000286">+7 958 500-02-86</a>
               </div>
             </div>
           </div>

@@ -135,7 +135,7 @@ async function handleFormSubmit() {
                 <div class="item-text">
                   <div class="item-text__title">Телефон</div>
                   <div class="item-text__description">
-                    <a href="tel:+7 995 555-06-91">+7 995 555-06-91</a>
+                    <a href="tel:+79585000286">+7 958 500-02-86</a>
                   </div>
                 </div>
               </div>
