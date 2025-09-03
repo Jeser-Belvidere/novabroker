@@ -57,9 +57,9 @@ nuxtApp.hook("page:transition:finish", () => {
   }
 });
 
-const openWhats = () => {
-  window.open("https://wa.me/79955550691", "_blank");
-};
+// const openWhats = () => {
+//   window.open("https://wa.me/79955550691", "_blank");
+// };
 
 const openYandex = () => {
   window.open("https://yandex.ru/maps/-/CHxum8Zx", "_blank");
@@ -140,7 +140,7 @@ async function handleFormSubmit() {
                 </div>
               </div>
               <div class="contacts-icons">
-                <UIIcon name="whatsapp" pointer @click="openWhats()" />
+                <!-- <UIIcon name="whatsapp" pointer @click="openWhats()" /> -->
                 <UIIcon name="vk" pointer @click="openVK()" />
                 <UIIcon
                   name="yandex-maps"
