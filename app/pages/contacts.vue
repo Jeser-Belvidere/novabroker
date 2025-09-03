@@ -135,7 +135,7 @@ const openVK = () => {
           </div>
           <div class="details-item">
             <div class="details-item__name">Краткое название:</div>
-            <div class="details-item__description">ООО "НоваБроке"</div>
+            <div class="details-item__description">ООО "НоваБрокер"</div>
           </div>
           <div class="details-item">
             <div class="details-item__name">Английское название:</div>

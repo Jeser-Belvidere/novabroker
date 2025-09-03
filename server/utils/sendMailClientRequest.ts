@@ -22,7 +22,7 @@ export const sendMailClientRequest = async ({
 
     await transporter.sendMail({
       from: '"novabroker" <novabroker@yandex.ru>',
-      to: "novabroker@yandex.ru",
+      to: "info@novabroker.ru",
       subject: "Новая заявка",
       text: "Новая заявка",
       html: `

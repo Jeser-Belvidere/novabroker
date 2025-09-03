@@ -30,7 +30,7 @@
         <UILink type="default" :to="{ path: '/', hash: '#news' }"
           >Новости</UILink
         >
-        <UILink :to="{ path: '/', hash: '#application' }"
+        <UILink type="default" :to="{ path: '/', hash: '#application' }"
           >Оставить заявку</UILink
         >
         <UILink type="default" to="/contacts">Контакты</UILink>
