@@ -82,6 +82,7 @@ export default defineNuxtConfig({
           content: "website",
         },
       ],
+      script: [{ src: 'yametrika.js', async: true, defer: true }],
     },
     pageTransition: { name: "page", mode: "out-in" },
     layoutTransition: { name: 'layout', mode: 'out-in' },

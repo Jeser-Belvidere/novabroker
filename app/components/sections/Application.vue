@@ -1,4 +1,3 @@
-
 <script setup lang="ts">
 import type { Map } from "maplibre-gl";
 import { ref } from "vue";
@@ -99,7 +98,7 @@ async function handleFormSubmit() {
       <div class="contacts-head">
         <div class="contacts-head__title">Связаться с нами</div>
         <div class="contacts-head__description">
-          Свяжитесь с нами любым удобным для вас способом - <br />
+          Свяжитесь с нами любым удобным для вас способом - <br >
           мы ответим быстро
         </div>
       </div>
@@ -113,7 +112,7 @@ async function handleFormSubmit() {
                 <div class="item-text">
                   <div class="item-text__title">Адрес</div>
                   <div class="item-text__description">
-                    Город Москва,ш. Калужское, км 22-Й, <br />
+                    Город Москва,ш. Калужское, км 22-Й, <br >
                     дом 10, строение 23
                   </div>
                 </div>
@@ -124,7 +123,7 @@ async function handleFormSubmit() {
                 <div class="item-text">
                   <div class="item-text__title">График работы</div>
                   <div class="item-text__description">
-                    с 8:00 по 20:00 <br />
+                    с 8:00 по 20:00 <br >
                     Без выходных
                   </div>
                 </div>
@@ -167,7 +166,7 @@ async function handleFormSubmit() {
                     name="name"
                     type="text"
                     placeholder="Имя"
-                  />
+                  >
                   <input
                     v-model="phone"
                     :disabled="isLoading"
@@ -175,7 +174,7 @@ async function handleFormSubmit() {
                     name="phone"
                     type="tel"
                     placeholder="Телефон"
-                  />
+                  >
                   <input
                     v-model="mail"
                     :disabled="isLoading"
@@ -183,7 +182,7 @@ async function handleFormSubmit() {
                     name="mail"
                     type="email"
                     placeholder="Почта"
-                  />
+                  >
                 </div>
                 <div class="form-checkbox">
                   <input
@@ -192,7 +191,7 @@ async function handleFormSubmit() {
                     class="form-checkbox__input"
                     type="checkbox"
                     name="scales"
-                  />
+                  >
                   <label class="form-checkbox__label" for="scales"
                     >Я даю согласие на
                     <UILink to="/privacy">обработку персональных данных</UILink>

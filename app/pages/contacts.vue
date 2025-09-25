@@ -1,8 +1,4 @@
 <script setup lang="ts">
-// const openWhats = () => {
-//   window.open("https://wa.me/79955550691", "_blank");
-// };
-
 const openYandex = () => {
   window.open("https://yandex.ru/maps/-/CHxum8Zx", "_blank");
 };
@@ -44,12 +40,30 @@ const openVK = () => {
                 >
               </div>
             </div>
-            <div class="managers-item">
-              <div class="managers-item__name">Диана</div>
+            <div class="managers-item bottom-border">
+              <div class="managers-item__name">Марк</div>
               <div class="managers-item__contacts">
                 <a class="link" href="tel:+797774095899">+7 977 409-58-99</a>
                 <a class="link" href="mailto:diana@novabroker.ru"
-                  >diana@novabroker.ru</a
+                  >mark@novabroker.ru</a
+                >
+              </div>
+            </div>
+            <div class="managers-item bottom-border">
+              <div class="managers-item__name">Елена</div>
+              <div class="managers-item__contacts">
+                <a class="link" href="tel:+797774095969">+7 977 409-59-69</a>
+                <a class="link" href="mailto:diana@novabroker.ru"
+                  >mark@novabroker.ru</a
+                >
+              </div>
+            </div>
+            <div class="managers-item">
+              <div class="managers-item__name">Зарина</div>
+              <div class="managers-item__contacts">
+                <a class="link" href="tel:+790178355900">+7 901 783-59-00</a>
+                <a class="link" href="mailto:diana@novabroker.ru"
+                  >mark@novabroker.ru</a
                 >
               </div>
             </div>
@@ -114,7 +128,6 @@ const openVK = () => {
             </div>
           </div>
           <div class="contacts-icons">
-            <!-- <UIIcon name="whatsapp" pointer @click="openWhats()" /> -->
             <UIIcon name="vk" pointer @click="openVK()" />
             <UIIcon
               name="yandex-maps"

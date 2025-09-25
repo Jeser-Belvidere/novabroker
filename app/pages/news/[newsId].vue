@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { UINewsText } from "#components";
 import type { INews } from "~/types/news";
 
 const route = useRoute();
@@ -36,6 +37,7 @@ useHead({
     },
   ],
 });
+
 useSeoMeta({
   title: `NOVABROKER - новости ВЭД - ${currentNews?.title}`,
   description: `НОВАБРОКЕР. ${currentNews?.description}`,
@@ -50,19 +52,13 @@ useSeoMeta({
       <nuxt-link class="breadcrumbs" to="/news">{{ "< Назад" }}</nuxt-link>
     </div>
     <h1 class="margin-bottom">{{ currentNews?.title }}</h1>
-    <div
-      class="image margin-bottom"
-      :style="`background-image: url(${currentNews?.imgSrc})`"
-    ></div>
+    <div class="image margin-bottom" :style="`background-image: url(${currentNews?.imgSrc})`" />
     <div class="image-subtitle margin-bottom">{{ currentNews?.date }}</div>
     <div class="content">
-      <div
-        v-for="(text, index) in currentNews?.texts"
-        :key="index"
-        class="margin-bottom"
-      >
-        <h2>{{ text.heading }}</h2>
-        <p>{{ text.paragraph }}</p>
+      <div v-for="(newsBlock, index) in currentNews?.newsBlocks" :key="index" class="margin-bottom">
+        <UINewsText v-if="newsBlock.tag === 'text'" :heading="newsBlock?.heading" :paragraph="newsBlock.paragraph" />
+        <UINewsTable v-if="newsBlock.tag === 'table'" :caption="newsBlock.caption" :columns="newsBlock.columns"
+          :data="newsBlock.data" />
       </div>
     </div>
   </section>
@@ -81,6 +77,7 @@ section {
   font-size: 1.5rem;
   color: var(--black);
   cursor: pointer;
+
   @media screen and (max-width: 440px) {
     font-size: 0.8rem;
   }
@@ -89,6 +86,7 @@ section {
 h1 {
   font-size: 4rem;
   color: var(--black);
+
   @media screen and (max-width: 440px) {
     font-size: 2rem;
   }
@@ -109,17 +107,5 @@ h1 {
 
 .margin-bottom {
   margin-bottom: 16px;
-}
-
-h2 {
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-p {
-  font-size: 1.3rem;
-  letter-spacing: 2px;
-  margin-bottom: 30px;
-
 }
 </style>

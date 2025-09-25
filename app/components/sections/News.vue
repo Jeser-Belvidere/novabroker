@@ -20,7 +20,7 @@ const lastThreeNews = feed.slice(feed.length - 3, feed.length).reverse();
       >
         <nuxt-link class="first-card" :to="`/news/${news.listIndex}`">
           <div class="card-image">
-            <img :src="news.imgSrc" loading="lazy" :alt="news.title" />
+            <img :src="news.imgSrc" loading="lazy" :alt="news.title" >
           </div>
           <div class="card-info">
             <div class="card-title">{{ news.title }}</div>

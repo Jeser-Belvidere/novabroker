@@ -16,7 +16,7 @@
   top: 0;
   left: 0;
   z-index: 100;
-  height: 110vh;
+  height: 100vh;
   width: 100vw;
   background-color: var(--dark-forest-green);
 }
@@ -32,7 +32,6 @@
   }
 }
 
-/* HTML: <div class="loader"></div> */
 .loader {
   height: 80px;
   aspect-ratio: 1;

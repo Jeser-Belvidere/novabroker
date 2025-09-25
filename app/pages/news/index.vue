@@ -21,7 +21,7 @@ useSeoMeta({
 const feed = getNewsFeed();
 
 const lastNews = feed[feed.length - 1];
-const restNews = feed.slice(0, feed.length - 1);
+const restNews = feed.slice(0, feed.length - 1).reverse();
 </script>
 
 <template>
@@ -38,10 +38,7 @@ const restNews = feed.slice(0, feed.length - 1);
     <div>
       <div class="first-card margin-bottom">
         <nuxt-link class="first-card" :to="`/news/${lastNews?.listIndex}`">
-          <div
-            class="card-image"
-            :style="`background-image: url(${lastNews?.imgSrc})`"
-          ></div>
+          <div class="card-image" :style="`background-image: url(${lastNews?.imgSrc})`" />
           <div class="card-info">
             <div class="card-title">{{ lastNews?.title }}</div>
             <div class="card-date">{{ lastNews?.date }}</div>
@@ -50,16 +47,9 @@ const restNews = feed.slice(0, feed.length - 1);
       </div>
     </div>
     <div class="grid">
-      <div
-        v-for="(news, index) in restNews"
-        :key="index"
-        :class="`card card-${index + 1}`"
-      >
+      <div v-for="(news, index) in restNews" :key="index" :class="`card card-${index + 1}`">
         <nuxt-link class="card" :to="`/news/${news.listIndex}`">
-          <div
-            class="card-image"
-            :style="`background-image: url(${news.imgSrc})`"
-          ></div>
+          <div class="card-image" :style="`background-image: url(${news.imgSrc})`" />
           <div class="card-info">
             <div class="card-title">{{ news.title }}</div>
             <div class="card-date">{{ news.date }}</div>
@@ -92,12 +82,14 @@ main {
   width: 100%;
   color: var(--black);
   text-align: center;
+
   @media screen and (max-width: 868px) {
     align-items: center;
   }
 
   .title-head {
     font-size: 4rem;
+
     @media screen and (max-width: 768px) {
       font-size: 2rem;
     }
@@ -105,6 +97,7 @@ main {
 
   .title-description {
     font-size: 1.5rem;
+
     @media screen and (max-width: 768px) {
       font-size: 1rem;
     }
@@ -128,6 +121,7 @@ main {
   height: 400px;
   cursor: pointer;
   text-decoration: none;
+
   .card-image {
     border-radius: inherit;
     display: block;
@@ -137,10 +131,12 @@ main {
     background-position: center;
     filter: brightness(0.7);
   }
+
   .card-info {
     position: relative;
     display: flex;
     flex-direction: column;
+
     .card-title {
       font-size: 2rem;
       color: var(--black);
@@ -150,18 +146,22 @@ main {
       -webkit-line-clamp: 2;
       line-clamp: 2;
       overflow: hidden;
+
       @media screen and (max-width: 440px) {
         font-size: 1.5rem;
         color: var(--white);
       }
     }
+
     .card-date {
       font-size: 0.9rem;
       color: var(--black);
+
       @media screen and (max-width: 440px) {
         color: var(--white);
       }
     }
+
     @media screen and (max-width: 440px) {
       position: absolute;
       bottom: 32px;
@@ -179,10 +179,12 @@ main {
   height: 400px;
   cursor: pointer;
   text-decoration: none;
+
   @media screen and (max-width: 1300px) {
     width: 350px;
     height: 250px;
   }
+
   .card-image {
     border-radius: inherit;
     display: block;
@@ -191,11 +193,17 @@ main {
     background-size: cover;
     background-position: center;
     filter: brightness(0.4);
+
+    &:hover {
+      filter: brightness(0.7);
+    }
   }
+
   .card-info {
     position: relative;
     display: flex;
     flex-direction: column;
+
     .card-title {
       display: -webkit-box;
       -webkit-box-orient: vertical;
@@ -205,21 +213,26 @@ main {
       font-size: 2rem;
       color: var(--black);
       margin-bottom: 5px;
+
       @media screen and (max-width: 1300px) {
         font-size: 1.2rem;
       }
+
       @media screen and (max-width: 440px) {
         font-size: 1.5rem;
         color: var(--white);
       }
     }
+
     .card-date {
       font-size: 0.9rem;
       color: var(--black);
+
       @media screen and (max-width: 440px) {
         color: var(--white);
       }
     }
+
     @media screen and (max-width: 440px) {
       position: absolute;
       bottom: 32px;

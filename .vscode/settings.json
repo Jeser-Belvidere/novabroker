@@ -1,0 +1,8 @@
+{
+  "editor.formatOnPaste": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "editor.codeActionsOnSave": ["source.fixAll.eslint"]
+}
