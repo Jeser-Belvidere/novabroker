@@ -2,15 +2,15 @@
 <template>
   <header class="header">
     <div class="header-content">
-      <div class="header-content__logo">NOVABROKER</div>
+      <nuxt-link class="header-content__logo" to="/">NOVABROKER</nuxt-link>
       <div class="header-content__links">
-        <UILink :to="{ path: '/', hash: '#intro'}">Главная</UILink>
-        <UILink :to="{ path: '/', hash: '#services'}">Услуги</UILink>
-        <UILink :to="{ path: '/', hash: '#advantages'}">Преимущества</UILink>
-        <UILink :to="{ path: '/', hash: '#stages'}">Этапы</UILink>
-        <UILink :to="{ path: '/', hash: '#reviews'}">Отзывы</UILink>
-        <UILink :to="{ path: '/', hash: '#news'}">Новости</UILink>
-        <UILink :to="{ path: '/', hash: '#application'}">Оставить заявку</UILink>
+        <UILink :to="{ path: '/', hash: '#intro' }">Главная</UILink>
+        <UILink :to="{ path: '/', hash: '#services' }">Услуги</UILink>
+        <UILink :to="{ path: '/', hash: '#advantages' }">Преимущества</UILink>
+        <UILink :to="{ path: '/', hash: '#stages' }">Этапы</UILink>
+        <UILink :to="{ path: '/', hash: '#reviews' }">Отзывы</UILink>
+        <UILink :to="{ path: '/', hash: '#news' }">Новости</UILink>
+        <UILink :to="{ path: '/', hash: '#application' }">Оставить заявку</UILink>
       </div>
       <div class="header-content__contacts">
         <UILink to="/contacts" type="default">Контакты</UILink>
@@ -30,6 +30,7 @@
   width: 100% !important;
   background-color: var(--dark-forest-green);
   padding: 10px 32px;
+
   @media screen and (max-width: 852px) {
     padding-top: 10px;
   }
@@ -49,6 +50,8 @@
   color: var(--warm-beige);
   font-size: 1.6rem;
   letter-spacing: 4px;
+  text-decoration: none;
+
   @media screen and (max-width: 852px) {
     font-size: 1.4rem;
   }

@@ -13,14 +13,10 @@ const lastThreeNews = feed.slice(feed.length - 3, feed.length).reverse();
       </p>
     </div>
     <div class="grid">
-      <div
-        v-for="(news, index) in lastThreeNews"
-        :key="index"
-        :class="`card card-${index + 1}`"
-      >
+      <div v-for="(news, index) in lastThreeNews" :key="index" :class="`card card-${index + 1}`">
         <nuxt-link class="first-card" :to="`/news/${news.listIndex}`">
           <div class="card-image">
-            <img :src="news.imgSrc" loading="lazy" :alt="news.title" >
+            <img :src="news.imgSrc" loading="lazy" :alt="news.title">
           </div>
           <div class="card-info">
             <div class="card-title">{{ news.title }}</div>
@@ -53,6 +49,7 @@ section {
 
   .title-head {
     font-size: 4rem;
+
     @media screen and (max-width: 768px) {
       font-size: 2rem;
     }
@@ -60,6 +57,7 @@ section {
 
   .title-description {
     font-size: 1.5rem;
+
     @media screen and (max-width: 768px) {
       font-size: 1rem;
     }
@@ -74,6 +72,7 @@ section {
   grid-row-gap: 12px;
   margin-top: 40px;
   margin-bottom: 40px;
+
   @media screen and (max-width: 868px) {
     grid-template-columns: auto;
     grid-template-rows: auto;
@@ -85,9 +84,11 @@ section {
   border-radius: 16px;
   width: 100%;
   height: 100%;
+
   .card-image {
     width: 100%;
     height: 100%;
+
     img {
       width: 100%;
       height: 100%;
@@ -96,22 +97,26 @@ section {
       border-radius: 16px;
     }
   }
+
   .card-info {
     position: absolute;
     bottom: 32px;
     left: 32px;
+
     .card-title {
       text-overflow: ellipsis;
       font-size: 2rem;
       color: var(--white);
       margin-bottom: 5px;
+
       @media screen and (max-width: 868px) {
         font-size: 1.5rem;
       }
     }
+
     .card-date {
       font-size: 0.9rem;
-      color: var(--medium-taupe);
+      color: var(--medium-taupe-light);
     }
   }
 }
@@ -126,6 +131,7 @@ section {
 
 .card-1 {
   grid-area: 1 / 1 / 3 / 3;
+
   @media screen and (max-width: 868px) {
     grid-area: auto;
   }
@@ -149,6 +155,7 @@ section {
 
 .card-3 {
   grid-area: 2 / 3 / 3 / 4;
+
   .card-info {
     .card-title {
       @media screen and (max-width: 1200px) {

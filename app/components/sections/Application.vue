@@ -56,10 +56,6 @@ nuxtApp.hook("page:transition:finish", () => {
   }
 });
 
-// const openWhats = () => {
-//   window.open("https://wa.me/79955550691", "_blank");
-// };
-
 const openYandex = () => {
   window.open("https://yandex.ru/maps/-/CHxum8Zx", "_blank");
 };
@@ -98,7 +94,7 @@ async function handleFormSubmit() {
       <div class="contacts-head">
         <div class="contacts-head__title">Связаться с нами</div>
         <div class="contacts-head__description">
-          Свяжитесь с нами любым удобным для вас способом - <br >
+          Свяжитесь с нами любым удобным для вас способом - <br>
           мы ответим быстро
         </div>
       </div>
@@ -112,7 +108,7 @@ async function handleFormSubmit() {
                 <div class="item-text">
                   <div class="item-text__title">Адрес</div>
                   <div class="item-text__description">
-                    Город Москва,ш. Калужское, км 22-Й, <br >
+                    Город Москва,ш. Калужское, км 22-Й, <br>
                     дом 10, строение 23
                   </div>
                 </div>
@@ -123,7 +119,7 @@ async function handleFormSubmit() {
                 <div class="item-text">
                   <div class="item-text__title">График работы</div>
                   <div class="item-text__description">
-                    с 8:00 по 20:00 <br >
+                    с 8:00 по 20:00 <br>
                     Без выходных
                   </div>
                 </div>
@@ -139,14 +135,8 @@ async function handleFormSubmit() {
                 </div>
               </div>
               <div class="contacts-icons">
-                <!-- <UIIcon name="whatsapp" pointer @click="openWhats()" /> -->
                 <UIIcon name="vk" pointer @click="openVK()" />
-                <UIIcon
-                  name="yandex-maps"
-                  size="lg"
-                  pointer
-                  @click="openYandex()"
-                />
+                <UIIcon name="yandex-maps" size="lg" pointer @click="openYandex()" />
               </div>
               <div>
                 <button @click.prevent="currentTab = 1">Оставить заявку</button>
@@ -159,60 +149,28 @@ async function handleFormSubmit() {
               <div class="form-wrapper">
                 <div class="form-title">Оставьте заявку</div>
                 <div class="form-content">
-                  <input
-                    v-model="name"
-                    :disabled="isLoading"
-                    required
-                    name="name"
-                    type="text"
-                    placeholder="Имя"
-                  >
-                  <input
-                    v-model="phone"
-                    :disabled="isLoading"
-                    required
-                    name="phone"
-                    type="tel"
-                    placeholder="Телефон"
-                  >
-                  <input
-                    v-model="mail"
-                    :disabled="isLoading"
-                    required
-                    name="mail"
-                    type="email"
-                    placeholder="Почта"
-                  >
+                  <input v-model="name" :disabled="isLoading" required name="name" type="text" placeholder="Имя">
+                  <input v-model="phone" :disabled="isLoading" required name="phone" type="tel" placeholder="Телефон">
+                  <input v-model="mail" :disabled="isLoading" required name="mail" type="email" placeholder="Почта">
                 </div>
                 <div class="form-checkbox">
-                  <input
-                    id="scales"
-                    v-model="isAgreed"
-                    class="form-checkbox__input"
-                    type="checkbox"
-                    name="scales"
-                  >
-                  <label class="form-checkbox__label" for="scales"
-                    >Я даю согласие на
-                    <UILink to="/privacy">обработку персональных данных</UILink>
+                  <input id="scales" v-model="isAgreed" class="form-checkbox__input" type="checkbox" name="scales">
+                  <label class="form-checkbox__label" for="scales">Согласен на
+                    <UILink to="/personaldata">обработку персональных данных</UILink>
+                    и с
+                    <UILink to="/privacy">политикой обработки персональных данных</UILink>
                   </label>
                 </div>
                 <div class="form-actions">
                   <button @click.prevent="currentTab = 0">Назад</button>
-                  <button
-                    :disabled="!isAgreed || !mail || !name || !phone"
-                    type="submit"
-                  >
+                  <button :disabled="!isAgreed || !mail || !name || !phone" type="submit">
                     <div>
-                      <div
-                        v-if="isLoading"
-                        style="
+                      <div v-if="isLoading" style="
                           width: 100%;
                           display: flex;
                           justify-content: center;
                           align-items: center;
-                        "
-                      >
+                        ">
                         <UISpinner />
                       </div>
 
@@ -258,6 +216,7 @@ section {
   max-width: 600px;
   gap: 50px;
   z-index: 2;
+
   @media screen and (max-width: 440px) {
     width: 100%;
     margin-left: 0;
@@ -277,6 +236,7 @@ section {
   color: var(--warm-beige);
   margin-top: 16px;
   text-align: center;
+
   @media screen and (max-width: 768px) {
     background-color: rgba(255, 255, 255, 0);
     box-shadow: none;
@@ -311,9 +271,11 @@ section {
   border-radius: 12px;
   padding: 32px 32px;
   max-width: 500px;
+
   @media screen and (max-width: 868px) {
     max-width: 450px;
   }
+
   @media screen and (max-width: 440px) {
     width: 90%;
     margin-left: 5%;
@@ -440,16 +402,19 @@ button {
   z-index: 5;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+
   &:hover {
     background-color: var(--dark-forest-green);
     color: var(--warm-beige);
   }
+
   &:disabled {
     font-weight: 400px;
     background-color: var(--medium-taupe);
     color: var(--dark-forest-green);
     cursor: not-allowed;
   }
+
   @media screen and (max-width: 440px) {
     font-size: 1.1rem;
     padding: 0px 4px;
@@ -490,6 +455,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+
   .dialog-wrapper {
     display: flex;
     flex-direction: column;
@@ -499,16 +465,19 @@ a {
     padding: 32px;
     color: var(--warm-beige);
     border: solid 2px var(--warm-beige);
+
     @media screen and (max-width: 440px) {
       margin-left: 10%;
       margin-right: 10%;
       width: 80%;
     }
   }
+
   .dialog-title {
     font-size: 2rem;
     text-align: center;
   }
+
   .dialog-description {
     font-size: 1.5rem;
     text-align: center;
