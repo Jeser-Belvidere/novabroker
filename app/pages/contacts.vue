@@ -26,45 +26,35 @@ const openVK = () => {
               <div class="managers-item__name">Андрей</div>
               <div class="managers-item__contacts">
                 <a class="link" href="tel:+79585000345">+7 958 500-03-45</a>
-                <a class="link" href="mailto:andrei@novabroker.ru"
-                  >andrei@novabroker.ru</a
-                >
+                <a class="link" href="mailto:andrei@novabroker.ru">andrei@novabroker.ru</a>
               </div>
             </div>
             <div class="managers-item bottom-border">
               <div class="managers-item__name">Анна</div>
               <div class="managers-item__contacts">
                 <a class="link" href="tel: +79585000286">+7 958 500-02-86</a>
-                <a class="link" href="mailto:anna@novabroker.ru"
-                  >anna@novabroker.ru</a
-                >
+                <a class="link" href="mailto:anna@novabroker.ru">anna@novabroker.ru</a>
               </div>
             </div>
             <div class="managers-item bottom-border">
               <div class="managers-item__name">Марк</div>
               <div class="managers-item__contacts">
                 <a class="link" href="tel:+797774095899">+7 977 409-58-99</a>
-                <a class="link" href="mailto:diana@novabroker.ru"
-                  >mark@novabroker.ru</a
-                >
+                <a class="link" href="mailto:diana@novabroker.ru">mark@novabroker.ru</a>
               </div>
             </div>
             <div class="managers-item bottom-border">
               <div class="managers-item__name">Елена</div>
               <div class="managers-item__contacts">
                 <a class="link" href="tel:+797774095969">+7 977 409-59-69</a>
-                <a class="link" href="mailto:diana@novabroker.ru"
-                  >mark@novabroker.ru</a
-                >
+                <a class="link" href="mailto:diana@novabroker.ru">mark@novabroker.ru</a>
               </div>
             </div>
             <div class="managers-item">
               <div class="managers-item__name">Зарина</div>
               <div class="managers-item__contacts">
                 <a class="link" href="tel:+790178355900">+7 901 783-59-00</a>
-                <a class="link" href="mailto:diana@novabroker.ru"
-                  >mark@novabroker.ru</a
-                >
+                <a class="link" href="mailto:diana@novabroker.ru">mark@novabroker.ru</a>
               </div>
             </div>
           </div>
@@ -74,13 +64,33 @@ const openVK = () => {
               <div class="managers-item__name">Михаил</div>
               <div class="managers-item__contacts">
                 <a class="link" href="tel:+797774095897">+7 977 409-58-97</a>
-                <a class="link" href="mailto:michael@novabroker.ru"
-                  >michael@novabroker.ru</a
-                >
+                <a class="link" href="mailto:michael@novabroker.ru">michael@novabroker.ru</a>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <!--  -->
+      <div class="map-wrapper">
+        <h1>Таможенный пост</h1>
+        <p>Данный таможенный пост уполномочен принимать декларации и проводить таможенное оформление для участников ВЭД,
+          зарегистрированных в следующих административных округах и районах:</p>
+        <br />
+        <div class="list-wrapper">
+          <h3>Москва:</h3>
+          <ul>
+            <li>ЮЗАО (Юго-Западный административный округ)</li>
+            <li>ЗАО (Западный административный округ)</li>
+            <li>Южный административный округ</li>
+          </ul>
+          <h3>Московская область: </h3>
+          <ul>
+            <li>Городской округ Видное (включая г. Видное и прилегающие территории)</li>
+            <li>Новомосковский административный округ Москвы (ТиНАО)</li>
+          </ul>
+        </div>
+
+        <CoverageServicesMap />
       </div>
       <!--  -->
       <div class="grid-wrapper">
@@ -90,7 +100,7 @@ const openVK = () => {
             <div class="item-text">
               <div class="item-text__title">Адрес</div>
               <div class="item-text__description">
-                Город Москва,ш. Калужское, км 22-Й, <br />
+                Город Москва,ш. Калужское, км 22-Й, <br>
                 дом 10, строение 23, 14 этаж, Офис 1407
               </div>
             </div>
@@ -101,7 +111,7 @@ const openVK = () => {
             <div class="item-text">
               <div class="item-text__title">График работы</div>
               <div class="item-text__description">
-                с 8:00 по 20:00 <br />
+                с 8:00 по 20:00 <br>
                 Без выходных
               </div>
             </div>
@@ -122,22 +132,16 @@ const openVK = () => {
               <div class="item-text__title">Эл. почта для общих вопросов</div>
               <div class="item-text__description">
                 <a class="link" href="mailto:michael@novabroker.ru">
-                  info@novabroker.ru</a
-                >
+                  info@novabroker.ru</a>
               </div>
             </div>
           </div>
           <div class="contacts-icons">
             <UIIcon name="vk" pointer @click="openVK()" />
-            <UIIcon
-              name="yandex-maps"
-              size="lg"
-              pointer
-              @click="openYandex()"
-            />
+            <UIIcon name="yandex-maps" size="lg" pointer @click="openYandex()" />
           </div>
         </div>
-        <div class="divider"></div>
+        <div class="divider" />
         <div class="details-wrapper">
           <div class="title">Реквизиты</div>
           <div class="details-item">
@@ -188,6 +192,7 @@ main {
   width: 1px;
   height: 100%;
   background-color: var(--warm-beige);
+
   @media screen and (max-width: 440px) {
     height: 1px;
     width: 100%;
@@ -197,6 +202,7 @@ main {
 .link {
   text-decoration: none;
   color: var(--light-grey);
+
   &:hover {
     text-decoration: underline;
   }
@@ -227,19 +233,83 @@ main {
   align-items: center;
   justify-content: center;
   margin-bottom: 32px;
+
   p {
     font-size: 1.3rem;
     color: var(--light-grey);
     text-align: center;
+
     @media screen and (max-width: 440px) {
       font-size: 1rem;
     }
   }
+
   h1 {
     font-size: 4rem;
     color: var(--warm-beige);
+
     @media screen and (max-width: 440px) {
       font-size: 2rem;
+    }
+  }
+}
+
+.map-wrapper {
+  display: flex;
+  flex-direction: column;
+  color: var(--warm-beige);
+  width: 100%;
+  text-align: center;
+  align-items: center;
+
+  .list-wrapper {
+    width: fit-content;
+    text-align: left;
+
+    ul {
+      list-style-type: none;
+      list-style-position: inside;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+
+      @media screen and (max-width: 440px) {
+        font-size: 1rem;
+      }
+    }
+
+    li {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: var(--light-grey);
+
+      @media screen and (max-width: 440px) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 1.7rem;
+    text-align: center;
+
+    @media screen and (max-width: 440px) {
+      font-size: 1.2rem;
+      width: 100%;
+    }
+  }
+
+  p {
+    font-size: 1.3rem;
+    color: var(--light-grey);
+    text-align: center;
+    text-wrap: pretty;
+    max-width: 800px;
+
+    @media screen and (max-width: 440px) {
+      font-size: 1rem;
     }
   }
 }
@@ -254,13 +324,14 @@ main {
 }
 
 .content-block {
-  /* width: 300px; */
   display: flex;
   flex-direction: column;
   gap: 10px;
+
   .block-title {
     font-size: 1.6rem;
     text-align: center;
+
     @media screen and (max-width: 440px) {
       font-size: 1.2rem;
       width: 100%;
@@ -280,6 +351,7 @@ main {
   padding-bottom: 10px;
   font-size: 1.1rem;
   color: var(--light-grey);
+
   .managers-item__name {
     display: flex;
     flex-direction: column;
@@ -295,11 +367,13 @@ main {
     align-items: flex-start;
     justify-content: center;
   }
+
   @media screen and (max-width: 440px) {
     font-size: 1rem;
     width: 100%;
   }
 }
+
 /*  */
 
 .grid-wrapper {
@@ -309,6 +383,7 @@ main {
   gap: 8px;
   display: grid;
   grid-template-columns: 1fr 1px 1fr;
+
   @media screen and (max-width: 440px) {
     display: flex;
     flex-direction: column;
@@ -336,6 +411,7 @@ main {
     .item-text__title {
       font-size: 1.3rem;
       color: var(--warm-beige);
+
       @media screen and (max-width: 440px) {
         font-size: 1.2rem;
       }
@@ -345,6 +421,7 @@ main {
       font-size: 1.1rem;
       color: var(--light-grey);
       text-wrap: balance;
+
       @media screen and (max-width: 440px) {
         font-size: 1rem;
       }
@@ -369,6 +446,7 @@ main {
   flex-direction: column;
   gap: 16px;
   padding-left: 16px;
+
   .title {
     display: flex;
     flex-direction: column;
@@ -383,17 +461,21 @@ main {
     display: flex;
     flex-direction: column;
     gap: 8px;
+
     .details-item__name {
       font-size: 1.3rem;
       color: var(--warm-beige);
+
       @media screen and (max-width: 440px) {
         font-size: 1.2rem;
       }
     }
+
     .details-item__description {
       font-size: 1.1rem;
       color: var(--light-grey);
       text-wrap: balance;
+
       @media screen and (max-width: 440px) {
         font-size: 1rem;
       }
