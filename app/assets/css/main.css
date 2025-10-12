@@ -8,7 +8,8 @@
   --warm-ligth: #fffae8;
   --black: rgb(0, 0, 0);
   --white: #f9f7f3;
-  --header-height: 80px;
+  --header-height: 90px;
+  --header-height-mobile: 100px;
   --footer-height: 120px;
   cursor: url("/cursor.svg") 26 37, auto;
   font-size: 16px;

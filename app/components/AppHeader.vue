@@ -1,10 +1,20 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { TCurrencyData } from '~~/server/utils/CurrencyStorage'
+
+const { data, error } = await useFetch('/api/currency')
+
+const currencies = ref<TCurrencyData>({} as TCurrencyData)
+
+if (data.value) {
+  currencies.value = data.value
+}
+
+</script>
 <template>
   <header class="header">
     <div class="header-content">
       <nuxt-link class="header-content__logo" to="/">NOVABROKER</nuxt-link>
       <div class="header-content__links">
-        <UILink :to="{ path: '/', hash: '#intro' }">Главная</UILink>
         <UILink :to="{ path: '/', hash: '#services' }">Услуги</UILink>
         <UILink :to="{ path: '/', hash: '#advantages' }">Преимущества</UILink>
         <UILink :to="{ path: '/', hash: '#stages' }">Этапы</UILink>
@@ -19,20 +29,49 @@
         <UIMenu />
       </div>
     </div>
+    <div v-if="!error" class="header-currency">
+      <div class="header-currency__content">$: <span>{{ currencies?.USD?.value }}</span> | ¥: <span>{{
+        currencies?.CNY?.value }}</span> | €: <span>{{
+            currencies?.EUR?.value
+          }}</span>
+      </div>
+    </div>
   </header>
 </template>
 <style lang="css" scoped>
 .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: var(--header-height);
   position: fixed;
   top: 0;
   z-index: 10;
   width: 100% !important;
   background-color: var(--dark-forest-green);
-  padding: 10px 32px;
+  padding: 6px 32px;
 
-  @media screen and (max-width: 852px) {
-    padding-top: 10px;
+  @media screen and (max-width: 868px) {
+    height: var(--header-height-mobile);
+    flex-direction: column-reverse;
+  }
+}
+
+.header-currency {
+  color: var(--warm-beige);
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+
+  @media screen and (max-width: 868px) {
+    top: 10px;
+  }
+}
+
+.header-currency__content {
+  span {
+    color: var(--light-grey);
   }
 }
 
@@ -62,7 +101,7 @@
   display: flex;
   flex-direction: row;
   gap: 24px;
-  padding: 16px 24px;
+  padding: 10px 24px;
   border-radius: 100px;
   color: var(--light-grey);
   background-color: rgba(108, 108, 108, 0.102);

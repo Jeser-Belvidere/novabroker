@@ -13,9 +13,9 @@ interface IValute {
 }
 
 export type TCurrencyData = Record<
-  currencyCode | "date",
+  currencyCode,
   { name: string; value: string }
-> | null;
+> & {date: string} | null;
 
 class CurrencyStorage {
   private instance: null | boolean = null;
@@ -86,7 +86,10 @@ class CurrencyStorage {
             const formattedCurrency = this.formatCurrencyData(result);
 
             for (const item of formattedCurrency) {
-              this.currencyData[item.code as currencyCode].value = item.value;
+              this.currencyData[item.code as currencyCode].value = Number(item.value.replace(
+                ",",
+                "."
+              )).toFixed(2).toString();
             }
 
             log("info", `Currency data updated: ${JSON.stringify(this.currencyData)}`);

@@ -1,9 +1,8 @@
-import  { CurrencyStorage } from '../utils/CurrencyStorage'
+import { CurrencyStorage } from "../utils/CurrencyStorage";
 
 export default defineNitroPlugin(() => {
   if (CurrencyStorage.getCurrencyData() === null) {
-    log('info', 'currencyStorage is empty. Loading...')
-    CurrencyStorage.updateCurrencyData()
+    log("info", "currencyStorage is empty. Loading...");
+    CurrencyStorage.updateCurrencyData();
   }
-})
-
+});
