@@ -20,7 +20,7 @@ export default defineEventHandler(async (event) => {
 
   } catch (e) {
     sendMailError(e)
-    console.error(e)
+    log('error', 'Error in /api/mail.post', e)
     throw e
   }
 });

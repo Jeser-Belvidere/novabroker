@@ -1,14 +1,6 @@
 import nodemailer from "nodemailer";
 
-export const sendMailClientRequest = async ({
-  name,
-  mail,
-  phone,
-}: {
-  name: string;
-  mail: string;
-  phone: string;
-}) => {
+export const mailErrorToAdmin = async (error: string | unknown, message?: string) => {
   try {
     const transporter = nodemailer.createTransport({
       host: "smtp.yandex.ru",
@@ -22,9 +14,9 @@ export const sendMailClientRequest = async ({
 
     await transporter.sendMail({
       from: '"novabroker" <novabroker@yandex.ru>',
-      to: "info@novabroker.ru",
-      subject: "Новая заявка",
-      text: "Новая заявка",
+      to: "jelbelvidere@gmail.com",
+      subject: "Ошибка",
+      text: "Ошибка",
       html: `
     <!DOCTYPE html>
     <html>
@@ -74,11 +66,10 @@ export const sendMailClientRequest = async ({
             NOVABROKER
           </div>
           <div class="body">
-            <h1>Новая заявка</h1>
-            <p>Почта клиента: <b>${mail}</b></p>
-            <p>Имя клиента: <b>${name}</b></p>
-            <p>Телефон клиента: <b>${phone}</b></p>
-            <p class="date">Время сервера: <b>${new Date(Date.now())}</b></p>
+            <h1>Ошибка</h1>
+            <p>Ошибка: ${JSON.stringify(error)}
+            <p>Сообщение: ${message}</p>
+            <p class="date">Время сервера: ${new Date(Date.now())}</p>
           </div>
           <div class="footer">
             © ${new Date(Date.now()).getFullYear()} Novabroker.
@@ -89,7 +80,7 @@ export const sendMailClientRequest = async ({
   `,
     });
   } catch (e) {
-    log("error", 'Error in sendMailClientRequest' , e);
+    console.error(e);
     throw e;
   }
 };
