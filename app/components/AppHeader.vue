@@ -30,10 +30,10 @@ if (data.value) {
       </div>
     </div>
     <div v-if="!error" class="header-currency">
-      <div class="header-currency__content">$: <span>{{ currencies?.USD?.value }}</span> | ¥: <span>{{
-        currencies?.CNY?.value }}</span> | €: <span>{{
-            currencies?.EUR?.value
-          }}</span>
+      <div class="header-currency__content">
+        $: <span>{{ currencies?.USD?.value }}</span> |
+        ¥: <span>{{ currencies?.CNY?.value }}</span> |
+        €: <span>{{ currencies?.EUR?.value }}</span>
       </div>
     </div>
   </header>
