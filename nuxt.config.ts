@@ -2,6 +2,16 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
+  nitro: {
+    plugins: ['plugins/updateCurrency.server.ts'],
+    experimental: {
+      tasks: true
+    },
+    scheduledTasks: {
+      // Run once a day
+      '0 0 * * *': ['currency:update']
+    }
+  },
   ssr: true,
   modules: ["@nuxt/eslint", "@nuxt/image", "@nuxt/fonts", "nuxt-schema-org", "vue3-carousel-nuxt", "@nuxtjs/device"],
   css: ["~/assets/css/main.css"],
