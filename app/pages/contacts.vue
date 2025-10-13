@@ -47,14 +47,13 @@ const openVK = () => {
               <div class="managers-item__name">Елена</div>
               <div class="managers-item__contacts">
                 <a class="link" href="tel:+797774095969">+7 977 409-59-69</a>
-                <a class="link" href="mailto:diana@novabroker.ru">mark@novabroker.ru</a>
+                <a class="link" href="mailto:diana@novabroker.ru">elenaruban@novabroker.ru</a>
               </div>
             </div>
             <div class="managers-item">
               <div class="managers-item__name">Зарина</div>
               <div class="managers-item__contacts">
                 <a class="link" href="tel:+790178355900">+7 901 783-59-00</a>
-                <a class="link" href="mailto:diana@novabroker.ru">mark@novabroker.ru</a>
               </div>
             </div>
           </div>
@@ -364,7 +363,7 @@ main {
     min-width: 160px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: center;
   }
 
