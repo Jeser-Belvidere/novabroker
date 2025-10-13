@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     },
     scheduledTasks: {
       // Run once a day
-      '0 14 * * *': ['currency:update']
+      '0 18 * * *': ['currency:update']
     }
   },
   ssr: true,

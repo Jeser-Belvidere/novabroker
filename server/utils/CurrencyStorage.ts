@@ -2,7 +2,7 @@ import convert from "xml2js";
 import { log } from "./Logger";
 
 //US dollar, Chinese yuan, EURO
-export const CURRENCY_CODES = ["USD", "CNY", "EUR"] as const;
+export const CURRENCY_CODES = ["USD", "CNY", "EUR", "KRW"] as const;
 
 type currencyCode = (typeof CURRENCY_CODES)[number];
 interface IValute {
@@ -81,6 +81,10 @@ class CurrencyStorage {
                 name: "Евро",
                 value: "0",
               },
+              KRW: {
+                name: "Вон",
+                value: "0",
+              }
             };
 
             const formattedCurrency = this.formatCurrencyData(result);
