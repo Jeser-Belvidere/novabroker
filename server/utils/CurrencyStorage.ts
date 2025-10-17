@@ -10,16 +10,17 @@ interface IValute {
   CharCode: [string];
   Name: [string];
   Value: [string];
+  Nominal: ["1" | "10" | "100" | "1000" | "10000" | "100000"];
 }
 
-export type TCurrencyData = Record<
-  currencyCode,
-  { name: string; value: string }
-> & {date: string} | null;
+export type TCurrencyData =
+  | (Record<currencyCode, { name: string; value: string }> & { date: string })
+  | null;
 
 class CurrencyStorage {
   private instance: null | boolean = null;
   private currencyData: TCurrencyData = null;
+  private errorTimeout: NodeJS.Timeout | null = null;
   constructor() {
     if (this.instance) {
       throw new Error(
@@ -41,9 +42,24 @@ class CurrencyStorage {
         return item;
       }
     }).map((item: IValute) => {
+      const { Nominal, Value } = item;
+
+      let valuteValue: number | string = Number(Value[0].replace(",", "."));
+      const nominalValue = Number(Nominal[0]) as
+        | 1
+        | 10
+        | 100
+        | 1000
+        | 10000
+        | 100000;
+
+      if (nominalValue !== 1) {
+        valuteValue /= nominalValue;
+      }
+
       return {
         code: item["CharCode"][0],
-        value: item["Value"][0],
+        value: valuteValue.toString().slice(0, 5),
       };
     });
     return filterdValute;
@@ -51,6 +67,10 @@ class CurrencyStorage {
 
   public async updateCurrencyData() {
     try {
+      if (this.errorTimeout) {
+        clearTimeout(this.errorTimeout);
+      }
+
       log("info", "Updating currency data...");
       await fetch("https://www.cbr.ru/scripts/XML_daily.asp")
         .then((res) => res.text())
@@ -84,31 +104,34 @@ class CurrencyStorage {
               KRW: {
                 name: "Вон",
                 value: "0",
-              }
+              },
             };
 
             const formattedCurrency = this.formatCurrencyData(result);
 
             for (const item of formattedCurrency) {
-              this.currencyData[item.code as currencyCode].value = Number(item.value.replace(
-                ",",
-                "."
-              )).toFixed(2).toString();
+              this.currencyData[item.code as currencyCode].value = item.value;
             }
 
-            log("info", `Currency data updated: ${JSON.stringify(this.currencyData)}`);
+            log(
+              "info",
+              `Currency data updated: ${JSON.stringify(this.currencyData)}`
+            );
           });
-        }).catch((err) => {
-          log("error", "Error during updating currency data, will try again in 1 minute", err);
-          setTimeout(() => {
-            this.updateCurrencyData();
-          }, 60000);
+        })
+        .catch((err) => {
+          throw err;
         });
     } catch (e) {
-      log("error", "Error during updating currency data", e);
-      setTimeout(() => {
+      log(
+        "error",
+        "Error during updating currency data, will try again in 5 minute",
+        e
+      );
+      
+      this.errorTimeout = setTimeout(() => {
         this.updateCurrencyData();
-      }, 5000);
+      }, 60000 * 5);
     }
   }
 
