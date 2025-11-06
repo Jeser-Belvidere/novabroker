@@ -92,90 +92,48 @@ onMounted(() => {
     <div class="wrapper">
       <div class="text-container">
         <svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid slice">
-          <text
-            x="70"
-            y="25"
-            text-anchor="middle"
-            dominant-baseline="middle"
-            font-family="Arial"
-            font-size="8"
-            fill="rgb(218, 187, 141)"
-          >
+          <text x="70" y="25" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="8"
+            fill="rgb(218, 187, 141)">
             ОЦЕНКА ТС
           </text>
         </svg>
       </div>
       <div class="text-container">
         <svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid slice">
-          <text
-            x="30"
-            y="25"
-            text-anchor="middle"
-            dominant-baseline="middle"
-            font-family="Arial"
-            font-size="8"
-            fill="rgb(218, 187, 141)"
-          >
+          <text x="30" y="25" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="8"
+            fill="rgb(218, 187, 141)">
             Услуги сертификации
           </text>
         </svg>
       </div>
       <div class="text-container">
         <svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid slice">
-          <text
-            x="40"
-            y="25"
-            text-anchor="middle"
-            dominant-baseline="middle"
-            font-family="Arial"
-            font-size="8"
-            fill="rgb(218, 187, 141)"
-          >
+          <text x="40" y="25" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="8"
+            fill="rgb(218, 187, 141)">
             УВЭОС - ГЛОНАСС
           </text>
         </svg>
       </div>
       <div class="text-container">
         <svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid slice">
-          <text
-            x="70"
-            y="25"
-            text-anchor="middle"
-            dominant-baseline="middle"
-            font-family="Arial"
-            font-size="8"
-            fill="rgb(218, 187, 141)"
-          >
+          <text x="70" y="25" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="8"
+            fill="rgb(218, 187, 141)">
             ЛАБОРАТОРИЯ
           </text>
         </svg>
       </div>
       <div class="text-container">
         <svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid slice">
-          <text
-            x="30"
-            y="25"
-            text-anchor="middle"
-            dominant-baseline="middle"
-            font-family="Arial"
-            font-size="8"
-            fill="rgb(218, 187, 141)"
-          >
+          <text x="30" y="25" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="8"
+            fill="rgb(218, 187, 141)">
             СБКТС
           </text>
         </svg>
       </div>
       <div class="text-container">
         <svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid slice">
-          <text
-            x="60"
-            y="25"
-            text-anchor="middle"
-            dominant-baseline="middle"
-            font-family="Arial"
-            font-size="8"
-            fill="rgb(218, 187, 141)"
-          >
+          <text x="60" y="25" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="8"
+            fill="rgb(218, 187, 141)">
             ЭПТС
           </text>
         </svg>
@@ -187,6 +145,8 @@ onMounted(() => {
         <h1>NOVABROKER</h1>
         <br />
         <h2>ВЭД КОНСАЛТИНГ</h2>
+        <br />
+        <h3>Новомосковский <br /> таможенный пост</h3>
       </div>
     </div>
   </section>
@@ -201,6 +161,7 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
   margin-top: -80px;
+
   @media screen and (max-width: 852px) {
     margin-top: -120px;
   }
@@ -218,6 +179,7 @@ onMounted(() => {
       font-size: 5rem;
       letter-spacing: 10px;
       text-align: center;
+
       @media screen and (max-width: 852px) {
         font-size: 2rem;
       }
@@ -228,6 +190,18 @@ onMounted(() => {
       font-weight: 400;
       letter-spacing: 10px;
       text-align: center;
+
+      @media screen and (max-width: 852px) {
+        font-size: 20px;
+      }
+    }
+
+    h3 {
+      color: var(--light-grey);
+      font-weight: 200;
+      letter-spacing: 8px;
+      text-align: center;
+
       @media screen and (max-width: 852px) {
         font-size: 20px;
       }
@@ -281,6 +255,7 @@ onMounted(() => {
   z-index: 1;
   width: 100vw;
   height: 100vh;
+
   @media screen and (max-width: 852px) {
     display: none;
   }

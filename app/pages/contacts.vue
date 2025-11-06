@@ -23,37 +23,17 @@ const openVK = () => {
           <div class="content-block">
             <div class="block-title">Менеджеры по работе с клиентами</div>
             <div class="managers-item bottom-border">
-              <div class="managers-item__name">Андрей</div>
-              <div class="managers-item__contacts">
-                <a class="link" href="tel:+79585000345">+7 958 500-03-45</a>
-                <a class="link" href="mailto:andrei@novabroker.ru">andrei@novabroker.ru</a>
-              </div>
-            </div>
-            <div class="managers-item bottom-border">
               <div class="managers-item__name">Анна</div>
               <div class="managers-item__contacts">
                 <a class="link" href="tel: +79585000286">+7 958 500-02-86</a>
                 <a class="link" href="mailto:anna@novabroker.ru">anna@novabroker.ru</a>
               </div>
             </div>
-            <div class="managers-item bottom-border">
-              <div class="managers-item__name">Марк</div>
-              <div class="managers-item__contacts">
-                <a class="link" href="tel:+797774095899">+7 977 409-58-99</a>
-                <a class="link" href="mailto:diana@novabroker.ru">mark@novabroker.ru</a>
-              </div>
-            </div>
-            <div class="managers-item bottom-border">
+            <div class="managers-item">
               <div class="managers-item__name">Елена</div>
               <div class="managers-item__contacts">
                 <a class="link" href="tel:+797774095969">+7 977 409-59-69</a>
                 <a class="link" href="mailto:diana@novabroker.ru">elenaruban@novabroker.ru</a>
-              </div>
-            </div>
-            <div class="managers-item">
-              <div class="managers-item__name">Зарина</div>
-              <div class="managers-item__contacts">
-                <a class="link" href="tel:+790178355900">+7 901 783-59-00</a>
               </div>
             </div>
           </div>
@@ -71,7 +51,7 @@ const openVK = () => {
       </div>
       <!--  -->
       <div class="map-wrapper">
-        <h1>Таможенный пост</h1>
+        <h1>Новомосковский таможенный пост</h1>
         <p>Данный таможенный пост уполномочен принимать декларации и проводить таможенное оформление для участников ВЭД,
           зарегистрированных в следующих административных округах и районах:</p>
         <br />
