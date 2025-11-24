@@ -38,7 +38,10 @@ const restNews = feed.slice(0, feed.length - 1).reverse();
     <div>
       <div class="first-card margin-bottom">
         <nuxt-link class="first-card" :to="`/news/${lastNews?.listIndex}`">
-          <div class="card-image" :style="`background-image: url(${lastNews?.imgSrc})`" />
+          <div
+            class="card-image"
+            :style="`background-image: url(${lastNews?.imgSrc})`"
+          />
           <div class="card-info">
             <div class="card-title">{{ lastNews?.title }}</div>
             <div class="card-date">{{ lastNews?.date }}</div>
@@ -47,9 +50,17 @@ const restNews = feed.slice(0, feed.length - 1).reverse();
       </div>
     </div>
     <div class="grid">
-      <div v-for="(news, index) in restNews" :key="index" :class="`card card-${index + 1}`">
+      <div
+        v-for="(news, index) in restNews"
+        :key="index"
+        :class="`card card-${index + 1}`"
+        :title="news.title"
+      >
         <nuxt-link class="card" :to="`/news/${news.listIndex}`">
-          <div class="card-image" :style="`background-image: url(${news.imgSrc})`" />
+          <div
+            class="card-image"
+            :style="`background-image: url(${news.imgSrc})`"
+          />
           <div class="card-info">
             <div class="card-title">{{ news.title }}</div>
             <div class="card-date">{{ news.date }}</div>

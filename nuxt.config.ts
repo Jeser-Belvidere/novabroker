@@ -3,17 +3,23 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   nitro: {
-    plugins: ['plugins/updateCurrency.server.ts'],
+    plugins: ["plugins/updateCurrency.server.ts"],
     experimental: {
-      tasks: true
+      tasks: true,
     },
     scheduledTasks: {
       // Run once a day
-      '0 18 * * *': ['currency:update']
-    }
+      "0 18 * * *": ["currency:update"],
+    },
   },
   ssr: true,
-  modules: ["@nuxt/eslint", "@nuxt/image", "@nuxt/fonts", "nuxt-schema-org", "vue3-carousel-nuxt", "@nuxtjs/device"],
+  modules: [
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "nuxt-schema-org",
+    "vue3-carousel-nuxt",
+    "@nuxtjs/device",
+  ],
   css: ["~/assets/css/main.css"],
   app: {
     head: {
@@ -26,35 +32,41 @@ export default defineNuxtConfig({
       link: [
         { rel: "manifest", href: "/manifest.json" },
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-        { rel: 'preload', href: '/fonts/AdventPro-VariableFont_wdth,wght.ttf', as: 'font', type: 'font/ttf', crossorigin: 'anonymous' },
+        {
+          rel: "preload",
+          href: "/fonts/AdventPro-VariableFont_wdth,wght.ttf",
+          as: "font",
+          type: "font/ttf",
+          crossorigin: "anonymous",
+        },
         { rel: "canonical", href: "https://xn--80acboyohdrd.xn--p1ai/" },
         {
           rel: "icon",
           type: "image/svg+xml",
           sizes: "any",
           href: "/icon64x64.svg",
-          media: "(prefers-color-scheme: light)"
+          media: "(prefers-color-scheme: light)",
         },
         {
           rel: "icon",
           type: "image/svg+xml",
           sizes: "128x128",
           href: "/icon128x128.svg",
-          media: "(prefers-color-scheme: light)"
+          media: "(prefers-color-scheme: light)",
         },
         {
           rel: "apple-touch-icon",
           type: "image/svg+xml",
           sizes: "180x180",
           href: "/icon180x180.svg",
-          media: "(prefers-color-scheme: light)"
+          media: "(prefers-color-scheme: light)",
         },
         {
           rel: "icon",
           type: "image/svg+xml",
           sizes: "512x512",
           href: "/icon512x512.svg",
-          media: "(prefers-color-scheme: light)"
+          media: "(prefers-color-scheme: light)",
         },
       ],
       meta: [
@@ -69,7 +81,8 @@ export default defineNuxtConfig({
         },
         {
           name: "description",
-          content: "NOVABROKER - Мы предоставляем полный спектр услуг по ВЭД-консалтингу. Оптимизация логистики, таможенное оформление и сопровождение сделок. Снизьте риски и экономьте время с нашими экспертами.",
+          content:
+            "NOVABROKER - Мы предоставляем полный спектр услуг по ВЭД-консалтингу. Оптимизация логистики, таможенное оформление и сопровождение сделок. Снизьте риски и экономьте время с нашими экспертами.",
         },
         {
           property: "og:title",
@@ -77,11 +90,12 @@ export default defineNuxtConfig({
         },
         {
           property: "og:description",
-          content: "NOVABROKER - Мы предоставляем полный спектр услуг по ВЭД-консалтингу. Оптимизация логистики, таможенное оформление и сопровождение сделок. Снизьте риски и экономьте время с нашими экспертами.",
+          content:
+            "NOVABROKER - Мы предоставляем полный спектр услуг по ВЭД-консалтингу. Оптимизация логистики, таможенное оформление и сопровождение сделок. Снизьте риски и экономьте время с нашими экспертами.",
         },
         {
           property: "og:image",
-          content: 'https://новаброкер.рф/icon300x300.jpg',
+          content: "https://новаброкер.рф/icon300x300.jpg",
         },
         {
           property: "og:url",
@@ -92,9 +106,9 @@ export default defineNuxtConfig({
           content: "website",
         },
       ],
-      script: [{ src: 'yametrika.js', async: true, defer: true }],
+      script: [{ src: "yametrika.js", async: true, defer: true }],
     },
     pageTransition: { name: "page", mode: "out-in" },
-    layoutTransition: { name: 'layout', mode: 'out-in' },
+    layoutTransition: { name: "layout", mode: "out-in" },
   },
 });
