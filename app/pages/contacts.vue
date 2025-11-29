@@ -26,14 +26,18 @@ const openVK = () => {
               <div class="managers-item__name">Анна</div>
               <div class="managers-item__contacts">
                 <a class="link" href="tel: +79585000286">+7 958 500-02-86</a>
-                <a class="link" href="mailto:anna@novabroker.ru">anna@novabroker.ru</a>
+                <a class="link" href="mailto:anna@novabroker.ru"
+                  >anna@novabroker.ru</a
+                >
               </div>
             </div>
             <div class="managers-item">
               <div class="managers-item__name">Елена</div>
               <div class="managers-item__contacts">
                 <a class="link" href="tel:+797774095969">+7 977 409-59-69</a>
-                <a class="link" href="mailto:diana@novabroker.ru">elenaruban@novabroker.ru</a>
+                <a class="link" href="mailto:diana@novabroker.ru"
+                  >elenaruban@novabroker.ru</a
+                >
               </div>
             </div>
           </div>
@@ -43,7 +47,9 @@ const openVK = () => {
               <div class="managers-item__name">Михаил</div>
               <div class="managers-item__contacts">
                 <a class="link" href="tel:+797774095897">+7 977 409-58-97</a>
-                <a class="link" href="mailto:michael@novabroker.ru">michael@novabroker.ru</a>
+                <a class="link" href="mailto:michael@novabroker.ru"
+                  >michael@novabroker.ru</a
+                >
               </div>
             </div>
           </div>
@@ -52,21 +58,37 @@ const openVK = () => {
       <!--  -->
       <div class="map-wrapper">
         <h1>Новомосковский таможенный пост</h1>
-        <p>Данный таможенный пост уполномочен принимать декларации и проводить таможенное оформление для участников ВЭД,
-          зарегистрированных в следующих административных округах и районах:</p>
-        <br />
-        <div class="list-wrapper">
-          <h3>Москва:</h3>
-          <ul>
-            <li>ЮЗАО (Юго-Западный административный округ)</li>
-            <li>ЗАО (Западный административный округ)</li>
-            <li>Южный административный округ</li>
-          </ul>
-          <h3>Московская область: </h3>
-          <ul>
-            <li>Городской округ Видное (включая г. Видное и прилегающие территории)</li>
-            <li>Новомосковский административный округ Москвы (ТиНАО)</li>
-          </ul>
+        <p style="margin-bottom: 16px">
+          Данный таможенный пост уполномочен принимать декларации и проводить
+          таможенное оформление для участников ВЭД, зарегистрированных в
+          следующих административных округах и районах.<br />
+        </p>
+
+        <div style="margin-bottom: 22px">
+          <h2 style="margin-bottom: 8px">Растаможивание ТС с регистрацией:</h2>
+          <p>Москва и Московская область</p>
+        </div>
+
+        <div>
+          <h2 style="margin-bottom: 8px">
+            Утилизационный сбор с регистрацией:
+          </h2>
+          <div class="list-wrapper">
+            <h3>Москва:</h3>
+            <ul>
+              <li>ЮЗАО (Юго-Западный административный округ)</li>
+              <li>ЗАО (Западный административный округ)</li>
+              <li>Южный административный округ</li>
+            </ul>
+            <h3>Московская область:</h3>
+            <ul>
+              <li>
+                Городской округ Видное (включая г. Видное и прилегающие
+                территории)
+              </li>
+              <li>Новомосковский административный округ Москвы (ТиНАО)</li>
+            </ul>
+          </div>
         </div>
 
         <CoverageServicesMap />
@@ -79,7 +101,7 @@ const openVK = () => {
             <div class="item-text">
               <div class="item-text__title">Адрес</div>
               <div class="item-text__description">
-                Город Москва,ш. Калужское, км 22-Й, <br>
+                Город Москва, ш. Калужское, км 22-Й, <br />
                 дом 10, строение 23, 14 этаж, Офис 1407
               </div>
             </div>
@@ -90,7 +112,7 @@ const openVK = () => {
             <div class="item-text">
               <div class="item-text__title">График работы</div>
               <div class="item-text__description">
-                с 8:00 по 20:00 <br>
+                с 8:00 по 20:00 <br />
                 Без выходных
               </div>
             </div>
@@ -111,13 +133,19 @@ const openVK = () => {
               <div class="item-text__title">Эл. почта для общих вопросов</div>
               <div class="item-text__description">
                 <a class="link" href="mailto:michael@novabroker.ru">
-                  info@novabroker.ru</a>
+                  info@novabroker.ru</a
+                >
               </div>
             </div>
           </div>
           <div class="contacts-icons">
             <UIIcon name="vk" pointer @click="openVK()" />
-            <UIIcon name="yandex-maps" size="lg" pointer @click="openYandex()" />
+            <UIIcon
+              name="yandex-maps"
+              size="lg"
+              pointer
+              @click="openYandex()"
+            />
           </div>
         </div>
         <div class="divider" />
@@ -141,7 +169,8 @@ const openVK = () => {
             <div class="details-item__name">Адрес для корреспонденции:</div>
             <div class="details-item__description">
               108802, Город Москва, вн. тер. г Муниципальный Округ Коммунарка,
-              ш. Калужское, км 22-Й, дом 10, строение 23, 14 этаж, Офис 1407
+              ш. Калужское,<span style="white-space: nowrap"> км 22-Й</span>,
+              дом 10, строение 23, 14 этаж, Офис 1407
             </div>
           </div>
           <div class="details-item">
@@ -240,6 +269,15 @@ main {
   width: 100%;
   text-align: center;
   align-items: center;
+
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+
+    @media screen and (max-width: 440px) {
+      font-size: 1.5rem;
+    }
+  }
 
   .list-wrapper {
     width: fit-content;
