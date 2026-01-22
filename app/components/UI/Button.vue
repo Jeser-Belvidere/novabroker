@@ -1,14 +1,14 @@
 <script setup lang="ts">
 interface IProps {
-  type?: "primary" | "secondary" | "outline";
-  href?: "_self" | "_blank" | "_parent" | "_top";
+  type?: 'primary' | 'secondary' | 'outline';
+  href?: '_self' | '_blank' | '_parent' | '_top';
   loading?: boolean;
 }
 
 const props = withDefaults(defineProps<IProps>(), {
-  type: "primary",
-  href: undefined,
-  loading: false,
+	type: 'primary',
+	href: undefined,
+	loading: false,
 });
 </script>
 

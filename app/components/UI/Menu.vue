@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { onClickOutside } from "@vueuse/core";
+import { onClickOutside } from '@vueuse/core';
 const isActive = ref(false);
-const menuRef = useTemplateRef("menu");
+const menuRef = useTemplateRef('menu');
 
 onClickOutside(menuRef, () => {
-  isActive.value = false;
+	isActive.value = false;
 });
 </script>
 <template>

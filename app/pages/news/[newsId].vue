@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { UINewsText } from "#components";
-import type { INews } from "~/types/news";
+import { UINewsText } from '#components';
+import type { INews } from '~/types/news';
 
 const route = useRoute();
 const idFromParams: string = route?.params?.newsId as string;
 
 if (
-  !idFromParams ||
-  typeof idFromParams !== "string" ||
+	!idFromParams ||
+  typeof idFromParams !== 'string' ||
   isNaN(parseInt(idFromParams))
 ) {
-  navigateTo("/news");
+	navigateTo('/news');
 }
 
 const parsedNumber = parseInt(idFromParams);
@@ -20,29 +20,29 @@ const newsFeed = getNewsFeed();
 const currentNews: INews | undefined = newsFeed[parsedNumber - 1];
 
 if (!currentNews) {
-  navigateTo("/news");
+	navigateTo('/news');
 }
 
 useHead({
-  title: `NOVABROKER - ${currentNews?.title}`,
-  meta: [
-    {
-      name: "title",
-      content: `NOVABROKER - новости ВЭД - ${currentNews?.title}`,
-    },
-    {
-      name: "keywords",
-      content:
-        "ВЭД, новости, Таможенный брокер, Сертификация, Новаброкер, Novabroker",
-    },
-  ],
+	title: `NOVABROKER - ${currentNews?.title}`,
+	meta: [
+		{
+			name: 'title',
+			content: `NOVABROKER - новости ВЭД - ${currentNews?.title}`,
+		},
+		{
+			name: 'keywords',
+			content:
+        'ВЭД, новости, Таможенный брокер, Сертификация, Новаброкер, Novabroker',
+		},
+	],
 });
 
 useSeoMeta({
-  title: `NOVABROKER - новости ВЭД - ${currentNews?.title}`,
-  description: `НОВАБРОКЕР. ${currentNews?.description}`,
-  ogTitle: `НОВАБРОКЕР. ${currentNews?.title}`,
-  ogDescription: `НОВАБРОКЕР. ${currentNews?.description}`,
+	title: `NOVABROKER - новости ВЭД - ${currentNews?.title}`,
+	description: `НОВАБРОКЕР. ${currentNews?.description}`,
+	ogTitle: `НОВАБРОКЕР. ${currentNews?.title}`,
+	ogDescription: `НОВАБРОКЕР. ${currentNews?.description}`,
 });
 </script>
 

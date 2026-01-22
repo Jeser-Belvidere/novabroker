@@ -6,7 +6,7 @@ const { data, error } = await useFetch('/api/currency')
 const currencies = ref<TCurrencyData>({} as TCurrencyData)
 
 if (data.value) {
-  currencies.value = data.value
+	currencies.value = data.value
 }
 
 </script>

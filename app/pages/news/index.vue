@@ -1,21 +1,21 @@
 <script setup lang="ts">
 useHead({
-  title: "NOVABROKER - news",
-  meta: [
-    { name: "title", content: "NOVABROKER - новости ВЭД" },
-    {
-      name: "keywords",
-      content:
-        "ВЭД, новости, Таможенный брокер, Сертификация, Новаброкер, Novabroker",
-    },
-  ],
+	title: 'NOVABROKER - news',
+	meta: [
+		{ name: 'title', content: 'NOVABROKER - новости ВЭД' },
+		{
+			name: 'keywords',
+			content:
+        'ВЭД, новости, Таможенный брокер, Сертификация, Новаброкер, Novabroker',
+		},
+	],
 });
 useSeoMeta({
-  title: "NOVABROKER - новости ВЭД",
-  ogTitle: "НОВАБРОКЕР. Новости ВЭД консалтинга",
-  description: "НОВАБРОКЕР. Новости ВЭД консалтинга",
-  ogDescription:
-    "НОВАБРОКЕР. Оформление, сертификация, законодательство - все новости ВЭД консалтинга",
+	title: 'NOVABROKER - новости ВЭД',
+	ogTitle: 'НОВАБРОКЕР. Новости ВЭД консалтинга',
+	description: 'НОВАБРОКЕР. Новости ВЭД консалтинга',
+	ogDescription:
+    'НОВАБРОКЕР. Оформление, сертификация, законодательство - все новости ВЭД консалтинга',
 });
 
 const feed = getNewsFeed();

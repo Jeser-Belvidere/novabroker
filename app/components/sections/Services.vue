@@ -1,59 +1,59 @@
 <script lang="ts" setup>
 import {
-  UIIconsBadgeCheck,
-  UIIconsBookOpen,
-  UIIconsCardSim,
-  UIIconsCarGear,
-  UIIconsRubleRounded,
-  UIIconsSatteliteFly,
-} from "#components";
+	UIIconsBadgeCheck,
+	UIIconsBookOpen,
+	UIIconsCardSim,
+	UIIconsCarGear,
+	UIIconsRubleRounded,
+	UIIconsSatteliteFly,
+} from '#components';
 
 const services: {
   iconComponent: Component;
   title: string;
   description: string;
 }[] = [
-  {
-    iconComponent: UIIconsBadgeCheck,
-    title: "Сопровождение по растаможке автомобилей",
-    description:
-      "Пошлины, проверки, договоры - все берем на себя, вам не нужно беспокоиться",
-  },
-  {
-    iconComponent: UIIconsBookOpen,
-    title: "Консультации по таможенному оформлению ТС",
-    description: "Работаем с ТС из любой страны",
-  },
+	{
+		iconComponent: UIIconsBadgeCheck,
+		title: 'Сопровождение по растаможке автомобилей',
+		description:
+      'Пошлины, проверки, договоры - все берем на себя, вам не нужно беспокоиться',
+	},
+	{
+		iconComponent: UIIconsBookOpen,
+		title: 'Консультации по таможенному оформлению ТС',
+		description: 'Работаем с ТС из любой страны',
+	},
 
-  {
-    iconComponent: UIIconsRubleRounded,
-    title:
-      "Услуги оформления документов для оценки ТС и техническому заключению",
-    description:
-      "Определите реальную стоимость авто на рынке и защититесь от переплат",
-  },
-  {
-    iconComponent: UIIconsCardSim,
-    title: "Консультированию по оформления СБКТС и ЭПТС",
-    description: "Быстро. Надежно. С гарантией.",
-  },
-  {
-    iconComponent: UIIconsSatteliteFly,
-    title: "Консультации по установке УВЭОС - ГЛОНАСС",
-    description:
-      "Ваше надежное плечо в экстренных случаях. Будьте спокойны за местоположение вашего автомобиля",
-  },
-  {
-    iconComponent: UIIconsCarGear,
-    title: "Помощь в оформлении технического заключения",
-    description: "Будьте уверены в технических характеристиках вашего ТС",
-  },
+	{
+		iconComponent: UIIconsRubleRounded,
+		title:
+      'Услуги оформления документов для оценки ТС и техническому заключению',
+		description:
+      'Определите реальную стоимость авто на рынке и защититесь от переплат',
+	},
+	{
+		iconComponent: UIIconsCardSim,
+		title: 'Консультированию по оформления СБКТС и ЭПТС',
+		description: 'Быстро. Надежно. С гарантией.',
+	},
+	{
+		iconComponent: UIIconsSatteliteFly,
+		title: 'Консультации по установке УВЭОС - ГЛОНАСС',
+		description:
+      'Ваше надежное плечо в экстренных случаях. Будьте спокойны за местоположение вашего автомобиля',
+	},
+	{
+		iconComponent: UIIconsCarGear,
+		title: 'Помощь в оформлении технического заключения',
+		description: 'Будьте уверены в технических характеристиках вашего ТС',
+	},
 ];
 
 const carouselConfig = {
-  gap: 30,
-  itemsToShow: 1,
-  autoPlay: true,
+	gap: 30,
+	itemsToShow: 1,
+	autoPlay: true,
 };
 </script>
 

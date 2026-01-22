@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const openYandex = () => {
-  window.open("https://yandex.ru/maps/-/CHxum8Zx", "_blank");
+	window.open('https://yandex.ru/maps/-/CHxum8Zx', '_blank');
 };
 
 const openVK = () => {
-  window.open("https://vk.com/club232237455", "_blank");
+	window.open('https://vk.com/club232237455', '_blank');
 };
 </script>
 

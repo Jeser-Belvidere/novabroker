@@ -1,26 +1,26 @@
-import { sendMailError } from "../utils/sendMailError";
-import { sendMailClientRequest } from "../utils/sendMailClientRequest";
+import { sendMailError } from '../utils/sendMailError';
+import { sendMailClientRequest } from '../utils/sendMailClientRequest';
 
 export default defineEventHandler(async (event) => {
-  try {
-    const { mail, phone, name } = await readBody(event);
+	try {
+		const { mail, phone, name } = await readBody(event);
 
-    if (!mail || !phone || !name) {
-      throw createError({
-        statusCode: 400,
-        statusMessage: 'Not correct request'
-      })
-    }
+		if (!mail || !phone || !name) {
+			throw createError({
+				statusCode: 400,
+				statusMessage: 'Not correct request'
+			})
+		}
 
-    sendMailClientRequest({ mail, phone, name })
+		sendMailClientRequest({ mail, phone, name })
 
-    return {
-      status: 'ok'
-    }
+		return {
+			status: 'ok'
+		}
 
-  } catch (e) {
-    sendMailError(e)
-    log('error', 'Error in /api/mail.post', e)
-    throw e
-  }
+	} catch (e) {
+		sendMailError(e)
+		log('error', 'Error in /api/mail.post', e)
+		throw e
+	}
 });

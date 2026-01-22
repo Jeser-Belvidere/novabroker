@@ -1,89 +1,89 @@
 <script setup lang="ts">
-import { useTemplateRef, ref } from "vue";
+import { useTemplateRef, ref } from 'vue';
 const isMounted = ref(false);
-const canvasFlashlight = useTemplateRef<HTMLCanvasElement>("flashlight");
+const canvasFlashlight = useTemplateRef<HTMLCanvasElement>('flashlight');
 
 const addFlashlight = (canvas: HTMLCanvasElement | null) => {
-  if (!canvas) {
-    console.error("Canvas is null");
-    return;
-  }
+	if (!canvas) {
+		console.error('Canvas is null');
+		return;
+	}
 
-  const sizes = {
-    width: window.innerWidth,
-    height: window.innerHeight,
-  };
+	const sizes = {
+		width: window.innerWidth,
+		height: window.innerHeight,
+	};
 
-  canvas.width = sizes.width;
-  canvas.height = sizes.height;
+	canvas.width = sizes.width;
+	canvas.height = sizes.height;
 
-  window.addEventListener("resize", () => {
-    sizes.width = window.innerWidth;
-    sizes.height = window.innerHeight;
-    canvas.width = sizes.width;
-    canvas.height = sizes.height;
-  });
+	window.addEventListener('resize', () => {
+		sizes.width = window.innerWidth;
+		sizes.height = window.innerHeight;
+		canvas.width = sizes.width;
+		canvas.height = sizes.height;
+	});
 
-  const ctx = canvas.getContext("2d");
+	const ctx = canvas.getContext('2d');
 
-  if (!ctx) {
-    return;
-  }
+	if (!ctx) {
+		return;
+	}
 
-  ctx.fillStyle = "rgba(5, 51, 38, 1)";
-  ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-  ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+	ctx.fillStyle = 'rgba(5, 51, 38, 1)';
+	ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+	ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
-  window.addEventListener("mousemove", (event) => {
-    const x = event.clientX;
-    const y = event.clientY;
-    const radius = 150;
+	window.addEventListener('mousemove', (event) => {
+		const x = event.clientX;
+		const y = event.clientY;
+		const radius = 150;
 
-    ctx.fillStyle = "rgba(5, 51, 38, 1)";
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+		ctx.fillStyle = 'rgba(5, 51, 38, 1)';
+		ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+		ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
-    ctx.beginPath();
-    const radialGradient = ctx.createRadialGradient(x, y, 1, x, y, radius);
-    radialGradient.addColorStop(0, "rgba(255, 255, 255, 0.5)");
-    radialGradient.addColorStop(1, "rgba(0,0,0,0)");
+		ctx.beginPath();
+		const radialGradient = ctx.createRadialGradient(x, y, 1, x, y, radius);
+		radialGradient.addColorStop(0, 'rgba(255, 255, 255, 0.5)');
+		radialGradient.addColorStop(1, 'rgba(0,0,0,0)');
 
-    ctx.globalCompositeOperation = "xor";
+		ctx.globalCompositeOperation = 'xor';
 
-    ctx.fillStyle = radialGradient;
-    ctx.arc(x, y, radius, 0, Math.PI * 2, false);
-    ctx.fill();
-    ctx.closePath();
-  });
+		ctx.fillStyle = radialGradient;
+		ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+		ctx.fill();
+		ctx.closePath();
+	});
 
-  window.addEventListener("touchmove", (event) => {
-    const x = event.touches[0]?.clientX ?? 0;
-    const y = event.touches[0]?.clientY ?? 0;
+	window.addEventListener('touchmove', (event) => {
+		const x = event.touches[0]?.clientX ?? 0;
+		const y = event.touches[0]?.clientY ?? 0;
 
-    const radius = 150;
+		const radius = 150;
 
-    ctx.fillStyle = "rgba(5, 51, 38, 1)";
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+		ctx.fillStyle = 'rgba(5, 51, 38, 1)';
+		ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+		ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
-    ctx.beginPath();
-    const radialGradient = ctx.createRadialGradient(x, y, 1, x, y, radius);
-    radialGradient.addColorStop(0, "rgba(255, 255, 255, 0.5)");
-    radialGradient.addColorStop(1, "rgba(0,0,0,0)");
+		ctx.beginPath();
+		const radialGradient = ctx.createRadialGradient(x, y, 1, x, y, radius);
+		radialGradient.addColorStop(0, 'rgba(255, 255, 255, 0.5)');
+		radialGradient.addColorStop(1, 'rgba(0,0,0,0)');
 
-    ctx.globalCompositeOperation = "xor";
+		ctx.globalCompositeOperation = 'xor';
 
-    ctx.fillStyle = radialGradient;
-    ctx.arc(x, y, radius, 0, Math.PI * 2, false);
-    ctx.fill();
-    ctx.closePath();
-  });
+		ctx.fillStyle = radialGradient;
+		ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+		ctx.fill();
+		ctx.closePath();
+	});
 };
 
 //add onResize
 onMounted(() => {
-  addFlashlight(canvasFlashlight.value);
-  isMounted.value = true;
+	addFlashlight(canvasFlashlight.value);
+	isMounted.value = true;
 });
 </script>
 

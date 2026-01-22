@@ -1,11 +1,11 @@
 <script setup lang="ts">
 interface IProps {
   to?: string | { path: string; hash: string };
-  type?: "primary" | "secondary" | "default";
+  type?: 'primary' | 'secondary' | 'default';
   href?: string;
 }
 const props = withDefaults(defineProps<IProps>(), {
-  type: "primary",
+	type: 'primary',
 });
 </script>
 

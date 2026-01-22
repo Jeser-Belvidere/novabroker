@@ -4,5 +4,13 @@
   "editor.guides.bracketPairs": true,
   "editor.formatOnSave": true,
   "eslint.format.enable": true,
-  "editor.codeActionsOnSave": ["source.fixAll.eslint"]
+  //   // "editor.codeActionsOnSave": ["source.fixAll.eslint"],
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "eslint.useFlatConfig": true,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  }
 }

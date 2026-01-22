@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { INewsTableColumn, INewsTableData } from "~/types/news";
+import type { INewsTableColumn, INewsTableData } from '~/types/news';
 
 interface IProps {
     columns: INewsTableColumn[]

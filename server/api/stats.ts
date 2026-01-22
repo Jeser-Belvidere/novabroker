@@ -1,6 +1,6 @@
 export default defineEventHandler(() => {
-  return {
-    cpuUsage: process.cpuUsage(),
-    ramUsage: process.memoryUsage(),
-  };
+	return {
+		cpuUsage: process.cpuUsage(),
+		ramUsage: process.memoryUsage(),
+	};
 });

@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import type { Map } from "maplibre-gl";
-import { ref } from "vue";
+import type { Map } from 'maplibre-gl';
+import { ref } from 'vue';
 
 const currentTab = ref(0);
 const isLoading = ref(false);
 const isModalVisible = ref(false);
 
-const name = ref("");
-const phone = ref("");
-const mail = ref("");
+const name = ref('');
+const phone = ref('');
+const mail = ref('');
 const isAgreed = ref(false);
 
 const { isMobile } = useDevice();
@@ -16,8 +16,8 @@ let mapLibre = null;
 let map: null | Map = null;
 
 if (!isMobile) {
-  mapLibre = await import("maplibre-gl");
-  await import("maplibre-gl/dist/maplibre-gl.css");
+	mapLibre = await import('maplibre-gl');
+	await import('maplibre-gl/dist/maplibre-gl.css');
 }
 const nuxtApp = useNuxtApp();
 const INIT_BOUNDS: [number, number] = [37.4607, 55.596511];
@@ -26,66 +26,66 @@ const INIT_PITCH: number = 45;
 const MARKER_BOUNDS: [number, number] = [37.464374, 55.596406];
 
 const renderMap = () => {
-  try {
-    if (mapLibre) {
-      map = new mapLibre.Map({
-        container: "map",
-        style:
-          "https://api.maptiler.com/maps/0198bf23-3d83-729f-99dc-d37e37873f52/style.json?key=g3yRB9He8W6xRCD6CgML",
-        center: INIT_BOUNDS,
-        zoom: INIT_ZOOM,
-        pitch: INIT_PITCH,
-      });
+	try {
+		if (mapLibre) {
+			map = new mapLibre.Map({
+				container: 'map',
+				style:
+          'https://api.maptiler.com/maps/0198bf23-3d83-729f-99dc-d37e37873f52/style.json?key=g3yRB9He8W6xRCD6CgML',
+				center: INIT_BOUNDS,
+				zoom: INIT_ZOOM,
+				pitch: INIT_PITCH,
+			});
 
-      const marker = new mapLibre.Marker({ color: "#dabb8d" });
-      marker.setLngLat(MARKER_BOUNDS);
-      marker.addTo(map);
-    }
-  } catch (error) {
-    console.log(error);
-  }
+			const marker = new mapLibre.Marker({ color: '#dabb8d' });
+			marker.setLngLat(MARKER_BOUNDS);
+			marker.addTo(map);
+		}
+	} catch (error) {
+		console.log(error);
+	}
 };
 //TODO: поправить повторный рендер при транзишенах
-nuxtApp.hook("page:finish", () => {
-  renderMap();
+nuxtApp.hook('page:finish', () => {
+	renderMap();
 });
 
-nuxtApp.hook("page:transition:finish", () => {
-  if (!map) {
-    renderMap();
-  }
+nuxtApp.hook('page:transition:finish', () => {
+	if (!map) {
+		renderMap();
+	}
 });
 
 const openYandex = () => {
-  window.open("https://yandex.ru/maps/-/CHxum8Zx", "_blank");
+	window.open('https://yandex.ru/maps/-/CHxum8Zx', '_blank');
 };
 
 const openVK = () => {
-  window.open("https://vk.com/club232237455", "_blank");
+	window.open('https://vk.com/club232237455', '_blank');
 };
 
 async function handleFormSubmit() {
-  try {
-    isLoading.value = true;
-    await $fetch("/api/mail", {
-      method: "POST",
-      body: {
-        name: name.value,
-        phone: phone.value,
-        mail: mail.value,
-      },
-    });
-    name.value = "";
-    phone.value = "";
-    mail.value = "";
-    isModalVisible.value = true;
-  } catch (error) {
-    console.log(error);
-  } finally {
-    setTimeout(() => {
-      isLoading.value = false;
-    }, 1000);
-  }
+	try {
+		isLoading.value = true;
+		await $fetch('/api/mail', {
+			method: 'POST',
+			body: {
+				name: name.value,
+				phone: phone.value,
+				mail: mail.value,
+			},
+		});
+		name.value = '';
+		phone.value = '';
+		mail.value = '';
+		isModalVisible.value = true;
+	} catch (error) {
+		console.log(error);
+	} finally {
+		setTimeout(() => {
+			isLoading.value = false;
+		}, 1000);
+	}
 }
 </script>
 <template>

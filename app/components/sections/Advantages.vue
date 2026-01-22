@@ -4,23 +4,22 @@ const advantagesFirstGrid: {
   title: string;
   description: string;
 }[] = [
-  {
-    icon: "person-check",
-    title: "Индивидуальный подход",
-    description:
-      "Персональный менеджер сопровождает сделку от заявки до результата",
-  },
-  {
-    icon: "auto-towing",
-    title: "Полный сервис под ключ",
-    description:
-      "Берём на себя всё: документы, оформление, доставка",
-  },
-  {
-    icon: 'fust-track',
-    title: "Проверенная логистика",
-    description: "Надёжная транспортировка по Москве и МО",
-  },
+	{
+		icon: 'person-check',
+		title: 'Индивидуальный подход',
+		description:
+        'Персональный менеджер сопровождает сделку от заявки до результата',
+	},
+	{
+		icon: 'auto-towing',
+		title: 'Полный сервис под ключ',
+		description: 'Берём на себя всё: документы, оформление, доставка',
+	},
+	{
+		icon: 'fust-track',
+		title: 'Проверенная логистика',
+		description: 'Надёжная транспортировка по Москве и МО',
+	},
 ];
 
 const advantageSecondGrid: {
@@ -28,28 +27,27 @@ const advantageSecondGrid: {
   title: string;
   description: string;
 }[] = [
-  {
-    icon: 'experiment',
-    title: "Организация прохождения испытательной лаборатории",
-    description:
-      "Всё в одном месте — не нужно искать и ждать сторонние сервисы",
-  },
-  {
-    icon: 'balance',
-    title: "Прозрачность и честность",
-    description:
-      "100% результат без скрытых платежей",
-  },
-  {
-    icon: 'inventory',
-    title: "Прямые контракты",
-    description: "Работаем без посредников. Экономим бюджет и время",
-  },
+	{
+		icon: 'experiment',
+		title: 'Организация прохождения испытательной лаборатории',
+		description:
+        'Всё в одном месте — не нужно искать и ждать сторонние сервисы',
+	},
+	{
+		icon: 'balance',
+		title: 'Прозрачность и честность',
+		description: '100% результат без скрытых платежей',
+	},
+	{
+		icon: 'inventory',
+		title: 'Прямые контракты',
+		description: 'Работаем без посредников. Экономим бюджет и время',
+	},
 ];
 
 const carouselConfig = {
-  gap: 30,
-  itemsToShow: 1,
+	gap: 30,
+	itemsToShow: 1,
 };
 </script>
 
@@ -63,14 +61,10 @@ const carouselConfig = {
     </div>
     <div v-if="$device.isMobile" class="cards-mobile">
       <Carousel v-bind="carouselConfig">
-        <Slide
-          v-for="(advantage, index) in [
-            ...advantagesFirstGrid,
-            ...advantageSecondGrid,
-          ]"
-          :key="index"
-          class="carousel__slide"
-        >
+        <Slide v-for="(advantage, index) in [
+          ...advantagesFirstGrid,
+          ...advantageSecondGrid,
+        ]" :key="index" class="carousel__slide">
           <div class="card carousel__item">
             <div class="card-image">
               <UIIcon :name="advantage.icon" />
@@ -86,11 +80,7 @@ const carouselConfig = {
       </Carousel>
     </div>
     <div v-if="$device.isDesktopOrTablet" class="cards-desktop first">
-      <div
-        v-for="(advantage, index) in advantagesFirstGrid"
-        :key="index"
-        class="card"
-      >
+      <div v-for="(advantage, index) in advantagesFirstGrid" :key="index" class="card">
         <div class="card-image">
           <UIIcon :name="advantage.icon" />
         </div>
@@ -100,12 +90,8 @@ const carouselConfig = {
     </div>
     <div class="cards-divider" />
     <div class="cards-desktop second">
-      <div
-        v-for="(advantage, index) in advantageSecondGrid"
-        :key="index"
-        class="card"
-      >
-          <UIIcon :name="advantage.icon" />
+      <div v-for="(advantage, index) in advantageSecondGrid" :key="index" class="card">
+        <UIIcon :name="advantage.icon" />
         <div class="card-title">{{ advantage.title }}</div>
         <div class="card-description">{{ advantage.description }}</div>
       </div>
@@ -131,6 +117,7 @@ section {
 
 .title-head {
   font-size: 4rem;
+
   @media screen and (max-width: 768px) {
     font-size: 2rem;
   }
@@ -138,6 +125,7 @@ section {
 
 .title-description {
   font-size: 1.5rem;
+
   @media screen and (max-width: 768px) {
     font-size: 1rem;
   }
@@ -145,6 +133,7 @@ section {
 
 .cards-divider {
   border-bottom: 2px dashed var(--warm-beige);
+
   @media screen and (max-width: 768px) {
     border-bottom: none;
   }
@@ -152,6 +141,7 @@ section {
 
 .cards-mobile {
   display: none;
+
   @media screen and (max-width: 768px) {
     display: block;
   }
@@ -173,9 +163,11 @@ section {
   display: grid;
   row-gap: 48px;
   column-gap: 16px;
-  & > div:nth-child(-n + 2) {
+
+  &>div:nth-child(-n + 2) {
     border-right: 2px dashed var(--warm-beige);
   }
+
   @media screen and (max-width: 768px) {
     display: none;
   }

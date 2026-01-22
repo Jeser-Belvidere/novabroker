@@ -1,3 +1,6 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
 :root {
   --dark-forest-green: #053326;
   --dark-green: rgb(4, 40, 29);
@@ -7,11 +10,14 @@
   --medium-taupe-light: #c5c2b2;
   --warm-ligth: #fffae8;
   --black: rgb(0, 0, 0);
+  --text-black: rgb(0, 0, 0);
   --white: #f9f7f3;
   --header-height: 90px;
   --header-height-mobile: 100px;
   --footer-height: 120px;
-  cursor: url("/cursor.svg") 26 37, auto;
+  cursor:
+    url("/cursor.svg") 26 37,
+    auto;
   font-size: 16px;
   letter-spacing: 1px;
   scroll-behavior: smooth;
@@ -29,17 +35,26 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "AdventPro", -apple-system, blinkmacsystemfont, "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
+  font-family:
+    "AdventPro",
+    -apple-system,
+    blinkmacsystemfont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
-
 body {
-  margin-top: var(--header-height);
-  margin-bottom: var(--footer-height);
-  height: 100vh;
-  width: 100vw;
+  /* margin-top: var(--header-height); */
+  /* margin-bottom: var(--footer-height); */
+  /* height: 100vh; */
+  /* width: 100vw; */
   background-color: var(--dark-forest-green);
   cursor: url("/cursor.svg"), default;
   overflow-x: hidden;
@@ -47,11 +62,11 @@ body {
 }
 
 #app {
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .carousel__icon {
-  fill: var(--warm-beige)
+  fill: var(--warm-beige);
 }
 
 .carousel__pagination-button--active {
@@ -70,5 +85,5 @@ body {
 .svg-text_big {
   font-size: 1.4rem;
   font-weight: 800;
-  fill: var(  --dark-forest-green);
+  fill: var(--dark-forest-green);
 }

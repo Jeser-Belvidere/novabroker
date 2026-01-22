@@ -16,12 +16,15 @@ const props = defineProps<IProps>()
 
 <style lang="css" scoped>
 h2 {
+  color: var(--text-black);
   font-size: 1.5rem;
   letter-spacing: 2px;
   margin-bottom: 10px;
+  font-weight: 600;
 }
 
 p {
+  color: var(--text-black);
   font-size: 1.3rem;
   letter-spacing: 2px;
   margin-bottom: 30px;

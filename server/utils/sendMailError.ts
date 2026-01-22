@@ -1,23 +1,23 @@
-import nodemailer from "nodemailer";
+import nodemailer from 'nodemailer';
 
 export const sendMailError = async (error: string | unknown) => {
-  try {
-    const transporter = nodemailer.createTransport({
-      host: "smtp.yandex.ru",
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_PASSWORD,
-      },
-    });
+	try {
+		const transporter = nodemailer.createTransport({
+			host: 'smtp.yandex.ru',
+			port: 465,
+			secure: true,
+			auth: {
+				user: process.env.MAIL_USER,
+				pass: process.env.MAIL_PASSWORD,
+			},
+		});
 
-    await transporter.sendMail({
-      from: '"novabroker" <novabroker@yandex.ru>',
-      to: "novabroker@yandex.ru",
-      subject: "Ошибка",
-      text: "Ошибка",
-      html: `
+		await transporter.sendMail({
+			from: '"novabroker" <novabroker@yandex.ru>',
+			to: 'novabroker@yandex.ru',
+			subject: 'Ошибка',
+			text: 'Ошибка',
+			html: `
     <!DOCTYPE html>
     <html>
       <head>
@@ -77,9 +77,9 @@ export const sendMailError = async (error: string | unknown) => {
       </body>
     </html>
   `,
-    });
-  } catch (e) {
-    console.error(e);
-    throw e;
-  }
+		});
+	} catch (e) {
+		console.error(e);
+		throw e;
+	}
 };
