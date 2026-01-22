@@ -143,10 +143,9 @@ onMounted(() => {
     <div class="title-wrapper">
       <div class="title">
         <h1>NOVABROKER</h1>
-        <br />
+        <br>
         <h2>ВЭД КОНСАЛТИНГ</h2>
-        <br />
-        <h3>Новомосковский <br /> таможенный пост</h3>
+        <br>
       </div>
     </div>
   </section>

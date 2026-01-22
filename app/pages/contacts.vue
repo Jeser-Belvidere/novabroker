@@ -26,18 +26,21 @@ const openVK = () => {
               <div class="managers-item__name">Анна</div>
               <div class="managers-item__contacts">
                 <a class="link" href="tel: +79585000286">+7 958 500-02-86</a>
-                <a class="link" href="mailto:anna@novabroker.ru"
-                  >anna@novabroker.ru</a
-                >
+                <a class="link" href="mailto:anna@novabroker.ru">anna@novabroker.ru</a>
               </div>
             </div>
             <div class="managers-item">
               <div class="managers-item__name">Елена</div>
               <div class="managers-item__contacts">
                 <a class="link" href="tel:+797774095969">+7 977 409-59-69</a>
-                <a class="link" href="mailto:diana@novabroker.ru"
-                  >elenaruban@novabroker.ru</a
-                >
+                <a class="link" href="mailto:diana@novabroker.ru">elenaruban@novabroker.ru</a>
+              </div>
+            </div>
+            <div class="managers-item">
+              <div class="managers-item__name">Андрей</div>
+              <div class="managers-item__contacts">
+                <a class="link" href="tel:+797774095969">+7 958 500-03-45</a>
+                <a class="link" href="mailto:diana@novabroker.ru">andrei@novabroker.ru</a>
               </div>
             </div>
           </div>
@@ -47,16 +50,14 @@ const openVK = () => {
               <div class="managers-item__name">Михаил</div>
               <div class="managers-item__contacts">
                 <a class="link" href="tel:+797774095897">+7 977 409-58-97</a>
-                <a class="link" href="mailto:michael@novabroker.ru"
-                  >michael@novabroker.ru</a
-                >
+                <a class="link" href="mailto:michael@novabroker.ru">michael@novabroker.ru</a>
               </div>
             </div>
           </div>
         </div>
       </div>
       <!--  -->
-      <div class="map-wrapper">
+      <!-- <div class="map-wrapper">
         <h1>Новомосковский таможенный пост</h1>
         <p style="margin-bottom: 16px">
           Данный таможенный пост уполномочен принимать декларации и проводить
@@ -92,7 +93,7 @@ const openVK = () => {
         </div>
 
         <CoverageServicesMap />
-      </div>
+      </div> -->
       <!--  -->
       <div class="grid-wrapper">
         <div class="items-wrapper">
@@ -101,7 +102,7 @@ const openVK = () => {
             <div class="item-text">
               <div class="item-text__title">Адрес</div>
               <div class="item-text__description">
-                Город Москва, ш. Калужское, км 22-Й, <br />
+                Город Москва, ш. Калужское, км 22-Й, <br>
                 дом 10, строение 23, 14 этаж, Офис 1407
               </div>
             </div>
@@ -112,7 +113,7 @@ const openVK = () => {
             <div class="item-text">
               <div class="item-text__title">График работы</div>
               <div class="item-text__description">
-                с 8:00 по 20:00 <br />
+                с 8:00 по 20:00 <br>
                 Без выходных
               </div>
             </div>
@@ -133,19 +134,13 @@ const openVK = () => {
               <div class="item-text__title">Эл. почта для общих вопросов</div>
               <div class="item-text__description">
                 <a class="link" href="mailto:michael@novabroker.ru">
-                  info@novabroker.ru</a
-                >
+                  info@novabroker.ru</a>
               </div>
             </div>
           </div>
           <div class="contacts-icons">
             <UIIcon name="vk" pointer @click="openVK()" />
-            <UIIcon
-              name="yandex-maps"
-              size="lg"
-              pointer
-              @click="openYandex()"
-            />
+            <UIIcon name="yandex-maps" size="lg" pointer @click="openYandex()" />
           </div>
         </div>
         <div class="divider" />
