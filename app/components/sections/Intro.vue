@@ -152,19 +152,22 @@ onMounted(() => {
 </template>
 
 <style lang="css" scoped>
-.title-wrapper {
-  z-index: 2;
+section {
   position: relative;
   display: flex;
-  height: 100vh;
   justify-content: center;
   align-items: center;
-  margin-top: -80px;
+  height: calc(100vh - var(--header-height));
+  margin-top: var(--header-height);
 
   @media screen and (max-width: 852px) {
-    margin-top: -120px;
+    /* margin-top: var(--header-height-mobile); */
+    height: calc(100vh - var(--header-height-mobile));
   }
+}
 
+.title-wrapper {
+  z-index: 2;
   .title {
     max-width: 1300px;
     display: flex;
@@ -217,7 +220,7 @@ onMounted(() => {
   display: grid;
   grid-template-rows: auto;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - var(--header-height));
 }
 
 .text-container {
@@ -253,7 +256,7 @@ onMounted(() => {
   left: 0;
   z-index: 1;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - var(--header-height));
 
   @media screen and (max-width: 852px) {
     display: none;

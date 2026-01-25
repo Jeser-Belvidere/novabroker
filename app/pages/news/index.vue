@@ -74,8 +74,14 @@ const restNews = feed.slice(0, feed.length - 1).reverse();
 <style lang="css" scoped>
 main {
   min-height: 100vh;
-  background-color: var(--light-grey);
   padding: 32px 32px;
+  background-color: var(--light-grey);
+  margin-top: var(--header-height);
+  min-height: calc(100vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .breadcrumbs {

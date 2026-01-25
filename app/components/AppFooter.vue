@@ -54,7 +54,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   height: var(--footer-height);
-  z-index: 1;
+  z-index: 10;
   width: 100% !important;
   background-color: var(--black);
   padding: 16px 32px;

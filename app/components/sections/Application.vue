@@ -185,6 +185,7 @@ async function handleFormSubmit() {
       </div>
     </div>
     <div id="map" class="map" :class="{ 'map-mobile': isMobile }" />
+    <div id="map-overlay"/> 
     <dialog v-if="isModalVisible" class="dialog">
       <div class="dialog-wrapper">
         <div class="dialog-title">Спасибо за заявку</div>
@@ -203,11 +204,11 @@ section {
 }
 
 .contacts-container {
-  filter: drop-shadow(0px 0px 50px rgb(5, 51, 38));
+  filter: drop-shadow(0px 0px 20px rgb(5, 51, 38));
 
   position: absolute;
   border-radius: 12px;
-  top: 32px;
+  top: 50px;
   margin-left: 32px;
   margin-right: 32px;
 
@@ -215,7 +216,7 @@ section {
   flex-direction: column;
   max-width: 600px;
   gap: 50px;
-  z-index: 2;
+  z-index: 3;
 
   @media screen and (max-width: 440px) {
     width: 100%;
@@ -226,7 +227,7 @@ section {
 
 .contacts-head {
   background-color: rgba(5, 51, 38, 0.652);
-  box-shadow: 0px 0px 50px rgb(5, 51, 38);
+  box-shadow: 0px 0px 20px rgb(5, 51, 38);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -238,8 +239,8 @@ section {
   text-align: center;
 
   @media screen and (max-width: 768px) {
-    background-color: rgba(255, 255, 255, 0);
-    box-shadow: none;
+    background-color: rgba(5, 51, 38, 0.652);
+    /* box-shadow: none; */
   }
 
   .contacts-head__title {
@@ -376,8 +377,19 @@ section {
   }
 }
 
+#map-overlay {
+  background-color: var(--light-grey);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  z-index: 2;
+  
+}
+
 .map {
-  min-height: 800px;
+  top: 40px;
+  min-height: calc(100vh - var(--header-height) + 40px);
   z-index: 1;
 }
 

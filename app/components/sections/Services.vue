@@ -94,9 +94,8 @@ const carouselConfig = {
 </template>
 <style lang="css" scoped>
 section {
-  height: 100%;
   background-color: var(--light-grey);
-  padding: 48px 32px;
+  padding: 32px 32px;
 }
 
 .title {

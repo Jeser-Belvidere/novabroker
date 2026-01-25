@@ -29,7 +29,7 @@ const openVK = () => {
                 <a class="link" href="mailto:anna@novabroker.ru">anna@novabroker.ru</a>
               </div>
             </div>
-            <div class="managers-item">
+            <div class="managers-item bottom-border">
               <div class="managers-item__name">Елена</div>
               <div class="managers-item__contacts">
                 <a class="link" href="tel:+797774095969">+7 977 409-59-69</a>
@@ -188,7 +188,12 @@ const openVK = () => {
 
 <style lang="css" scoped>
 main {
+  margin-top: var(--header-height);
   min-height: calc(100vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .divider {

@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <main>
     <section>
       <h1>Политика в отношении обработки персональных данных</h1>
       <div>
@@ -373,26 +373,29 @@
         14.3. Актуальная версия Политики в свободном доступе расположена в сети
         Интернет по адресу https://новаброкер.рф/privacy
       </div>
-    </section>
-  </div>
+      </section>
+  </main>
 </template>
 
 <style lang="css" scoped>
-.page {
-  padding: 0 32px;
-  position: relative;
+main {
+  min-height: 100vh;
+  padding: 32px 32px;
+  margin-top: var(--header-height);
+  min-height: calc(100vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 section {
-  div {
     margin-top: 18px;
-    color: var(--light-grey);
     font-weight: 400;
     font-size: 1.2rem;
     letter-spacing: 0.5px;
     line-height: 32px;
     letter-spacing: 2px;
-  }
 }
 
 h1 {

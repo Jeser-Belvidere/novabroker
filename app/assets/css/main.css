@@ -32,8 +32,6 @@
 }
 
 * {
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
   font-family:
     "AdventPro",
@@ -51,18 +49,10 @@
 }
 
 body {
-  /* margin-top: var(--header-height); */
-  /* margin-bottom: var(--footer-height); */
-  /* height: 100vh; */
-  /* width: 100vw; */
   background-color: var(--dark-forest-green);
   cursor: url("/cursor.svg"), default;
   overflow-x: hidden;
   scroll-behavior: smooth;
-}
-
-#app {
-  /* height: 100vh; */
 }
 
 .carousel__icon {

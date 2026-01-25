@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <main>
     <section>
       <h1>Согласие пользователей сайта на обработку персональных данных</h1>
       <div>
@@ -112,13 +112,19 @@
         подлежит применению право Российской Федерации.<br>
       </div>
     </section>
-  </div>
+  </main>
 </template>
 
 <style lang="css" scoped>
-.page {
-  padding: 0 32px;
-  position: relative;
+main {
+  min-height: 100vh;
+  padding: 32px 32px;
+  margin-top: var(--header-height);
+  min-height: calc(100vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 section {

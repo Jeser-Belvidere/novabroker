@@ -66,7 +66,7 @@ useSeoMeta({
 
 <style lang="css" scoped>
 section {
-  min-height: 100vh;
+  height: 100vh;
   background-color: var(--light-grey);
   padding: 32px 32px;
 }

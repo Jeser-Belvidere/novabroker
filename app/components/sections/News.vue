@@ -103,14 +103,26 @@ section {
     bottom: 32px;
     left: 32px;
 
+    @media screen and (max-width: 440px) {
+      bottom: 16px;
+      left: 16px;
+    }
+
     .card-title {
       text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: 100%;
+      max-height: 100%;
       font-size: 2rem;
       color: var(--white);
       margin-bottom: 5px;
 
       @media screen and (max-width: 868px) {
         font-size: 1.5rem;
+      }
+
+      @media screen and (max-width: 440px) {
+        font-size: 1.2rem;
       }
     }
 
