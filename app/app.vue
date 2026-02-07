@@ -4,10 +4,12 @@
   <div id="app">
     <AppLoader />
     <AppAgreement />
+    <UApp>
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </UApp>
 
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
   </div>
 </template>
 

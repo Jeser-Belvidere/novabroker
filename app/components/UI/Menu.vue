@@ -28,15 +28,10 @@ onClickOutside(menuRef, () => {
     <div v-if="isActive" class="dropdown">
       <div class="dropdown__content">
         <UILink :to="{ path: '/', hash: '#intro' }">Главная</UILink>
-        <UILink :to="{ path: '/', hash: '#services' }">Услуги</UILink>
-        <UILink :to="{ path: '/', hash: '#advantages' }">Преимущества</UILink>
-        <UILink :to="{ path: '/', hash: '#stages' }">Этапы</UILink>
-        <UILink :to="{ path: '/', hash: '#reviews' }">Отзывы</UILink>
-        <UILink :to="{ path: '/', hash: '#news' }">Новости</UILink>
-        <UILink :to="{ path: '/', hash: '#application' }"
-          >Оставить заявку</UILink
-        >
-        <UILink to="/contacts" type="default">Контакты</UILink>
+        <UILink to="/news">Новости</UILink>
+        <UILink to="/tamozhennyy_kalkulyator">Таможенный калькулятор</UILink>
+        <UILink to="/contacts">Контакты</UILink>
+        <UILink :to="{ path: '/', hash: '#application' }">Оставить заявку</UILink>
       </div>
     </div>
   </div>

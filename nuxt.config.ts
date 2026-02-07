@@ -13,13 +13,7 @@ export default defineNuxtConfig({
 		},
 	},
 	ssr: true,
-	modules: [
-		'@nuxt/eslint',
-		'nuxt-schema-org',
-		'vue3-carousel-nuxt',
-		'@nuxtjs/device',
-		'@nuxt/ui',
-	],
+	modules: ['@nuxt/eslint', 'nuxt-schema-org', 'vue3-carousel-nuxt', '@nuxtjs/device', '@nuxt/ui', '@nuxtjs/seo'],
 	ui: {
 		fonts: false,
 	},
@@ -30,7 +24,7 @@ export default defineNuxtConfig({
 			charset: 'utf-8',
 			viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
 			htmlAttrs: {
-				lang: 'en',
+				lang: 'ru',
 			},
 			link: [
 				{ rel: 'manifest', href: '/manifest.json' },

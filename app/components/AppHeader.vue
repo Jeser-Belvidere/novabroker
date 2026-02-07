@@ -15,15 +15,13 @@ if (data.value) {
     <div class="header-content">
       <nuxt-link class="header-content__logo" to="/">NOVABROKER</nuxt-link>
       <div class="header-content__links">
-        <UILink :to="{ path: '/', hash: '#services' }">Услуги</UILink>
-        <UILink :to="{ path: '/', hash: '#advantages' }">Преимущества</UILink>
-        <UILink :to="{ path: '/', hash: '#stages' }">Этапы</UILink>
-        <UILink :to="{ path: '/', hash: '#reviews' }">Отзывы</UILink>
-        <UILink :to="{ path: '/', hash: '#news' }">Новости</UILink>
-        <UILink :to="{ path: '/', hash: '#application' }">Оставить заявку</UILink>
+        <UILink to="/">Главная</UILink>
+        <UILink to="/news">Новости</UILink>
+        <UILink to="/tamozhennyy_kalkulyator">Таможенный калькулятор</UILink>
+        <UILink to="/contacts">Контакты</UILink>
       </div>
       <div class="header-content__contacts">
-        <UILink to="/contacts" type="default">Контакты</UILink>
+        <UILink :to="{ path: '/', hash: '#application' }" type="default">Оставить заявку</UILink>
       </div>
       <div class="mobile-menu">
         <UIMenu />

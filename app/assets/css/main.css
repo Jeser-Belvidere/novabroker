@@ -2,8 +2,11 @@
 @import "@nuxt/ui";
 
 :root {
+  --ui-primary: #dabb8d;
+  --ui-bg: #04281d;
+
   --dark-forest-green: #053326;
-  --dark-green: rgb(4, 40, 29);
+  --dark-green: #04281d;
   --warm-beige: #dabb8d;
   --light-grey: #e8e8e8;
   --medium-taupe: #827667;
@@ -15,12 +18,13 @@
   --header-height: 90px;
   --header-height-mobile: 100px;
   --footer-height: 120px;
-  cursor:
-    url("/cursor.svg") 26 37,
-    auto;
+
   font-size: 16px;
   letter-spacing: 1px;
   scroll-behavior: smooth;
+  *:disabled {
+    cursor: not-allowed !important;
+  }
 }
 
 @font-face {
@@ -32,6 +36,7 @@
 }
 
 * {
+  cursor: url("/cursor.svg"), auto;
   box-sizing: border-box;
   font-family:
     "AdventPro",
@@ -49,8 +54,9 @@
 }
 
 body {
+  /* font-weight: 600; */
   background-color: var(--dark-forest-green);
-  cursor: url("/cursor.svg"), default;
+  /* cursor: url("/cursor.svg"), default; */
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
