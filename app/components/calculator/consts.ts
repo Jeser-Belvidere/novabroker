@@ -25,10 +25,10 @@ export const CHASSIS_TYPES_OPTIONS = [
 ]
 
 export const AGE_OPTIONS = [
-	{label: 'меньше 3-х лет', value: 3}, 
-	{label: '3-5 лет', value: 35}, 
-	{label: '5-7 лет', value: 57}, 
-	{label: 'больше 7 лет', value: 7}
+	{label: 'меньше 3-х лет', value: '3'}, 
+	{label: '3-5 лет', value: '35'}, 
+	{label: '5-7 лет', value: '57'}, 
+	{label: 'больше 7 лет', value: '7'}
 ]
 
 export const TS_TYPES_OPTIONS = [
@@ -50,11 +50,11 @@ export const TS_TYPES_OPTIONS = [
 ]
 
 export const CURRENCY_OPTIONS = [
-	{label: 'RUB', value: 643},
-	{label: 'USD', value: 840}, 
-	{label: 'EUR', value: 978}, 
-	{label: 'CNY', value: 156},
-	{label: 'KRW', value: 410},
+	{label: 'RUB', value: '643'},
+	{label: 'USD', value: '840'}, 
+	{label: 'EUR', value: '978'}, 
+	{label: 'CNY', value: '156'},
+	{label: 'KRW', value: '410'},
 ]
 
 export const BUS_CAPACITY_OPTIONS = [
@@ -67,7 +67,7 @@ export const BUS_ECO_CLASS_OPTIONS = [
 	{label: 'прочие экологического класса 4 или выше, габаритной длиной не менее 11,5 м, имеющие не менее 41 посадочного места, включая водителя, объем багажного отсека не менее 5 м3 и предназначенные для перевозки только сидящих пассажиров и их багажа', value: 'lt120_ec4'}, 
 ]
 
-export const CURRENCY_OPTIONS_MAP: Record<number, string> = CURRENCY_OPTIONS.reduce((acc, cur) => ({...acc, [cur.value]: cur.label}), {})
-export const AGE_OPTIONS_MAP: Record<number, string> = AGE_OPTIONS.reduce((acc, cur) => ({...acc, [cur.value]: cur.label}), {})
+export const CURRENCY_OPTIONS_MAP: Record<string, string> = CURRENCY_OPTIONS.reduce((acc, cur) => ({...acc, [cur.value]: cur.label}), {})
+export const AGE_OPTIONS_MAP: Record<string, string> = AGE_OPTIONS.reduce((acc, cur) => ({...acc, [cur.value]: cur.label}), {})
 export const POWER_TYPES_MAP: Record<string, string> = POWER_TYPES_OPTIONS.reduce((acc, cur) => ({...acc, [cur.value]: cur.label}), {})
 export const ENGINE_TYPES_MAP: Record<string, string> = ENGINE_TYPES_OPTIONS.reduce((acc, cur) => ({...acc, [cur.value]: cur.label}), {})

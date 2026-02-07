@@ -13,7 +13,7 @@ export default defineNuxtConfig({
 		},
 	},
 	ssr: true,
-	modules: ['@nuxt/eslint', 'nuxt-schema-org', 'vue3-carousel-nuxt', '@nuxtjs/device', '@nuxt/ui', '@nuxtjs/seo'],
+	modules: ['@nuxt/eslint', 'nuxt-schema-org', 'vue3-carousel-nuxt', '@nuxtjs/device', '@nuxt/ui', '@nuxtjs/seo', 'nuxt-security'],
 	ui: {
 		fonts: false,
 	},

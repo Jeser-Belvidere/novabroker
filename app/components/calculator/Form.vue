@@ -27,14 +27,14 @@ const emits = defineEmits(['submit'])
 
 const initialState: IFormValues = {
 	face: 'nat', // nat, jur
-	cost: 0,
-	currency: 643,
-	age: 3, //3, 35, 57, 7
-	power: 0,
+	cost: '',
+	currency: '643',
+	age: '3', //3, 35, 57, 7
+	power: '',
 	power_edizm: 'ls', // kvt, ls
-	volume: 0,
+	volume: '',
 	engine_type: 'petrol', // petrol, diesel, petrol_electric, diesel_electric, electric, no_engine
-	mass: 0,
+	mass: '',
 	offroad: false, // Повышенной проходимости (для ts_type=00_8703)
 	caravan: false, // Автодом (для ts_type=00_8703)
 	ts_type: '00_8703', //00_8703 - автомобиль, 00_8704 - пикап, 01_8703 - квадроцикл, 02_8703 - гольф-кар, 03_8703101100 - снегоход, 04_8704 - грузовик, 05_870410 - самосвал, 06_8711 - мотоцикл, 07_8711201000 - мотороллер, 08_8711100000 - мопед, 09_8716400000 - автоприцеп, 10_871610 - дом-автоприцеп, 11_890399 - водный мотоцикл, 12_8903 - катер (яхта, лодка), 13_8702 - автобус
@@ -179,14 +179,19 @@ const isPowerDisabled = computed(() => {
             </UFormField>
           </div>
           <div class="calculator-row">
-            <div class="cost-input">
-              <UFormField class="text-md" required label="Стоймость" name="price" size="lg" >
-                <UInput v-model="formState.cost" v-maska="costMask" required variant="outline" min="1" class="text-md w-full"/>
-              </UFormField>
-              <UFormField class="text-md" label="" size="lg" name="currency">
-                <USelect v-model="formState.currency" required arrow :items="CURRENCY_OPTIONS" min="1" />
-              </UFormField>
-            </div>  
+            <!-- <div class="cost-column"> -->
+              <div class="cost-input">
+                <UFormField class="text-md" required label="Стоймость" name="price" size="lg" >
+                  <UInput v-model="formState.cost" v-maska="costMask" required variant="outline" min="1" class="text-md w-full"/>
+                </UFormField>
+                <UFormField class="text-md" label="" size="lg" name="currency">
+                  <USelect v-model="formState.currency" required arrow :items="CURRENCY_OPTIONS" />
+                </UFormField>
+              </div>
+              <!-- <UFormField class="text-md" name="pp_152_minpromtorg_cb">
+                <UCheckbox v-model="formState.pp_152_minpromtorg_cb"  label="Авто растаможен при ввозе в ЕАЭС"/>
+              </UFormField> -->
+            <!-- </div> -->
             <UFormField class="text-md" :required="!isVolumeDisabled"  label="Объем двигателя, см3" size="lg" name="volume">
               <UInput v-model="formState.volume" v-maska="volumeMask" :required="!isVolumeDisabled" :disabled="isVolumeDisabled" class="text-md w-full"/>
             </UFormField>
@@ -194,10 +199,24 @@ const isPowerDisabled = computed(() => {
               <USelect v-model="formState.engine_type" :ui="{ content: 'min-w-fit' }"  arrow :items="ENGINE_TYPES_OPTIONS" class="w-full" :disabled="isEngineTypeDisabled"/>
             </UFormField>
           </div>
+          <!-- <div v-if="formState.pp_152_minpromtorg_cb === true" class="calculator-row_minpromtorg">
+            <UFormField class="text-md" :required="formState.pp_152_minpromtorg_cb" label="Руб, ср. стоимость Минпромторга" name="pp_152_minpromtorg_cost" size="lg" >
+              <UInput v-model="formState.pp_152_minpromtorg_cost" v-maska="costMask" :required="formState.pp_152_minpromtorg_cb" variant="outline" class="text-md w-full"/>
+            </UFormField>
+            <UFormField class="text-md" label="Руб, уплачено: там. пошлина" name="pp_152_minpromtorg_poshl" size="lg" >
+              <UInput v-model="formState.pp_152_minpromtorg_poshl" v-maska="costMask" variant="outline" min="1" class="text-md w-full"/>
+            </UFormField>
+            <UFormField class="text-md" label="Руб, уплачено: акциз" name="pp_152_minpromtorg_akciz" size="lg" >
+              <UInput v-model="formState.pp_152_minpromtorg_akciz" v-maska="costMask" variant="outline" min="1" class="text-md w-full"/>
+            </UFormField>
+            <UFormField class="text-md" label="Руб, уплачено: НДС" name="pp_152_minpromtorg_nds" size="lg" >
+              <UInput v-model="formState.pp_152_minpromtorg_nds" v-maska="costMask" variant="outline" min="1" class="text-md w-full"/>
+            </UFormField>
+          </div> -->
           <div class="calculator-row">
             <div class="power-input">
               <UFormField class="text-md" :required="!isPowerDisabled" label="Мощность" size="lg" name="power" :disabled="isPowerDisabled">
-                <UInput v-model="formState.power" v-maska="powerMask" class="text-md w-full" :disabled="isPowerDisabled"/>
+                <UInput v-model="formState.power" v-maska="powerMask" class="text-md w-full" :disabled="isPowerDisabled" :required="!isPowerDisabled"/>
               </UFormField>
               <div class="power-type">
                 <UFormField class="text-md" name="powerType" :disabled="isPowerDisabled">
@@ -270,6 +289,7 @@ const isPowerDisabled = computed(() => {
   flex-direction: column;
   gap: 20px;
 }
+
 .calculator-container {
   display: flex;
   flex-direction: column;
@@ -281,6 +301,20 @@ const isPowerDisabled = computed(() => {
 .calculator-row {
   display: grid;
   grid-template-columns: 300px 200px 200px;
+  gap: 20px;
+  @media screen and (max-width: 868px) {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    gap: 6px;
+  }
+}
+
+.calculator-row_minpromtorg {
+  display: grid;
+  grid-template-columns: 175px 175px 175px 175px;
+  align-items: end;
   gap: 20px;
   @media screen and (max-width: 868px) {
     display: flex;
@@ -303,14 +337,21 @@ const isPowerDisabled = computed(() => {
   }
 }
 
-.cost-input {
+
+
+/* .cost-column {
   display: flex;
-  width: fit-content;
-  align-items: flex-end;
-  flex-direction: row;
-  width: 100%;
-  gap: 6px;
-}
+  flex-direction: column;
+  gap: 6px; */
+  .cost-input {
+    display: flex;
+    width: fit-content;
+    align-items: flex-end;
+    flex-direction: row;
+    width: 100%;
+    gap: 6px;
+  }
+/* } */
 
 .power-input {
   display: flex;

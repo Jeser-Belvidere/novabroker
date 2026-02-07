@@ -8,6 +8,8 @@ useSeoMeta({
 	ogUrl: 'https://xn--80acboyohdrd.xn--p1ai/tamozhennyy_kalkulyator',
 });
 
+const toast = useToast()
+
 const isLoading = ref(false);
 const computeResults = ref<TKSResponse | null>(null)
 const stepperValue = ref<0 | 1>(0)
@@ -34,7 +36,16 @@ const getData = async (data: IFormValues) => {
 
 const handleSubmit = async (data: IFormValues) => {
 	const response = await getData(data)
-	if (!response) return
+	if (!response || 'error' in response) {
+		toast.add({
+			title: 'Упс, что-то пошло не так',
+			color: 'error',
+			progress: true
+		})
+  
+		return 
+	}
+
 	formData.value = data
 	computeResults.value = response
 	stepperValue.value = 1

@@ -1,14 +1,14 @@
 export interface TKSRequest {
-  cost: number,
-	volume: number,
-	currency: number, //TODO:
-	power: number,
+  cost: string,
+	volume: string,
+	currency: string, //TODO:
+	power: string,
 	engine_type: 'petrol'| 'diesel'|'petrol_electric'| 'diesel_electric'| 'electric'| 'no_engine',
 	power_edizm: 'kvt' | 'ls',
-	age: 3 | 35 | 57 | 7
+	age: '3' | '35' | '57' | '7'
 	face: 'nat' | 'jur' 
 	ts_type: '00_8703' | '00_8704' | '01_8703' | '02_8703' | '03_8703101100' | '04_8704' | '05_870410' | '07_8711201000' | '08_8711100000' | '09_8716400000' | '10_871610' | '11_890399' | '12_8903' | '13_8702'
-	mass?: number
+	mass?: string
 	offroad?: boolean
 	caravan?: boolean
 	chassis?: 'shs' | 'nshs' | 'nshs2'
@@ -19,7 +19,7 @@ export interface TKSRequest {
 	boat_sea?: boolean
 	pp_152_minpromtorg_cb?: boolean
 	pp_152_minpromtorg_cost?: number
-	pp_152_minpromtorg_poshod?: number
+	pp_152_minpromtorg_poshl?: number
 	pp_152_minpromtorg_akciz?: number
 	pp_152_minpromtorg_nds?: number
   bus_municipal_cb?: boolean
