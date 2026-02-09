@@ -220,6 +220,7 @@ section {
 
   @media screen and (max-width: 440px) {
     width: 100%;
+    top: 20px;
     margin-left: 0;
     margin-right: 0;
   }
@@ -290,6 +291,9 @@ section {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  @media screen and (max-width: 860px)   {
+    gap: 16px;
+  }
 }
 
 .contacts-info__item {
@@ -380,11 +384,13 @@ section {
 #map-overlay {
   background-color: var(--light-grey);
   position: absolute;
-  top: 0;
+  /* top: 0; */
   width: 100%;
   height: 40px;
   z-index: 2;
-  
+  @media screen and (max-width: 440px) {
+    display: none;
+  }
 }
 
 .map {

@@ -35,7 +35,7 @@ const restNews = feed.slice(0, feed.length - 1).reverse();
         Оформление, сертификация, законодательство - все по делу
       </div>
     </div>
-    <div>
+    <!-- <div> -->
       <div class="first-card margin-bottom">
         <nuxt-link class="first-card" :to="`/news/${lastNews?.listIndex}`">
           <div
@@ -48,7 +48,7 @@ const restNews = feed.slice(0, feed.length - 1).reverse();
           </div>
         </nuxt-link>
       </div>
-    </div>
+    <!-- </div> -->
     <div class="grid">
       <div
         v-for="(news, index) in restNews"
@@ -73,6 +73,7 @@ const restNews = feed.slice(0, feed.length - 1).reverse();
 
 <style lang="css" scoped>
 main {
+  width: 100%;
   min-height: 100vh;
   padding: 32px 32px;
   background-color: var(--light-grey);
@@ -85,10 +86,16 @@ main {
 }
 
 .breadcrumbs {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
   text-decoration: none;
   font-size: 1.5rem;
   color: var(--black);
   cursor: pointer;
+  @media screen and (max-width: 868px) {
+    font-size: 1rem;
+  }
 }
 
 .title {
@@ -260,5 +267,8 @@ main {
 
 .margin-bottom {
   margin-bottom: 24px;
+    @media screen and (max-width: 868px) {
+    margin-bottom: 12px;
+  }
 }
 </style>

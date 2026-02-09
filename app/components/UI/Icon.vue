@@ -119,6 +119,10 @@ const className = computed(() => {
   background-image: url("~/assets/icons/yandex-maps.svg");
 }
 
+.max {
+  background-image: url("~/assets/icons/max.svg");
+}
+
 .vk {
   background-image: url("~/assets/icons/vk.svg");
 }

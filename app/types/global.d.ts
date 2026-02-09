@@ -22,5 +22,6 @@ declare global {
     | 'yandex-maps'
     | 'vk'
     | 'mail'
-    | 'map-pin';
+    | 'map-pin'
+    | 'max' ;
 }

@@ -5,8 +5,8 @@
     <SectionsAdvantages />
     <SectionsStages />
     <SectionsRewievs />
-    <SectionsNews />
     <SectionsApplication />
+    <SectionsNews />
   </main>
 </template>
 

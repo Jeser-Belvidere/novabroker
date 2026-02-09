@@ -9,7 +9,6 @@
         <NuxtPage />
       </NuxtLayout>
     </UApp>
-
   </div>
 </template>
 
