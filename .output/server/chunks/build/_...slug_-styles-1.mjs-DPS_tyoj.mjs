@@ -1,0 +1,4 @@
+const ____slug__vue_vue_type_style_index_0_scoped_662fe7ab_lang = "section[data-v-662fe7ab]{align-items:center;display:flex;flex-direction:column;gap:32px;height:100vh;justify-content:center}.container[data-v-662fe7ab]{align-items:center;display:flex;flex-direction:column;justify-content:center;margin-top:-200px}@media screen and (max-width:768px){.container[data-v-662fe7ab]{margin-top:-300px}}.code[data-v-662fe7ab]{color:var(--warm-beige);font-size:10rem;font-weight:800}@media screen and (max-width:768px){.code[data-v-662fe7ab]{font-size:6rem}}.title[data-v-662fe7ab]{color:var(--light-grey);font-size:4rem;font-weight:800}@media screen and (max-width:768px){.title[data-v-662fe7ab]{font-size:2rem}}";
+
+export { ____slug__vue_vue_type_style_index_0_scoped_662fe7ab_lang as _ };
+//# sourceMappingURL=_...slug_-styles-1.mjs-DPS_tyoj.mjs.map

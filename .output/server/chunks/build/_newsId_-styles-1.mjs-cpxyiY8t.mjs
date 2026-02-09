@@ -1,0 +1,4 @@
+const _newsId__vue_vue_type_style_index_0_scoped_a77db743_lang = "section[data-v-a77db743]{background-color:var(--light-grey);height:100vh;padding:32px}.breadcrumbs[data-v-a77db743]{color:var(--black);cursor:pointer;font-size:1.5rem;text-decoration:none;width:-moz-fit-content;width:fit-content}@media screen and (max-width:440px){.breadcrumbs[data-v-a77db743]{font-size:.8rem}}h1[data-v-a77db743]{color:var(--black);font-size:4rem}@media screen and (max-width:440px){h1[data-v-a77db743]{font-size:2rem}}.image[data-v-a77db743]{background-position:50%;background-size:cover;border-radius:16px;height:400px;width:100%}.image-subtitle[data-v-a77db743]{color:var(--black);font-size:1rem}.margin-bottom[data-v-a77db743]{margin-bottom:16px}";
+
+export { _newsId__vue_vue_type_style_index_0_scoped_a77db743_lang as _ };
+//# sourceMappingURL=_newsId_-styles-1.mjs-cpxyiY8t.mjs.map
