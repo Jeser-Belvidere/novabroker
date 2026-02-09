@@ -5638,28 +5638,34 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
     const emits = __emit;
     return (_ctx, _push, _parent, _attrs) => {
       const _component_UButton = _sfc_main$8$1;
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "result-container" }, _attrs))} data-v-7cbae1d7><div class="result-content" data-v-7cbae1d7><div class="result-input" data-v-7cbae1d7><h3 data-v-7cbae1d7>Введенные данные:</h3><table class="input-table" data-v-7cbae1d7><tbody data-v-7cbae1d7><tr data-v-7cbae1d7><th scope="col" data-v-7cbae1d7>Возраст:</th><td data-v-7cbae1d7>${ssrInterpolate(props.input?.age ? unref(AGE_OPTIONS_MAP)[props.input.age] : "Не указано")}</td></tr><tr data-v-7cbae1d7><th scope="col" data-v-7cbae1d7>Стоймость автомобиля:</th><td data-v-7cbae1d7>${ssrInterpolate(props.input?.cost ? props.input.cost + " " + unref(CURRENCY_OPTIONS_MAP)[props.input.currency] : "Не указано")}</td></tr><tr data-v-7cbae1d7><th scope="col" data-v-7cbae1d7>Тип двигателя:</th><td data-v-7cbae1d7>${ssrInterpolate(props.input?.engine_type ? unref(ENGINE_TYPES_MAP)[props.input.engine_type] : "Не указано")}</td></tr><tr data-v-7cbae1d7><th scope="col" data-v-7cbae1d7>Мощность:</th><td data-v-7cbae1d7>${ssrInterpolate(props.input?.power ? props.input?.power + " " + unref(POWER_TYPES_MAP)[props.input?.power_edizm] : "Не указано")}</td></tr><tr data-v-7cbae1d7><th scope="col" data-v-7cbae1d7>Объем двигателя:</th><td data-v-7cbae1d7>${ssrInterpolate(props.input?.volume + " см3")}</td></tr></tbody></table></div><div class="result-output" data-v-7cbae1d7><h3 data-v-7cbae1d7>Таможенные сборы:</h3><table data-v-7cbae1d7><caption data-v-7cbae1d7> Примерные результаты расчета. Для точного расчета обратитесь к нашим специалистам * </caption><thead data-v-7cbae1d7><tr data-v-7cbae1d7><th scope="col" data-v-7cbae1d7>Платеж</th><th scope="col" data-v-7cbae1d7>Ставка</th><th scope="col" data-v-7cbae1d7>Сумма (руб)</th></tr></thead><tbody data-v-7cbae1d7><tr data-v-7cbae1d7><th scope="row" data-v-7cbae1d7>Таможенное оформление</th><td data-v-7cbae1d7>${ssrInterpolate(props.result?.tam_oform?.name)}</td><td data-v-7cbae1d7>${ssrInterpolate(props.result?.tam_oform?.name)}</td></tr>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "result-container" }, _attrs))} data-v-97435518><div class="result-content" data-v-97435518><div class="result-input" data-v-97435518><h3 data-v-97435518>Введенные данные:</h3><table class="input-table" data-v-97435518><tbody data-v-97435518><tr data-v-97435518><th scope="col" data-v-97435518>Возраст:</th><td data-v-97435518>${ssrInterpolate(props.input?.age ? unref(AGE_OPTIONS_MAP)[props.input.age] : "Не указано")}</td></tr><tr data-v-97435518><th scope="col" data-v-97435518>Стоймость автомобиля:</th><td data-v-97435518>${ssrInterpolate(props.input?.cost ? props.input.cost + " " + unref(CURRENCY_OPTIONS_MAP)[props.input.currency] : "Не указано")}</td></tr><tr data-v-97435518><th scope="col" data-v-97435518>Тип двигателя:</th><td data-v-97435518>${ssrInterpolate(props.input?.engine_type ? unref(ENGINE_TYPES_MAP)[props.input.engine_type] : "Не указано")}</td></tr><tr data-v-97435518><th scope="col" data-v-97435518>Мощность:</th><td data-v-97435518>${ssrInterpolate(props.input?.power ? props.input?.power + " " + unref(POWER_TYPES_MAP)[props.input?.power_edizm] : "Не указано")}</td></tr>`);
+      if (props.input?.volume) {
+        _push(`<tr data-v-97435518><th scope="col" data-v-97435518>Объем двигателя:</th><td data-v-97435518>${ssrInterpolate(props.input?.volume + " см3")}</td></tr>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</tbody></table></div><div class="result-output" data-v-97435518><h3 data-v-97435518>Таможенные сборы:</h3><table data-v-97435518><caption data-v-97435518> Примерные результаты расчета. Для точного расчета обратитесь к нашим специалистам * </caption><thead data-v-97435518><tr data-v-97435518><th scope="col" data-v-97435518>Платеж</th><th scope="col" data-v-97435518>Ставка</th><th scope="col" data-v-97435518>Сумма (руб)</th></tr></thead><tbody data-v-97435518><tr data-v-97435518><th scope="row" data-v-97435518>Таможенное оформление</th><td data-v-97435518>${ssrInterpolate(props.result?.tam_oform?.name)}</td><td data-v-97435518>${ssrInterpolate(props.result?.tam_oform?.name)}</td></tr>`);
       if (props.input?.face === "nat") {
-        _push(`<tr data-v-7cbae1d7><th scope="row" data-v-7cbae1d7>Единая ставка</th><td data-v-7cbae1d7>${ssrInterpolate(props.result?.poshl?.name)}</td><td data-v-7cbae1d7>${ssrInterpolate(props.result?.poshl?.value_rub)} руб.</td></tr>`);
+        _push(`<tr data-v-97435518><th scope="row" data-v-97435518>Единая ставка</th><td data-v-97435518>${ssrInterpolate(props.result?.poshl?.name)}</td><td data-v-97435518>${ssrInterpolate(props.result?.poshl?.value_rub)} руб.</td></tr>`);
       } else {
         _push(`<!---->`);
       }
-      if (props.input?.face === "jur") {
-        _push(`<tr data-v-7cbae1d7><th scope="row" data-v-7cbae1d7>Пошлина</th><td data-v-7cbae1d7>${ssrInterpolate(props.result?.poshl?.name)}</td><td data-v-7cbae1d7>${ssrInterpolate(props.result?.poshl?.value_rub)} руб.</td></tr>`);
+      if (props.input?.face === "jur" || props.input?.sequential === true) {
+        _push(`<tr data-v-97435518><th scope="row" data-v-97435518>Пошлина</th><td data-v-97435518>${ssrInterpolate(props.result?.poshl?.name)}</td><td data-v-97435518>${ssrInterpolate(props.result?.poshl?.value_rub)} руб.</td></tr>`);
       } else {
         _push(`<!---->`);
       }
-      if (props.input?.face === "jur") {
-        _push(`<tr data-v-7cbae1d7><th scope="row" data-v-7cbae1d7>Акциз</th><td data-v-7cbae1d7>${ssrInterpolate(props.result?.akciz?.name)}</td><td data-v-7cbae1d7>${ssrInterpolate(props.result?.akciz?.value_rub)} руб.</td></tr>`);
+      if (props.input?.face === "jur" || props.input?.sequential === true) {
+        _push(`<tr data-v-97435518><th scope="row" data-v-97435518>Акциз</th><td data-v-97435518>${ssrInterpolate(props.result?.akciz?.name)}</td><td data-v-97435518>${ssrInterpolate(props.result?.akciz?.value_rub)} руб.</td></tr>`);
       } else {
         _push(`<!---->`);
       }
-      if (props.input?.face === "jur") {
-        _push(`<tr data-v-7cbae1d7><th scope="row" data-v-7cbae1d7>НДС</th><td data-v-7cbae1d7>${ssrInterpolate(props.result?.nds?.name)}</td><td data-v-7cbae1d7>${ssrInterpolate(props.result?.nds?.value_rub)} руб.</td></tr>`);
+      if (props.input?.face === "jur" || props.input?.sequential === true) {
+        _push(`<tr data-v-97435518><th scope="row" data-v-97435518>НДС</th><td data-v-97435518>${ssrInterpolate(props.result?.nds?.name)}</td><td data-v-97435518>${ssrInterpolate(props.result?.nds?.value_rub)} руб.</td></tr>`);
       } else {
         _push(`<!---->`);
       }
-      _push(`<tr data-v-7cbae1d7><th scope="row" data-v-7cbae1d7>Утилизационный сбор</th><td data-v-7cbae1d7>${ssrInterpolate(props.result?.util_sbor.value_base)} руб. x ${ssrInterpolate(props.result?.util_sbor.value_coef)}</td><td data-v-7cbae1d7>${ssrInterpolate(props.result?.util_sbor.value_rub)} руб.</td></tr></tbody><tfoot data-v-7cbae1d7><tr data-v-7cbae1d7><th colspan="2" scope="row" data-v-7cbae1d7>Итого c утилизационным сбором</th><td class="bold" data-v-7cbae1d7>${ssrInterpolate(props.result?.sum_util.value_rub)} руб.</td></tr></tfoot></table></div></div><div class="result-actions" data-v-7cbae1d7>`);
+      _push(`<tr data-v-97435518><th scope="row" data-v-97435518>Утилизационный сбор</th><td data-v-97435518>${ssrInterpolate(props.result?.util_sbor.value_base)} руб. x ${ssrInterpolate(props.result?.util_sbor.value_coef)}</td><td data-v-97435518>${ssrInterpolate(props.result?.util_sbor.value_rub)} руб.</td></tr></tbody><tfoot data-v-97435518><tr data-v-97435518><th colspan="2" scope="row" data-v-97435518>Итого c утилизационным сбором</th><td class="bold" data-v-97435518>${ssrInterpolate(props.result?.sum_util.value_rub)} руб.</td></tr></tfoot></table></div></div><div class="result-actions" data-v-97435518>`);
       _push(ssrRenderComponent(_component_UButton, {
         variant: "outline",
         label: "Вернуться",
@@ -5676,7 +5682,7 @@ _sfc_main$1.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/calculator/Result.vue");
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
-const __nuxt_component_2 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$1, [["__scopeId", "data-v-7cbae1d7"]]), { __name: "CalculatorResult" });
+const __nuxt_component_2 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$1, [["__scopeId", "data-v-97435518"]]), { __name: "CalculatorResult" });
 const _sfc_main = /* @__PURE__ */ defineComponent({
   __name: "tamozhennyy_kalkulyator",
   __ssrInlineRender: true,
@@ -5785,4 +5791,4 @@ _sfc_main.setup = (props, ctx) => {
 const tamozhennyy_kalkulyator = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-9375a67a"]]);
 
 export { tamozhennyy_kalkulyator as default };
-//# sourceMappingURL=tamozhennyy_kalkulyator-CsV3kPzL.mjs.map
+//# sourceMappingURL=tamozhennyy_kalkulyator-K9EWWAQj.mjs.map

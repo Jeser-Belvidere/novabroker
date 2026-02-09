@@ -135,7 +135,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     return (_ctx, _push, _parent, _attrs) => {
       const _component_nuxt_link = __nuxt_component_0$2;
       const _component_UINewsTable = __nuxt_component_1;
-      _push(`<section${ssrRenderAttrs(_attrs)} data-v-a77db743><div class="breadcrumbs margin-bottom" data-v-a77db743>`);
+      _push(`<section${ssrRenderAttrs(_attrs)} data-v-32429599><div class="breadcrumbs margin-bottom" data-v-32429599>`);
       _push(ssrRenderComponent(_component_nuxt_link, {
         class: "breadcrumbs",
         to: "/news"
@@ -151,9 +151,9 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div><h1 class="margin-bottom" data-v-a77db743>${ssrInterpolate(unref(currentNews)?.title)}</h1><div class="image margin-bottom" style="${ssrRenderStyle(`background-image: url(${unref(currentNews)?.imgSrc})`)}" data-v-a77db743></div><div class="image-subtitle margin-bottom" data-v-a77db743>${ssrInterpolate(unref(currentNews)?.date)}</div><div class="content" data-v-a77db743><!--[-->`);
+      _push(`</div><h1 class="margin-bottom" data-v-32429599>${ssrInterpolate(unref(currentNews)?.title)}</h1><div class="image margin-bottom" style="${ssrRenderStyle(`background-image: url(${unref(currentNews)?.imgSrc})`)}" data-v-32429599></div><div class="image-subtitle margin-bottom" data-v-32429599>${ssrInterpolate(unref(currentNews)?.date)}</div><div class="content" data-v-32429599><!--[-->`);
       ssrRenderList(unref(currentNews)?.newsBlocks, (newsBlock, index) => {
-        _push(`<div class="margin-bottom" data-v-a77db743>`);
+        _push(`<div class="margin-bottom" data-v-32429599>`);
         if (newsBlock.tag === "text") {
           _push(ssrRenderComponent(unref(UINewsText), {
             heading: newsBlock?.heading,
@@ -183,7 +183,7 @@ _sfc_main.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/news/[newsId].vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-const _newsId_ = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-a77db743"]]);
+const _newsId_ = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-32429599"]]);
 
 export { _newsId_ as default };
-//# sourceMappingURL=_newsId_-VMwOgd5F.mjs.map
+//# sourceMappingURL=_newsId_-eVItB_Pg.mjs.map

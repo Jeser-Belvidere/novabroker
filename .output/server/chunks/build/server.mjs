@@ -513,12 +513,12 @@ const _routes = [
   {
     name: "news-newsId",
     path: "/news/:newsId()",
-    component: () => import('./_newsId_-VMwOgd5F.mjs')
+    component: () => import('./_newsId_-eVItB_Pg.mjs')
   },
   {
     name: "tamozhennyy_kalkulyator",
     path: "/tamozhennyy_kalkulyator",
-    component: () => import('./tamozhennyy_kalkulyator-CsV3kPzL.mjs')
+    component: () => import('./tamozhennyy_kalkulyator-K9EWWAQj.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {

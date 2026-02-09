@@ -30,7 +30,7 @@ const emits = defineEmits(['back'])
                             <th scope="col">Мощность:</th>
                             <td>{{props.input?.power ? props.input?.power + ' ' + POWER_TYPES_MAP[props.input?.power_edizm] : 'Не указано' }}</td>
                         </tr>
-                        <tr>
+                        <tr v-if="props.input?.volume">
                             <th scope="col">Объем двигателя:</th>
                             <td>{{ props.input?.volume + ' см3' }}</td>
                         </tr>
@@ -62,17 +62,17 @@ const emits = defineEmits(['back'])
 								<td>{{ props.result?.poshl?.name }}</td>
 								<td>{{ props.result?.poshl?.value_rub }} руб.</td>
 							</tr>
-                            <tr v-if="props.input?.face === 'jur'">
+                            <tr v-if="props.input?.face === 'jur' ||  props.input?.sequential === true" >
 								<th scope="row">Пошлина</th>
 								<td>{{ props.result?.poshl?.name }}</td>
 								<td>{{ props.result?.poshl?.value_rub }} руб.</td>
 							</tr>
-                            <tr v-if="props.input?.face === 'jur'">
+                            <tr v-if="props.input?.face === 'jur' ||  props.input?.sequential === true" >
 								<th scope="row">Акциз</th>
 								<td>{{ props.result?.akciz?.name }}</td>
 								<td>{{ props.result?.akciz?.value_rub }} руб.</td>
 							</tr>
-                            <tr v-if="props.input?.face === 'jur'">
+                            <tr v-if="props.input?.face === 'jur' ||  props.input?.sequential === true">
 								<th scope="row">НДС</th>
 								<td>{{ props.result?.nds?.name }}</td>
 								<td>{{ props.result?.nds?.value_rub }} руб.</td>
