@@ -483,7 +483,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-DmtauJop.mjs')
+    component: () => import('./index-ixZ6SGpj.mjs')
   },
   {
     name: "privacy",
@@ -493,7 +493,7 @@ const _routes = [
   {
     name: "contacts",
     path: "/contacts",
-    component: () => import('./contacts-DTQIrYGg.mjs')
+    component: () => import('./contacts-BPFPOBh4.mjs')
   },
   {
     name: "slug",

@@ -6,6 +6,10 @@ const openYandex = () => {
 const openVK = () => {
 	window.open('https://vk.com/club232237455', '_blank');
 };
+
+const openMax = () => {
+	window.open('https://vk.com/club232237455', '_blank');
+}
 </script>
 
 <template>
@@ -141,6 +145,7 @@ const openVK = () => {
           <div class="contacts-icons">
             <UIIcon name="vk" pointer @click="openVK()" />
             <UIIcon name="yandex-maps" size="lg" pointer @click="openYandex()" />
+            <UIIcon name="max" size="lg" pointer @click="openMax()" />
           </div>
         </div>
         <div class="divider" />

@@ -64,6 +64,10 @@ const openVK = () => {
 	window.open('https://vk.com/club232237455', '_blank');
 };
 
+const openMax = () => {
+	window.open('https://vk.com/club232237455', '_blank');
+}
+
 async function handleFormSubmit() {
 	try {
 		isLoading.value = true;
@@ -137,6 +141,7 @@ async function handleFormSubmit() {
               <div class="contacts-icons">
                 <UIIcon name="vk" pointer @click="openVK()" />
                 <UIIcon name="yandex-maps" size="lg" pointer @click="openYandex()" />
+                <UIIcon name="max" size="lg" pointer @click="openMax()" />
               </div>
               <div>
                 <button @click.prevent="currentTab = 1">Оставить заявку</button>
