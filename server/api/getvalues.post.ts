@@ -13,9 +13,8 @@
 
 const getTKSData = async (data: IFormValues): Promise<TKSResponse | {error: unknown}> => {
 	try {
-
-		console.log(data)
 		const apiKey = process.env.TKS_KEY
+		//TODO: ZOD
 
 		if (!apiKey) {
 			throw new Error('No TKS_KEY provided')
@@ -23,7 +22,6 @@ const getTKSData = async (data: IFormValues): Promise<TKSResponse | {error: unkn
 
 		const TKS_URL = `https://api1.tks.ru/auto.json/json/${apiKey}/legacy/`
 
-		//TODO: errors + ZOD
 		const queryParams = new URLSearchParams()
 
 		Object.entries(data).forEach(([key, value]) => {
@@ -42,7 +40,6 @@ const getTKSData = async (data: IFormValues): Promise<TKSResponse | {error: unkn
 
 		return await res.json()
 	} catch (error) {
-		console.log(error)
 		log('error', 'Error in /api/getvalues.post', `${error}, data: ${JSON.stringify(data)}` )
 		return {
 			error: (error as Error).message
@@ -53,8 +50,6 @@ const getTKSData = async (data: IFormValues): Promise<TKSResponse | {error: unkn
 
 export default defineEventHandler(async (event) => {
 	try {
-		//TODO: ZOD
-
 		const formValues = await readBody(event) as IFormValues
 
 		const TKSData = await getTKSData(formValues)
