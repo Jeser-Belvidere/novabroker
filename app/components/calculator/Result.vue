@@ -62,17 +62,17 @@ const emits = defineEmits(['back'])
 								<td>{{ props.result?.poshl?.name }}</td>
 								<td>{{ props.result?.poshl?.value_rub }} руб.</td>
 							</tr>
-                            <tr v-if="props.input?.face === 'jur' ||  props.input?.sequential === true" >
+                            <tr v-if="props.input?.face === 'jur' ||  props.input?.sequential === true || props.input?.engine_type === 'electric'" >
 								<th scope="row">Пошлина</th>
 								<td>{{ props.result?.poshl?.name }}</td>
 								<td>{{ props.result?.poshl?.value_rub }} руб.</td>
 							</tr>
-                            <tr v-if="props.input?.face === 'jur' ||  props.input?.sequential === true" >
+                            <tr v-if="props.input?.face === 'jur' ||  props.input?.sequential === true || props.input?.engine_type === 'electric'" >
 								<th scope="row">Акциз</th>
 								<td>{{ props.result?.akciz?.name }}</td>
 								<td>{{ props.result?.akciz?.value_rub }} руб.</td>
 							</tr>
-                            <tr v-if="props.input?.face === 'jur' ||  props.input?.sequential === true">
+                            <tr v-if="props.input?.face === 'jur' ||  props.input?.sequential === true || props.input?.engine_type === 'electric'">
 								<th scope="row">НДС</th>
 								<td>{{ props.result?.nds?.name }}</td>
 								<td>{{ props.result?.nds?.value_rub }} руб.</td>
