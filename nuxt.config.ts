@@ -1,15 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-
-if (!process.env.TKS_KEY) {
-	console.error('No TKS_KEY provided')
-	process.exit(1)
-}
-
-if (!process.env.MAIL_USER || !process.env.MAIL_PASSWORD) {
-	console.error('No mailer credentials provided')
-	process.exit(1)
-}
-
 export default defineNuxtConfig({
 	compatibilityDate: '2025-07-15',
 	devtools: { enabled: true },
