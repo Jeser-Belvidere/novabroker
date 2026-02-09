@@ -391,9 +391,9 @@ main {
   }
 }
 
-/*  */
-
 .grid-wrapper {
+  margin-left: 12px;
+  margin-right: 12px;
   padding: 16px 32px;
   border: 1px solid var(--warm-beige);
   border-radius: 8px;
