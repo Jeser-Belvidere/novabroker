@@ -23,7 +23,6 @@ export interface TKSRequest {
 	pp_152_minpromtorg_akciz?: number
 	pp_152_minpromtorg_nds?: number
   bus_municipal_cb?: boolean
-  sh2017?: boolean //TODO ????
 }
 
 export type IFormValues = TKSRequest
