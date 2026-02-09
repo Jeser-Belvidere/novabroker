@@ -4,7 +4,6 @@
 :root {
   --ui-primary: #dabb8d;
   --ui-bg: #04281d;
-
   --dark-forest-green: #053326;
   --dark-green: #04281d;
   --warm-beige: #dabb8d;
@@ -18,8 +17,8 @@
   --header-height: 90px;
   --header-height-mobile: 100px;
   --footer-height: 120px;
-
-  font-size: 16px;
+  --ui-color-neutral-700: #e8e8e8;
+  --ui-text-highlighted: #e8e8e8;
   letter-spacing: 1px;
   scroll-behavior: smooth;
   *:disabled {

@@ -126,7 +126,10 @@ const isEngineTypeDisabled = computed(() => {
 })
 
 const isMassInputDisabled = computed(() => {
-	if (formState.ts_type === '01_8703' || formState.ts_type === '04_8704' || formState.ts_type === '05_870410') {
+	if (formState.ts_type === '01_8703' 
+  || formState.ts_type === '04_8704'
+  || formState.ts_type === '00_8704' 
+  || formState.ts_type === '05_870410') {
 		return false
 	} else {
 		return true

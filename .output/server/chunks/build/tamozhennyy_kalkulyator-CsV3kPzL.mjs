@@ -4542,7 +4542,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
       }
     });
     const isMassInputDisabled = computed(() => {
-      if (formState.ts_type === "01_8703" || formState.ts_type === "04_8704" || formState.ts_type === "05_870410") {
+      if (formState.ts_type === "01_8703" || formState.ts_type === "04_8704" || formState.ts_type === "00_8704" || formState.ts_type === "05_870410") {
         return false;
       } else {
         return true;
@@ -4582,7 +4582,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
       }, _attrs), {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<div class="calculator-container" data-v-d2118aac${_scopeId}><div class="calculator-row" data-v-d2118aac${_scopeId}>`);
+            _push2(`<div class="calculator-container" data-v-eac3497b${_scopeId}><div class="calculator-row" data-v-eac3497b${_scopeId}>`);
             if (unref(formState).ts_type === "00_8703") {
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
@@ -4680,7 +4680,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`</div><div class="calculator-row" data-v-d2118aac${_scopeId}><div class="cost-input" data-v-d2118aac${_scopeId}>`);
+            _push2(`</div><div class="calculator-row" data-v-eac3497b${_scopeId}><div class="cost-input" data-v-eac3497b${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UFormField, {
               class: "text-md",
               required: "",
@@ -4811,7 +4811,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`</div><div class="calculator-row" data-v-d2118aac${_scopeId}><div class="power-input" data-v-d2118aac${_scopeId}>`);
+            _push2(`</div><div class="calculator-row" data-v-eac3497b${_scopeId}><div class="power-input" data-v-eac3497b${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UFormField, {
               class: "text-md",
               required: !unref(isPowerDisabled),
@@ -4845,7 +4845,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`<div class="power-type" data-v-d2118aac${_scopeId}>`);
+            _push2(`<div class="power-type" data-v-eac3497b${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UFormField, {
               class: "text-md",
               name: "powerType",
@@ -4909,7 +4909,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`</div><div class="calculator-row" data-v-d2118aac${_scopeId}>`);
+            _push2(`</div><div class="calculator-row" data-v-eac3497b${_scopeId}>`);
             if (unref(formState).ts_type === "00_8703") {
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
@@ -5142,7 +5142,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
             } else {
               _push2(`<!---->`);
             }
-            _push2(`</div><div class="bus-eco-class" data-v-d2118aac${_scopeId}>`);
+            _push2(`</div><div class="bus-eco-class" data-v-eac3497b${_scopeId}>`);
             if (unref(formState).ts_type === "13_8702") {
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
@@ -5205,7 +5205,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
             } else {
               _push2(`<!---->`);
             }
-            _push2(`</div><div class="actions" data-v-d2118aac${_scopeId}>`);
+            _push2(`</div><div class="actions" data-v-eac3497b${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UButton, {
               loading: props.isLoading,
               type: "submit",
@@ -5624,7 +5624,7 @@ _sfc_main$2.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/calculator/Form.vue");
   return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
 };
-const __nuxt_component_1 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$2, [["__scopeId", "data-v-d2118aac"]]), { __name: "CalculatorForm" });
+const __nuxt_component_1 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$2, [["__scopeId", "data-v-eac3497b"]]), { __name: "CalculatorForm" });
 const _sfc_main$1 = /* @__PURE__ */ defineComponent({
   __name: "Result",
   __ssrInlineRender: true,
@@ -5785,4 +5785,4 @@ _sfc_main.setup = (props, ctx) => {
 const tamozhennyy_kalkulyator = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-9375a67a"]]);
 
 export { tamozhennyy_kalkulyator as default };
-//# sourceMappingURL=tamozhennyy_kalkulyator-BZYhwNbc.mjs.map
+//# sourceMappingURL=tamozhennyy_kalkulyator-CsV3kPzL.mjs.map
