@@ -4382,7 +4382,7 @@ _sfc_main$3.setup = (props, ctx) => {
 };
 const POWER_TYPES_OPTIONS = [
   { label: "Л.С.", value: "ls" },
-  { value: "kwt", label: "кВт" }
+  { value: "kvt", label: "кВт" }
 ];
 const FACE_TYPES_OPTIONS = [
   { label: "Физическое лицо", value: "nat" },
@@ -5791,4 +5791,4 @@ _sfc_main.setup = (props, ctx) => {
 const tamozhennyy_kalkulyator = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-9375a67a"]]);
 
 export { tamozhennyy_kalkulyator as default };
-//# sourceMappingURL=tamozhennyy_kalkulyator-nIOSgDxY.mjs.map
+//# sourceMappingURL=tamozhennyy_kalkulyator-HFXW4He3.mjs.map

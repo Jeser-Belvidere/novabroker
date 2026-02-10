@@ -1,6 +1,6 @@
 export const POWER_TYPES_OPTIONS = [
 	{label: 'Л.С.', value:'ls'}, 
-	{value: 'kwt', label: 'кВт'}
+	{value: 'kvt', label: 'кВт'}
 ]
 
 export const FACE_TYPES_OPTIONS = [
