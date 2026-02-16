@@ -6,12 +6,26 @@ const props = defineProps<{
 }>()
 
 const emits = defineEmits(['back'])
+
+const prepareNumber = (number: string | undefined) => {
+	if (!number) return number
+	const numberWithoutComma = number.split('.')[0]
+	if (!numberWithoutComma) return number
+	return numberWithoutComma.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')
+}
+
+const prepareNumberInString = (string: string | undefined) => {
+	if (!string) return string
+	const numberWithoutComma = string.split(' ')[0]
+	if (!numberWithoutComma) return string
+	return [numberWithoutComma.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 '), string.split(' ')[1]].join(' ')
+}
 </script>
 <template>
     <div class="result-container">
         <div class="result-content">
             <div class="result-input">
-                <h3>Введенные данные:</h3>
+                <h3>Введенные данные</h3>
                 <table class="input-table">
                     <tbody>
                         <tr>
@@ -38,7 +52,7 @@ const emits = defineEmits(['back'])
                 </table>
             </div>
             <div class="result-output">
-                <h3>Таможенные сборы:</h3>
+                <h3>Расчет таможенных сборов при ввозе тс на {{ new Date(Date.now()).toLocaleDateString('ru-RU') }}</h3>
                 <table>
 					<caption>
                         Примерные результаты расчета. Для точного расчета обратитесь к нашим специалистам *
@@ -53,40 +67,40 @@ const emits = defineEmits(['back'])
 						<tbody>
 							<tr>
 								<th scope="row">Таможенное оформление</th>
-								<td>{{ props.result?.tam_oform?.name }}</td>
-								<td>{{ props.result?.tam_oform?.name }}</td>
+								<td>{{ prepareNumberInString(props.result?.tam_oform?.name) }}</td>
+								<td>{{ prepareNumberInString(props.result?.tam_oform?.name) }}</td>
 							</tr>
 							<!-- V if  Единая ставка только для автомобилей b физлиц-->
 							<tr v-if="props.input?.face === 'nat'">
 								<th scope="row">Единая ставка</th>
 								<td>{{ props.result?.poshl?.name }}</td>
-								<td>{{ props.result?.poshl?.value_rub }} руб.</td>
+								<td>{{ prepareNumber(props.result?.poshl?.value_rub) }} руб.</td>
 							</tr>
                             <tr v-if="props.input?.face === 'jur' ||  props.input?.sequential === true || props.input?.engine_type === 'electric'" >
 								<th scope="row">Пошлина</th>
 								<td>{{ props.result?.poshl?.name }}</td>
-								<td>{{ props.result?.poshl?.value_rub }} руб.</td>
+								<td>{{ prepareNumber(props.result?.poshl?.value_rub) }} руб.</td>
 							</tr>
                             <tr v-if="props.input?.face === 'jur' ||  props.input?.sequential === true || props.input?.engine_type === 'electric'" >
 								<th scope="row">Акциз</th>
 								<td>{{ props.result?.akciz?.name }}</td>
-								<td>{{ props.result?.akciz?.value_rub }} руб.</td>
+								<td>{{ prepareNumber(props.result?.akciz?.value_rub) }} руб.</td>
 							</tr>
                             <tr v-if="props.input?.face === 'jur' ||  props.input?.sequential === true || props.input?.engine_type === 'electric'">
 								<th scope="row">НДС</th>
 								<td>{{ props.result?.nds?.name }}</td>
-								<td>{{ props.result?.nds?.value_rub }} руб.</td>
+								<td>{{ prepareNumber(props.result?.nds?.value_rub) }} руб.</td>
 							</tr>
 							<tr>
-								<th scope="row">Утилизационный сбор</th>
-								<td>{{ props.result?.util_sbor.value_base }} руб. x {{ props.result?.util_sbor.value_coef }}</td>
-								<td>{{ props.result?.util_sbor.value_rub }} руб.</td>
+								<th scope="row">Утиль сбор</th>
+								<td>{{ prepareNumber(props.result?.util_sbor.value_base) }} руб. x {{ props.result?.util_sbor.value_coef }}</td>
+								<td>{{ prepareNumber(props.result?.util_sbor.value_rub) }} руб.</td>
 							</tr>
 							</tbody>
 							<tfoot>
 							<tr>
 								<th colspan="2" scope="row">Итого c утилизационным сбором</th>
-								<td class="bold">{{ props.result?.sum_util.value_rub }} руб.</td>
+								<td class="result-sum">{{ prepareNumber(props.result?.sum_util.value_rub) }} руб.</td>
 							</tr>
 							</tfoot>
 
@@ -94,7 +108,7 @@ const emits = defineEmits(['back'])
             </div>
         </div>
         <div class="result-actions">
-            <UButton variant="outline" label="Вернуться" color="primary" @click="emits('back')" />
+            <UButton variant="solid" label="Вернуться" color="primary" size="xl" @click="emits('back')" />
             <!-- <UButton variant="outline" label="Скачать" color="primary" @click="emits('back')" /> -->
         </div>
     </div>
@@ -102,21 +116,30 @@ const emits = defineEmits(['back'])
 
 <style lang="css" scoped>
 .result-container {
+	font-weight: 600;
     display: flex;
     width: 900px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: var(--light-grey);
+    box-shadow: 0 0 10px #a4a4a4;
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 1.1rem;
     @media screen and (max-width: 868px) {
         width: 600px;
     }
 
 	@media screen and (max-width: 620px) {
         width: 400px;
+        padding: 8px;
+        font-size: 1rem;
+	    font-weight: 600;
     }
 
 	@media screen and (max-width: 440px) {
-        width: 340px;
+        width: 100%;
     }
 
     .result-content {
@@ -126,7 +149,6 @@ const emits = defineEmits(['back'])
         align-items: center;
         justify-content: center;
         gap: 32px;
-
         .result-input {
             display: flex;
             width: 100%;
@@ -172,6 +194,7 @@ const emits = defineEmits(['back'])
 					caption-side: bottom;
 					padding: 10px;
 					border: none;
+                    font-size: 0.8rem;
 				}
 
 				th {
@@ -191,7 +214,6 @@ const emits = defineEmits(['back'])
 
 				tr :last-child {
 					border-right: none;
-
 				}
 
 				tfoot :last-child {
@@ -209,9 +231,15 @@ h3 {
     letter-spacing: 2px;
     margin-bottom: 10px;
     font-weight: 600;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.bold {
-	font-weight: 600;
+.result-sum {
+	min-width: 110px;
 }
 </style>

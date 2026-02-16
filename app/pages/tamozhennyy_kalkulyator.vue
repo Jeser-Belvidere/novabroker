@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 useSeoMeta({
 	title: 'Калькулятор таможенных платежей',
 	keywords: 'калькулятор растаможки автомобилей таможенный калькулятор авто расчет таможенных платежей при ввозе автомобиля',
@@ -13,7 +14,22 @@ const toast = useToast()
 const isLoading = ref(false);
 const computeResults = ref<TKSResponse | null>(null)
 const stepperValue = ref<0 | 1>(0)
-const formData = ref<IFormValues | null>(null)
+
+
+const formData = reactive<IFormValues>({
+	face: 'nat', 
+	cost: '',
+	currency: '643',
+	age: '3', 
+	power: '',
+	power_edizm: 'ls',
+	volume: '',
+	engine_type: 'petrol',
+	mass: '',
+	offroad: false,
+	caravan: false, 
+	ts_type: '00_8703', 
+})
 
 const items = [
 	{ slot: 'form', title: 'Введите данные по авто',},
@@ -34,19 +50,22 @@ const getData = async (data: IFormValues) => {
 	}
 }
 
-const handleSubmit = async (data: IFormValues) => {
-	const response = await getData(data)
+const handleSubmit = async (updatedFormData: IFormValues) => {
+	Object.assign(formData, updatedFormData)
+  
+	const response = await getData(formData)
 	if (!response || 'error' in response) {
 		toast.add({
 			title: 'Упс, что-то пошло не так',
-			color: 'error',
-			progress: true
+			progress:false,
+			ui: {
+				root: 'ui-toast-wrapper',
+			}
 		})
   
 		return 
 	}
 
-	formData.value = data
 	computeResults.value = response
 	stepperValue.value = 1
 }
@@ -65,7 +84,7 @@ const handleSubmit = async (data: IFormValues) => {
       </div>
       <UStepper class="stepper" disabled :items="items" :model-value="stepperValue">
         <template #form>
-          <CalculatorForm ref="form" :is-loading="isLoading" @submit="handleSubmit"/>
+          <CalculatorForm ref="form" v-model="formData" :is-loading="isLoading" @submit="handleSubmit"/>
         </template>
         <template #result>
           <CalculatorResult :input="formData" :result="computeResults" @back="() => stepperValue = 0"/>
@@ -84,7 +103,7 @@ const handleSubmit = async (data: IFormValues) => {
 
   h2 {
     font-size: 1.3rem;
-    color: var(--light-grey);
+    color: var(--black);
     text-align: center;
 
     @media screen and (max-width: 440px) {
@@ -114,12 +133,37 @@ main {
   align-items: center;
   min-height: calc(100vh - var(--header-height));
   width: 100%;
-  background-color: var(--dark-forest-green);
+  background-color: var(--dark-grey);
   margin-top: var(--header-height);
   padding: 48px 32px;
   @media screen and (max-width: 868px) {
     padding: 16px 16px;
   }
+  @media screen and (max-width: 468px) {
+    padding: 8px 8px;
+  }
+
+  --ui-bg-accented: var(--warm-beige);
+  --ui-primary: var(--warm-beige);
+  --ui-bg: var(--dark-grey);
+  --ui-text: var(--black);
+  --ui-border-muted: var(--darker-grey);
+  --text-xs: 0.77rem;
+  /* --tw-ring-inset: #04281d; */
+  /* --tw-ring-color: #04281d !important; */
+
+  /* Stepper inactive bg and select menu bg */
+  --ui-bg-elevated: var(--light-grey);
+
+  /* Radio buttons and inputs border */
+  --ui-border-accented: var(--darker-grey);
+
+  /* Selects and inputs palaceholders */
+  --ui-text-highlighted: var(--black);
+  --ui-text-dimmed: #ababab;
+
+  --font-weight-medium: 600;
+  letter-spacing: 1.5px;
 }
 
 .stepper {

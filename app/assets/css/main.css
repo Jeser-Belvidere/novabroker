@@ -2,12 +2,12 @@
 @import "@nuxt/ui";
 
 :root {
-  --ui-primary: #dabb8d;
-  --ui-bg: #04281d;
   --dark-forest-green: #053326;
   --dark-green: #04281d;
   --warm-beige: #dabb8d;
   --light-grey: #e8e8e8;
+  --dark-grey: #dcdcdc;
+  --darker-grey: #969696;
   --medium-taupe: #827667;
   --medium-taupe-light: #c5c2b2;
   --warm-ligth: #fffae8;
@@ -24,6 +24,16 @@
   *:disabled {
     cursor: not-allowed !important;
   }
+
+  /* Styles for select menus in calculator */
+  --ui-bg: var(--dark-grey);
+  --ui-text: var(--black);
+  --ui-border: var(--dark-grey);
+  --font-weight-medium: 700;
+}
+
+.ui-toast-wrapper {
+  background-color: var(--warm-beige);
 }
 
 @font-face {

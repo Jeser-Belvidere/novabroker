@@ -71,3 +71,18 @@ export const CURRENCY_OPTIONS_MAP: Record<string, string> = CURRENCY_OPTIONS.red
 export const AGE_OPTIONS_MAP: Record<string, string> = AGE_OPTIONS.reduce((acc, cur) => ({...acc, [cur.value]: cur.label}), {})
 export const POWER_TYPES_MAP: Record<string, string> = POWER_TYPES_OPTIONS.reduce((acc, cur) => ({...acc, [cur.value]: cur.label}), {})
 export const ENGINE_TYPES_MAP: Record<string, string> = ENGINE_TYPES_OPTIONS.reduce((acc, cur) => ({...acc, [cur.value]: cur.label}), {})
+
+export const initialState: IFormValues = {
+	face: 'nat',
+	cost: '',
+	currency: '643',
+	age: '3',
+	power: '',
+	power_edizm: 'ls',
+	volume: '',
+	engine_type: 'petrol',
+	mass: '',
+	offroad: false,
+	caravan: false, 
+	ts_type: '00_8703', 
+}

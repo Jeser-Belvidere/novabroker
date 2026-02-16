@@ -9,39 +9,28 @@ import {
 	POWER_TYPES_OPTIONS, 
 	TS_TYPES_OPTIONS, 
 	BUS_CAPACITY_OPTIONS, 
-	BUS_ECO_CLASS_OPTIONS 
+	BUS_ECO_CLASS_OPTIONS,
+	initialState,
 } from './consts'
 import { vMaska } from 'maska/vue'
 import type { MaskInputOptions } from 'maska'
 // import type * as zod from 'zod'
 // const { id, emitFormBlur, emitFormInput, emitFormChange } = useFormField()
+// const formModel = defineModel<IFormValues>()
+
 const props = defineProps<{
     isLoading: boolean
+    modelValue: IFormValues
 }>()
 
-const emits = defineEmits(['submit'])
+const emits = defineEmits(['submit', 'update:modelValue'])
 
-// const schema = zod.object(IFormValues)
-
-// type schema = zod.infer<IFormValues>;
-
-const initialState: IFormValues = {
-	face: 'nat', // nat, jur
-	cost: '',
-	currency: '643',
-	age: '3', //3, 35, 57, 7
-	power: '',
-	power_edizm: 'ls', // kvt, ls
-	volume: '',
-	engine_type: 'petrol', // petrol, diesel, petrol_electric, diesel_electric, electric, no_engine
-	mass: '',
-	offroad: false, // Повышенной проходимости (для ts_type=00_8703)
-	caravan: false, // Автодом (для ts_type=00_8703)
-	ts_type: '00_8703', //00_8703 - автомобиль, 00_8704 - пикап, 01_8703 - квадроцикл, 02_8703 - гольф-кар, 03_8703101100 - снегоход, 04_8704 - грузовик, 05_870410 - самосвал, 06_8711 - мотоцикл, 07_8711201000 - мотороллер, 08_8711100000 - мопед, 09_8716400000 - автоприцеп, 10_871610 - дом-автоприцеп, 11_890399 - водный мотоцикл, 12_8903 - катер (яхта, лодка), 13_8702 - автобус
-}
-
-const formState = reactive({...initialState})
+const formState = reactive({...props.modelValue})
 const formRef = ref()
+
+watch(formState , () => {
+	emits('update:modelValue', formState)
+})
 
 const onSubmit = (event: FormSubmitEvent<IFormValues>) => {
 	emits('submit', event.data)
@@ -171,23 +160,23 @@ const isPowerDisabled = computed(() => {
     <UForm ref="formRef" class="form" :state="formState" :validate-on="['change', 'blur', 'input']" :disabled="props.isLoading" @submit.prevent="onSubmit" @reset="onReset">
         <div class="calculator-container">
           <div class="calculator-row">
-            <UFormField v-if="formState.ts_type === '00_8703'" class="text-md" label="Расчитать для:" size="lg" name="face">
+            <UFormField v-if="formState.ts_type === '00_8703'" class="text-md" label="Расчитать для:" size="xl" name="face">
               <URadioGroup v-model="formState.face" size="xs" variant="table" orientation="horizontal" :items="FACE_TYPES_OPTIONS" />
             </UFormField>
-            <UFormField class="text-md" label="Тип ТС" size="lg" name="age">
+            <UFormField class="text-md" label="Тип ТС" size="xl" name="age">
               <USelect v-model="formState.ts_type" variant="outline" :ui="{ content: 'min-w-fit' }"  arrow :items="TS_TYPES_OPTIONS" class="w-full"/>
             </UFormField>
-            <UFormField class="text-md" label="Возраст ТС" size="lg" name="age">
+            <UFormField class="text-md" label="Возраст ТС" size="xl" name="age">
               <USelect v-model="formState.age"  arrow :items="AGE_OPTIONS" class="w-full"/>
             </UFormField>
           </div>
           <div class="calculator-row">
             <!-- <div class="cost-column"> -->
               <div class="cost-input">
-                <UFormField class="text-md" required label="Стоймость" name="price" size="lg" >
-                  <UInput v-model="formState.cost" v-maska="costMask" required variant="outline" min="1" class="text-md w-full"/>
+                <UFormField class="text-md" required label="Стоймость" name="price" size="xl" >
+                  <UInput v-model="formState.cost" v-maska="costMask" placeholder="стоймость" required variant="outline" min="1" class="text-md w-full"/>
                 </UFormField>
-                <UFormField class="text-md" label="" size="lg" name="currency">
+                <UFormField class="text-md" label="" size="xl" name="currency">
                   <USelect v-model="formState.currency" required arrow :items="CURRENCY_OPTIONS" />
                 </UFormField>
               </div>
@@ -195,10 +184,10 @@ const isPowerDisabled = computed(() => {
                 <UCheckbox v-model="formState.pp_152_minpromtorg_cb"  label="Авто растаможен при ввозе в ЕАЭС"/>
               </UFormField> -->
             <!-- </div> -->
-            <UFormField class="text-md" :required="!isVolumeDisabled"  label="Объем двигателя, см3" size="lg" name="volume">
-              <UInput v-model="formState.volume" v-maska="volumeMask" :required="!isVolumeDisabled" :disabled="isVolumeDisabled" class="text-md w-full"/>
+            <UFormField class="text-md" :required="!isVolumeDisabled"  label="Объем двигателя, см3" size="xl" name="volume">
+              <UInput v-model="formState.volume" v-maska="volumeMask" placeholder="объем" :required="!isVolumeDisabled" :disabled="isVolumeDisabled" class="text-md w-full"/>
             </UFormField>
-            <UFormField class="text-md" label="Тип двигателя" size="lg" name="engineType" :disabled="isEngineTypeDisabled">
+            <UFormField class="text-md" label="Тип двигателя" size="xl" name="engineType" :disabled="isEngineTypeDisabled">
               <USelect v-model="formState.engine_type" :ui="{ content: 'min-w-fit' }"  arrow :items="ENGINE_TYPES_OPTIONS" class="w-full" :disabled="isEngineTypeDisabled"/>
             </UFormField>
           </div>
@@ -218,8 +207,8 @@ const isPowerDisabled = computed(() => {
           </div> -->
           <div class="calculator-row">
             <div class="power-input">
-              <UFormField class="text-md" :required="!isPowerDisabled" label="Мощность" size="lg" name="power" :disabled="isPowerDisabled">
-                <UInput v-model="formState.power" v-maska="powerMask" class="text-md w-full" :disabled="isPowerDisabled" :required="!isPowerDisabled"/>
+              <UFormField class="text-md" :required="!isPowerDisabled" label="Мощность" size="xl" name="power" :disabled="isPowerDisabled">
+                <UInput v-model="formState.power" v-maska="powerMask" placeholder="мощность" class="text-md w-full" :disabled="isPowerDisabled" :required="!isPowerDisabled"/>
               </UFormField>
               <div class="power-type">
                 <UFormField class="text-md" name="powerType" :disabled="isPowerDisabled">
@@ -227,8 +216,8 @@ const isPowerDisabled = computed(() => {
                 </UFormField>
               </div>
             </div>
-            <UFormField class="text-md" label="Масса, тонн" size="lg" name="mass" :disabled="isMassInputDisabled">
-              <UInput v-model="formState.mass" v-maska="massMask" class="text-md w-full" :disabled="isMassInputDisabled"/>
+            <UFormField class="text-md" label="Масса, тонн" size="xl" name="mass" :disabled="isMassInputDisabled">
+              <UInput v-model="formState.mass" v-maska="massMask" placeholder="масса" class="text-md w-full" :disabled="isMassInputDisabled"/>
             </UFormField>
           </div>
             
@@ -236,49 +225,49 @@ const isPowerDisabled = computed(() => {
           <!-- Additional points -->
           <div class="calculator-row">
 			      <!-- 00_8703 автомобиль -->
-            <UFormField v-if="formState.ts_type === '00_8703'" class="text-md" label="Повышенной проходимости" size="lg" name="offroad">
+            <UFormField v-if="formState.ts_type === '00_8703'" class="text-md" label="Повышенной проходимости" size="xl" name="offroad">
               <UCheckbox v-model="formState.offroad" />
             </UFormField>
-            <UFormField v-if="formState.ts_type === '00_8703'" class="text-md" label="Автодом" size="lg" name="caravan">
+            <UFormField v-if="formState.ts_type === '00_8703'" class="text-md" label="Автодом" size="xl" name="caravan">
               <UCheckbox v-model="formState.caravan" />
             </UFormField>
 			      <!-- 04_8704 грузовик -->
-            <UFormField v-if="formState.ts_type === '04_8704'" class="text-md" label="Тип 'Форвардер'" size="lg" name="forwarder">
+            <UFormField v-if="formState.ts_type === '04_8704'" class="text-md" label="Тип 'Форвардер'" size="xl" name="forwarder">
               <UCheckbox v-model="formState.forwarder" />
             </UFormField>
             <!-- 05_870410 самосвал -->
-            <UFormField v-if="formState.ts_type === '05_870410'" class="text-md" label="Рама" size="lg" name="chassis">
+            <UFormField v-if="formState.ts_type === '05_870410'" class="text-md" label="Рама" size="xl" name="chassis">
               <URadioGroup v-model="formState.chassis" size="xs" variant="table" orientation="horizontal" :items="CHASSIS_TYPES_OPTIONS" />
             </UFormField>
             <!-- 12_8903 Катер -->
-            <UFormField v-if="formState.ts_type === '12_8903'" class="text-md" label="Морского класса" size="lg" name="boat_sea">
+            <UFormField v-if="formState.ts_type === '12_8903'" class="text-md" label="Морского класса" size="xl" name="boat_sea">
               <UCheckbox v-model="formState.boat_sea" />
             </UFormField>
             <!-- If electric engine or hybrid -->
-           <UFormField v-if="formState.engine_type === 'diesel_electric' || formState.engine_type === 'petrol_electric'" class="text-md" label="Мощность ДВС больше максимальной 30-минутной мощности ЭД" size="lg" name="boat_sea">
+           <UFormField v-if="formState.engine_type === 'diesel_electric' || formState.engine_type === 'petrol_electric'" class="text-md" label="Мощность ДВС больше максимальной 30-минутной мощности ЭД" size="xl" name="boat_sea">
               <UCheckbox v-model="formState.mdvs_gt_m30ed" />
             </UFormField>
-            <UFormField v-if="formState.engine_type === 'diesel_electric' || formState.engine_type === 'petrol_electric'" class="text-md" label="Силовая установка последовательного типа" size="lg" name="sequential">
+            <UFormField v-if="formState.engine_type === 'diesel_electric' || formState.engine_type === 'petrol_electric'" class="text-md" label="Силовая установка последовательного типа" size="xl" name="sequential">
               <UCheckbox v-model="formState.sequential" />
             </UFormField>
             <!-- If 13_8702 автобус -->
-            <UFormField v-if="formState.ts_type === '13_8702'" class="text-md" label="Вместимость" size="lg" name="chassis">
+            <UFormField v-if="formState.ts_type === '13_8702'" class="text-md" label="Вместимость" size="xl" name="chassis">
               <URadioGroup v-model="formState.buscap" size="xs" variant="table" orientation="horizontal" :items="BUS_CAPACITY_OPTIONS" />
             </UFormField>
             
           </div>
           <div class="bus-eco-class">
-            <UFormField v-if="formState.ts_type === '13_8702'" class="text-md" label="Для осуществления перевозок по межмуниципальным, смежным межрегиональным, межрегиональным и международным маршрутам регулярных перевозок" size="lg" name="bus_municipal_cb">
+            <UFormField v-if="formState.ts_type === '13_8702'" class="text-md" label="Для осуществления перевозок по межмуниципальным, смежным межрегиональным, межрегиональным и международным маршрутам регулярных перевозок" size="xl" name="bus_municipal_cb">
               <UCheckbox v-model="formState.bus_municipal_cb" />
             </UFormField>
-            <UFormField v-if="formState.ts_type === '13_8702'" class="text-md" label="Эк. класс" size="lg" name="chassis">
+            <UFormField v-if="formState.ts_type === '13_8702'" class="text-md" label="Эк. класс" size="xl" name="chassis">
               <URadioGroup v-model="formState.buscap" size="xs" variant="table" orientation="vertical" :items="BUS_ECO_CLASS_OPTIONS" />
             </UFormField>
           </div>
           
           <div class="actions">
-            <UButton :loading="props.isLoading" type="submit" variant="solid" label="Расчитать" color="primary" />
-            <UButton :loading="props.isLoading" type="reset" variant="outline" label="Сбросить" color="primary" />
+            <UButton :loading="props.isLoading" size="xl" type="submit" variant="solid" label="Расчитать" color="primary" />
+            <UButton :disabled="props.isLoading" size="xl" type="reset" variant="subtle" label="Сбросить" color="primary" />
           </div>
         </div>
       </UForm>
@@ -291,6 +280,10 @@ const isPowerDisabled = computed(() => {
   justify-content: center;
   flex-direction: column;
   gap: 20px;
+  background-color: var(--light-grey);
+  box-shadow: 0 0 10px #a4a4a4;
+  border-radius: 10px;
+  padding: 16px;
 }
 
 .calculator-container {
