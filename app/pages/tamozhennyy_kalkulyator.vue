@@ -149,8 +149,7 @@ main {
   --ui-text: var(--black);
   --ui-border-muted: var(--darker-grey);
   --text-xs: 0.77rem;
-  /* --tw-ring-inset: #04281d; */
-  /* --tw-ring-color: #04281d !important; */
+  --ui-text-inverted: var(--black);
 
   /* Stepper inactive bg and select menu bg */
   --ui-bg-elevated: var(--light-grey);

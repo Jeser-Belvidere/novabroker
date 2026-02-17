@@ -176,7 +176,7 @@ const prepareNumberInString = (string: string | undefined) => {
                 align-items: center;
                 justify-content: space-between;
                 :last-child {
-                    color: var(--warm-beige);
+                    color: var(--black);
                 }
             }
             table {
