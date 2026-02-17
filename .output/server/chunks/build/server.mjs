@@ -483,7 +483,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-ixZ6SGpj.mjs')
+    component: () => import('./index-CaZm3BtW.mjs')
   },
   {
     name: "privacy",
@@ -493,7 +493,7 @@ const _routes = [
   {
     name: "contacts",
     path: "/contacts",
-    component: () => import('./contacts-BPFPOBh4.mjs')
+    component: () => import('./contacts-DifLFMo3.mjs')
   },
   {
     name: "slug",
@@ -518,7 +518,7 @@ const _routes = [
   {
     name: "tamozhennyy_kalkulyator",
     path: "/tamozhennyy_kalkulyator",
-    component: () => import('./tamozhennyy_kalkulyator-BIZCL72D.mjs')
+    component: () => import('./tamozhennyy_kalkulyator-C-8d1XmY.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {

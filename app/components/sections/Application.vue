@@ -65,7 +65,7 @@ const openVK = () => {
 };
 
 const openMax = () => {
-	window.open('https://vk.com/club232237455', '_blank');
+	window.open('https://max.ru/u/f9LHodD0cOKBqEeIpYjND9OaKCNPmPbINwy0_Gnyht8zLxKdPCu_OZzK96Y', '_blank');
 }
 
 async function handleFormSubmit() {

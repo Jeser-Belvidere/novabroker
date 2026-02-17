@@ -9,23 +9,36 @@ const emits = defineEmits(['back'])
 
 const prepareNumber = (number: string | undefined) => {
 	if (!number) return number
-	const numberWithoutComma = number.split('.')[0]
+
+	const numberWithoutComma = number.split('.')
+
 	if (!numberWithoutComma) return number
-	return numberWithoutComma.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')
+
+	if (number.split('.').length > 1) {
+		return [numberWithoutComma[0]!.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 '), numberWithoutComma[1]].join('.')
+	}
+
+	return numberWithoutComma[0]!.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')
 }
 
 const prepareNumberInString = (string: string | undefined) => {
 	if (!string) return string
-	const numberWithoutComma = string.split(' ')[0]
+
+	const numberWithoutComma = string.split(' ')
+
 	if (!numberWithoutComma) return string
-	return [numberWithoutComma.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 '), string.split(' ')[1]].join(' ')
+
+	return [numberWithoutComma[0]!.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 '), numberWithoutComma[1]].join(' ')
 }
 </script>
 <template>
     <div class="result-container">
         <div class="result-content">
             <div class="result-input">
+            <div class="header">
                 <h3>Введенные данные</h3>
+                <h3>NOVABROKER</h3>
+            </div>
                 <table class="input-table">
                     <tbody>
                         <tr>
@@ -156,6 +169,16 @@ const prepareNumberInString = (string: string | undefined) => {
             align-items: flex-start;
             justify-content: center;
             gap: 16px;
+            .header {
+                display: flex;
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                :last-child {
+                    color: var(--warm-beige);
+                }
+            }
             table {
                 width: 100%;
                 border-collapse: separate; 
@@ -229,14 +252,10 @@ const prepareNumberInString = (string: string | undefined) => {
 h3 {
     font-size: 1.5rem;
     letter-spacing: 2px;
-    margin-bottom: 10px;
     font-weight: 600;
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    @media screen and (max-width: 620px) {
+        font-size: 1.2rem;
+    }
 }
 
 .result-sum {
