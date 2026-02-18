@@ -25,6 +25,10 @@
     cursor: not-allowed !important;
   }
 
+  input {
+    cursor: text !important;
+  }
+
   /* Styles for select menus in calculator */
   --ui-bg: var(--dark-grey);
   --ui-text: var(--black);
@@ -63,9 +67,7 @@
 }
 
 body {
-  /* font-weight: 600; */
   background-color: var(--dark-forest-green);
-  /* cursor: url("/cursor.svg"), default; */
   overflow-x: hidden;
   scroll-behavior: smooth;
 }

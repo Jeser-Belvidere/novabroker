@@ -80,40 +80,40 @@ const prepareNumberInString = (string: string | undefined) => {
 						<tbody>
 							<tr>
 								<th scope="row">Таможенное оформление</th>
-								<td>{{ prepareNumberInString(props.result?.tam_oform?.name) }}</td>
-								<td>{{ prepareNumberInString(props.result?.tam_oform?.name) }}</td>
+								<td class="numbers">{{ prepareNumberInString(props.result?.tam_oform?.name) }}</td>
+								<td class="numbers">{{ prepareNumberInString(props.result?.tam_oform?.name) }}</td>
 							</tr>
 							<!-- V if  Единая ставка только для автомобилей b физлиц-->
 							<tr v-if="props.input?.face === 'nat'">
 								<th scope="row">Единая ставка</th>
-								<td>{{ props.result?.poshl?.name }}</td>
-								<td>{{ prepareNumber(props.result?.poshl?.value_rub) }} руб.</td>
+								<td class="numbers">{{ props.result?.poshl?.name }}</td>
+								<td class="numbers">{{ prepareNumber(props.result?.poshl?.value_rub) }} руб.</td>
 							</tr>
                             <tr v-if="props.input?.face === 'jur' ||  props.input?.sequential === true || props.input?.engine_type === 'electric'" >
 								<th scope="row">Пошлина</th>
-								<td>{{ props.result?.poshl?.name }}</td>
-								<td>{{ prepareNumber(props.result?.poshl?.value_rub) }} руб.</td>
+								<td class="numbers">{{ props.result?.poshl?.name }}</td>
+								<td class="numbers">{{ prepareNumber(props.result?.poshl?.value_rub) }} руб.</td>
 							</tr>
                             <tr v-if="props.input?.face === 'jur' ||  props.input?.sequential === true || props.input?.engine_type === 'electric'" >
 								<th scope="row">Акциз</th>
-								<td>{{ props.result?.akciz?.name }}</td>
-								<td>{{ prepareNumber(props.result?.akciz?.value_rub) }} руб.</td>
+								<td class="numbers">{{ props.result?.akciz?.name }}</td>
+								<td class="numbers">{{ prepareNumber(props.result?.akciz?.value_rub) }} руб.</td>
 							</tr>
                             <tr v-if="props.input?.face === 'jur' ||  props.input?.sequential === true || props.input?.engine_type === 'electric'">
 								<th scope="row">НДС</th>
-								<td>{{ props.result?.nds?.name }}</td>
-								<td>{{ prepareNumber(props.result?.nds?.value_rub) }} руб.</td>
+								<td class="numbers">{{ props.result?.nds?.name }}</td>
+								<td class="numbers">{{ prepareNumber(props.result?.nds?.value_rub) }} руб.</td>
 							</tr>
 							<tr>
 								<th scope="row">Утиль сбор</th>
-								<td>{{ prepareNumber(props.result?.util_sbor.value_base) }} руб. x {{ props.result?.util_sbor.value_coef }}</td>
-								<td>{{ prepareNumber(props.result?.util_sbor.value_rub) }} руб.</td>
+								<td class="numbers">{{ prepareNumber(props.result?.util_sbor.value_base) }} руб. x {{ props.result?.util_sbor.value_coef }}</td>
+								<td class="numbers">{{ prepareNumber(props.result?.util_sbor.value_rub) }} руб.</td>
 							</tr>
 							</tbody>
 							<tfoot>
 							<tr>
-								<th colspan="2" scope="row">Итого c утилизационным сбором</th>
-								<td class="result-sum">{{ prepareNumber(props.result?.sum_util.value_rub) }} руб.</td>
+								<th class="result-sum-row-header" colspan="2" scope="row">Итого c утилизационным сбором</th>
+								<td class="result-sum-row-td numbers">{{ prepareNumber(props.result?.sum_util.value_rub) }} руб.</td>
 							</tr>
 							</tfoot>
 
@@ -128,6 +128,12 @@ const prepareNumberInString = (string: string | undefined) => {
 </template>
 
 <style lang="css" scoped>
+/* .numbers {
+    font-family: "Courier New", monospace;
+    letter-spacing: 0.8px;
+    font-weight: 400;
+} */
+
 .result-container {
 	font-weight: 600;
     display: flex;
@@ -179,7 +185,9 @@ const prepareNumberInString = (string: string | undefined) => {
                     color: var(--black);
                 }
             }
+
             table {
+                
                 width: 100%;
                 border-collapse: separate; 
                 border-spacing: 0;
@@ -215,7 +223,8 @@ const prepareNumberInString = (string: string | undefined) => {
 			table {
 				caption {
 					caption-side: bottom;
-					padding: 10px;
+                    padding-top: 2px;
+					margin-bottom: 18px;
 					border: none;
                     font-size: 0.8rem;
 				}
@@ -258,7 +267,14 @@ h3 {
     }
 }
 
-.result-sum {
+.result-sum-row-header {
+    background-color: var(--warm-beige);
+    border-bottom-left-radius: 8px;
+}
+
+.result-sum-row-td {
 	min-width: 110px;
+    background-color: var(--warm-beige);
+    border-bottom-right-radius: 8px;
 }
 </style>

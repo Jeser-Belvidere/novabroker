@@ -518,7 +518,7 @@ const _routes = [
   {
     name: "tamozhennyy_kalkulyator",
     path: "/tamozhennyy_kalkulyator",
-    component: () => import('./tamozhennyy_kalkulyator-D__PWpBJ.mjs')
+    component: () => import('./tamozhennyy_kalkulyator-BBrI6FAA.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
