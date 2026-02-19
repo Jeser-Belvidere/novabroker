@@ -49,7 +49,9 @@
 }
 
 * {
-  cursor: url("/cursor.svg"), auto;
+  cursor:
+    url("/cursor.svg") -4 4,
+    auto;
   box-sizing: border-box;
   font-family:
     "AdventPro",

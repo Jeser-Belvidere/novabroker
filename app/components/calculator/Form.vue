@@ -56,11 +56,6 @@ const powerMask = reactive<MaskInputOptions>({
 	reversed: true
 })
 
-const massMask = reactive<MaskInputOptions>({
-	mask: '###',
-	reversed: true
-})
-
 watch (() => formState.ts_type, () => {
 	Object.assign(formState, {...initialState, ts_type: formState.ts_type})
 	formRef.value.clear()
@@ -217,7 +212,7 @@ const isPowerDisabled = computed(() => {
               </div>
             </div>
             <UFormField class="text-md" label="Масса, тонн" size="xl" name="mass" :disabled="isMassInputDisabled">
-              <UInput v-model="formState.mass" v-maska="massMask" placeholder="масса" class="text-md w-full" :disabled="isMassInputDisabled"/>
+              <UInput v-model="formState.mass" placeholder="масса" class="text-md w-full" :disabled="isMassInputDisabled"/>
             </UFormField>
           </div>
             

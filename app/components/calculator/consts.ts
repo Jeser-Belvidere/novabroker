@@ -55,6 +55,9 @@ export const CURRENCY_OPTIONS = [
 	{label: 'EUR', value: '978'}, 
 	{label: 'CNY', value: '156'},
 	{label: 'KRW', value: '410'},
+	{label: 'AZN', value: '944'},
+	{label: 'AED', value: '784'},
+	{label: 'GEL', value: '981'},
 ]
 
 export const BUS_CAPACITY_OPTIONS = [

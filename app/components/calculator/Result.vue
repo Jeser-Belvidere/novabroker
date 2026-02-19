@@ -57,7 +57,7 @@ const prepareNumberInString = (string: string | undefined) => {
                             <th scope="col">Мощность:</th>
                             <td>{{props.input?.power ? props.input?.power + ' ' + POWER_TYPES_MAP[props.input?.power_edizm] : 'Не указано' }}</td>
                         </tr>
-                        <tr v-if="props.input?.volume">
+                        <tr v-if="props.input?.volume && props.input?.engine_type != 'electric'">
                             <th scope="col">Объем двигателя:</th>
                             <td>{{ props.input?.volume + ' см3' }}</td>
                         </tr>
@@ -65,11 +65,9 @@ const prepareNumberInString = (string: string | undefined) => {
                 </table>
             </div>
             <div class="result-output">
-                <h3>Расчет таможенных сборов при ввозе тс на {{ new Date(Date.now()).toLocaleDateString('ru-RU') }}</h3>
+
+                <h3>Расчет таможенных сборов ввоза тс на {{ new Date(Date.now()).toLocaleDateString('ru-RU') }}</h3>
                 <table>
-					<caption>
-                        Примерные результаты расчета. Для точного расчета обратитесь к нашим специалистам *
-                    </caption>
 						<thead>
 							<tr>
 								<th scope="col">Платеж</th>
@@ -124,6 +122,7 @@ const prepareNumberInString = (string: string | undefined) => {
             <UButton variant="solid" label="Вернуться" color="primary" size="xl" @click="emits('back')" />
             <!-- <UButton variant="outline" label="Скачать" color="primary" @click="emits('back')" /> -->
         </div>
+        <div class="hint">Примерные результаты расчета. Для точного расчета обратитесь к нашим специалистам <span style="color: red;">*</span> </div>
     </div>
 </template>
 
@@ -133,10 +132,18 @@ const prepareNumberInString = (string: string | undefined) => {
     letter-spacing: 0.8px;
     font-weight: 400;
 } */
+.hint {
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    line-height: 32px;
+    letter-spacing: 1px;
+}
 
 .result-container {
 	font-weight: 600;
     display: flex;
+    gap: 16px;
     width: 900px;
     flex-direction: column;
     align-items: center;
@@ -221,13 +228,6 @@ const prepareNumberInString = (string: string | undefined) => {
             gap: 16px;
 	
 			table {
-				caption {
-					caption-side: bottom;
-                    padding-top: 2px;
-					margin-bottom: 18px;
-					border: none;
-                    font-size: 0.8rem;
-				}
 
 				th {
 					text-align: left;
