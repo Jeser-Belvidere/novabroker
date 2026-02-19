@@ -1,5 +1,5 @@
 import { defineComponent, ref, reactive, mergeModels, unref, withCtx, createVNode, isRef, useSlots, useModel, computed, mergeProps, renderSlot, createBlock, openBlock, Fragment, createTextVNode, toDisplayString, createCommentVNode, renderList, watch, withDirectives, useId, inject, provide, readonly, resolveDynamicComponent, toRef, useTemplateRef, useSSRContext } from 'vue';
-import { ssrRenderAttrs, ssrRenderComponent, ssrRenderClass, ssrRenderList, ssrRenderSlot, ssrInterpolate, ssrGetDirectiveProps, ssrRenderVNode, ssrRenderAttr } from 'vue/server-renderer';
+import { ssrRenderAttrs, ssrRenderComponent, ssrRenderClass, ssrRenderList, ssrRenderSlot, ssrInterpolate, ssrRenderStyle, ssrGetDirectiveProps, ssrRenderVNode, ssrRenderAttr } from 'vue/server-renderer';
 import { useForwardProps, StepperRoot, StepperItem, StepperTrigger, StepperIndicator, StepperSeparator, StepperTitle, StepperDescription, Primitive, Label, useForwardPropsEmits, RadioGroupRoot, RadioGroupItem, RadioGroupIndicator, SelectRoot, SelectTrigger, SelectPortal, SelectContent, SelectGroup, SelectLabel, SelectSeparator, SelectItem, SelectItemText, SelectItemIndicator, SelectArrow, CheckboxRoot, CheckboxIndicator } from 'reka-ui';
 import { reactivePick, useEventBus, useVModel } from '@vueuse/core';
 import { _ as _export_sfc, c as useSeoMeta, C as useToast, e as useAppConfig, t as tv, g as get, f as _sfc_main$d, B as _sfc_main$8$1, h as formBusInjectionKey, i as formStateInjectionKey, j as formErrorsInjectionKey, k as formInputsInjectionKey, l as formLoadingInjectionKey, m as formOptionsInjectionKey, o as inputIdInjectionKey, p as formFieldInjectionKey, q as useFormField, r as usePortal, s as useFieldGroup, v as useComponentIcons, w as isArrayOfArray, x as _sfc_main$b, y as _sfc_main$c, z as looseToNumber, A as getDisplayValue } from './server.mjs';
@@ -4429,7 +4429,10 @@ const CURRENCY_OPTIONS = [
   { label: "USD", value: "840" },
   { label: "EUR", value: "978" },
   { label: "CNY", value: "156" },
-  { label: "KRW", value: "410" }
+  { label: "KRW", value: "410" },
+  { label: "AZN", value: "944" },
+  { label: "AED", value: "784" },
+  { label: "GEL", value: "981" }
 ];
 const BUS_CAPACITY_OPTIONS = [
   { label: "Более 120 человек", value: "gt120" },
@@ -4490,10 +4493,6 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
     });
     const powerMask = reactive({
       mask: "# ###",
-      reversed: true
-    });
-    const massMask = reactive({
-      mask: "###",
       reversed: true
     });
     watch(() => formState.ts_type, () => {
@@ -4579,7 +4578,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
       }, _attrs), {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<div class="calculator-container" data-v-cf38a791${_scopeId}><div class="calculator-row" data-v-cf38a791${_scopeId}>`);
+            _push2(`<div class="calculator-container" data-v-03ece71a${_scopeId}><div class="calculator-row" data-v-03ece71a${_scopeId}>`);
             if (unref(formState).ts_type === "00_8703") {
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
@@ -4677,7 +4676,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`</div><div class="calculator-row" data-v-cf38a791${_scopeId}><div class="cost-input" data-v-cf38a791${_scopeId}>`);
+            _push2(`</div><div class="calculator-row" data-v-03ece71a${_scopeId}><div class="cost-input" data-v-03ece71a${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UFormField, {
               class: "text-md",
               required: "",
@@ -4812,7 +4811,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`</div><div class="calculator-row" data-v-cf38a791${_scopeId}><div class="power-input" data-v-cf38a791${_scopeId}>`);
+            _push2(`</div><div class="calculator-row" data-v-03ece71a${_scopeId}><div class="power-input" data-v-03ece71a${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UFormField, {
               class: "text-md",
               required: !unref(isPowerDisabled),
@@ -4848,7 +4847,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`<div class="power-type" data-v-cf38a791${_scopeId}>`);
+            _push2(`<div class="power-type" data-v-03ece71a${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UFormField, {
               class: "text-md",
               name: "powerType",
@@ -4891,30 +4890,28 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
             }, {
               default: withCtx((_2, _push3, _parent3, _scopeId2) => {
                 if (_push3) {
-                  _push3(ssrRenderComponent(_component_UInput, mergeProps({
+                  _push3(ssrRenderComponent(_component_UInput, {
                     modelValue: unref(formState).mass,
                     "onUpdate:modelValue": ($event) => unref(formState).mass = $event,
                     placeholder: "масса",
                     class: "text-md w-full",
                     disabled: unref(isMassInputDisabled)
-                  }, ssrGetDirectiveProps(_ctx, unref(vMaska), unref(massMask))), null, _parent3, _scopeId2));
+                  }, null, _parent3, _scopeId2));
                 } else {
                   return [
-                    withDirectives(createVNode(_component_UInput, {
+                    createVNode(_component_UInput, {
                       modelValue: unref(formState).mass,
                       "onUpdate:modelValue": ($event) => unref(formState).mass = $event,
                       placeholder: "масса",
                       class: "text-md w-full",
                       disabled: unref(isMassInputDisabled)
-                    }, null, 8, ["modelValue", "onUpdate:modelValue", "disabled"]), [
-                      [unref(vMaska), unref(massMask)]
-                    ])
+                    }, null, 8, ["modelValue", "onUpdate:modelValue", "disabled"])
                   ];
                 }
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`</div><div class="calculator-row" data-v-cf38a791${_scopeId}>`);
+            _push2(`</div><div class="calculator-row" data-v-03ece71a${_scopeId}>`);
             if (unref(formState).ts_type === "00_8703") {
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
@@ -5147,7 +5144,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
             } else {
               _push2(`<!---->`);
             }
-            _push2(`</div><div class="bus-eco-class" data-v-cf38a791${_scopeId}>`);
+            _push2(`</div><div class="bus-eco-class" data-v-03ece71a${_scopeId}>`);
             if (unref(formState).ts_type === "13_8702") {
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
@@ -5210,7 +5207,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
             } else {
               _push2(`<!---->`);
             }
-            _push2(`</div><div class="actions" data-v-cf38a791${_scopeId}>`);
+            _push2(`</div><div class="actions" data-v-03ece71a${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UButton, {
               loading: props.isLoading,
               size: "xl",
@@ -5425,15 +5422,13 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                     disabled: unref(isMassInputDisabled)
                   }, {
                     default: withCtx(() => [
-                      withDirectives(createVNode(_component_UInput, {
+                      createVNode(_component_UInput, {
                         modelValue: unref(formState).mass,
                         "onUpdate:modelValue": ($event) => unref(formState).mass = $event,
                         placeholder: "масса",
                         class: "text-md w-full",
                         disabled: unref(isMassInputDisabled)
-                      }, null, 8, ["modelValue", "onUpdate:modelValue", "disabled"]), [
-                        [unref(vMaska), unref(massMask)]
-                      ])
+                      }, null, 8, ["modelValue", "onUpdate:modelValue", "disabled"])
                     ]),
                     _: 1
                   }, 8, ["disabled"])
@@ -5637,7 +5632,7 @@ _sfc_main$2.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/calculator/Form.vue");
   return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
 };
-const __nuxt_component_1 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$2, [["__scopeId", "data-v-cf38a791"]]), { __name: "CalculatorForm" });
+const __nuxt_component_1 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$2, [["__scopeId", "data-v-03ece71a"]]), { __name: "CalculatorForm" });
 const _sfc_main$1 = /* @__PURE__ */ defineComponent({
   __name: "Result",
   __ssrInlineRender: true,
@@ -5666,34 +5661,34 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
     };
     return (_ctx, _push, _parent, _attrs) => {
       const _component_UButton = _sfc_main$8$1;
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "result-container" }, _attrs))} data-v-6f948b8a><div class="result-content" data-v-6f948b8a><div class="result-input" data-v-6f948b8a><div class="header" data-v-6f948b8a><h3 data-v-6f948b8a>Введенные данные</h3><h3 data-v-6f948b8a>NOVABROKER</h3></div><table class="input-table" data-v-6f948b8a><tbody data-v-6f948b8a><tr data-v-6f948b8a><th scope="col" data-v-6f948b8a>Возраст:</th><td data-v-6f948b8a>${ssrInterpolate(props.input?.age ? unref(AGE_OPTIONS_MAP)[props.input.age] : "Не указано")}</td></tr><tr data-v-6f948b8a><th scope="col" data-v-6f948b8a>Стоймость автомобиля:</th><td data-v-6f948b8a>${ssrInterpolate(props.input?.cost ? props.input.cost + " " + unref(CURRENCY_OPTIONS_MAP)[props.input.currency] : "Не указано")}</td></tr><tr data-v-6f948b8a><th scope="col" data-v-6f948b8a>Тип двигателя:</th><td data-v-6f948b8a>${ssrInterpolate(props.input?.engine_type ? unref(ENGINE_TYPES_MAP)[props.input.engine_type] : "Не указано")}</td></tr><tr data-v-6f948b8a><th scope="col" data-v-6f948b8a>Мощность:</th><td data-v-6f948b8a>${ssrInterpolate(props.input?.power ? props.input?.power + " " + unref(POWER_TYPES_MAP)[props.input?.power_edizm] : "Не указано")}</td></tr>`);
-      if (props.input?.volume) {
-        _push(`<tr data-v-6f948b8a><th scope="col" data-v-6f948b8a>Объем двигателя:</th><td data-v-6f948b8a>${ssrInterpolate(props.input?.volume + " см3")}</td></tr>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "result-container" }, _attrs))} data-v-6e29ec09><div class="result-content" data-v-6e29ec09><div class="result-input" data-v-6e29ec09><div class="header" data-v-6e29ec09><h3 data-v-6e29ec09>Введенные данные</h3><h3 data-v-6e29ec09>NOVABROKER</h3></div><table class="input-table" data-v-6e29ec09><tbody data-v-6e29ec09><tr data-v-6e29ec09><th scope="col" data-v-6e29ec09>Возраст:</th><td data-v-6e29ec09>${ssrInterpolate(props.input?.age ? unref(AGE_OPTIONS_MAP)[props.input.age] : "Не указано")}</td></tr><tr data-v-6e29ec09><th scope="col" data-v-6e29ec09>Стоймость автомобиля:</th><td data-v-6e29ec09>${ssrInterpolate(props.input?.cost ? props.input.cost + " " + unref(CURRENCY_OPTIONS_MAP)[props.input.currency] : "Не указано")}</td></tr><tr data-v-6e29ec09><th scope="col" data-v-6e29ec09>Тип двигателя:</th><td data-v-6e29ec09>${ssrInterpolate(props.input?.engine_type ? unref(ENGINE_TYPES_MAP)[props.input.engine_type] : "Не указано")}</td></tr><tr data-v-6e29ec09><th scope="col" data-v-6e29ec09>Мощность:</th><td data-v-6e29ec09>${ssrInterpolate(props.input?.power ? props.input?.power + " " + unref(POWER_TYPES_MAP)[props.input?.power_edizm] : "Не указано")}</td></tr>`);
+      if (props.input?.volume && props.input?.engine_type != "electric") {
+        _push(`<tr data-v-6e29ec09><th scope="col" data-v-6e29ec09>Объем двигателя:</th><td data-v-6e29ec09>${ssrInterpolate(props.input?.volume + " см3")}</td></tr>`);
       } else {
         _push(`<!---->`);
       }
-      _push(`</tbody></table></div><div class="result-output" data-v-6f948b8a><h3 data-v-6f948b8a>Расчет таможенных сборов при ввозе тс на ${ssrInterpolate(new Date(Date.now()).toLocaleDateString("ru-RU"))}</h3><table data-v-6f948b8a><caption data-v-6f948b8a> Примерные результаты расчета. Для точного расчета обратитесь к нашим специалистам * </caption><thead data-v-6f948b8a><tr data-v-6f948b8a><th scope="col" data-v-6f948b8a>Платеж</th><th scope="col" data-v-6f948b8a>Ставка</th><th scope="col" data-v-6f948b8a>Сумма (руб)</th></tr></thead><tbody data-v-6f948b8a><tr data-v-6f948b8a><th scope="row" data-v-6f948b8a>Таможенное оформление</th><td class="numbers" data-v-6f948b8a>${ssrInterpolate(prepareNumberInString(props.result?.tam_oform?.name))}</td><td class="numbers" data-v-6f948b8a>${ssrInterpolate(prepareNumberInString(props.result?.tam_oform?.name))}</td></tr>`);
+      _push(`</tbody></table></div><div class="result-output" data-v-6e29ec09><h3 data-v-6e29ec09>Расчет таможенных сборов ввоза тс на ${ssrInterpolate(new Date(Date.now()).toLocaleDateString("ru-RU"))}</h3><table data-v-6e29ec09><thead data-v-6e29ec09><tr data-v-6e29ec09><th scope="col" data-v-6e29ec09>Платеж</th><th scope="col" data-v-6e29ec09>Ставка</th><th scope="col" data-v-6e29ec09>Сумма (руб)</th></tr></thead><tbody data-v-6e29ec09><tr data-v-6e29ec09><th scope="row" data-v-6e29ec09>Таможенное оформление</th><td class="numbers" data-v-6e29ec09>${ssrInterpolate(prepareNumberInString(props.result?.tam_oform?.name))}</td><td class="numbers" data-v-6e29ec09>${ssrInterpolate(prepareNumberInString(props.result?.tam_oform?.name))}</td></tr>`);
       if (props.input?.face === "nat") {
-        _push(`<tr data-v-6f948b8a><th scope="row" data-v-6f948b8a>Единая ставка</th><td class="numbers" data-v-6f948b8a>${ssrInterpolate(props.result?.poshl?.name)}</td><td class="numbers" data-v-6f948b8a>${ssrInterpolate(prepareNumber(props.result?.poshl?.value_rub))} руб.</td></tr>`);
+        _push(`<tr data-v-6e29ec09><th scope="row" data-v-6e29ec09>Единая ставка</th><td class="numbers" data-v-6e29ec09>${ssrInterpolate(props.result?.poshl?.name)}</td><td class="numbers" data-v-6e29ec09>${ssrInterpolate(prepareNumber(props.result?.poshl?.value_rub))} руб.</td></tr>`);
       } else {
         _push(`<!---->`);
       }
       if (props.input?.face === "jur" || props.input?.sequential === true || props.input?.engine_type === "electric") {
-        _push(`<tr data-v-6f948b8a><th scope="row" data-v-6f948b8a>Пошлина</th><td class="numbers" data-v-6f948b8a>${ssrInterpolate(props.result?.poshl?.name)}</td><td class="numbers" data-v-6f948b8a>${ssrInterpolate(prepareNumber(props.result?.poshl?.value_rub))} руб.</td></tr>`);
+        _push(`<tr data-v-6e29ec09><th scope="row" data-v-6e29ec09>Пошлина</th><td class="numbers" data-v-6e29ec09>${ssrInterpolate(props.result?.poshl?.name)}</td><td class="numbers" data-v-6e29ec09>${ssrInterpolate(prepareNumber(props.result?.poshl?.value_rub))} руб.</td></tr>`);
       } else {
         _push(`<!---->`);
       }
       if (props.input?.face === "jur" || props.input?.sequential === true || props.input?.engine_type === "electric") {
-        _push(`<tr data-v-6f948b8a><th scope="row" data-v-6f948b8a>Акциз</th><td class="numbers" data-v-6f948b8a>${ssrInterpolate(props.result?.akciz?.name)}</td><td class="numbers" data-v-6f948b8a>${ssrInterpolate(prepareNumber(props.result?.akciz?.value_rub))} руб.</td></tr>`);
+        _push(`<tr data-v-6e29ec09><th scope="row" data-v-6e29ec09>Акциз</th><td class="numbers" data-v-6e29ec09>${ssrInterpolate(props.result?.akciz?.name)}</td><td class="numbers" data-v-6e29ec09>${ssrInterpolate(prepareNumber(props.result?.akciz?.value_rub))} руб.</td></tr>`);
       } else {
         _push(`<!---->`);
       }
       if (props.input?.face === "jur" || props.input?.sequential === true || props.input?.engine_type === "electric") {
-        _push(`<tr data-v-6f948b8a><th scope="row" data-v-6f948b8a>НДС</th><td class="numbers" data-v-6f948b8a>${ssrInterpolate(props.result?.nds?.name)}</td><td class="numbers" data-v-6f948b8a>${ssrInterpolate(prepareNumber(props.result?.nds?.value_rub))} руб.</td></tr>`);
+        _push(`<tr data-v-6e29ec09><th scope="row" data-v-6e29ec09>НДС</th><td class="numbers" data-v-6e29ec09>${ssrInterpolate(props.result?.nds?.name)}</td><td class="numbers" data-v-6e29ec09>${ssrInterpolate(prepareNumber(props.result?.nds?.value_rub))} руб.</td></tr>`);
       } else {
         _push(`<!---->`);
       }
-      _push(`<tr data-v-6f948b8a><th scope="row" data-v-6f948b8a>Утиль сбор</th><td class="numbers" data-v-6f948b8a>${ssrInterpolate(prepareNumber(props.result?.util_sbor.value_base))} руб. x ${ssrInterpolate(props.result?.util_sbor.value_coef)}</td><td class="numbers" data-v-6f948b8a>${ssrInterpolate(prepareNumber(props.result?.util_sbor.value_rub))} руб.</td></tr></tbody><tfoot data-v-6f948b8a><tr data-v-6f948b8a><th class="result-sum-row-header" colspan="2" scope="row" data-v-6f948b8a>Итого c утилизационным сбором</th><td class="result-sum-row-td numbers" data-v-6f948b8a>${ssrInterpolate(prepareNumber(props.result?.sum_util.value_rub))} руб.</td></tr></tfoot></table></div></div><div class="result-actions" data-v-6f948b8a>`);
+      _push(`<tr data-v-6e29ec09><th scope="row" data-v-6e29ec09>Утиль сбор</th><td class="numbers" data-v-6e29ec09>${ssrInterpolate(prepareNumber(props.result?.util_sbor.value_base))} руб. x ${ssrInterpolate(props.result?.util_sbor.value_coef)}</td><td class="numbers" data-v-6e29ec09>${ssrInterpolate(prepareNumber(props.result?.util_sbor.value_rub))} руб.</td></tr></tbody><tfoot data-v-6e29ec09><tr data-v-6e29ec09><th class="result-sum-row-header" colspan="2" scope="row" data-v-6e29ec09>Итого c утилизационным сбором</th><td class="result-sum-row-td numbers" data-v-6e29ec09>${ssrInterpolate(prepareNumber(props.result?.sum_util.value_rub))} руб.</td></tr></tfoot></table></div></div><div class="result-actions" data-v-6e29ec09>`);
       _push(ssrRenderComponent(_component_UButton, {
         variant: "solid",
         label: "Вернуться",
@@ -5701,7 +5696,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
         size: "xl",
         onClick: ($event) => emits("back")
       }, null, _parent));
-      _push(`</div></div>`);
+      _push(`</div><div class="hint" data-v-6e29ec09>Примерные результаты расчета. Для точного расчета обратитесь к нашим специалистам <span style="${ssrRenderStyle({ "color": "red" })}" data-v-6e29ec09>*</span></div></div>`);
     };
   }
 });
@@ -5711,7 +5706,7 @@ _sfc_main$1.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/calculator/Result.vue");
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
-const __nuxt_component_2 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$1, [["__scopeId", "data-v-6f948b8a"]]), { __name: "CalculatorResult" });
+const __nuxt_component_2 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$1, [["__scopeId", "data-v-6e29ec09"]]), { __name: "CalculatorResult" });
 const _sfc_main = /* @__PURE__ */ defineComponent({
   __name: "tamozhennyy_kalkulyator",
   __ssrInlineRender: true,
@@ -5839,4 +5834,4 @@ _sfc_main.setup = (props, ctx) => {
 const tamozhennyy_kalkulyator = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-7979ea17"]]);
 
 export { tamozhennyy_kalkulyator as default };
-//# sourceMappingURL=tamozhennyy_kalkulyator-BBrI6FAA.mjs.map
+//# sourceMappingURL=tamozhennyy_kalkulyator-bPxBWlx7.mjs.map
