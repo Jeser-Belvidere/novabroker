@@ -483,7 +483,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-CaZm3BtW.mjs')
+    component: () => import('./index-BDChNB2e.mjs')
   },
   {
     name: "privacy",

@@ -34,7 +34,7 @@ const services: {
 	},
 	{
 		iconComponent: UIIconsCardSim,
-		title: 'Консультированию по оформления СБКТС и ЭПТС',
+		title: 'Консультирование по оформлению СБКТС и ЭПТС',
 		description: 'Быстро. Надежно. С гарантией.',
 	},
 	{

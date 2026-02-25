@@ -165,7 +165,7 @@ const _sfc_main$7 = /* @__PURE__ */ defineComponent({
       },
       {
         iconComponent: UIIconsCardSim,
-        title: "Консультированию по оформления СБКТС и ЭПТС",
+        title: "Консультирование по оформлению СБКТС и ЭПТС",
         description: "Быстро. Надежно. С гарантией."
       },
       {
@@ -192,9 +192,9 @@ const _sfc_main$7 = /* @__PURE__ */ defineComponent({
       _push(`<section${ssrRenderAttrs(mergeProps({
         id: "services",
         class: "services"
-      }, _attrs))} data-v-74246628><div class="title" data-v-74246628><p class="title-head" data-v-74246628>Что мы предлагаем?</p><p class="title-description" data-v-74246628> Консультации по таможенным оформлениям, растаможке, СБКТС, ГЛОНАСС, ЭПТС - все под ключ </p></div>`);
+      }, _attrs))} data-v-e7b0cb9e><div class="title" data-v-e7b0cb9e><p class="title-head" data-v-e7b0cb9e>Что мы предлагаем?</p><p class="title-description" data-v-e7b0cb9e> Консультации по таможенным оформлениям, растаможке, СБКТС, ГЛОНАСС, ЭПТС - все под ключ </p></div>`);
       if (_ctx.$device.isMobile) {
-        _push(`<div class="cards-mobile" data-v-74246628>`);
+        _push(`<div class="cards-mobile" data-v-e7b0cb9e>`);
         _push(ssrRenderComponent(_component_Carousel, carouselConfig, {
           addons: withCtx((_, _push2, _parent2, _scopeId) => {
             if (_push2) {
@@ -214,9 +214,9 @@ const _sfc_main$7 = /* @__PURE__ */ defineComponent({
                 _push2(ssrRenderComponent(_component_Slide, { key: index2 }, {
                   default: withCtx((_2, _push3, _parent3, _scopeId2) => {
                     if (_push3) {
-                      _push3(`<div class="card carousel__item" data-v-74246628${_scopeId2}><div class="card-image" data-v-74246628${_scopeId2}>`);
+                      _push3(`<div class="card carousel__item" data-v-e7b0cb9e${_scopeId2}><div class="card-image" data-v-e7b0cb9e${_scopeId2}>`);
                       ssrRenderVNode(_push3, createVNode(resolveDynamicComponent(service.iconComponent), null, null), _parent3, _scopeId2);
-                      _push3(`</div><div class="card-title" data-v-74246628${_scopeId2}>${ssrInterpolate(service.title)}</div><div class="card-description" data-v-74246628${_scopeId2}>${ssrInterpolate(service.description)}</div></div>`);
+                      _push3(`</div><div class="card-title" data-v-e7b0cb9e${_scopeId2}>${ssrInterpolate(service.title)}</div><div class="card-description" data-v-e7b0cb9e${_scopeId2}>${ssrInterpolate(service.description)}</div></div>`);
                     } else {
                       return [
                         createVNode("div", { class: "card carousel__item" }, [
@@ -259,11 +259,11 @@ const _sfc_main$7 = /* @__PURE__ */ defineComponent({
         _push(`<!---->`);
       }
       if (_ctx.$device.isDesktop) {
-        _push(`<div class="cards-desktop" data-v-74246628><!--[-->`);
+        _push(`<div class="cards-desktop" data-v-e7b0cb9e><!--[-->`);
         ssrRenderList(services, (service) => {
-          _push(`<div class="card" data-v-74246628>`);
+          _push(`<div class="card" data-v-e7b0cb9e>`);
           ssrRenderVNode(_push, createVNode(resolveDynamicComponent(service.iconComponent), null, null), _parent);
-          _push(`<div class="card-title" data-v-74246628>${ssrInterpolate(service.title)}</div><div class="card-description" data-v-74246628>${ssrInterpolate(service.description)}</div></div>`);
+          _push(`<div class="card-title" data-v-e7b0cb9e>${ssrInterpolate(service.title)}</div><div class="card-description" data-v-e7b0cb9e>${ssrInterpolate(service.description)}</div></div>`);
         });
         _push(`<!--]--></div>`);
       } else {
@@ -279,7 +279,7 @@ _sfc_main$7.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/sections/Services.vue");
   return _sfc_setup$7 ? _sfc_setup$7(props, ctx) : void 0;
 };
-const __nuxt_component_1 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$7, [["__scopeId", "data-v-74246628"]]), { __name: "SectionsServices" });
+const __nuxt_component_1 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$7, [["__scopeId", "data-v-e7b0cb9e"]]), { __name: "SectionsServices" });
 const _sfc_main$6 = /* @__PURE__ */ defineComponent({
   __name: "Advantages",
   __ssrInlineRender: true,
@@ -1243,4 +1243,4 @@ _sfc_main.setup = (props, ctx) => {
 const index = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender], ["__scopeId", "data-v-a9e1eb32"]]);
 
 export { index as default };
-//# sourceMappingURL=index-CaZm3BtW.mjs.map
+//# sourceMappingURL=index-BDChNB2e.mjs.map
