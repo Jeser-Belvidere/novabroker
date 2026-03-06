@@ -80,6 +80,7 @@ section {
 }
 
 .card {
+  cursor: pointer;
   position: relative;
   border-radius: 16px;
   width: 100%;
@@ -88,17 +89,20 @@ section {
   .card-image {
     width: 100%;
     height: 100%;
+    filter: brightness(0.4);
 
     img {
+      cursor: pointer;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.7);
+      filter: brightness(0.8);
       border-radius: 16px;
     }
   }
 
   .card-info {
+    cursor: pointer;
     position: absolute;
     bottom: 32px;
     left: 32px;
@@ -109,6 +113,7 @@ section {
     }
 
     .card-title {
+      cursor: pointer;
       text-overflow: ellipsis;
       overflow: hidden;
       max-width: 100%;
@@ -127,6 +132,7 @@ section {
     }
 
     .card-date {
+      cursor: pointer;
       font-size: 0.9rem;
       color: var(--medium-taupe-light);
     }

@@ -27,7 +27,7 @@ const restNews = feed.slice(0, feed.length - 1).reverse();
 <template>
   <main>
     <div class="breadcrumbs margin-bottom">
-      <nuxt-link class="breadcrumbs" to="/">{{ "< Назад" }}</nuxt-link>
+      <nuxt-link class="breadcrumbs" to="/">{{ "< Главная" }}</nuxt-link>
     </div>
     <div class="title margin-bottom">
       <div class="title-head">Новости и обновления</div>
@@ -137,6 +137,7 @@ main {
 }
 
 .first-card {
+  cursor: pointer;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -147,6 +148,7 @@ main {
   text-decoration: none;
 
   .card-image {
+    cursor: pointer;
     border-radius: inherit;
     display: block;
     width: 100%;
@@ -157,11 +159,13 @@ main {
   }
 
   .card-info {
+    cursor: pointer;
     position: relative;
     display: flex;
     flex-direction: column;
 
     .card-title {
+      cursor: pointer;
       font-size: 2rem;
       color: var(--black);
       margin-bottom: 5px;
@@ -178,6 +182,7 @@ main {
     }
 
     .card-date {
+      cursor: pointer;
       font-size: 0.9rem;
       color: var(--black);
 
@@ -195,13 +200,13 @@ main {
 }
 
 .card {
+  cursor: pointer;
   display: flex;
   position: relative;
   flex-direction: column;
   border-radius: 16px;
   width: 600px;
   height: 400px;
-  cursor: pointer;
   text-decoration: none;
 
   @media screen and (max-width: 1300px) {
@@ -210,6 +215,7 @@ main {
   }
 
   .card-image {
+    cursor: pointer;
     border-radius: inherit;
     display: block;
     width: 100%;
@@ -224,11 +230,13 @@ main {
   }
 
   .card-info {
+    cursor: pointer;
     position: relative;
     display: flex;
     flex-direction: column;
 
     .card-title {
+      cursor: pointer;
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
@@ -249,6 +257,7 @@ main {
     }
 
     .card-date {
+      cursor: pointer;
       font-size: 0.9rem;
       color: var(--black);
 

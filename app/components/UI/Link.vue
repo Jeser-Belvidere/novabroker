@@ -21,6 +21,7 @@ const props = withDefaults(defineProps<IProps>(), {
 <style lang="css" scoped>
 .link {
   color: var(--warm-beige);
+  cursor: pointer;
   text-decoration: none;
 }
 

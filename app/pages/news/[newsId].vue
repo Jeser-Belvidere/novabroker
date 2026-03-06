@@ -47,28 +47,37 @@ useSeoMeta({
 </script>
 
 <template>
-  <section>
-    <div class="breadcrumbs margin-bottom">
-      <nuxt-link class="breadcrumbs" to="/news">{{ "< Назад" }}</nuxt-link>
-    </div>
-    <h1 class="margin-bottom">{{ currentNews?.title }}</h1>
-    <div class="image margin-bottom" :style="`background-image: url(${currentNews?.imgSrc})`" />
-    <div class="image-subtitle margin-bottom">{{ currentNews?.date }}</div>
-    <div class="content">
-      <div v-for="(newsBlock, index) in currentNews?.newsBlocks" :key="index" class="margin-bottom">
-        <UINewsText v-if="newsBlock.tag === 'text'" :heading="newsBlock?.heading" :paragraph="newsBlock.paragraph" />
-        <UINewsTable v-if="newsBlock.tag === 'table'" :caption="newsBlock.caption" :columns="newsBlock.columns"
-          :data="newsBlock.data" />
+  <main>
+    <section>
+      <div class="breadcrumbs margin-bottom">
+        <nuxt-link class="breadcrumbs" to="/news">{{ "< Новости" }}</nuxt-link>
       </div>
-    </div>
-  </section>
+      <h1 class="margin-bottom">{{ currentNews?.title }}</h1>
+      <div class="image margin-bottom" :style="`background-image: url(${currentNews?.imgSrc})`" />
+      <div class="image-subtitle margin-bottom">{{ currentNews?.date }}</div>
+      <div class="content">
+        <div v-for="(newsBlock, index) in currentNews?.newsBlocks" :key="index" class="margin-bottom">
+          <UINewsText v-if="newsBlock.tag === 'text'" :heading="newsBlock?.heading" :paragraph="newsBlock.paragraph" />
+          <UINewsTable v-if="newsBlock.tag === 'table'" :caption="newsBlock.caption" :columns="newsBlock.columns"
+            :data="newsBlock.data" />
+        </div>
+      </div>
+    </section>
+  </main>
 </template>
 
 <style lang="css" scoped>
-section {
+main {
+  width: 100%;
   min-height: 100vh;
-  background-color: var(--light-grey);
   padding: 32px 32px;
+  background-color: var(--light-grey);
+  margin-top: var(--header-height);
+  min-height: calc(100vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .breadcrumbs {
@@ -86,8 +95,9 @@ section {
 h1 {
   font-size: 4rem;
   color: var(--black);
-
+  line-height: 60px;
   @media screen and (max-width: 440px) {
+    line-height: 36px;
     font-size: 2rem;
   }
 }

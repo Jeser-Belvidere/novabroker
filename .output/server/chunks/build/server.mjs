@@ -483,27 +483,27 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-BDChNB2e.mjs')
+    component: () => import('./index-CXTNw-TY.mjs')
   },
   {
     name: "privacy",
     path: "/privacy",
-    component: () => import('./privacy-7NQ6FAEm.mjs')
+    component: () => import('./privacy-ci-GzWnE.mjs')
   },
   {
     name: "contacts",
     path: "/contacts",
-    component: () => import('./contacts-DifLFMo3.mjs')
+    component: () => import('./contacts-C9CQiEdf.mjs')
   },
   {
     name: "slug",
     path: "/:slug(.*)*",
-    component: () => import('./_...slug_-WtkhdPxJ.mjs')
+    component: () => import('./_...slug_-C2B-tdO3.mjs')
   },
   {
     name: "news",
     path: "/news",
-    component: () => import('./index-yXXzEVXp.mjs')
+    component: () => import('./index-CGgFzxxE.mjs')
   },
   {
     name: "personaldata",
@@ -513,7 +513,7 @@ const _routes = [
   {
     name: "news-newsId",
     path: "/news/:newsId()",
-    component: () => import('./_newsId_-eVItB_Pg.mjs')
+    component: () => import('./_newsId_-D5fDxkeO.mjs')
   },
   {
     name: "tamozhennyy_kalkulyator",
@@ -5811,7 +5811,7 @@ _sfc_main$3.setup = (props, ctx) => {
 };
 const __nuxt_component_2 = Object.assign(_sfc_main$3, { __name: "UApp" });
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-HVrol11T.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-ORAXhgoo.mjs').then((m) => m.default || m))
 };
 const LayoutLoader = defineComponent({
   name: "LayoutLoader",

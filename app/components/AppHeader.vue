@@ -86,6 +86,7 @@ if (data.value) {
 }
 
 .header-content__logo {
+  cursor: pointer;
   color: var(--warm-beige);
   font-size: 1.6rem;
   letter-spacing: 4px;

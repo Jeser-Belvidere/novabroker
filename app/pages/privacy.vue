@@ -390,12 +390,21 @@ main {
 }
 
 section {
+  margin-top: 18px;
+  font-weight: 400;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  line-height: 32px;
+  letter-spacing: 2px;
+  div {
     margin-top: 18px;
+    color: var(--light-grey);
     font-weight: 400;
     font-size: 1.2rem;
     letter-spacing: 0.5px;
     line-height: 32px;
     letter-spacing: 2px;
+  }
 }
 
 h1 {
