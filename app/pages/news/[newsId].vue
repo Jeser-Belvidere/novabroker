@@ -33,16 +33,17 @@ useHead({
 		{
 			name: 'keywords',
 			content:
-        'ВЭД, новости, Таможенный брокер, Сертификация, Новаброкер, Novabroker',
+        `${currentNews?.keywords ?? 'ВЭД, новости, Таможенный брокер, Сертификация, Новаброкер, Novabroker'}`,
 		},
 	],
 });
 
 useSeoMeta({
 	title: `NOVABROKER - новости ВЭД - ${currentNews?.title}`,
-	description: `НОВАБРОКЕР. ${currentNews?.description}`,
-	ogTitle: `НОВАБРОКЕР. ${currentNews?.title}`,
-	ogDescription: `НОВАБРОКЕР. ${currentNews?.description}`,
+	description: `NOVABROKER - новости ВЭД - ${currentNews?.description}`,
+	ogTitle: `NOVABROKER - новости ВЭД - ${currentNews?.title}`,
+	ogDescription: `NOVABROKER. ${currentNews?.description}`,
+	ogUrl: `https://xn--80acboyohdrd.xn--p1ai/news/${idFromParams}`,
 });
 </script>
 

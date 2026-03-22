@@ -25,6 +25,10 @@ const openMax = () => {
         </div>
         <div class="content">
           <div class="content-block">
+            <div class="block-title">Наш многоканальный номер</div>
+            <a class="link phone-number" href="tel: +74957783050">+7 495 778-30-50</a>
+          </div>
+          <div class="content-block">
             <div class="block-title">Менеджеры по работе с клиентами</div>
             <div class="managers-item bottom-border">
               <div class="managers-item__name">Анна</div>
@@ -213,12 +217,18 @@ main {
 }
 
 .link {
+  cursor: pointer;
   text-decoration: none;
   color: var(--light-grey);
 
   &:hover {
     text-decoration: underline;
   }
+}
+
+.phone-number {
+  text-align: center;
+  font-size: 1.6rem;
 }
 
 .bottom-border {

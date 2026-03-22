@@ -220,30 +220,30 @@ const isPowerDisabled = computed(() => {
           <!-- Additional points -->
           <div class="calculator-row">
 			      <!-- 00_8703 автомобиль -->
-            <UFormField v-if="formState.ts_type === '00_8703'" class="text-md" label="Повышенной проходимости" size="xl" name="offroad">
-              <UCheckbox v-model="formState.offroad" />
+            <UFormField v-if="formState.ts_type === '00_8703'" class="text-md mx-4" size="xl" name="offroad">
+              <UCheckbox v-model="formState.offroad" label="Повышенной проходимости"/>
             </UFormField>
-            <UFormField v-if="formState.ts_type === '00_8703'" class="text-md" label="Автодом" size="xl" name="caravan">
-              <UCheckbox v-model="formState.caravan" />
+            <UFormField v-if="formState.ts_type === '00_8703'" class="text-md mx-4"  size="xl" name="caravan">
+              <UCheckbox v-model="formState.caravan" label="Автодом" />
             </UFormField>
 			      <!-- 04_8704 грузовик -->
-            <UFormField v-if="formState.ts_type === '04_8704'" class="text-md" label="Тип 'Форвардер'" size="xl" name="forwarder">
-              <UCheckbox v-model="formState.forwarder" />
+            <UFormField v-if="formState.ts_type === '04_8704'" class="text-md mx-4" size="xl" name="forwarder">
+              <UCheckbox v-model="formState.forwarder" label="Тип 'Форвардер'"/>
             </UFormField>
             <!-- 05_870410 самосвал -->
             <UFormField v-if="formState.ts_type === '05_870410'" class="text-md" label="Рама" size="xl" name="chassis">
               <URadioGroup v-model="formState.chassis" size="xs" variant="table" orientation="horizontal" :items="CHASSIS_TYPES_OPTIONS" />
             </UFormField>
             <!-- 12_8903 Катер -->
-            <UFormField v-if="formState.ts_type === '12_8903'" class="text-md" label="Морского класса" size="xl" name="boat_sea">
-              <UCheckbox v-model="formState.boat_sea" />
+            <UFormField v-if="formState.ts_type === '12_8903'" class="text-md mx-4"  size="xl" name="boat_sea">
+              <UCheckbox v-model="formState.boat_sea" label="Морского класса"/>
             </UFormField>
             <!-- If electric engine or hybrid -->
-           <UFormField v-if="formState.engine_type === 'diesel_electric' || formState.engine_type === 'petrol_electric'" class="text-md" label="Мощность ДВС больше максимальной 30-минутной мощности ЭД" size="xl" name="boat_sea">
-              <UCheckbox v-model="formState.mdvs_gt_m30ed" />
+           <UFormField v-if="formState.engine_type === 'diesel_electric' || formState.engine_type === 'petrol_electric'" class="text-md mx-4" size="xl" name="boat_sea">
+              <UCheckbox v-model="formState.mdvs_gt_m30ed" label="Мощность ДВС больше максимальной 30-минутной мощности ЭД" />
             </UFormField>
-            <UFormField v-if="formState.engine_type === 'diesel_electric' || formState.engine_type === 'petrol_electric'" class="text-md" label="Силовая установка последовательного типа" size="xl" name="sequential">
-              <UCheckbox v-model="formState.sequential" />
+            <UFormField v-if="formState.engine_type === 'diesel_electric' || formState.engine_type === 'petrol_electric'" class="text-md mx-4" size="xl" name="sequential">
+              <UCheckbox v-model="formState.sequential" label="Силовая установка последовательного типа" />
             </UFormField>
             <!-- If 13_8702 автобус -->
             <UFormField v-if="formState.ts_type === '13_8702'" class="text-md" label="Вместимость" size="xl" name="chassis">
@@ -252,10 +252,10 @@ const isPowerDisabled = computed(() => {
             
           </div>
           <div class="bus-eco-class">
-            <UFormField v-if="formState.ts_type === '13_8702'" class="text-md" label="Для осуществления перевозок по межмуниципальным, смежным межрегиональным, межрегиональным и международным маршрутам регулярных перевозок" size="xl" name="bus_municipal_cb">
-              <UCheckbox v-model="formState.bus_municipal_cb" />
+            <UFormField v-if="formState.ts_type === '13_8702'" class="text-md mx-4"  size="xl" name="bus_municipal_cb">
+              <UCheckbox v-model="formState.bus_municipal_cb" label="Для осуществления перевозок по межмуниципальным, смежным межрегиональным, межрегиональным и международным маршрутам регулярных перевозок"/>
             </UFormField>
-            <UFormField v-if="formState.ts_type === '13_8702'" class="text-md" label="Эк. класс" size="xl" name="chassis">
+            <UFormField v-if="formState.ts_type === '13_8702'" class="text-md mx-4" label="Эк. класс" size="xl" name="chassis">
               <URadioGroup v-model="formState.buscap" size="xs" variant="table" orientation="vertical" :items="BUS_ECO_CLASS_OPTIONS" />
             </UFormField>
           </div>
@@ -295,6 +295,7 @@ const isPowerDisabled = computed(() => {
   gap: 20px;
   @media screen and (max-width: 868px) {
     display: flex;
+    /* justify-content: space-between; */
     width: 100%;
     flex-wrap: wrap;
     font-size: 1rem;

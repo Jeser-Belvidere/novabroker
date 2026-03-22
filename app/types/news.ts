@@ -42,4 +42,5 @@ export interface INews {
     imgSrc: string;
     tags: string[];
     listIndex: number;
+    keywords?: string;
 }
