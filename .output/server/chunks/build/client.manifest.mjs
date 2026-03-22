@@ -11,7 +11,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "Dat2yBf8.js",
+    "file": "2QEL4lmZ.js",
     "name": "entry",
     "src": "../node_modules/nuxt/dist/app/entry.js",
     "isEntry": true,
@@ -19,11 +19,11 @@ const client_manifest = {
       "layouts/default.vue"
     ],
     "css": [
-      "entry.DqC2XgQC.css"
+      "entry.CrT_sqdw.css"
     ]
   },
-  "entry.DqC2XgQC.css": {
-    "file": "entry.DqC2XgQC.css",
+  "entry.CrT_sqdw.css": {
+    "file": "entry.CrT_sqdw.css",
     "resourceType": "style",
     "prefetch": true,
     "preload": true
@@ -37,23 +37,12 @@ const client_manifest = {
     "name": "maplibre-gl",
     "isDynamicEntry": true
   },
-  "_C1r6XU_U.js": {
+  "_CKC-7Z3r.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "C1r6XU_U.js",
-    "name": "index",
-    "imports": [
-      "../node_modules/nuxt/dist/app/entry.js"
-    ]
-  },
-  "_DGVbx42i.js": {
-    "resourceType": "script",
-    "module": true,
-    "prefetch": true,
-    "preload": true,
-    "file": "DGVbx42i.js",
+    "file": "CKC-7Z3r.js",
     "name": "Icon",
     "imports": [
       "../node_modules/nuxt/dist/app/entry.js"
@@ -77,13 +66,16 @@ const client_manifest = {
     "prefetch": true,
     "mimeType": "image/svg+xml"
   },
-  "_DYnUMtX-.js": {
+  "_DXHJs2PJ.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "DYnUMtX-.js",
-    "name": "newsFeed"
+    "file": "DXHJs2PJ.js",
+    "name": "index",
+    "imports": [
+      "../node_modules/nuxt/dist/app/entry.js"
+    ]
   },
   "_Icon.BAiXO1AN.css": {
     "resourceType": "style",
@@ -91,6 +83,14 @@ const client_manifest = {
     "preload": true,
     "file": "Icon.BAiXO1AN.css",
     "src": "_Icon.BAiXO1AN.css"
+  },
+  "_Opw2LGhh.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "Opw2LGhh.js",
+    "name": "newsFeed"
   },
   "assets/icons/yandex-maps.svg": {
     "resourceType": "image",
@@ -111,13 +111,13 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "C3OEkt_8.js",
+    "file": "DeolC4DP.js",
     "name": "default",
     "src": "layouts/default.vue",
     "isDynamicEntry": true,
     "imports": [
       "../node_modules/nuxt/dist/app/entry.js",
-      "_C1r6XU_U.js"
+      "_DXHJs2PJ.js"
     ],
     "css": []
   },
@@ -132,7 +132,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "C65AInEQ.js",
+    "file": "DwpN40q5.js",
     "name": "_...slug_",
     "src": "pages/[...slug].vue",
     "isDynamicEntry": true,
@@ -152,18 +152,18 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "Bwo9xib7.js",
+    "file": "DrgQ1yAn.js",
     "name": "contacts",
     "src": "pages/contacts.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_DGVbx42i.js",
+      "_CKC-7Z3r.js",
       "../node_modules/nuxt/dist/app/entry.js"
     ],
     "css": []
   },
-  "contacts.DZwqPbsr.css": {
-    "file": "contacts.DZwqPbsr.css",
+  "contacts.DzGvJwhg.css": {
+    "file": "contacts.DzGvJwhg.css",
     "resourceType": "style",
     "prefetch": true,
     "preload": true
@@ -173,14 +173,14 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "CEfh5-E6.js",
+    "file": "BYKT3Qkp.js",
     "name": "index",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "../node_modules/nuxt/dist/app/entry.js",
-      "_DGVbx42i.js",
-      "_DYnUMtX-.js"
+      "_CKC-7Z3r.js",
+      "_Opw2LGhh.js"
     ],
     "dynamicImports": [
       "_BzPtgy5V.js"
@@ -190,8 +190,8 @@ const client_manifest = {
       "map-mobile.7K6KDHCb.webp"
     ]
   },
-  "index.D4Fd2WO_.css": {
-    "file": "index.D4Fd2WO_.css",
+  "index.0wEnGD7v.css": {
+    "file": "index.0wEnGD7v.css",
     "resourceType": "style",
     "prefetch": true,
     "preload": true
@@ -207,18 +207,18 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "BJFhGnjm.js",
+    "file": "C2Mlpbn1.js",
     "name": "_newsId_",
     "src": "pages/news/[newsId].vue",
     "isDynamicEntry": true,
     "imports": [
       "../node_modules/nuxt/dist/app/entry.js",
-      "_DYnUMtX-.js"
+      "_Opw2LGhh.js"
     ],
     "css": []
   },
-  "_newsId_.B6xPdlBe.css": {
-    "file": "_newsId_.B6xPdlBe.css",
+  "_newsId_.-opqY8rW.css": {
+    "file": "_newsId_.-opqY8rW.css",
     "resourceType": "style",
     "prefetch": true,
     "preload": true
@@ -228,13 +228,13 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "CkAQabvp.js",
+    "file": "D9YV100S.js",
     "name": "index",
     "src": "pages/news/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "../node_modules/nuxt/dist/app/entry.js",
-      "_DYnUMtX-.js"
+      "_Opw2LGhh.js"
     ],
     "css": []
   },
@@ -249,7 +249,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "z7sq0c4b.js",
+    "file": "ccAo7J1L.js",
     "name": "personaldata",
     "src": "pages/personaldata.vue",
     "isDynamicEntry": true,
@@ -269,7 +269,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "CvVRk1O-.js",
+    "file": "D2JZxYLp.js",
     "name": "privacy",
     "src": "pages/privacy.vue",
     "isDynamicEntry": true,
@@ -289,18 +289,18 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "Bf1kR_av.js",
+    "file": "B_Bm8GCW.js",
     "name": "tamozhennyy_kalkulyator",
     "src": "pages/tamozhennyy_kalkulyator.vue",
     "isDynamicEntry": true,
     "imports": [
       "../node_modules/nuxt/dist/app/entry.js",
-      "_C1r6XU_U.js"
+      "_DXHJs2PJ.js"
     ],
     "css": []
   },
-  "tamozhennyy_kalkulyator.CT0rhirH.css": {
-    "file": "tamozhennyy_kalkulyator.CT0rhirH.css",
+  "tamozhennyy_kalkulyator.DtTe_Pc0.css": {
+    "file": "tamozhennyy_kalkulyator.DtTe_Pc0.css",
     "resourceType": "style",
     "prefetch": true,
     "preload": true
