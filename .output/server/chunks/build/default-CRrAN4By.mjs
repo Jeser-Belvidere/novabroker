@@ -236,7 +236,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
       const _component_nuxt_link = __nuxt_component_0$2;
       const _component_UILink = __nuxt_component_0$1;
       const _component_UIMenu = __nuxt_component_2;
-      _push(`<header${ssrRenderAttrs(mergeProps({ class: "header" }, _attrs))} data-v-56ef694d><div class="header-content" data-v-56ef694d>`);
+      _push(`<header${ssrRenderAttrs(mergeProps({ class: "header" }, _attrs))} data-v-6b72beda><div class="header-content" data-v-6b72beda>`);
       _push(ssrRenderComponent(_component_nuxt_link, {
         class: "header-content__logo",
         to: "/"
@@ -252,7 +252,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`<div class="header-content__links" data-v-56ef694d>`);
+      _push(`<div class="header-content__links" data-v-6b72beda>`);
       _push(ssrRenderComponent(_component_UILink, { to: "/" }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
@@ -301,7 +301,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div><div class="header-content__contacts" data-v-56ef694d>`);
+      _push(`</div><div class="header-content__contacts" data-v-6b72beda>`);
       _push(ssrRenderComponent(_component_UILink, {
         to: { path: "/", hash: "#application" },
         type: "default"
@@ -317,11 +317,11 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
         }),
         _: 1
       }, _parent));
-      _push(`</div><div class="mobile-menu" data-v-56ef694d>`);
+      _push(`</div><div class="mobile-menu" data-v-6b72beda>`);
       _push(ssrRenderComponent(_component_UIMenu, null, null, _parent));
       _push(`</div></div>`);
       if (!unref(error)) {
-        _push(`<div class="header-currency" data-v-56ef694d><div class="header-currency__content" data-v-56ef694d> $: <span data-v-56ef694d>${ssrInterpolate(unref(currencies)?.USD?.value)}</span> | €: <span data-v-56ef694d>${ssrInterpolate(unref(currencies)?.EUR?.value)}</span> | ¥: <span data-v-56ef694d>${ssrInterpolate(unref(currencies)?.CNY?.value)}</span> | ₩: <span data-v-56ef694d>${ssrInterpolate(unref(currencies)?.KRW?.value)}</span></div></div>`);
+        _push(`<div class="header-currency" data-v-6b72beda><div class="header-currency__content" data-v-6b72beda> $: <span data-v-6b72beda>${ssrInterpolate(unref(currencies)?.USD?.value)} <span class="${ssrRenderClass(unref(currencies)?.USD.diff)}" data-v-6b72beda></span></span> | €: <span data-v-6b72beda>${ssrInterpolate(unref(currencies)?.EUR?.value)} <span class="${ssrRenderClass(unref(currencies)?.EUR.diff)}" data-v-6b72beda></span></span> | ¥: <span data-v-6b72beda>${ssrInterpolate(unref(currencies)?.CNY?.value)} <span class="${ssrRenderClass(unref(currencies)?.CNY.diff)}" data-v-6b72beda></span></span> | ₩: <span data-v-6b72beda>${ssrInterpolate(unref(currencies)?.KRW?.value)} <span class="${ssrRenderClass(unref(currencies)?.KRW.diff)}" data-v-6b72beda></span></span></div></div>`);
       } else {
         _push(`<!---->`);
       }
@@ -335,7 +335,7 @@ _sfc_main$2.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/AppHeader.vue");
   return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
 };
-const __nuxt_component_0 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$2, [["__scopeId", "data-v-56ef694d"]]), { __name: "AppHeader" });
+const __nuxt_component_0 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$2, [["__scopeId", "data-v-6b72beda"]]), { __name: "AppHeader" });
 const _sfc_main$1 = {};
 function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs) {
   const _component_UILink = __nuxt_component_0$1;
@@ -504,4 +504,4 @@ _sfc_main.setup = (props, ctx) => {
 const _default = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender], ["__scopeId", "data-v-9b6891ce"]]);
 
 export { _default as default };
-//# sourceMappingURL=default-ORAXhgoo.mjs.map
+//# sourceMappingURL=default-CRrAN4By.mjs.map

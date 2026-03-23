@@ -9,6 +9,19 @@ if (data.value) {
 	currencies.value = data.value
 }
 
+// const diffCurrencyView = (diff: 'bigger' | 'smaller' | 'equal' | undefined) => {
+// 	switch (diff) {
+// 	case 'bigger':
+// 		return '&#8593;'
+// 	case 'smaller':
+// 		return '&#8595;'
+// 	case 'equal':
+// 		return '&#61;'
+// 	default:
+// 		return null
+// 	}
+// }
+
 </script>
 <template>
   <header class="header">
@@ -29,11 +42,10 @@ if (data.value) {
     </div>
     <div v-if="!error" class="header-currency">
       <div class="header-currency__content">
-        $: <span>{{ currencies?.USD?.value }}</span> |
-        €: <span>{{ currencies?.EUR?.value }}</span> |
-        ¥: <span>{{ currencies?.CNY?.value }}</span> |
-        ₩: <span>{{ currencies?.KRW?.value }}</span>
-
+        $: <span>{{ currencies?.USD?.value }} <span :class="currencies?.USD.diff"/> </span> |
+        €: <span>{{ currencies?.EUR?.value }} <span :class="currencies?.EUR.diff"/></span> |
+        ¥: <span>{{ currencies?.CNY?.value }} <span :class="currencies?.CNY.diff"/></span> |
+        ₩: <span>{{ currencies?.KRW?.value }} <span :class="currencies?.KRW.diff"/></span>
       </div>
     </div>
   </header>
@@ -53,7 +65,6 @@ if (data.value) {
 
   @media screen and (max-width: 868px) {
     height: var(--header-height-mobile);
-    flex-direction: column-reverse;
   }
 }
 
@@ -136,5 +147,20 @@ if (data.value) {
   @media screen and (min-width: 852px) {
     display: none;
   }
+}
+
+.bigger::after {
+  content: '↑';
+  color: green;
+}
+
+.smaller::after {
+  content: '↓';
+  color: red;
+}
+
+.equal::after {
+  content: '＝';
+  color: white;
 }
 </style>

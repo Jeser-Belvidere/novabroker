@@ -2,7 +2,7 @@ import convert from 'xml2js';
 import { log } from './Logger';
 
 //US dollar, Chinese yuan, EURO
-export const CURRENCY_CODES = ['USD', 'CNY', 'EUR', 'KRW'] as const;
+const CURRENCY_CODES = ['USD', 'CNY', 'EUR', 'KRW'] as const;
 
 type currencyCode = (typeof CURRENCY_CODES)[number];
 interface IValute {
@@ -14,7 +14,7 @@ interface IValute {
 }
 
 export type TCurrencyData =
-  | (Record<currencyCode, { name: string; value: string }> & { date: string })
+  | (Record<currencyCode, { name: string; value: string, diff?: 'bigger' | 'smaller' | 'equal' }>)
   | null;
 
 class CurrencyStorage {
@@ -65,30 +65,24 @@ class CurrencyStorage {
 		return filterdValute;
 	}
 
-	public async updateCurrencyData() {
-		try {
-			if (this.errorTimeout) {
-				clearTimeout(this.errorTimeout);
-			}
-
-			log('info', 'Updating currency data...');
-			await fetch('https://www.cbr.ru/scripts/XML_daily.asp')
+	/**
+	 * 
+	 * @param date dd/mm/yyyy
+	 */
+	private async fetchCurrency(dateString: string): Promise<TCurrencyData> {
+		return new Promise((resolve, reject) => {
+			fetch(
+				`https://www.cbr.ru/scripts/XML_daily.asp?date_req=${dateString}`
+			)
 				.then((res) => res.text())
 				.then((data) => {
 					convert.parseString(data, {}, (err, result) => {
 						if (err) {
 							log('info', 'Updating currency data failed...');
-							throw err;
+							reject(err);
 						}
 
-						const {
-							ValCurs: {
-								$: { Date: date },
-							},
-						} = result;
-
-						this.currencyData = {
-							date,
+						const resultObj = {
 							USD: {
 								name: 'Американский доллар',
 								value: '0',
@@ -110,18 +104,52 @@ class CurrencyStorage {
 						const formattedCurrency = this.formatCurrencyData(result);
 
 						for (const item of formattedCurrency) {
-							this.currencyData[item.code as currencyCode].value = item.value;
+							resultObj[item.code as currencyCode].value = item.value;
 						}
 
-						log(
-							'info',
-							`Currency data updated: ${JSON.stringify(this.currencyData)}`
-						);
+						resolve(resultObj)
 					});
 				})
-				.catch((err) => {
-					throw err;
-				});
+		});
+
+		
+
+	}
+
+	public async updateCurrencyData() {
+		const todayDate = new Date().toLocaleDateString('ru-RU');
+		const previousDate = new Date(new Date().setDate(new Date().getDate() - 1)).toLocaleDateString('ru-RU');
+		try {
+			if (this.errorTimeout) {
+				clearTimeout(this.errorTimeout);
+			}
+
+			log('info', 'Updating currency data...');
+			const todayCurrencyData = await this.fetchCurrency(todayDate);
+			const previousCurrencyData = await this.fetchCurrency(previousDate);
+
+			this.currencyData = todayCurrencyData;
+
+			if (previousCurrencyData) {
+				for (const key in this.currencyData) {
+					const previousValue = Number(previousCurrencyData[key as currencyCode].value);
+					const todayValue = Number(this.currencyData[key as currencyCode].value);
+
+					if (todayValue > previousValue) {
+						this.currencyData[key as currencyCode].diff = 'bigger';
+					} else if (todayValue < previousValue) {
+						this.currencyData[key as currencyCode].diff = 'smaller';
+					} else {
+						this.currencyData[key as currencyCode].diff = 'equal';
+					}
+
+				}
+			} else {
+				log('error', 'Error during comparing currency data, previousCurrencyData is null');
+			}
+			
+			log('info', `Previous currency data: ${JSON.stringify(previousCurrencyData)}, DATE: ${previousDate}`);
+			log('info', `Currency data updated: ${JSON.stringify(todayCurrencyData)}, DATE: ${todayDate}`);
 		} catch (e) {
 			log(
 				'error',
