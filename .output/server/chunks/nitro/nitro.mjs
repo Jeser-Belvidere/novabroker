@@ -4408,7 +4408,7 @@ function _expandFromEnv(value) {
 const _inlineRuntimeConfig = {
   "app": {
     "baseURL": "/",
-    "buildId": "401e2945-154a-4c79-8515-f480ec218186",
+    "buildId": "dd0642ea-60e8-4145-a495-b5e61e422926",
     "buildAssetsDir": "/_nuxt/",
     "cdnURL": ""
   },
@@ -5478,541 +5478,541 @@ const assets = {
   "/cursor.svg": {
     "type": "image/svg+xml",
     "etag": "\"579-AVYMUAMZQenBRJUCrH3i8yVlRV0\"",
-    "mtime": "2026-03-23T07:45:44.147Z",
+    "mtime": "2026-03-24T14:25:13.748Z",
     "size": 1401,
     "path": "../public/cursor.svg"
   },
   "/favicon.ico": {
     "type": "image/vnd.microsoft.icon",
     "etag": "\"10be-A8eX6F8spno6tpePeR4L1fpYIkw\"",
-    "mtime": "2026-03-23T07:45:44.147Z",
+    "mtime": "2026-03-24T14:25:13.749Z",
     "size": 4286,
     "path": "../public/favicon.ico"
   },
   "/icon128x128.svg": {
     "type": "image/svg+xml",
     "etag": "\"12f-Wjrnmc1S+MuEjSh+54eIfYwGsUE\"",
-    "mtime": "2026-03-23T07:45:44.147Z",
+    "mtime": "2026-03-24T14:25:13.749Z",
     "size": 303,
     "path": "../public/icon128x128.svg"
   },
   "/icon180x180.svg": {
     "type": "image/svg+xml",
     "etag": "\"155-r254L5hgziu7TRXeNkGuS0mA5V8\"",
-    "mtime": "2026-03-23T07:45:44.147Z",
+    "mtime": "2026-03-24T14:25:13.749Z",
     "size": 341,
     "path": "../public/icon180x180.svg"
   },
   "/icon256x256.svg": {
     "type": "image/svg+xml",
     "etag": "\"137-+60qz1JaMW9q4UfE6+P+HV/7s48\"",
-    "mtime": "2026-03-23T07:45:44.148Z",
+    "mtime": "2026-03-24T14:25:13.749Z",
     "size": 311,
     "path": "../public/icon256x256.svg"
   },
   "/icon300x300.jpg": {
     "type": "image/jpeg",
     "etag": "\"86c0-tgsCnW6qCwoMBWor4DXnyelJpzM\"",
-    "mtime": "2026-03-23T07:45:44.148Z",
+    "mtime": "2026-03-24T14:25:13.750Z",
     "size": 34496,
     "path": "../public/icon300x300.jpg"
   },
   "/icon512x512.svg": {
     "type": "image/svg+xml",
     "etag": "\"12d-X1iuBn+QQDUBc8OwDPEpFlCowhE\"",
-    "mtime": "2026-03-23T07:45:44.148Z",
+    "mtime": "2026-03-24T14:25:13.750Z",
     "size": 301,
     "path": "../public/icon512x512.svg"
   },
   "/icon64x64.svg": {
     "type": "image/svg+xml",
     "etag": "\"137-CR1PFYBQmsJK9xgg+DcZOa/XHgw\"",
-    "mtime": "2026-03-23T07:45:44.148Z",
+    "mtime": "2026-03-24T14:25:13.750Z",
     "size": 311,
     "path": "../public/icon64x64.svg"
   },
   "/manifest.json": {
     "type": "application/json",
     "etag": "\"2f0-60cKES+YdR2W1NknCmMkIVtj0DY\"",
-    "mtime": "2026-03-23T07:45:44.148Z",
+    "mtime": "2026-03-24T14:25:13.750Z",
     "size": 752,
     "path": "../public/manifest.json"
   },
   "/robots.txt": {
     "type": "text/plain; charset=utf-8",
     "etag": "\"17-btGtiJUUy/a7whls31sgntjUPk4\"",
-    "mtime": "2026-03-23T07:45:44.148Z",
+    "mtime": "2026-03-24T14:25:13.752Z",
     "size": 23,
     "path": "../public/robots.txt"
   },
   "/yametrika.js": {
     "type": "text/javascript; charset=utf-8",
     "etag": "\"251-KLp/yxNoDbSlO7R+6y5zhUsrH5U\"",
-    "mtime": "2026-03-23T07:45:44.149Z",
+    "mtime": "2026-03-24T14:25:13.752Z",
     "size": 593,
     "path": "../public/yametrika.js"
   },
   "/fonts/AdventPro-VariableFont_wdth,wght.ttf": {
     "type": "font/ttf",
     "etag": "\"3c828-4aP7hoqsFjf13bt9o6pN2cYL0dk\"",
-    "mtime": "2026-03-23T07:45:44.127Z",
+    "mtime": "2026-03-24T14:25:13.713Z",
     "size": 247848,
     "path": "../public/fonts/AdventPro-VariableFont_wdth,wght.ttf"
   },
   "/_nuxt/-2dM3RiF.js": {
     "type": "text/javascript; charset=utf-8",
     "etag": "\"ca9-sXSGAEhCLAU3kuUmevaJayQ7rcE\"",
-    "mtime": "2026-03-23T07:45:44.121Z",
+    "mtime": "2026-03-24T14:25:13.700Z",
     "size": 3241,
     "path": "../public/_nuxt/-2dM3RiF.js"
   },
   "/_nuxt/9BFKYAgO.js": {
     "type": "text/javascript; charset=utf-8",
     "etag": "\"8cc-E/PVNT8qgBOGoT8Kp1x87tK8iaA\"",
-    "mtime": "2026-03-23T07:45:44.114Z",
+    "mtime": "2026-03-24T14:25:13.685Z",
     "size": 2252,
     "path": "../public/_nuxt/9BFKYAgO.js"
   },
   "/_nuxt/BAG2l6SW.js": {
     "type": "text/javascript; charset=utf-8",
     "etag": "\"32c4-fRVUYkS+LIJFN5++orueI9/KYVU\"",
-    "mtime": "2026-03-23T07:45:44.114Z",
+    "mtime": "2026-03-24T14:25:13.685Z",
     "size": 12996,
     "path": "../public/_nuxt/BAG2l6SW.js"
   },
   "/_nuxt/BDjP3LMj.js": {
     "type": "text/javascript; charset=utf-8",
     "etag": "\"1912-bKG+GVxzg9VX8GSFGmoqQVZ6AE4\"",
-    "mtime": "2026-03-23T07:45:44.114Z",
+    "mtime": "2026-03-24T14:25:13.685Z",
     "size": 6418,
     "path": "../public/_nuxt/BDjP3LMj.js"
   },
   "/_nuxt/BshZsmt6.js": {
     "type": "text/javascript; charset=utf-8",
     "etag": "\"5fdea-/ZErWjKjTrk4/sB1i6A3RSWQcuU\"",
-    "mtime": "2026-03-23T07:45:44.115Z",
+    "mtime": "2026-03-24T14:25:13.685Z",
     "size": 392682,
     "path": "../public/_nuxt/BshZsmt6.js"
   },
   "/_nuxt/Btf-3Rpq.js": {
     "type": "text/javascript; charset=utf-8",
     "etag": "\"207-fKXq4rk8q9JbdgqrS2BT4DYr1rY\"",
-    "mtime": "2026-03-23T07:45:44.115Z",
+    "mtime": "2026-03-24T14:25:13.687Z",
     "size": 519,
     "path": "../public/_nuxt/Btf-3Rpq.js"
   },
   "/_nuxt/BzPtgy5V.js": {
     "type": "text/javascript; charset=utf-8",
     "etag": "\"e4e48-ID5Xuvwy+cdUOAF7mdt506GB940\"",
-    "mtime": "2026-03-23T07:45:44.118Z",
+    "mtime": "2026-03-24T14:25:13.689Z",
     "size": 937544,
     "path": "../public/_nuxt/BzPtgy5V.js"
   },
   "/_nuxt/CJ-ZQvTZ.js": {
     "type": "text/javascript; charset=utf-8",
     "etag": "\"2812c-8nN+KBL2x3qLLuIja0b0FxPyQqM\"",
-    "mtime": "2026-03-23T07:45:44.116Z",
+    "mtime": "2026-03-24T14:25:13.688Z",
     "size": 164140,
     "path": "../public/_nuxt/CJ-ZQvTZ.js"
   },
   "/_nuxt/CK8jCe_6.js": {
     "type": "text/javascript; charset=utf-8",
     "etag": "\"a92-GeyhGRJKIXc3w3UptRwiJCsqVac\"",
-    "mtime": "2026-03-23T07:45:44.115Z",
+    "mtime": "2026-03-24T14:25:13.690Z",
     "size": 2706,
     "path": "../public/_nuxt/CK8jCe_6.js"
   },
   "/_nuxt/Cjc3xuak.js": {
     "type": "text/javascript; charset=utf-8",
     "etag": "\"3d7d-aeNzA7H882EVb2dK53Os/tDJtdY\"",
-    "mtime": "2026-03-23T07:45:44.116Z",
+    "mtime": "2026-03-24T14:25:13.690Z",
     "size": 15741,
     "path": "../public/_nuxt/Cjc3xuak.js"
   },
   "/_nuxt/DifHFmBh.js": {
     "type": "text/javascript; charset=utf-8",
     "etag": "\"185-G0kXmf+HHwSU8ZaVMNLJ1UR4Q0A\"",
-    "mtime": "2026-03-23T07:45:44.117Z",
+    "mtime": "2026-03-24T14:25:13.688Z",
     "size": 389,
     "path": "../public/_nuxt/DifHFmBh.js"
   },
   "/_nuxt/DnZB03K-.js": {
     "type": "text/javascript; charset=utf-8",
     "etag": "\"a5cc-rlHbnZ3SRuwWVOk7ixhf8exP3mU\"",
-    "mtime": "2026-03-23T07:45:44.117Z",
+    "mtime": "2026-03-24T14:25:13.689Z",
     "size": 42444,
     "path": "../public/_nuxt/DnZB03K-.js"
   },
   "/_nuxt/Icon.BAiXO1AN.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"3f25-HGk8GcH19P8iqAQb0NMKhP1X0nI\"",
-    "mtime": "2026-03-23T07:45:44.117Z",
+    "mtime": "2026-03-24T14:25:13.691Z",
     "size": 16165,
     "path": "../public/_nuxt/Icon.BAiXO1AN.css"
   },
   "/_nuxt/Opw2LGhh.js": {
     "type": "text/javascript; charset=utf-8",
     "etag": "\"22a93-050QhZPNE/+7p8A9oA/JCuHHDQg\"",
-    "mtime": "2026-03-23T07:45:44.118Z",
+    "mtime": "2026-03-24T14:25:13.690Z",
     "size": 141971,
     "path": "../public/_nuxt/Opw2LGhh.js"
   },
   "/_nuxt/XUmdWnQi.js": {
     "type": "text/javascript; charset=utf-8",
     "etag": "\"3ad42-jUxvSOuhR4Hg067RLbIDa1b+BRg\"",
-    "mtime": "2026-03-23T07:45:44.118Z",
+    "mtime": "2026-03-24T14:25:13.690Z",
     "size": 240962,
     "path": "../public/_nuxt/XUmdWnQi.js"
   },
   "/_nuxt/_...mPfv0HTB.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"280-OhfpCH9nJmSVg5jVzfGTA70qhp0\"",
-    "mtime": "2026-03-23T07:45:44.118Z",
+    "mtime": "2026-03-24T14:25:13.691Z",
     "size": 640,
     "path": "../public/_nuxt/_...mPfv0HTB.css"
   },
   "/_nuxt/_newsId_.-opqY8rW.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"596-ekjNLA6JbtuWde2hc/Ukz+breq4\"",
-    "mtime": "2026-03-23T07:45:44.119Z",
+    "mtime": "2026-03-24T14:25:13.693Z",
     "size": 1430,
     "path": "../public/_nuxt/_newsId_.-opqY8rW.css"
   },
   "/_nuxt/contacts.DzGvJwhg.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"165e-PfgcvcZnYP1tmfEN3alLpifeR0I\"",
-    "mtime": "2026-03-23T07:45:44.119Z",
+    "mtime": "2026-03-24T14:25:13.692Z",
     "size": 5726,
     "path": "../public/_nuxt/contacts.DzGvJwhg.css"
   },
   "/_nuxt/default.DE5zHvT0.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"11eb-KJ0nb9n75vhGHIleJlkjGLkan+8\"",
-    "mtime": "2026-03-23T07:45:44.119Z",
+    "mtime": "2026-03-24T14:25:13.692Z",
     "size": 4587,
     "path": "../public/_nuxt/default.DE5zHvT0.css"
   },
   "/_nuxt/entry.CrT_sqdw.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"2aff2-fQ5lOe4xXw1fPZwBfpVBvt4cJjQ\"",
-    "mtime": "2026-03-23T07:45:44.119Z",
+    "mtime": "2026-03-24T14:25:13.695Z",
     "size": 176114,
     "path": "../public/_nuxt/entry.CrT_sqdw.css"
   },
   "/_nuxt/index.0wEnGD7v.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"429a-Kne7AHhxYYFsjYPwuJ+KGd7rR0k\"",
-    "mtime": "2026-03-23T07:45:44.120Z",
+    "mtime": "2026-03-24T14:25:13.694Z",
     "size": 17050,
     "path": "../public/_nuxt/index.0wEnGD7v.css"
   },
   "/_nuxt/index.C-rnGreP.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"e43-S5C0WprnioUX6LGycGIydBAejQg\"",
-    "mtime": "2026-03-23T07:45:44.120Z",
+    "mtime": "2026-03-24T14:25:13.695Z",
     "size": 3651,
     "path": "../public/_nuxt/index.C-rnGreP.css"
   },
   "/_nuxt/map-mobile.7K6KDHCb.webp": {
     "type": "image/webp",
     "etag": "\"15fda-aJfxy5j/1JJ5tHpY68Vc4874ak8\"",
-    "mtime": "2026-03-23T07:45:44.120Z",
+    "mtime": "2026-03-24T14:25:13.698Z",
     "size": 90074,
     "path": "../public/_nuxt/map-mobile.7K6KDHCb.webp"
   },
   "/_nuxt/maplibre-gl.Cm_JH2Yw.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"10ecd-KwlxoLJdm8auBhyu4GSLTrbYKCE\"",
-    "mtime": "2026-03-23T07:45:44.120Z",
+    "mtime": "2026-03-24T14:25:13.698Z",
     "size": 69325,
     "path": "../public/_nuxt/maplibre-gl.Cm_JH2Yw.css"
   },
   "/_nuxt/personaldata.knZAuAsC.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"1f8-nm3xpIrfgf3asyJBj1U20eFbCko\"",
-    "mtime": "2026-03-23T07:45:44.121Z",
+    "mtime": "2026-03-24T14:25:13.697Z",
     "size": 504,
     "path": "../public/_nuxt/personaldata.knZAuAsC.css"
   },
   "/_nuxt/privacy.FQapnSeV.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"27a-mw6G+MiiONiFYFMmmxjk2dwjx/M\"",
-    "mtime": "2026-03-23T07:45:44.121Z",
+    "mtime": "2026-03-24T14:25:13.697Z",
     "size": 634,
     "path": "../public/_nuxt/privacy.FQapnSeV.css"
   },
   "/_nuxt/tamozhennyy_kalkulyator.DtTe_Pc0.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"1773-vi6nj/DJ7o7TMgZ1PVMH8Sljuu4\"",
-    "mtime": "2026-03-23T07:45:44.121Z",
+    "mtime": "2026-03-24T14:25:13.700Z",
     "size": 6003,
     "path": "../public/_nuxt/tamozhennyy_kalkulyator.DtTe_Pc0.css"
   },
   "/_nuxt/yandex-maps.42ObKiA9.svg": {
     "type": "image/svg+xml",
     "etag": "\"105e-JzDKKK8hjybJskE//sX3yt6kiKA\"",
-    "mtime": "2026-03-23T07:45:44.121Z",
+    "mtime": "2026-03-24T14:25:13.699Z",
     "size": 4190,
     "path": "../public/_nuxt/yandex-maps.42ObKiA9.svg"
   },
   "/images/10news.webp": {
     "type": "image/webp",
     "etag": "\"12c90-oDj8GNsjPwnxno2XHi5Sj+fszQc\"",
-    "mtime": "2026-03-23T07:45:44.127Z",
+    "mtime": "2026-03-24T14:25:13.714Z",
     "size": 76944,
     "path": "../public/images/10news.webp"
   },
   "/images/11news.webp": {
     "type": "image/webp",
     "etag": "\"3d762-Ss2EKwoaJNT19/kk9rb5qp/+1kE\"",
-    "mtime": "2026-03-23T07:45:44.128Z",
+    "mtime": "2026-03-24T14:25:13.720Z",
     "size": 251746,
     "path": "../public/images/11news.webp"
   },
   "/images/12news.webp": {
     "type": "image/webp",
     "etag": "\"1b4d2-FD5/DmIA7Ve8bk2gheWaXYAsXG0\"",
-    "mtime": "2026-03-23T07:45:44.129Z",
+    "mtime": "2026-03-24T14:25:13.714Z",
     "size": 111826,
     "path": "../public/images/12news.webp"
   },
   "/images/13news.webp": {
     "type": "image/webp",
     "etag": "\"177f6-+RNudw1c2uTxjffFBcAFJ1c9zfs\"",
-    "mtime": "2026-03-23T07:45:44.127Z",
+    "mtime": "2026-03-24T14:25:13.714Z",
     "size": 96246,
     "path": "../public/images/13news.webp"
   },
   "/images/14news.webp": {
     "type": "image/webp",
     "etag": "\"a36d0-8bgfdGO1siA8PnqnL6Oju50+whI\"",
-    "mtime": "2026-03-23T07:45:44.131Z",
+    "mtime": "2026-03-24T14:25:13.718Z",
     "size": 669392,
     "path": "../public/images/14news.webp"
   },
   "/images/15news.webp": {
     "type": "image/webp",
     "etag": "\"3cd7c-jl1G0nZWzb8OKCK1tQ3dQHo5/Nw\"",
-    "mtime": "2026-03-23T07:45:44.132Z",
+    "mtime": "2026-03-24T14:25:13.715Z",
     "size": 249212,
     "path": "../public/images/15news.webp"
   },
   "/images/16news.webp": {
     "type": "image/webp",
     "etag": "\"2111a-UBNHnyfm4+ON+wA/T07/6ytAkyQ\"",
-    "mtime": "2026-03-23T07:45:44.131Z",
+    "mtime": "2026-03-24T14:25:13.716Z",
     "size": 135450,
     "path": "../public/images/16news.webp"
   },
   "/images/17news.webp": {
     "type": "image/webp",
     "etag": "\"4258c-bRa/5r695Ja+eCvGLicK+A6gXi4\"",
-    "mtime": "2026-03-23T07:45:44.132Z",
+    "mtime": "2026-03-24T14:25:13.716Z",
     "size": 271756,
     "path": "../public/images/17news.webp"
   },
   "/images/18news.webp": {
     "type": "image/webp",
     "etag": "\"3ddec-ICY7/sEeF8tPm7+0ThJ41fa0500\"",
-    "mtime": "2026-03-23T07:45:44.134Z",
+    "mtime": "2026-03-24T14:25:13.719Z",
     "size": 253420,
     "path": "../public/images/18news.webp"
   },
   "/images/19news.webp": {
     "type": "image/webp",
     "etag": "\"3531c-XbgDmf7OkZ3Pk/jlmLUwgHXdan4\"",
-    "mtime": "2026-03-23T07:45:44.133Z",
+    "mtime": "2026-03-24T14:25:13.748Z",
     "size": 217884,
     "path": "../public/images/19news.webp"
   },
   "/images/20news.webp": {
     "type": "image/webp",
     "etag": "\"42404-x9IARregGQPRyB7TazJ6fQKT/YM\"",
-    "mtime": "2026-03-23T07:45:44.133Z",
+    "mtime": "2026-03-24T14:25:13.720Z",
     "size": 271364,
     "path": "../public/images/20news.webp"
   },
   "/images/21news.webp": {
     "type": "image/webp",
     "etag": "\"9bbe-P056dcgf+553OT6D78M1A9Z1AWs\"",
-    "mtime": "2026-03-23T07:45:44.132Z",
+    "mtime": "2026-03-24T14:25:13.721Z",
     "size": 39870,
     "path": "../public/images/21news.webp"
   },
   "/images/22news.webp": {
     "type": "image/webp",
     "etag": "\"171e0-8671J68tNIRvaKYx+zsQS+Cxv8Q\"",
-    "mtime": "2026-03-23T07:45:44.134Z",
+    "mtime": "2026-03-24T14:25:13.722Z",
     "size": 94688,
     "path": "../public/images/22news.webp"
   },
   "/images/23news.webp": {
     "type": "image/webp",
     "etag": "\"9cd4c-eUaH+K7BpvpgaW+r9CK3du6OtmI\"",
-    "mtime": "2026-03-23T07:45:44.136Z",
+    "mtime": "2026-03-24T14:25:13.738Z",
     "size": 642380,
     "path": "../public/images/23news.webp"
   },
   "/images/24news.webp": {
     "type": "image/webp",
     "etag": "\"86d18-h8UdVIWGdB7EgN55Mo3F3t7ulMA\"",
-    "mtime": "2026-03-23T07:45:44.136Z",
+    "mtime": "2026-03-24T14:25:13.727Z",
     "size": 552216,
     "path": "../public/images/24news.webp"
   },
   "/images/25news.webp": {
     "type": "image/webp",
     "etag": "\"6f906-1CZxLnApMC3t4Wpj0royIilPJEE\"",
-    "mtime": "2026-03-23T07:45:44.136Z",
+    "mtime": "2026-03-24T14:25:13.726Z",
     "size": 456966,
     "path": "../public/images/25news.webp"
   },
   "/images/26news.webp": {
     "type": "image/webp",
     "etag": "\"34802-mbjsxBX4SOvMOAE8ZFVCQL0JDP4\"",
-    "mtime": "2026-03-23T07:45:44.137Z",
+    "mtime": "2026-03-24T14:25:13.725Z",
     "size": 215042,
     "path": "../public/images/26news.webp"
   },
   "/images/27news.webp": {
     "type": "image/webp",
     "etag": "\"383c2-uszs2EjNpqZYChrTjH9ipBYFX5w\"",
-    "mtime": "2026-03-23T07:45:44.135Z",
+    "mtime": "2026-03-24T14:25:13.726Z",
     "size": 230338,
     "path": "../public/images/27news.webp"
   },
   "/images/28news.webp": {
     "type": "image/webp",
     "etag": "\"22e9a-OAyVdBYQDLdu4IqEi3dhECiPIlk\"",
-    "mtime": "2026-03-23T07:45:44.139Z",
+    "mtime": "2026-03-24T14:25:13.730Z",
     "size": 143002,
     "path": "../public/images/28news.webp"
   },
   "/images/29news.webp": {
     "type": "image/webp",
     "etag": "\"41eb2-vNafQ9WppC8TwyD2FUaZWidUeOs\"",
-    "mtime": "2026-03-23T07:45:44.139Z",
+    "mtime": "2026-03-24T14:25:13.732Z",
     "size": 270002,
     "path": "../public/images/29news.webp"
   },
   "/images/30news.webp": {
     "type": "image/webp",
     "etag": "\"ddcf4-AaCd0zjP5thCQ8oPU6RnWoG6Tts\"",
-    "mtime": "2026-03-23T07:45:44.140Z",
+    "mtime": "2026-03-24T14:25:13.731Z",
     "size": 908532,
     "path": "../public/images/30news.webp"
   },
   "/images/31news.webp": {
     "type": "image/webp",
     "etag": "\"36e70-3J+8oIMybeTkEau/koiBIVrfGzI\"",
-    "mtime": "2026-03-23T07:45:44.141Z",
+    "mtime": "2026-03-24T14:25:13.731Z",
     "size": 224880,
     "path": "../public/images/31news.webp"
   },
   "/images/32news.webp": {
     "type": "image/webp",
     "etag": "\"bf8c-kNa9nK+F72hdhahFoVRxdbdk5MM\"",
-    "mtime": "2026-03-23T07:45:44.140Z",
+    "mtime": "2026-03-24T14:25:13.733Z",
     "size": 49036,
     "path": "../public/images/32news.webp"
   },
   "/images/33news.webp": {
     "type": "image/webp",
     "etag": "\"16344-aDxSm+S026F9C7OUmcM0MgHqDsU\"",
-    "mtime": "2026-03-23T07:45:44.141Z",
+    "mtime": "2026-03-24T14:25:13.736Z",
     "size": 90948,
     "path": "../public/images/33news.webp"
   },
   "/images/34news.webp": {
     "type": "image/webp",
     "etag": "\"7061a-Gtbs8CwKpsv2gw3Em4PdkJjEWck\"",
-    "mtime": "2026-03-23T07:45:44.140Z",
+    "mtime": "2026-03-24T14:25:13.738Z",
     "size": 460314,
     "path": "../public/images/34news.webp"
   },
   "/images/5news.webp": {
     "type": "image/webp",
     "etag": "\"98a0-IkUjC18a122qLqEmRTRMW99dp0s\"",
-    "mtime": "2026-03-23T07:45:44.143Z",
+    "mtime": "2026-03-24T14:25:13.739Z",
     "size": 39072,
     "path": "../public/images/5news.webp"
   },
   "/images/6news.webp": {
     "type": "image/webp",
     "etag": "\"12de2-ZPAZ9CuI+N/LokEkXGs8PlbcH8A\"",
-    "mtime": "2026-03-23T07:45:44.143Z",
+    "mtime": "2026-03-24T14:25:13.742Z",
     "size": 77282,
     "path": "../public/images/6news.webp"
   },
   "/images/7news.webp": {
     "type": "image/webp",
     "etag": "\"2bf94-dwiv7cPmtlTVR99pa+Lb0NJyzpc\"",
-    "mtime": "2026-03-23T07:45:44.144Z",
+    "mtime": "2026-03-24T14:25:13.738Z",
     "size": 180116,
     "path": "../public/images/7news.webp"
   },
   "/images/8news.webp": {
     "type": "image/webp",
     "etag": "\"20588-xpDJWM5yNKwHxcVIHu09xP+8i0c\"",
-    "mtime": "2026-03-23T07:45:44.144Z",
+    "mtime": "2026-03-24T14:25:13.744Z",
     "size": 132488,
     "path": "../public/images/8news.webp"
   },
   "/images/9news.webp": {
     "type": "image/webp",
     "etag": "\"2d3ca-WcUh6TnrEASRwFzkN7M1fugWP/w\"",
-    "mtime": "2026-03-23T07:45:44.144Z",
+    "mtime": "2026-03-24T14:25:13.743Z",
     "size": 185290,
     "path": "../public/images/9news.webp"
   },
   "/images/map-mobile.webp": {
     "type": "image/webp",
     "etag": "\"15fda-aJfxy5j/1JJ5tHpY68Vc4874ak8\"",
-    "mtime": "2026-03-23T07:45:44.144Z",
+    "mtime": "2026-03-24T14:25:13.743Z",
     "size": 90074,
     "path": "../public/images/map-mobile.webp"
   },
   "/images/news_1.webp": {
     "type": "image/webp",
     "etag": "\"a7ac-dCzYs09SbltJh44gdUrQjB2X8eU\"",
-    "mtime": "2026-03-23T07:45:44.145Z",
+    "mtime": "2026-03-24T14:25:13.745Z",
     "size": 42924,
     "path": "../public/images/news_1.webp"
   },
   "/images/prestupnost.webp": {
     "type": "image/webp",
     "etag": "\"ed8c-IxjORKvRv0J4AU32JqopnAsDdaE\"",
-    "mtime": "2026-03-23T07:45:44.146Z",
+    "mtime": "2026-03-24T14:25:13.746Z",
     "size": 60812,
     "path": "../public/images/prestupnost.webp"
   },
   "/images/utilsbor.webp": {
     "type": "image/webp",
     "etag": "\"293da-/tKUM710XlIENsbWBS/qSg9yBIs\"",
-    "mtime": "2026-03-23T07:45:44.146Z",
+    "mtime": "2026-03-24T14:25:13.747Z",
     "size": 168922,
     "path": "../public/images/utilsbor.webp"
   },
   "/images/zaderzhanie.webp": {
     "type": "image/webp",
     "etag": "\"31e04-pFqq8vFjZHxlLg/pMvjyHNPvwss\"",
-    "mtime": "2026-03-23T07:45:44.146Z",
+    "mtime": "2026-03-24T14:25:13.747Z",
     "size": 204292,
     "path": "../public/images/zaderzhanie.webp"
   },
   "/_nuxt/builds/latest.json": {
     "type": "application/json",
-    "etag": "\"47-ENQB6HCTZSwM/nnJeOFt2uWwHoY\"",
-    "mtime": "2026-03-23T07:45:44.106Z",
+    "etag": "\"47-1xjPZeOKfSX550qWd0jf2CYNfYw\"",
+    "mtime": "2026-03-24T14:25:13.678Z",
     "size": 71,
     "path": "../public/_nuxt/builds/latest.json"
   },
-  "/_nuxt/builds/meta/401e2945-154a-4c79-8515-f480ec218186.json": {
+  "/_nuxt/builds/meta/dd0642ea-60e8-4145-a495-b5e61e422926.json": {
     "type": "application/json",
-    "etag": "\"8b-oCadLBABgp8/8YpLOAnlv+Ef/gQ\"",
-    "mtime": "2026-03-23T07:45:44.103Z",
+    "etag": "\"8b-yfNg9ceD2IIwn8YqYjsLIaxdMwg\"",
+    "mtime": "2026-03-24T14:25:13.675Z",
     "size": 139,
-    "path": "../public/_nuxt/builds/meta/401e2945-154a-4c79-8515-f480ec218186.json"
+    "path": "../public/_nuxt/builds/meta/dd0642ea-60e8-4145-a495-b5e61e422926.json"
   }
 };
 
@@ -6369,7 +6369,7 @@ function defineRenderHandler(render) {
 
 function h(n,t,e,r,s,i,a,l){return h.fromTZ(h.tp(n,t,e,r,s,i,a),l)}h.fromTZISO=(n,t,e)=>h.fromTZ(k(n,t),e);h.fromTZ=function(n,t){let e=new Date(Date.UTC(n.y,n.m-1,n.d,n.h,n.i,n.s)),r=D(n.tz,e),s=new Date(e.getTime()-r),i=D(n.tz,s);if(i-r===0)return s;{let a=new Date(e.getTime()-i),l=D(n.tz,a);if(l-i===0)return a;if(!t&&l-i>0)return a;if(t)throw new Error("Invalid date passed to fromTZ()");return s}};h.toTZ=function(n,t){let e=n.toLocaleString("en-US",{timeZone:t}).replace(/[\u202f]/," "),r=new Date(e);return {y:r.getFullYear(),m:r.getMonth()+1,d:r.getDate(),h:r.getHours(),i:r.getMinutes(),s:r.getSeconds(),tz:t}};h.tp=(n,t,e,r,s,i,a)=>({y:n,m:t,d:e,h:r,i:s,s:i,tz:a});function D(n,t=new Date){let e=t.toLocaleString("en-US",{timeZone:n,timeZoneName:"shortOffset"}).split(" ").slice(-1)[0],r=t.toLocaleString("en-US").replace(/[\u202f]/," ");return Date.parse(`${r} GMT`)-Date.parse(`${r} ${e}`)}function k(n,t){let e=new Date(Date.parse(n));if(isNaN(e))throw new Error("minitz: Invalid ISO8601 passed to parser.");let r=n.substring(9);return n.includes("Z")||r.includes("-")||r.includes("+")?h.tp(e.getUTCFullYear(),e.getUTCMonth()+1,e.getUTCDate(),e.getUTCHours(),e.getUTCMinutes(),e.getUTCSeconds(),"Etc/UTC"):h.tp(e.getFullYear(),e.getMonth()+1,e.getDate(),e.getHours(),e.getMinutes(),e.getSeconds(),t)}h.minitz=h;var b=32,p=31|b,v=[1,2,4,8,16],d=class{pattern;timezone;second;minute;hour;day;month;dayOfWeek;lastDayOfMonth;starDOM;starDOW;constructor(t,e){this.pattern=t,this.timezone=e,this.second=Array(60).fill(0),this.minute=Array(60).fill(0),this.hour=Array(24).fill(0),this.day=Array(31).fill(0),this.month=Array(12).fill(0),this.dayOfWeek=Array(7).fill(0),this.lastDayOfMonth=false,this.starDOM=false,this.starDOW=false,this.parse();}parse(){if(!(typeof this.pattern=="string"||this.pattern instanceof String))throw new TypeError("CronPattern: Pattern has to be of type string.");this.pattern.indexOf("@")>=0&&(this.pattern=this.handleNicknames(this.pattern).trim());let t=this.pattern.replace(/\s+/g," ").split(" ");if(t.length<5||t.length>6)throw new TypeError("CronPattern: invalid configuration format ('"+this.pattern+"'), exactly five or six space separated parts are required.");if(t.length===5&&t.unshift("0"),t[3].indexOf("L")>=0&&(t[3]=t[3].replace("L",""),this.lastDayOfMonth=true),t[3]=="*"&&(this.starDOM=true),t[4].length>=3&&(t[4]=this.replaceAlphaMonths(t[4])),t[5].length>=3&&(t[5]=this.replaceAlphaDays(t[5])),t[5]=="*"&&(this.starDOW=true),this.pattern.indexOf("?")>=0){let e=new f(new Date,this.timezone).getDate(true);t[0]=t[0].replace("?",e.getSeconds().toString()),t[1]=t[1].replace("?",e.getMinutes().toString()),t[2]=t[2].replace("?",e.getHours().toString()),this.starDOM||(t[3]=t[3].replace("?",e.getDate().toString())),t[4]=t[4].replace("?",(e.getMonth()+1).toString()),this.starDOW||(t[5]=t[5].replace("?",e.getDay().toString()));}this.throwAtIllegalCharacters(t),this.partToArray("second",t[0],0,1),this.partToArray("minute",t[1],0,1),this.partToArray("hour",t[2],0,1),this.partToArray("day",t[3],-1,1),this.partToArray("month",t[4],-1,1),this.partToArray("dayOfWeek",t[5],0,p),this.dayOfWeek[7]&&(this.dayOfWeek[0]=this.dayOfWeek[7]);}partToArray(t,e,r,s){let i=this[t],a=t==="day"&&this.lastDayOfMonth;if(e===""&&!a)throw new TypeError("CronPattern: configuration entry "+t+" ("+e+") is empty, check for trailing spaces.");if(e==="*")return i.fill(s);let l=e.split(",");if(l.length>1)for(let o=0;o<l.length;o++)this.partToArray(t,l[o],r,s);else e.indexOf("-")!==-1&&e.indexOf("/")!==-1?this.handleRangeWithStepping(e,t,r,s):e.indexOf("-")!==-1?this.handleRange(e,t,r,s):e.indexOf("/")!==-1?this.handleStepping(e,t,r,s):e!==""&&this.handleNumber(e,t,r,s);}throwAtIllegalCharacters(t){for(let e=0;e<t.length;e++)if((e===5?/[^/*0-9,\-#L]+/:/[^/*0-9,-]+/).test(t[e]))throw new TypeError("CronPattern: configuration entry "+e+" ("+t[e]+") contains illegal characters.")}handleNumber(t,e,r,s){let i=this.extractNth(t,e),a=parseInt(i[0],10)+r;if(isNaN(a))throw new TypeError("CronPattern: "+e+" is not a number: '"+t+"'");this.setPart(e,a,i[1]||s);}setPart(t,e,r){if(!Object.prototype.hasOwnProperty.call(this,t))throw new TypeError("CronPattern: Invalid part specified: "+t);if(t==="dayOfWeek"){if(e===7&&(e=0),e<0||e>6)throw new RangeError("CronPattern: Invalid value for dayOfWeek: "+e);this.setNthWeekdayOfMonth(e,r);return}if(t==="second"||t==="minute"){if(e<0||e>=60)throw new RangeError("CronPattern: Invalid value for "+t+": "+e)}else if(t==="hour"){if(e<0||e>=24)throw new RangeError("CronPattern: Invalid value for "+t+": "+e)}else if(t==="day"){if(e<0||e>=31)throw new RangeError("CronPattern: Invalid value for "+t+": "+e)}else if(t==="month"&&(e<0||e>=12))throw new RangeError("CronPattern: Invalid value for "+t+": "+e);this[t][e]=r;}handleRangeWithStepping(t,e,r,s){let i=this.extractNth(t,e),a=i[0].match(/^(\d+)-(\d+)\/(\d+)$/);if(a===null)throw new TypeError("CronPattern: Syntax error, illegal range with stepping: '"+t+"'");let[,l,o,u]=a,c=parseInt(l,10)+r,w=parseInt(o,10)+r,C=parseInt(u,10);if(isNaN(c))throw new TypeError("CronPattern: Syntax error, illegal lower range (NaN)");if(isNaN(w))throw new TypeError("CronPattern: Syntax error, illegal upper range (NaN)");if(isNaN(C))throw new TypeError("CronPattern: Syntax error, illegal stepping: (NaN)");if(C===0)throw new TypeError("CronPattern: Syntax error, illegal stepping: 0");if(C>this[e].length)throw new TypeError("CronPattern: Syntax error, steps cannot be greater than maximum value of part ("+this[e].length+")");if(c>w)throw new TypeError("CronPattern: From value is larger than to value: '"+t+"'");for(let T=c;T<=w;T+=C)this.setPart(e,T,i[1]||s);}extractNth(t,e){let r=t,s;if(r.includes("#")){if(e!=="dayOfWeek")throw new Error("CronPattern: nth (#) only allowed in day-of-week field");s=r.split("#")[1],r=r.split("#")[0];}return [r,s]}handleRange(t,e,r,s){let i=this.extractNth(t,e),a=i[0].split("-");if(a.length!==2)throw new TypeError("CronPattern: Syntax error, illegal range: '"+t+"'");let l=parseInt(a[0],10)+r,o=parseInt(a[1],10)+r;if(isNaN(l))throw new TypeError("CronPattern: Syntax error, illegal lower range (NaN)");if(isNaN(o))throw new TypeError("CronPattern: Syntax error, illegal upper range (NaN)");if(l>o)throw new TypeError("CronPattern: From value is larger than to value: '"+t+"'");for(let u=l;u<=o;u++)this.setPart(e,u,i[1]||s);}handleStepping(t,e,r,s){let i=this.extractNth(t,e),a=i[0].split("/");if(a.length!==2)throw new TypeError("CronPattern: Syntax error, illegal stepping: '"+t+"'");a[0]===""&&(a[0]="*");let l=0;a[0]!=="*"&&(l=parseInt(a[0],10)+r);let o=parseInt(a[1],10);if(isNaN(o))throw new TypeError("CronPattern: Syntax error, illegal stepping: (NaN)");if(o===0)throw new TypeError("CronPattern: Syntax error, illegal stepping: 0");if(o>this[e].length)throw new TypeError("CronPattern: Syntax error, max steps for part is ("+this[e].length+")");for(let u=l;u<this[e].length;u+=o)this.setPart(e,u,i[1]||s);}replaceAlphaDays(t){return t.replace(/-sun/gi,"-7").replace(/sun/gi,"0").replace(/mon/gi,"1").replace(/tue/gi,"2").replace(/wed/gi,"3").replace(/thu/gi,"4").replace(/fri/gi,"5").replace(/sat/gi,"6")}replaceAlphaMonths(t){return t.replace(/jan/gi,"1").replace(/feb/gi,"2").replace(/mar/gi,"3").replace(/apr/gi,"4").replace(/may/gi,"5").replace(/jun/gi,"6").replace(/jul/gi,"7").replace(/aug/gi,"8").replace(/sep/gi,"9").replace(/oct/gi,"10").replace(/nov/gi,"11").replace(/dec/gi,"12")}handleNicknames(t){let e=t.trim().toLowerCase();return e==="@yearly"||e==="@annually"?"0 0 1 1 *":e==="@monthly"?"0 0 1 * *":e==="@weekly"?"0 0 * * 0":e==="@daily"?"0 0 * * *":e==="@hourly"?"0 * * * *":t}setNthWeekdayOfMonth(t,e){if(typeof e!="number"&&e==="L")this.dayOfWeek[t]=this.dayOfWeek[t]|b;else if(e===p)this.dayOfWeek[t]=p;else if(e<6&&e>0)this.dayOfWeek[t]=this.dayOfWeek[t]|v[e-1];else throw new TypeError(`CronPattern: nth weekday out of range, should be 1-5 or L. Value: ${e}, Type: ${typeof e}`)}};var O=[31,28,31,30,31,30,31,31,30,31,30,31],m=[["month","year",0],["day","month",-1],["hour","day",0],["minute","hour",0],["second","minute",0]],f=class n{tz;ms;second;minute;hour;day;month;year;constructor(t,e){if(this.tz=e,t&&t instanceof Date)if(!isNaN(t))this.fromDate(t);else throw new TypeError("CronDate: Invalid date passed to CronDate constructor");else if(t===void 0)this.fromDate(new Date);else if(t&&typeof t=="string")this.fromString(t);else if(t instanceof n)this.fromCronDate(t);else throw new TypeError("CronDate: Invalid type ("+typeof t+") passed to CronDate constructor")}isNthWeekdayOfMonth(t,e,r,s){let a=new Date(Date.UTC(t,e,r)).getUTCDay(),l=0;for(let o=1;o<=r;o++)new Date(Date.UTC(t,e,o)).getUTCDay()===a&&l++;if(s&p&&v[l-1]&s)return  true;if(s&b){let o=new Date(Date.UTC(t,e+1,0)).getUTCDate();for(let u=r+1;u<=o;u++)if(new Date(Date.UTC(t,e,u)).getUTCDay()===a)return  false;return  true}return  false}fromDate(t){if(this.tz!==void 0)if(typeof this.tz=="number")this.ms=t.getUTCMilliseconds(),this.second=t.getUTCSeconds(),this.minute=t.getUTCMinutes()+this.tz,this.hour=t.getUTCHours(),this.day=t.getUTCDate(),this.month=t.getUTCMonth(),this.year=t.getUTCFullYear(),this.apply();else {let e=h.toTZ(t,this.tz);this.ms=t.getMilliseconds(),this.second=e.s,this.minute=e.i,this.hour=e.h,this.day=e.d,this.month=e.m-1,this.year=e.y;}else this.ms=t.getMilliseconds(),this.second=t.getSeconds(),this.minute=t.getMinutes(),this.hour=t.getHours(),this.day=t.getDate(),this.month=t.getMonth(),this.year=t.getFullYear();}fromCronDate(t){this.tz=t.tz,this.year=t.year,this.month=t.month,this.day=t.day,this.hour=t.hour,this.minute=t.minute,this.second=t.second,this.ms=t.ms;}apply(){if(this.month>11||this.day>O[this.month]||this.hour>59||this.minute>59||this.second>59||this.hour<0||this.minute<0||this.second<0){let t=new Date(Date.UTC(this.year,this.month,this.day,this.hour,this.minute,this.second,this.ms));return this.ms=t.getUTCMilliseconds(),this.second=t.getUTCSeconds(),this.minute=t.getUTCMinutes(),this.hour=t.getUTCHours(),this.day=t.getUTCDate(),this.month=t.getUTCMonth(),this.year=t.getUTCFullYear(),true}else return  false}fromString(t){if(typeof this.tz=="number"){let e=h.fromTZISO(t);this.ms=e.getUTCMilliseconds(),this.second=e.getUTCSeconds(),this.minute=e.getUTCMinutes(),this.hour=e.getUTCHours(),this.day=e.getUTCDate(),this.month=e.getUTCMonth(),this.year=e.getUTCFullYear(),this.apply();}else return this.fromDate(h.fromTZISO(t,this.tz))}findNext(t,e,r,s){let i=this[e],a;r.lastDayOfMonth&&(this.month!==1?a=O[this.month]:a=new Date(Date.UTC(this.year,this.month+1,0,0,0,0,0)).getUTCDate());let l=!r.starDOW&&e=="day"?new Date(Date.UTC(this.year,this.month,1,0,0,0,0)).getUTCDay():void 0;for(let o=this[e]+s;o<r[e].length;o++){let u=r[e][o];if(e==="day"&&r.lastDayOfMonth&&o-s==a&&(u=1),e==="day"&&!r.starDOW){let c=r.dayOfWeek[(l+(o-s-1))%7];if(c&&c&p)c=this.isNthWeekdayOfMonth(this.year,this.month,o-s,c)?1:0;else if(c)throw new Error(`CronDate: Invalid value for dayOfWeek encountered. ${c}`);t.legacyMode&&!r.starDOM?u=u||c:u=u&&c;}if(u)return this[e]=o-s,i!==this[e]?2:1}return 3}recurse(t,e,r){let s=this.findNext(e,m[r][0],t,m[r][2]);if(s>1){let i=r+1;for(;i<m.length;)this[m[i][0]]=-m[i][2],i++;if(s===3)return this[m[r][1]]++,this[m[r][0]]=-m[r][2],this.apply(),this.recurse(t,e,0);if(this.apply())return this.recurse(t,e,r-1)}return r+=1,r>=m.length?this:this.year>=3e3?null:this.recurse(t,e,r)}increment(t,e,r){return this.second+=e.interval!==void 0&&e.interval>1&&r?e.interval:1,this.ms=0,this.apply(),this.recurse(t,e,0)}getDate(t){return t||this.tz===void 0?new Date(this.year,this.month,this.day,this.hour,this.minute,this.second,this.ms):typeof this.tz=="number"?new Date(Date.UTC(this.year,this.month,this.day,this.hour,this.minute-this.tz,this.second,this.ms)):h.fromTZ(h.tp(this.year,this.month+1,this.day,this.hour,this.minute,this.second,this.tz),false)}getTime(){return this.getDate(false).getTime()}};function N(n){if(n===void 0&&(n={}),delete n.name,n.legacyMode=n.legacyMode===void 0?true:n.legacyMode,n.paused=n.paused===void 0?false:n.paused,n.maxRuns=n.maxRuns===void 0?1/0:n.maxRuns,n.catch=n.catch===void 0?false:n.catch,n.interval=n.interval===void 0?0:parseInt(n.interval.toString(),10),n.utcOffset=n.utcOffset===void 0?void 0:parseInt(n.utcOffset.toString(),10),n.unref=n.unref===void 0?false:n.unref,n.startAt&&(n.startAt=new f(n.startAt,n.timezone)),n.stopAt&&(n.stopAt=new f(n.stopAt,n.timezone)),n.interval!==null){if(isNaN(n.interval))throw new Error("CronOptions: Supplied value for interval is not a number");if(n.interval<0)throw new Error("CronOptions: Supplied value for interval can not be negative")}if(n.utcOffset!==void 0){if(isNaN(n.utcOffset))throw new Error("CronOptions: Invalid value passed for utcOffset, should be number representing minutes offset from UTC.");if(n.utcOffset<-870||n.utcOffset>870)throw new Error("CronOptions: utcOffset out of bounds.");if(n.utcOffset!==void 0&&n.timezone)throw new Error("CronOptions: Combining 'utcOffset' with 'timezone' is not allowed.")}if(n.unref!==true&&n.unref!==false)throw new Error("CronOptions: Unref should be either true, false or undefined(false).");return n}function g(n){return Object.prototype.toString.call(n)==="[object Function]"||typeof n=="function"||n instanceof Function}function S(n){return g(n)}function P(n){typeof Deno<"u"&&typeof Deno.unrefTimer<"u"?Deno.unrefTimer(n):n&&typeof n.unref<"u"&&n.unref();}var _=30*1e3,y=[],R=class{name;options;_states;fn;constructor(t,e,r){let s,i;if(g(e))i=e;else if(typeof e=="object")s=e;else if(e!==void 0)throw new Error("Cron: Invalid argument passed for optionsIn. Should be one of function, or object (options).");if(g(r))i=r;else if(typeof r=="object")s=r;else if(r!==void 0)throw new Error("Cron: Invalid argument passed for funcIn. Should be one of function, or object (options).");if(this.name=s?.name,this.options=N(s),this._states={kill:false,blocking:false,previousRun:void 0,currentRun:void 0,once:void 0,currentTimeout:void 0,maxRuns:s?s.maxRuns:void 0,paused:s?s.paused:false,pattern:new d("* * * * *")},t&&(t instanceof Date||typeof t=="string"&&t.indexOf(":")>0)?this._states.once=new f(t,this.options.timezone||this.options.utcOffset):this._states.pattern=new d(t,this.options.timezone),this.name){if(y.find(l=>l.name===this.name))throw new Error("Cron: Tried to initialize new named job '"+this.name+"', but name already taken.");y.push(this);}return i!==void 0&&S(i)&&(this.fn=i,this.schedule()),this}nextRun(t){let e=this._next(t);return e?e.getDate(false):null}nextRuns(t,e){this._states.maxRuns!==void 0&&t>this._states.maxRuns&&(t=this._states.maxRuns);let r=[],s=e||this._states.currentRun||void 0;for(;t--&&(s=this.nextRun(s));)r.push(s);return r}getPattern(){return this._states.pattern?this._states.pattern.pattern:void 0}isRunning(){let t=this.nextRun(this._states.currentRun),e=!this._states.paused,r=this.fn!==void 0,s=!this._states.kill;return e&&r&&s&&t!==null}isStopped(){return this._states.kill}isBusy(){return this._states.blocking}currentRun(){return this._states.currentRun?this._states.currentRun.getDate():null}previousRun(){return this._states.previousRun?this._states.previousRun.getDate():null}msToNext(t){let e=this._next(t);return e?t instanceof f||t instanceof Date?e.getTime()-t.getTime():e.getTime()-new f(t).getTime():null}stop(){this._states.kill=true,this._states.currentTimeout&&clearTimeout(this._states.currentTimeout);let t=y.indexOf(this);t>=0&&y.splice(t,1);}pause(){return this._states.paused=true,!this._states.kill}resume(){return this._states.paused=false,!this._states.kill}schedule(t){if(t&&this.fn)throw new Error("Cron: It is not allowed to schedule two functions using the same Croner instance.");t&&(this.fn=t);let e=this.msToNext(),r=this.nextRun(this._states.currentRun);return e==null||isNaN(e)||r===null?this:(e>_&&(e=_),this._states.currentTimeout=setTimeout(()=>this._checkTrigger(r),e),this._states.currentTimeout&&this.options.unref&&P(this._states.currentTimeout),this)}async _trigger(t){if(this._states.blocking=true,this._states.currentRun=new f(void 0,this.options.timezone||this.options.utcOffset),this.options.catch)try{this.fn!==void 0&&await this.fn(this,this.options.context);}catch(e){g(this.options.catch)&&this.options.catch(e,this);}else this.fn!==void 0&&await this.fn(this,this.options.context);this._states.previousRun=new f(t,this.options.timezone||this.options.utcOffset),this._states.blocking=false;}async trigger(){await this._trigger();}runsLeft(){return this._states.maxRuns}_checkTrigger(t){let e=new Date,r=!this._states.paused&&e.getTime()>=t.getTime(),s=this._states.blocking&&this.options.protect;r&&!s?(this._states.maxRuns!==void 0&&this._states.maxRuns--,this._trigger()):r&&s&&g(this.options.protect)&&setTimeout(()=>this.options.protect(this),0),this.schedule();}_next(t){let e=!!(t||this._states.currentRun),r=false;!t&&this.options.startAt&&this.options.interval&&([t,e]=this._calculatePreviousRun(t,e),r=!t),t=new f(t,this.options.timezone||this.options.utcOffset),this.options.startAt&&t&&t.getTime()<this.options.startAt.getTime()&&(t=this.options.startAt);let s=this._states.once||new f(t,this.options.timezone||this.options.utcOffset);return !r&&s!==this._states.once&&(s=s.increment(this._states.pattern,this.options,e)),this._states.once&&this._states.once.getTime()<=t.getTime()||s===null||this._states.maxRuns!==void 0&&this._states.maxRuns<=0||this._states.kill||this.options.stopAt&&s.getTime()>=this.options.stopAt.getTime()?null:s}_calculatePreviousRun(t,e){let r=new f(void 0,this.options.timezone||this.options.utcOffset),s=t;if(this.options.startAt.getTime()<=r.getTime()){s=this.options.startAt;let i=s.getTime()+this.options.interval*1e3;for(;i<=r.getTime();)s=new f(s,this.options.timezone||this.options.utcOffset).increment(this._states.pattern,this.options,true),i=s.getTime()+this.options.interval*1e3;e=true;}return s===null&&(s=void 0),[s,e]}};
 
-const scheduledTasks = [{"cron":"0 18 * * *","tasks":["currency:update"]}];
+const scheduledTasks = [{"cron":"0 * * * *","tasks":["currency:update"]}];
 
 const tasks = {
   "currency:update": {
