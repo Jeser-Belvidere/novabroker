@@ -5,6 +5,10 @@ export interface TKSRequest {
 	power: string,
 	engine_type: 'petrol'| 'diesel'|'petrol_electric'| 'diesel_electric'| 'electric'| 'no_engine',
 	power_edizm: 'kvt' | 'ls',
+  power_hybrid_dvs?: string // Мощность ДВС для параллельных гибридов
+  power_hybrid_dvs_edizm: 'kvt' | 'ls' // Единицы измерения мощности ДВС для параллельных гибридов
+  power_hybrid_electro?: string // Мощность ЭД для параллельных гибридов
+  power_hybrid_electro_edizm: 'kvt' | 'ls' // Единицы измерения мощности ЭД для параллельных гибридов
 	age: '3' | '35' | '57' | '7'
 	face: 'nat' | 'jur' 
 	ts_type: '00_8703' | '00_8704' | '01_8703' | '02_8703' | '03_8703101100' | '04_8704' | '05_870410' | '07_8711201000' | '08_8711100000' | '09_8716400000' | '10_871610' | '11_890399' | '12_8903' | '13_8702'

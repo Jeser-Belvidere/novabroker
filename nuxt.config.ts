@@ -11,7 +11,7 @@ export default defineNuxtConfig({
 			tasks: true,
 		},
 		scheduledTasks: {
-			// Run once a day
+			// Runs every hour
 			'0 * * * *': ['currency:update'],
 		},
 	},

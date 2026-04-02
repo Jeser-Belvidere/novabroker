@@ -9,19 +9,6 @@ if (data.value) {
 	currencies.value = data.value
 }
 
-// const diffCurrencyView = (diff: 'bigger' | 'smaller' | 'equal' | undefined) => {
-// 	switch (diff) {
-// 	case 'bigger':
-// 		return '&#8593;'
-// 	case 'smaller':
-// 		return '&#8595;'
-// 	case 'equal':
-// 		return '&#61;'
-// 	default:
-// 		return null
-// 	}
-// }
-
 </script>
 <template>
   <header class="header">

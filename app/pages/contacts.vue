@@ -132,7 +132,7 @@ const openMax = () => {
             <div class="item-text">
               <div class="item-text__title">Телефон</div>
               <div class="item-text__description">
-                <a class="link" href="tel: +79585000286">+7 958 500-02-86</a>
+                <a class="link" href="tel:+74957783050">+7 495 778-30-50</a>
               </div>
             </div>
           </div>

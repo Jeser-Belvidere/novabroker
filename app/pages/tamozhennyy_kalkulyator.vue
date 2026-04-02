@@ -29,6 +29,8 @@ const formData = reactive<IFormValues>({
 	offroad: false,
 	caravan: false, 
 	ts_type: '00_8703', 
+	power_hybrid_dvs_edizm: 'ls',
+	power_hybrid_electro_edizm: 'ls',
 })
 
 const items = [
@@ -36,15 +38,21 @@ const items = [
 	{ slot: 'result', title: 'Результат рассчета'},
 ]
 
-const getData = async (data: IFormValues) => {
+const getData = async (formData: IFormValues) => {
 	try {
 		isLoading.value = true
-		return await $fetch('/api/getvalues', {
+		const { data, error } = await useFetch('/api/getvalues', {
 			method: 'POST',
-			body: data,
-		});
+			body: formData
+		})
+
+		if (error.value) {
+			throw error.value
+		}
+
+		return data.value
 	} catch (e) {
-		console.log(e)
+		return { error: e }
 	} finally {
 		isLoading.value = false
 	}
@@ -54,10 +62,11 @@ const handleSubmit = async (updatedFormData: IFormValues) => {
 	Object.assign(formData, updatedFormData)
   
 	const response = await getData(formData)
+
 	if (!response || 'error' in response) {
 		toast.add({
 			title: 'Упс, что-то пошло не так',
-			progress:false,
+			progress: false,
 			ui: {
 				root: 'ui-toast-wrapper',
 			}

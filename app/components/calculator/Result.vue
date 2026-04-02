@@ -53,13 +53,29 @@ const prepareNumberInString = (string: string | undefined) => {
                             <th scope="col">Тип двигателя:</th>
                             <td>{{ props.input?.engine_type ? ENGINE_TYPES_MAP[props.input.engine_type] : 'Не указано' }}</td>
                         </tr>
-                        <tr>
+                        <tr v-if="props.input?.power">
+                            <th scope="col">Мощность:</th>
+                            <td>{{props.input?.power ? props.input.power + ' ' + POWER_TYPES_MAP[props.input.power_edizm] : 'Не указано' }}</td>
+                        </tr>
+                        <tr v-if="props.input?.power_hybrid_dvs">
+                            <th scope="col">Мощность ДВС:</th>
+                            <td>{{props.input?.power_hybrid_dvs ? props.input.power_hybrid_dvs + ' ' + POWER_TYPES_MAP[props.input?.power_hybrid_dvs_edizm] : 'Не указано' }}</td>
+                        </tr>
+                        <tr v-if="props.input?.power_hybrid_electro">
+                            <th scope="col">Мощность ЭД:</th>
+                            <td>{{props.input?.power_hybrid_electro ? props.input.power_hybrid_electro + ' ' + POWER_TYPES_MAP[props.input.power_hybrid_electro_edizm] : 'Не указано' }}</td>
+                        </tr>
+                        <tr v-if="props.input?.power">
                             <th scope="col">Мощность:</th>
                             <td>{{props.input?.power ? props.input?.power + ' ' + POWER_TYPES_MAP[props.input?.power_edizm] : 'Не указано' }}</td>
                         </tr>
                         <tr v-if="props.input?.volume && props.input?.engine_type != 'electric'">
                             <th scope="col">Объем двигателя:</th>
                             <td>{{ props.input?.volume + ' см3' }}</td>
+                        </tr>
+                        <tr v-if="props.input?.mass">
+                            <th scope="col">Масса:</th>
+                            <td>{{ props.input?.volume + ' тонн' }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -78,40 +94,40 @@ const prepareNumberInString = (string: string | undefined) => {
 						<tbody>
 							<tr>
 								<th scope="row">Таможенное оформление</th>
-								<td class="numbers">{{ prepareNumberInString(props.result?.tam_oform?.name) }}</td>
-								<td class="numbers">{{ prepareNumberInString(props.result?.tam_oform?.name) }}</td>
+								<td>{{ prepareNumberInString(props.result?.tam_oform?.name) }}</td>
+								<td>{{ prepareNumberInString(props.result?.tam_oform?.name) }}</td>
 							</tr>
 							<!-- V if  Единая ставка только для автомобилей b физлиц-->
 							<tr v-if="props.input?.face === 'nat'">
 								<th scope="row">Единая ставка</th>
-								<td class="numbers">{{ props.result?.poshl?.name }}</td>
-								<td class="numbers">{{ prepareNumber(props.result?.poshl?.value_rub) }} руб.</td>
+								<td>{{ props.result?.poshl?.name }}</td>
+								<td>{{ prepareNumber(props.result?.poshl?.value_rub) }} руб.</td>
 							</tr>
                             <tr v-if="props.input?.face === 'jur' ||  props.input?.sequential === true || props.input?.engine_type === 'electric'" >
 								<th scope="row">Пошлина</th>
-								<td class="numbers">{{ props.result?.poshl?.name }}</td>
-								<td class="numbers">{{ prepareNumber(props.result?.poshl?.value_rub) }} руб.</td>
+								<td>{{ props.result?.poshl?.name }}</td>
+								<td>{{ prepareNumber(props.result?.poshl?.value_rub) }} руб.</td>
 							</tr>
                             <tr v-if="props.input?.face === 'jur' ||  props.input?.sequential === true || props.input?.engine_type === 'electric'" >
 								<th scope="row">Акциз</th>
-								<td class="numbers">{{ props.result?.akciz?.name }}</td>
-								<td class="numbers">{{ prepareNumber(props.result?.akciz?.value_rub) }} руб.</td>
+								<td>{{ props.result?.akciz?.name }}</td>
+								<td>{{ prepareNumber(props.result?.akciz?.value_rub) }} руб.</td>
 							</tr>
                             <tr v-if="props.input?.face === 'jur' ||  props.input?.sequential === true || props.input?.engine_type === 'electric'">
 								<th scope="row">НДС</th>
-								<td class="numbers">{{ props.result?.nds?.name }}</td>
-								<td class="numbers">{{ prepareNumber(props.result?.nds?.value_rub) }} руб.</td>
+								<td>{{ props.result?.nds?.name }}</td>
+								<td>{{ prepareNumber(props.result?.nds?.value_rub) }} руб.</td>
 							</tr>
 							<tr>
 								<th scope="row">Утиль сбор</th>
-								<td class="numbers">{{ prepareNumber(props.result?.util_sbor.value_base) }} руб. x {{ props.result?.util_sbor.value_coef }}</td>
-								<td class="numbers">{{ prepareNumber(props.result?.util_sbor.value_rub) }} руб.</td>
+								<td>{{ prepareNumber(props.result?.util_sbor.value_base) }} руб. x {{ props.result?.util_sbor.value_coef }}</td>
+								<td>{{ prepareNumber(props.result?.util_sbor.value_rub) }} руб.</td>
 							</tr>
 							</tbody>
 							<tfoot>
 							<tr>
 								<th class="result-sum-row-header" colspan="2" scope="row">Итого c утилизационным сбором</th>
-								<td class="result-sum-row-td numbers">{{ prepareNumber(props.result?.sum_util.value_rub) }} руб.</td>
+								<td class="result-sum-row-td">{{ prepareNumber(props.result?.sum_util.value_rub) }} руб.</td>
 							</tr>
 							</tfoot>
 
@@ -127,11 +143,6 @@ const prepareNumberInString = (string: string | undefined) => {
 </template>
 
 <style lang="css" scoped>
-/* .numbers {
-    font-family: "Courier New", monospace;
-    letter-spacing: 0.8px;
-    font-weight: 400;
-} */
 .hint {
     font-weight: 600;
     font-size: 0.8rem;

@@ -117,8 +117,8 @@ class CurrencyStorage {
 	}
 
 	public async updateCurrencyData() {
-		const todayDate = new Date().toLocaleDateString('ru-RU');
-		const previousDate = new Date(new Date().setDate(new Date().getDate() - 1)).toLocaleDateString('ru-RU');
+		const todayDate = new Date(new Date().setDate(new Date().getDate() + 1)).toLocaleDateString('ru-RU');
+		const previousDate = new Date().toLocaleDateString('ru-RU');
 		try {
 			if (this.errorTimeout) {
 				clearTimeout(this.errorTimeout);

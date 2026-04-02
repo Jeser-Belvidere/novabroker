@@ -71,14 +71,19 @@ const openMax = () => {
 async function handleFormSubmit() {
 	try {
 		isLoading.value = true;
-		await $fetch('/api/mail', {
+		const {error} = await useFetch('/api/mail', {
 			method: 'POST',
 			body: {
 				name: name.value,
 				phone: phone.value,
 				mail: mail.value,
-			},
-		});
+			}
+		})
+
+		if (error.value) {
+			throw error.value
+		}
+
 		name.value = '';
 		phone.value = '';
 		mail.value = '';
