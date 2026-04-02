@@ -97,6 +97,10 @@ watch (() => formState.caravan, (newValue) => {
 	}
 })
 
+watch (() => formState.engine_type, () => {
+	Object.assign(formState, {...formState, power: '', power_hybrid_dvs: '', power_hybrid_electro: ''})
+})
+
 const isEngineTypeDisabled = computed(() => {
 	if (
 		formState.ts_type === '09_8716400000' || 

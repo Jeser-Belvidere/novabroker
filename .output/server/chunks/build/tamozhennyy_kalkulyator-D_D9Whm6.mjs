@@ -4529,6 +4529,9 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
         Object.assign(formState, { ...formState, offroad: false });
       }
     });
+    watch(() => formState.engine_type, () => {
+      Object.assign(formState, { ...formState, power: "", power_hybrid_dvs: "", power_hybrid_electro: "" });
+    });
     const isEngineTypeDisabled = computed(() => {
       if (formState.ts_type === "09_8716400000" || formState.ts_type === "10_871610") {
         Object.assign(formState, { ...formState, engine_type: "no_engine" });
@@ -4592,7 +4595,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
       }, _attrs), {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<div class="calculator-container" data-v-1fc2ef79${_scopeId}><div class="calculator-row" data-v-1fc2ef79${_scopeId}>`);
+            _push2(`<div class="calculator-container" data-v-e0d7da5b${_scopeId}><div class="calculator-row" data-v-e0d7da5b${_scopeId}>`);
             if (unref(formState).ts_type === "00_8703") {
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
@@ -4690,7 +4693,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`</div><div class="calculator-row" data-v-1fc2ef79${_scopeId}><div class="cost-input" data-v-1fc2ef79${_scopeId}>`);
+            _push2(`</div><div class="calculator-row" data-v-e0d7da5b${_scopeId}><div class="cost-input" data-v-e0d7da5b${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UFormField, {
               class: "text-md",
               required: "",
@@ -4825,7 +4828,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`</div><div class="calculator-row" data-v-1fc2ef79${_scopeId}>`);
+            _push2(`</div><div class="calculator-row" data-v-e0d7da5b${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UFormField, {
               class: "text-md",
               label: "Масса, тонн",
@@ -4859,7 +4862,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`<div class="power-input" data-v-1fc2ef79${_scopeId}>`);
+            _push2(`<div class="power-input" data-v-e0d7da5b${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UFormField, {
               class: "text-md",
               required: !unref(isSelectedOneOfPowersAndRequired),
@@ -4895,7 +4898,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`<div class="power-type" data-v-1fc2ef79${_scopeId}>`);
+            _push2(`<div class="power-type" data-v-e0d7da5b${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UFormField, {
               class: "text-md",
               name: "powerType",
@@ -4930,7 +4933,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
             }, _parent2, _scopeId));
             _push2(`</div></div></div>`);
             if (unref(formState).engine_type === "diesel_electric" || unref(formState).engine_type === "petrol_electric") {
-              _push2(`<div class="calculator-row" data-v-1fc2ef79${_scopeId}><div class="power-input" data-v-1fc2ef79${_scopeId}>`);
+              _push2(`<div class="calculator-row" data-v-e0d7da5b${_scopeId}><div class="power-input" data-v-e0d7da5b${_scopeId}>`);
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
                 required: !unref(isSelectedOneOfPowersAndRequired),
@@ -4966,7 +4969,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                 }),
                 _: 1
               }, _parent2, _scopeId));
-              _push2(`<div class="power-type" data-v-1fc2ef79${_scopeId}>`);
+              _push2(`<div class="power-type" data-v-e0d7da5b${_scopeId}>`);
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
                 name: "powerType",
@@ -4999,7 +5002,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                 }),
                 _: 1
               }, _parent2, _scopeId));
-              _push2(`</div></div><div class="power-input" data-v-1fc2ef79${_scopeId}>`);
+              _push2(`</div></div><div class="power-input" data-v-e0d7da5b${_scopeId}>`);
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
                 required: !unref(isSelectedOneOfPowersAndRequired),
@@ -5035,7 +5038,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                 }),
                 _: 1
               }, _parent2, _scopeId));
-              _push2(`<div class="power-type" data-v-1fc2ef79${_scopeId}>`);
+              _push2(`<div class="power-type" data-v-e0d7da5b${_scopeId}>`);
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
                 name: "power_hybrid_electro_edizm",
@@ -5072,7 +5075,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
             } else {
               _push2(`<!---->`);
             }
-            _push2(`<div class="calculator-row" data-v-1fc2ef79${_scopeId}>`);
+            _push2(`<div class="calculator-row" data-v-e0d7da5b${_scopeId}>`);
             if (unref(formState).ts_type === "00_8703") {
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md mx-4",
@@ -5311,7 +5314,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
             } else {
               _push2(`<!---->`);
             }
-            _push2(`</div><div class="bus-eco-class" data-v-1fc2ef79${_scopeId}>`);
+            _push2(`</div><div class="bus-eco-class" data-v-e0d7da5b${_scopeId}>`);
             if (unref(formState).ts_type === "13_8702") {
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md mx-4",
@@ -5375,7 +5378,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
             } else {
               _push2(`<!---->`);
             }
-            _push2(`</div><div class="actions" data-v-1fc2ef79${_scopeId}>`);
+            _push2(`</div><div class="actions" data-v-e0d7da5b${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UButton, {
               loading: props.isLoading,
               size: "xl",
@@ -5895,7 +5898,7 @@ _sfc_main$2.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/calculator/Form.vue");
   return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
 };
-const __nuxt_component_1 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$2, [["__scopeId", "data-v-1fc2ef79"]]), { __name: "CalculatorForm" });
+const __nuxt_component_1 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$2, [["__scopeId", "data-v-e0d7da5b"]]), { __name: "CalculatorForm" });
 const _sfc_main$1 = /* @__PURE__ */ defineComponent({
   __name: "Result",
   __ssrInlineRender: true,
@@ -6124,4 +6127,4 @@ _sfc_main.setup = (props, ctx) => {
 const tamozhennyy_kalkulyator = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-9b3a9b60"]]);
 
 export { tamozhennyy_kalkulyator as default };
-//# sourceMappingURL=tamozhennyy_kalkulyator-trUMimvl.mjs.map
+//# sourceMappingURL=tamozhennyy_kalkulyator-D_D9Whm6.mjs.map
