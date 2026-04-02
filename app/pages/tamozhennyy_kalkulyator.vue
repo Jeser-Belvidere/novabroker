@@ -38,21 +38,16 @@ const items = [
 	{ slot: 'result', title: 'Результат рассчета'},
 ]
 
-const getData = async (formData: IFormValues) => {
+const getData = async (data: IFormValues) => {
 	try {
 		isLoading.value = true
-		const { data, error } = await useFetch('/api/getvalues', {
+		return await $fetch('/api/getvalues', {
 			method: 'POST',
-			body: formData
-		})
-
-		if (error.value) {
-			throw error.value
-		}
-
-		return data.value
+			body: data,
+		});
+    
 	} catch (e) {
-		return { error: e }
+		console.log(e)
 	} finally {
 		isLoading.value = false
 	}
@@ -62,11 +57,10 @@ const handleSubmit = async (updatedFormData: IFormValues) => {
 	Object.assign(formData, updatedFormData)
   
 	const response = await getData(formData)
-
 	if (!response || 'error' in response) {
 		toast.add({
 			title: 'Упс, что-то пошло не так',
-			progress: false,
+			progress:false,
 			ui: {
 				root: 'ui-toast-wrapper',
 			}

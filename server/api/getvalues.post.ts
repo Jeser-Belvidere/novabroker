@@ -1,44 +1,50 @@
-// import * as z from 'zod'
+import { z } from 'zod'
 
-//  cost: string,
-// 	volume: string,
-// 	currency: string, //TODO:
-// 	power: string,
-// 	engine_type: 'petrol'| 'diesel'|'petrol_electric'| 'diesel_electric'| 'electric'| 'no_engine',
-// 	power_edizm: 'kvt' | 'ls',
-// 	age: '3' | '35' | '57' | '7'
-// 	face: 'nat' | 'jur' 
-// 	ts_type: '00_8703' | '00_8704' | '01_8703' | '02_8703' | '03_8703101100' | '04_8704' | '05_870410' | '07_8711201000' | '08_8711100000' | '09_8716400000' | '10_871610' | '11_890399' | '12_8903' | '13_8702'
-// 	mass?: string
-// 	offroad?: boolean
-// 	caravan?: boolean
-// 	chassis?: 'shs' | 'nshs' | 'nshs2'
-// 	forwarder?: boolean
-// 	buscap?: 'gt120' | 'lt120' | 'lt120_ec4' | 'lt120_ec5' // lt120 - менее 120 пасажиров | gt120 - более 120 пасажиров
-// 	mdvs_gt_m30ed?: boolean // Мощность ДВС больше максимальной 30-минутной мощности ЭД
-//   sequential?: boolean // Силовая установка последовательного типа
-// 	boat_sea?: boolean
-// 	pp_152_minpromtorg_cb?: boolean
-// 	pp_152_minpromtorg_cost?: number
-// 	pp_152_minpromtorg_poshl?: number
-// 	pp_152_minpromtorg_akciz?: number
-// 	pp_152_minpromtorg_nds?: number
-//   bus_municipal_cb?: boolean
+const engineTypes = ['petrol', 'diesel', 'petrol_electric', 'diesel_electric', 'electric', 'no_engine'] as const
+const powerUnits = ['kvt', 'ls'] as const
+const ages = ['3', '35', '57', '7'] as const
+const faceTypes = ['nat', 'jur'] as const
+const chassisTypes = ['shs', 'nshs', 'nshs2'] as const
+const busCapacities = ['gt120', 'lt120', 'lt120_ec4', 'lt120_ec5'] as const
 
-// const test = z.object({
-// 	cost: z.string(),
-// 	volume: z.string(),
-// 	currency: z.string(),
-// 	power: z.string(),
-// 	engine_type: z.string(),
-// 	power_edizm: z.string(),
-// 	age: z.string(),
-// })
+const tsTypes = [
+	'00_8703', '00_8704', '01_8703', '02_8703', '03_8703101100',
+	'04_8704', '05_870410', '07_8711201000', '08_8711100000',
+	'09_8716400000', '10_871610', '11_890399', '12_8903', '13_8702'
+] as const
 
-const getTKSData = async (data: IFormValues): Promise<TKSResponse | {error: unknown}> => {
+const formValuesSchema = z.object({
+	cost: z.string().min(1, 'Cost is required'),
+	volume: z.string().min(1, 'Volume is required'),
+	currency: z.string().min(1, 'Currency is required'),
+	power: z.string().min(1, 'Power is required'),
+	engine_type: z.enum(engineTypes),
+	power_edizm: z.enum(powerUnits),
+	age: z.enum(ages),
+	face: z.enum(faceTypes),
+	ts_type: z.enum(tsTypes),
+	mass: z.string().optional(),
+	offroad: z.boolean().optional(),
+	caravan: z.boolean().optional(),
+	chassis: z.enum(chassisTypes).optional(),
+	forwarder: z.boolean().optional(),
+	buscap: z.enum(busCapacities).optional(),
+	mdvs_gt_m30ed: z.boolean().optional(),
+	sequential: z.boolean().optional(),
+	boat_sea: z.boolean().optional(),
+	pp_152_minpromtorg_cb: z.boolean().optional(),
+	pp_152_minpromtorg_cost: z.number().optional(),
+	pp_152_minpromtorg_poshl: z.number().optional(),
+	pp_152_minpromtorg_akciz: z.number().optional(),
+	pp_152_minpromtorg_nds: z.number().optional(),
+	bus_municipal_cb: z.boolean().optional(),
+})
+
+type IFormValues = z.infer<typeof formValuesSchema>
+
+const getTKSData = async (data: IFormValues): Promise<TKSResponse | { error: unknown }> => {
 	try {
 		const apiKey = process.env.TKS_KEY
-		//TODO: ZOD
 
 		if (!apiKey) {
 			throw new Error('No TKS_KEY provided')
@@ -49,7 +55,9 @@ const getTKSData = async (data: IFormValues): Promise<TKSResponse | {error: unkn
 		const queryParams = new URLSearchParams()
 
 		Object.entries(data).forEach(([key, value]) => {
-			queryParams.append(key, value)
+			if (value !== undefined && value !== null) {
+				queryParams.append(key, String(value))
+			}
 		})
 
 		const urlString = TKS_URL + '?' + queryParams.toString()
@@ -72,13 +80,24 @@ const getTKSData = async (data: IFormValues): Promise<TKSResponse | {error: unkn
 
 export default defineEventHandler(async (event) => {
 	try {
-		const formValues = await readBody(event) as IFormValues
+		const body = await readBody(event)
+		const result = formValuesSchema.safeParse(body)
 
-		const TKSData = await getTKSData(formValues)
+		if (!result.success) {
+			log('error', 'ZOD error in /api/getvalues.post', result.error.issues)
+			throw createError({
+				statusCode: 400,
+			})
+		}
 
+		const TKSData = await getTKSData(result.data)
 		return TKSData
+
 	} catch (error) {
+		if ((error as { statusCode?: number }).statusCode) {
+			throw error
+		}
+
 		log('error', 'Error in /api/getvalues.post', error)
 	}
-
 });

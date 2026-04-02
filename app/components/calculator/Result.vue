@@ -75,7 +75,7 @@ const prepareNumberInString = (string: string | undefined) => {
                         </tr>
                         <tr v-if="props.input?.mass">
                             <th scope="col">Масса:</th>
-                            <td>{{ props.input?.volume + ' тонн' }}</td>
+                            <td>{{ props.input?.mass + ' тонн' }}</td>
                         </tr>
                     </tbody>
                 </table>
