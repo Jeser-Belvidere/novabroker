@@ -483,7 +483,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-CsBtwlxR.mjs')
+    component: () => import('./index-BmmuxFkw.mjs')
   },
   {
     name: "privacy",
@@ -493,7 +493,7 @@ const _routes = [
   {
     name: "contacts",
     path: "/contacts",
-    component: () => import('./contacts-DsSo_Tsb.mjs')
+    component: () => import('./contacts-Qpx4IE6c.mjs')
   },
   {
     name: "slug",
@@ -503,7 +503,7 @@ const _routes = [
   {
     name: "news",
     path: "/news",
-    component: () => import('./index-hCTMsU6f.mjs')
+    component: () => import('./index-Kaf_68rb.mjs')
   },
   {
     name: "personaldata",
@@ -513,12 +513,12 @@ const _routes = [
   {
     name: "news-newsId",
     path: "/news/:newsId()",
-    component: () => import('./_newsId_-xCqYW-pC.mjs')
+    component: () => import('./_newsId_-DwyGvymc.mjs')
   },
   {
     name: "tamozhennyy_kalkulyator",
     path: "/tamozhennyy_kalkulyator",
-    component: () => import('./tamozhennyy_kalkulyator-D35Ati1n.mjs')
+    component: () => import('./tamozhennyy_kalkulyator-trUMimvl.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -5811,7 +5811,7 @@ _sfc_main$3.setup = (props, ctx) => {
 };
 const __nuxt_component_2 = Object.assign(_sfc_main$3, { __name: "UApp" });
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-CRrAN4By.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-CS7tRLmg.mjs').then((m) => m.default || m))
 };
 const LayoutLoader = defineComponent({
   name: "LayoutLoader",
