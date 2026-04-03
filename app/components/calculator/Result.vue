@@ -65,10 +65,6 @@ const prepareNumberInString = (string: string | undefined) => {
                             <th scope="col">Мощность ЭД:</th>
                             <td>{{props.input?.power_hybrid_electro ? props.input.power_hybrid_electro + ' ' + POWER_TYPES_MAP[props.input.power_hybrid_electro_edizm] : 'Не указано' }}</td>
                         </tr>
-                        <tr v-if="props.input?.power">
-                            <th scope="col">Мощность:</th>
-                            <td>{{props.input?.power ? props.input?.power + ' ' + POWER_TYPES_MAP[props.input?.power_edizm] : 'Не указано' }}</td>
-                        </tr>
                         <tr v-if="props.input?.volume && props.input?.engine_type != 'electric'">
                             <th scope="col">Объем двигателя:</th>
                             <td>{{ props.input?.volume + ' см3' }}</td>

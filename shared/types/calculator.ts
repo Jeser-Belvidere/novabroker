@@ -2,7 +2,7 @@ export interface TKSRequest {
   cost: string,
 	volume: string,
 	currency: string, //TODO:
-	power: string,
+	power?: string,
 	engine_type: 'petrol'| 'diesel'|'petrol_electric'| 'diesel_electric'| 'electric'| 'no_engine',
 	power_edizm: 'kvt' | 'ls',
   power_hybrid_dvs?: string // Мощность ДВС для параллельных гибридов

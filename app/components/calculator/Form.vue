@@ -165,12 +165,12 @@ const isPowerDisabled = computed(() => {
 	}
 })
 
-const isSelectedOneOfPowersAndRequired = computed(() => {
-	if (Boolean(formState.power_hybrid_dvs) || Boolean(formState.power_hybrid_electro) || Boolean(formState.power)) {
+const isHybridEngine = computed(() => {
+	if (formState.engine_type === 'diesel_electric' || formState.engine_type === 'petrol_electric') {
 		return true
+	} else {
+		return false
 	}
-
-	return false
 })
 
 </script>
@@ -228,9 +228,9 @@ const isSelectedOneOfPowersAndRequired = computed(() => {
             <UFormField class="text-md" label="Масса, тонн" size="xl" name="mass" :disabled="isMassInputDisabled" :required="isMassInputRequired">
               <UInput v-model="formState.mass" placeholder="масса" class="text-md w-full" :disabled="isMassInputDisabled" :required="isMassInputRequired"/>
             </UFormField>
-            <div class="power-input">
-              <UFormField class="text-md" :required="!isSelectedOneOfPowersAndRequired" label="Мощность" size="xl" name="power" :disabled="isPowerDisabled">
-                <UInput v-model="formState.power" v-maska="powerMask" placeholder="мощность" class="text-md w-full" :disabled="isPowerDisabled" :required="!isSelectedOneOfPowersAndRequired"/>
+            <div v-if="!isHybridEngine" class="power-input">
+              <UFormField class="text-md" required label="Мощность" size="xl" name="power" :disabled="isPowerDisabled">
+                <UInput v-model="formState.power" v-maska="powerMask" placeholder="мощность" class="text-md w-full" required :disabled="isPowerDisabled"/>
               </UFormField>
               <div class="power-type">
                 <UFormField class="text-md" name="powerType" :disabled="isPowerDisabled">
@@ -238,32 +238,27 @@ const isSelectedOneOfPowersAndRequired = computed(() => {
                 </UFormField>
               </div>
             </div>
-          </div>
-
-          <div v-if="formState.engine_type === 'diesel_electric' || formState.engine_type === 'petrol_electric'" class="calculator-row">
-            <div class="power-input">
-              <UFormField class="text-md" :required="!isSelectedOneOfPowersAndRequired" label="Мощность ДВС" size="xl" name="power_hybrid_dvs" :disabled="Boolean(formState.power)">
-                <UInput v-model="formState.power_hybrid_dvs" v-maska="powerMask" placeholder="Мощность двс" class="text-md w-full" :disabled="Boolean(formState.power)" :required="!isSelectedOneOfPowersAndRequired"/>
+            <div v-if="isHybridEngine" class="power-input">
+              <UFormField class="text-md" required label="Мощность ДВС" size="xl" name="power_hybrid_dvs">
+                <UInput v-model="formState.power_hybrid_dvs" v-maska="powerMask" placeholder="Мощность двс" class="text-md w-full" required/>
               </UFormField>
               <div class="power-type">
-                <UFormField class="text-md" name="powerType" :disabled="Boolean(formState.power)">
-                  <URadioGroup v-model="formState.power_hybrid_dvs_edizm" orientation="horizontal" :disabled="Boolean(formState.power)" size="xs" variant="table" :items="POWER_TYPES_OPTIONS" />
+                <UFormField class="text-md" name="powerType">
+                  <URadioGroup v-model="formState.power_hybrid_dvs_edizm" orientation="horizontal" size="xs" variant="table" :items="POWER_TYPES_OPTIONS" />
                 </UFormField>
               </div>
             </div>
-            <div class="power-input">
-              <UFormField class="text-md" :required="!isSelectedOneOfPowersAndRequired" label="Мощность ЭД" size="xl" name="power_hybrid_electro" :disabled="Boolean(formState.power)">
-                <UInput v-model="formState.power_hybrid_electro" v-maska="powerMask" placeholder="мощность эд" class="text-md w-full" :disabled="Boolean(formState.power)" :required="!isSelectedOneOfPowersAndRequired"/>
+            <div v-if="isHybridEngine" class="power-input">
+              <UFormField class="text-md" required label="Мощность ЭД" size="xl" name="power_hybrid_electro">
+                <UInput v-model="formState.power_hybrid_electro" v-maska="powerMask" placeholder="мощность эд" class="text-md w-full" required/>
               </UFormField>
               <div class="power-type">
-                <UFormField class="text-md" name="power_hybrid_electro_edizm" :disabled="Boolean(formState.power)">
-                  <URadioGroup v-model="formState.power_hybrid_electro_edizm" orientation="horizontal" :disabled="Boolean(formState.power)" size="xs" variant="table" :items="POWER_TYPES_OPTIONS" />
+                <UFormField class="text-md" name="power_hybrid_electro_edizm">
+                  <URadioGroup v-model="formState.power_hybrid_electro_edizm" orientation="horizontal" size="xs" variant="table" :items="POWER_TYPES_OPTIONS" />
                 </UFormField>
               </div>
             </div>
           </div>
-            
-
           <!-- Additional points -->
           <div class="calculator-row">
 			      <!-- 00_8703 автомобиль -->
@@ -338,9 +333,9 @@ const isSelectedOneOfPowersAndRequired = computed(() => {
 
 .calculator-row {
   display: grid;
-  grid-template-columns: 300px 300px 200px;
+  grid-template-columns: 300px 300px 300px;
   gap: 20px;
-  @media screen and (max-width: 868px) {
+  @media screen and (max-width: 1000px) {
     display: flex;
     /* justify-content: space-between; */
     width: 100%;
