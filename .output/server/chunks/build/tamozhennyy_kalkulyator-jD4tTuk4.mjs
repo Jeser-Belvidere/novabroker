@@ -4569,11 +4569,12 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
         return false;
       }
     });
-    const isSelectedOneOfPowersAndRequired = computed(() => {
-      if (Boolean(formState.power_hybrid_dvs) || Boolean(formState.power_hybrid_electro) || Boolean(formState.power)) {
+    const isHybridEngine = computed(() => {
+      if (formState.engine_type === "diesel_electric" || formState.engine_type === "petrol_electric") {
         return true;
+      } else {
+        return false;
       }
-      return false;
     });
     return (_ctx, _push, _parent, _attrs) => {
       const _component_UForm = _sfc_main$8;
@@ -4595,7 +4596,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
       }, _attrs), {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<div class="calculator-container" data-v-e0d7da5b${_scopeId}><div class="calculator-row" data-v-e0d7da5b${_scopeId}>`);
+            _push2(`<div class="calculator-container" data-v-8361421e${_scopeId}><div class="calculator-row" data-v-8361421e${_scopeId}>`);
             if (unref(formState).ts_type === "00_8703") {
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
@@ -4693,7 +4694,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`</div><div class="calculator-row" data-v-e0d7da5b${_scopeId}><div class="cost-input" data-v-e0d7da5b${_scopeId}>`);
+            _push2(`</div><div class="calculator-row" data-v-8361421e${_scopeId}><div class="cost-input" data-v-8361421e${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UFormField, {
               class: "text-md",
               required: "",
@@ -4828,7 +4829,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`</div><div class="calculator-row" data-v-e0d7da5b${_scopeId}>`);
+            _push2(`</div><div class="calculator-row" data-v-8361421e${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UFormField, {
               class: "text-md",
               label: "Масса, тонн",
@@ -4862,62 +4863,52 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`<div class="power-input" data-v-e0d7da5b${_scopeId}>`);
-            _push2(ssrRenderComponent(_component_UFormField, {
-              class: "text-md",
-              required: !unref(isSelectedOneOfPowersAndRequired),
-              label: "Мощность",
-              size: "xl",
-              name: "power",
-              disabled: unref(isPowerDisabled)
-            }, {
-              default: withCtx((_2, _push3, _parent3, _scopeId2) => {
-                if (_push3) {
-                  _push3(ssrRenderComponent(_component_UInput, mergeProps({
-                    modelValue: unref(formState).power,
-                    "onUpdate:modelValue": ($event) => unref(formState).power = $event,
-                    placeholder: "мощность",
-                    class: "text-md w-full",
-                    disabled: unref(isPowerDisabled),
-                    required: !unref(isSelectedOneOfPowersAndRequired)
-                  }, ssrGetDirectiveProps(_ctx, unref(vMaska), unref(powerMask))), null, _parent3, _scopeId2));
-                } else {
-                  return [
-                    withDirectives(createVNode(_component_UInput, {
+            if (!unref(isHybridEngine)) {
+              _push2(`<div class="power-input" data-v-8361421e${_scopeId}>`);
+              _push2(ssrRenderComponent(_component_UFormField, {
+                class: "text-md",
+                required: "",
+                label: "Мощность",
+                size: "xl",
+                name: "power",
+                disabled: unref(isPowerDisabled)
+              }, {
+                default: withCtx((_2, _push3, _parent3, _scopeId2) => {
+                  if (_push3) {
+                    _push3(ssrRenderComponent(_component_UInput, mergeProps({
                       modelValue: unref(formState).power,
                       "onUpdate:modelValue": ($event) => unref(formState).power = $event,
                       placeholder: "мощность",
                       class: "text-md w-full",
-                      disabled: unref(isPowerDisabled),
-                      required: !unref(isSelectedOneOfPowersAndRequired)
-                    }, null, 8, ["modelValue", "onUpdate:modelValue", "disabled", "required"]), [
-                      [unref(vMaska), unref(powerMask)]
-                    ])
-                  ];
-                }
-              }),
-              _: 1
-            }, _parent2, _scopeId));
-            _push2(`<div class="power-type" data-v-e0d7da5b${_scopeId}>`);
-            _push2(ssrRenderComponent(_component_UFormField, {
-              class: "text-md",
-              name: "powerType",
-              disabled: unref(isPowerDisabled)
-            }, {
-              default: withCtx((_2, _push3, _parent3, _scopeId2) => {
-                if (_push3) {
-                  _push3(ssrRenderComponent(_component_URadioGroup, {
-                    modelValue: unref(formState).power_edizm,
-                    "onUpdate:modelValue": ($event) => unref(formState).power_edizm = $event,
-                    orientation: "horizontal",
-                    disabled: unref(isPowerDisabled),
-                    size: "xs",
-                    variant: "table",
-                    items: unref(POWER_TYPES_OPTIONS)
-                  }, null, _parent3, _scopeId2));
-                } else {
-                  return [
-                    createVNode(_component_URadioGroup, {
+                      required: "",
+                      disabled: unref(isPowerDisabled)
+                    }, ssrGetDirectiveProps(_ctx, unref(vMaska), unref(powerMask))), null, _parent3, _scopeId2));
+                  } else {
+                    return [
+                      withDirectives(createVNode(_component_UInput, {
+                        modelValue: unref(formState).power,
+                        "onUpdate:modelValue": ($event) => unref(formState).power = $event,
+                        placeholder: "мощность",
+                        class: "text-md w-full",
+                        required: "",
+                        disabled: unref(isPowerDisabled)
+                      }, null, 8, ["modelValue", "onUpdate:modelValue", "disabled"]), [
+                        [unref(vMaska), unref(powerMask)]
+                      ])
+                    ];
+                  }
+                }),
+                _: 1
+              }, _parent2, _scopeId));
+              _push2(`<div class="power-type" data-v-8361421e${_scopeId}>`);
+              _push2(ssrRenderComponent(_component_UFormField, {
+                class: "text-md",
+                name: "powerType",
+                disabled: unref(isPowerDisabled)
+              }, {
+                default: withCtx((_2, _push3, _parent3, _scopeId2) => {
+                  if (_push3) {
+                    _push3(ssrRenderComponent(_component_URadioGroup, {
                       modelValue: unref(formState).power_edizm,
                       "onUpdate:modelValue": ($event) => unref(formState).power_edizm = $event,
                       orientation: "horizontal",
@@ -4925,22 +4916,35 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                       size: "xs",
                       variant: "table",
                       items: unref(POWER_TYPES_OPTIONS)
-                    }, null, 8, ["modelValue", "onUpdate:modelValue", "disabled", "items"])
-                  ];
-                }
-              }),
-              _: 1
-            }, _parent2, _scopeId));
-            _push2(`</div></div></div>`);
-            if (unref(formState).engine_type === "diesel_electric" || unref(formState).engine_type === "petrol_electric") {
-              _push2(`<div class="calculator-row" data-v-e0d7da5b${_scopeId}><div class="power-input" data-v-e0d7da5b${_scopeId}>`);
+                    }, null, _parent3, _scopeId2));
+                  } else {
+                    return [
+                      createVNode(_component_URadioGroup, {
+                        modelValue: unref(formState).power_edizm,
+                        "onUpdate:modelValue": ($event) => unref(formState).power_edizm = $event,
+                        orientation: "horizontal",
+                        disabled: unref(isPowerDisabled),
+                        size: "xs",
+                        variant: "table",
+                        items: unref(POWER_TYPES_OPTIONS)
+                      }, null, 8, ["modelValue", "onUpdate:modelValue", "disabled", "items"])
+                    ];
+                  }
+                }),
+                _: 1
+              }, _parent2, _scopeId));
+              _push2(`</div></div>`);
+            } else {
+              _push2(`<!---->`);
+            }
+            if (unref(isHybridEngine)) {
+              _push2(`<div class="power-input" data-v-8361421e${_scopeId}>`);
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
-                required: !unref(isSelectedOneOfPowersAndRequired),
+                required: "",
                 label: "Мощность ДВС",
                 size: "xl",
-                name: "power_hybrid_dvs",
-                disabled: Boolean(unref(formState).power)
+                name: "power_hybrid_dvs"
               }, {
                 default: withCtx((_2, _push3, _parent3, _scopeId2) => {
                   if (_push3) {
@@ -4949,8 +4953,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                       "onUpdate:modelValue": ($event) => unref(formState).power_hybrid_dvs = $event,
                       placeholder: "Мощность двс",
                       class: "text-md w-full",
-                      disabled: Boolean(unref(formState).power),
-                      required: !unref(isSelectedOneOfPowersAndRequired)
+                      required: ""
                     }, ssrGetDirectiveProps(_ctx, unref(vMaska), unref(powerMask))), null, _parent3, _scopeId2));
                   } else {
                     return [
@@ -4959,9 +4962,8 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                         "onUpdate:modelValue": ($event) => unref(formState).power_hybrid_dvs = $event,
                         placeholder: "Мощность двс",
                         class: "text-md w-full",
-                        disabled: Boolean(unref(formState).power),
-                        required: !unref(isSelectedOneOfPowersAndRequired)
-                      }, null, 8, ["modelValue", "onUpdate:modelValue", "disabled", "required"]), [
+                        required: ""
+                      }, null, 8, ["modelValue", "onUpdate:modelValue"]), [
                         [unref(vMaska), unref(powerMask)]
                       ])
                     ];
@@ -4969,11 +4971,10 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                 }),
                 _: 1
               }, _parent2, _scopeId));
-              _push2(`<div class="power-type" data-v-e0d7da5b${_scopeId}>`);
+              _push2(`<div class="power-type" data-v-8361421e${_scopeId}>`);
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
-                name: "powerType",
-                disabled: Boolean(unref(formState).power)
+                name: "powerType"
               }, {
                 default: withCtx((_2, _push3, _parent3, _scopeId2) => {
                   if (_push3) {
@@ -4981,7 +4982,6 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                       modelValue: unref(formState).power_hybrid_dvs_edizm,
                       "onUpdate:modelValue": ($event) => unref(formState).power_hybrid_dvs_edizm = $event,
                       orientation: "horizontal",
-                      disabled: Boolean(unref(formState).power),
                       size: "xs",
                       variant: "table",
                       items: unref(POWER_TYPES_OPTIONS)
@@ -4992,24 +4992,27 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                         modelValue: unref(formState).power_hybrid_dvs_edizm,
                         "onUpdate:modelValue": ($event) => unref(formState).power_hybrid_dvs_edizm = $event,
                         orientation: "horizontal",
-                        disabled: Boolean(unref(formState).power),
                         size: "xs",
                         variant: "table",
                         items: unref(POWER_TYPES_OPTIONS)
-                      }, null, 8, ["modelValue", "onUpdate:modelValue", "disabled", "items"])
+                      }, null, 8, ["modelValue", "onUpdate:modelValue", "items"])
                     ];
                   }
                 }),
                 _: 1
               }, _parent2, _scopeId));
-              _push2(`</div></div><div class="power-input" data-v-e0d7da5b${_scopeId}>`);
+              _push2(`</div></div>`);
+            } else {
+              _push2(`<!---->`);
+            }
+            if (unref(isHybridEngine)) {
+              _push2(`<div class="power-input" data-v-8361421e${_scopeId}>`);
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
-                required: !unref(isSelectedOneOfPowersAndRequired),
+                required: "",
                 label: "Мощность ЭД",
                 size: "xl",
-                name: "power_hybrid_electro",
-                disabled: Boolean(unref(formState).power)
+                name: "power_hybrid_electro"
               }, {
                 default: withCtx((_2, _push3, _parent3, _scopeId2) => {
                   if (_push3) {
@@ -5018,8 +5021,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                       "onUpdate:modelValue": ($event) => unref(formState).power_hybrid_electro = $event,
                       placeholder: "мощность эд",
                       class: "text-md w-full",
-                      disabled: Boolean(unref(formState).power),
-                      required: !unref(isSelectedOneOfPowersAndRequired)
+                      required: ""
                     }, ssrGetDirectiveProps(_ctx, unref(vMaska), unref(powerMask))), null, _parent3, _scopeId2));
                   } else {
                     return [
@@ -5028,9 +5030,8 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                         "onUpdate:modelValue": ($event) => unref(formState).power_hybrid_electro = $event,
                         placeholder: "мощность эд",
                         class: "text-md w-full",
-                        disabled: Boolean(unref(formState).power),
-                        required: !unref(isSelectedOneOfPowersAndRequired)
-                      }, null, 8, ["modelValue", "onUpdate:modelValue", "disabled", "required"]), [
+                        required: ""
+                      }, null, 8, ["modelValue", "onUpdate:modelValue"]), [
                         [unref(vMaska), unref(powerMask)]
                       ])
                     ];
@@ -5038,11 +5039,10 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                 }),
                 _: 1
               }, _parent2, _scopeId));
-              _push2(`<div class="power-type" data-v-e0d7da5b${_scopeId}>`);
+              _push2(`<div class="power-type" data-v-8361421e${_scopeId}>`);
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
-                name: "power_hybrid_electro_edizm",
-                disabled: Boolean(unref(formState).power)
+                name: "power_hybrid_electro_edizm"
               }, {
                 default: withCtx((_2, _push3, _parent3, _scopeId2) => {
                   if (_push3) {
@@ -5050,7 +5050,6 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                       modelValue: unref(formState).power_hybrid_electro_edizm,
                       "onUpdate:modelValue": ($event) => unref(formState).power_hybrid_electro_edizm = $event,
                       orientation: "horizontal",
-                      disabled: Boolean(unref(formState).power),
                       size: "xs",
                       variant: "table",
                       items: unref(POWER_TYPES_OPTIONS)
@@ -5061,21 +5060,20 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                         modelValue: unref(formState).power_hybrid_electro_edizm,
                         "onUpdate:modelValue": ($event) => unref(formState).power_hybrid_electro_edizm = $event,
                         orientation: "horizontal",
-                        disabled: Boolean(unref(formState).power),
                         size: "xs",
                         variant: "table",
                         items: unref(POWER_TYPES_OPTIONS)
-                      }, null, 8, ["modelValue", "onUpdate:modelValue", "disabled", "items"])
+                      }, null, 8, ["modelValue", "onUpdate:modelValue", "items"])
                     ];
                   }
                 }),
                 _: 1
               }, _parent2, _scopeId));
-              _push2(`</div></div></div>`);
+              _push2(`</div></div>`);
             } else {
               _push2(`<!---->`);
             }
-            _push2(`<div class="calculator-row" data-v-e0d7da5b${_scopeId}>`);
+            _push2(`</div><div class="calculator-row" data-v-8361421e${_scopeId}>`);
             if (unref(formState).ts_type === "00_8703") {
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md mx-4",
@@ -5314,7 +5312,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
             } else {
               _push2(`<!---->`);
             }
-            _push2(`</div><div class="bus-eco-class" data-v-e0d7da5b${_scopeId}>`);
+            _push2(`</div><div class="bus-eco-class" data-v-8361421e${_scopeId}>`);
             if (unref(formState).ts_type === "13_8702") {
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md mx-4",
@@ -5378,7 +5376,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
             } else {
               _push2(`<!---->`);
             }
-            _push2(`</div><div class="actions" data-v-e0d7da5b${_scopeId}>`);
+            _push2(`</div><div class="actions" data-v-8361421e${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UButton, {
               loading: props.isLoading,
               size: "xl",
@@ -5561,10 +5559,13 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                     ]),
                     _: 1
                   }, 8, ["disabled", "required"]),
-                  createVNode("div", { class: "power-input" }, [
+                  !unref(isHybridEngine) ? (openBlock(), createBlock("div", {
+                    key: 0,
+                    class: "power-input"
+                  }, [
                     createVNode(_component_UFormField, {
                       class: "text-md",
-                      required: !unref(isSelectedOneOfPowersAndRequired),
+                      required: "",
                       label: "Мощность",
                       size: "xl",
                       name: "power",
@@ -5576,14 +5577,14 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                           "onUpdate:modelValue": ($event) => unref(formState).power = $event,
                           placeholder: "мощность",
                           class: "text-md w-full",
-                          disabled: unref(isPowerDisabled),
-                          required: !unref(isSelectedOneOfPowersAndRequired)
-                        }, null, 8, ["modelValue", "onUpdate:modelValue", "disabled", "required"]), [
+                          required: "",
+                          disabled: unref(isPowerDisabled)
+                        }, null, 8, ["modelValue", "onUpdate:modelValue", "disabled"]), [
                           [unref(vMaska), unref(powerMask)]
                         ])
                       ]),
                       _: 1
-                    }, 8, ["required", "disabled"]),
+                    }, 8, ["disabled"]),
                     createVNode("div", { class: "power-type" }, [
                       createVNode(_component_UFormField, {
                         class: "text-md",
@@ -5604,20 +5605,17 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                         _: 1
                       }, 8, ["disabled"])
                     ])
-                  ])
-                ]),
-                unref(formState).engine_type === "diesel_electric" || unref(formState).engine_type === "petrol_electric" ? (openBlock(), createBlock("div", {
-                  key: 0,
-                  class: "calculator-row"
-                }, [
-                  createVNode("div", { class: "power-input" }, [
+                  ])) : createCommentVNode("", true),
+                  unref(isHybridEngine) ? (openBlock(), createBlock("div", {
+                    key: 1,
+                    class: "power-input"
+                  }, [
                     createVNode(_component_UFormField, {
                       class: "text-md",
-                      required: !unref(isSelectedOneOfPowersAndRequired),
+                      required: "",
                       label: "Мощность ДВС",
                       size: "xl",
-                      name: "power_hybrid_dvs",
-                      disabled: Boolean(unref(formState).power)
+                      name: "power_hybrid_dvs"
                     }, {
                       default: withCtx(() => [
                         withDirectives(createVNode(_component_UInput, {
@@ -5625,43 +5623,42 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                           "onUpdate:modelValue": ($event) => unref(formState).power_hybrid_dvs = $event,
                           placeholder: "Мощность двс",
                           class: "text-md w-full",
-                          disabled: Boolean(unref(formState).power),
-                          required: !unref(isSelectedOneOfPowersAndRequired)
-                        }, null, 8, ["modelValue", "onUpdate:modelValue", "disabled", "required"]), [
+                          required: ""
+                        }, null, 8, ["modelValue", "onUpdate:modelValue"]), [
                           [unref(vMaska), unref(powerMask)]
                         ])
                       ]),
                       _: 1
-                    }, 8, ["required", "disabled"]),
+                    }),
                     createVNode("div", { class: "power-type" }, [
                       createVNode(_component_UFormField, {
                         class: "text-md",
-                        name: "powerType",
-                        disabled: Boolean(unref(formState).power)
+                        name: "powerType"
                       }, {
                         default: withCtx(() => [
                           createVNode(_component_URadioGroup, {
                             modelValue: unref(formState).power_hybrid_dvs_edizm,
                             "onUpdate:modelValue": ($event) => unref(formState).power_hybrid_dvs_edizm = $event,
                             orientation: "horizontal",
-                            disabled: Boolean(unref(formState).power),
                             size: "xs",
                             variant: "table",
                             items: unref(POWER_TYPES_OPTIONS)
-                          }, null, 8, ["modelValue", "onUpdate:modelValue", "disabled", "items"])
+                          }, null, 8, ["modelValue", "onUpdate:modelValue", "items"])
                         ]),
                         _: 1
-                      }, 8, ["disabled"])
+                      })
                     ])
-                  ]),
-                  createVNode("div", { class: "power-input" }, [
+                  ])) : createCommentVNode("", true),
+                  unref(isHybridEngine) ? (openBlock(), createBlock("div", {
+                    key: 2,
+                    class: "power-input"
+                  }, [
                     createVNode(_component_UFormField, {
                       class: "text-md",
-                      required: !unref(isSelectedOneOfPowersAndRequired),
+                      required: "",
                       label: "Мощность ЭД",
                       size: "xl",
-                      name: "power_hybrid_electro",
-                      disabled: Boolean(unref(formState).power)
+                      name: "power_hybrid_electro"
                     }, {
                       default: withCtx(() => [
                         withDirectives(createVNode(_component_UInput, {
@@ -5669,36 +5666,33 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                           "onUpdate:modelValue": ($event) => unref(formState).power_hybrid_electro = $event,
                           placeholder: "мощность эд",
                           class: "text-md w-full",
-                          disabled: Boolean(unref(formState).power),
-                          required: !unref(isSelectedOneOfPowersAndRequired)
-                        }, null, 8, ["modelValue", "onUpdate:modelValue", "disabled", "required"]), [
+                          required: ""
+                        }, null, 8, ["modelValue", "onUpdate:modelValue"]), [
                           [unref(vMaska), unref(powerMask)]
                         ])
                       ]),
                       _: 1
-                    }, 8, ["required", "disabled"]),
+                    }),
                     createVNode("div", { class: "power-type" }, [
                       createVNode(_component_UFormField, {
                         class: "text-md",
-                        name: "power_hybrid_electro_edizm",
-                        disabled: Boolean(unref(formState).power)
+                        name: "power_hybrid_electro_edizm"
                       }, {
                         default: withCtx(() => [
                           createVNode(_component_URadioGroup, {
                             modelValue: unref(formState).power_hybrid_electro_edizm,
                             "onUpdate:modelValue": ($event) => unref(formState).power_hybrid_electro_edizm = $event,
                             orientation: "horizontal",
-                            disabled: Boolean(unref(formState).power),
                             size: "xs",
                             variant: "table",
                             items: unref(POWER_TYPES_OPTIONS)
-                          }, null, 8, ["modelValue", "onUpdate:modelValue", "disabled", "items"])
+                          }, null, 8, ["modelValue", "onUpdate:modelValue", "items"])
                         ]),
                         _: 1
-                      }, 8, ["disabled"])
+                      })
                     ])
-                  ])
-                ])) : createCommentVNode("", true),
+                  ])) : createCommentVNode("", true)
+                ]),
                 createVNode("div", { class: "calculator-row" }, [
                   unref(formState).ts_type === "00_8703" ? (openBlock(), createBlock(_component_UFormField, {
                     key: 0,
@@ -5898,7 +5892,7 @@ _sfc_main$2.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/calculator/Form.vue");
   return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
 };
-const __nuxt_component_1 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$2, [["__scopeId", "data-v-e0d7da5b"]]), { __name: "CalculatorForm" });
+const __nuxt_component_1 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$2, [["__scopeId", "data-v-8361421e"]]), { __name: "CalculatorForm" });
 const _sfc_main$1 = /* @__PURE__ */ defineComponent({
   __name: "Result",
   __ssrInlineRender: true,
@@ -5927,59 +5921,54 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
     };
     return (_ctx, _push, _parent, _attrs) => {
       const _component_UButton = _sfc_main$8$1;
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "result-container" }, _attrs))} data-v-1482946d><div class="result-content" data-v-1482946d><div class="result-input" data-v-1482946d><div class="header" data-v-1482946d><h3 data-v-1482946d>Введенные данные</h3><h3 data-v-1482946d>NOVABROKER</h3></div><table class="input-table" data-v-1482946d><tbody data-v-1482946d><tr data-v-1482946d><th scope="col" data-v-1482946d>Возраст:</th><td data-v-1482946d>${ssrInterpolate(props.input?.age ? unref(AGE_OPTIONS_MAP)[props.input.age] : "Не указано")}</td></tr><tr data-v-1482946d><th scope="col" data-v-1482946d>Стоймость автомобиля:</th><td data-v-1482946d>${ssrInterpolate(props.input?.cost ? props.input.cost + " " + unref(CURRENCY_OPTIONS_MAP)[props.input.currency] : "Не указано")}</td></tr><tr data-v-1482946d><th scope="col" data-v-1482946d>Тип двигателя:</th><td data-v-1482946d>${ssrInterpolate(props.input?.engine_type ? unref(ENGINE_TYPES_MAP)[props.input.engine_type] : "Не указано")}</td></tr>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "result-container" }, _attrs))} data-v-94edadfd><div class="result-content" data-v-94edadfd><div class="result-input" data-v-94edadfd><div class="header" data-v-94edadfd><h3 data-v-94edadfd>Введенные данные</h3><h3 data-v-94edadfd>NOVABROKER</h3></div><table class="input-table" data-v-94edadfd><tbody data-v-94edadfd><tr data-v-94edadfd><th scope="col" data-v-94edadfd>Возраст:</th><td data-v-94edadfd>${ssrInterpolate(props.input?.age ? unref(AGE_OPTIONS_MAP)[props.input.age] : "Не указано")}</td></tr><tr data-v-94edadfd><th scope="col" data-v-94edadfd>Стоймость автомобиля:</th><td data-v-94edadfd>${ssrInterpolate(props.input?.cost ? props.input.cost + " " + unref(CURRENCY_OPTIONS_MAP)[props.input.currency] : "Не указано")}</td></tr><tr data-v-94edadfd><th scope="col" data-v-94edadfd>Тип двигателя:</th><td data-v-94edadfd>${ssrInterpolate(props.input?.engine_type ? unref(ENGINE_TYPES_MAP)[props.input.engine_type] : "Не указано")}</td></tr>`);
       if (props.input?.power) {
-        _push(`<tr data-v-1482946d><th scope="col" data-v-1482946d>Мощность:</th><td data-v-1482946d>${ssrInterpolate(props.input?.power ? props.input.power + " " + unref(POWER_TYPES_MAP)[props.input.power_edizm] : "Не указано")}</td></tr>`);
+        _push(`<tr data-v-94edadfd><th scope="col" data-v-94edadfd>Мощность:</th><td data-v-94edadfd>${ssrInterpolate(props.input?.power ? props.input.power + " " + unref(POWER_TYPES_MAP)[props.input.power_edizm] : "Не указано")}</td></tr>`);
       } else {
         _push(`<!---->`);
       }
       if (props.input?.power_hybrid_dvs) {
-        _push(`<tr data-v-1482946d><th scope="col" data-v-1482946d>Мощность ДВС:</th><td data-v-1482946d>${ssrInterpolate(props.input?.power_hybrid_dvs ? props.input.power_hybrid_dvs + " " + unref(POWER_TYPES_MAP)[props.input?.power_hybrid_dvs_edizm] : "Не указано")}</td></tr>`);
+        _push(`<tr data-v-94edadfd><th scope="col" data-v-94edadfd>Мощность ДВС:</th><td data-v-94edadfd>${ssrInterpolate(props.input?.power_hybrid_dvs ? props.input.power_hybrid_dvs + " " + unref(POWER_TYPES_MAP)[props.input?.power_hybrid_dvs_edizm] : "Не указано")}</td></tr>`);
       } else {
         _push(`<!---->`);
       }
       if (props.input?.power_hybrid_electro) {
-        _push(`<tr data-v-1482946d><th scope="col" data-v-1482946d>Мощность ЭД:</th><td data-v-1482946d>${ssrInterpolate(props.input?.power_hybrid_electro ? props.input.power_hybrid_electro + " " + unref(POWER_TYPES_MAP)[props.input.power_hybrid_electro_edizm] : "Не указано")}</td></tr>`);
-      } else {
-        _push(`<!---->`);
-      }
-      if (props.input?.power) {
-        _push(`<tr data-v-1482946d><th scope="col" data-v-1482946d>Мощность:</th><td data-v-1482946d>${ssrInterpolate(props.input?.power ? props.input?.power + " " + unref(POWER_TYPES_MAP)[props.input?.power_edizm] : "Не указано")}</td></tr>`);
+        _push(`<tr data-v-94edadfd><th scope="col" data-v-94edadfd>Мощность ЭД:</th><td data-v-94edadfd>${ssrInterpolate(props.input?.power_hybrid_electro ? props.input.power_hybrid_electro + " " + unref(POWER_TYPES_MAP)[props.input.power_hybrid_electro_edizm] : "Не указано")}</td></tr>`);
       } else {
         _push(`<!---->`);
       }
       if (props.input?.volume && props.input?.engine_type != "electric") {
-        _push(`<tr data-v-1482946d><th scope="col" data-v-1482946d>Объем двигателя:</th><td data-v-1482946d>${ssrInterpolate(props.input?.volume + " см3")}</td></tr>`);
+        _push(`<tr data-v-94edadfd><th scope="col" data-v-94edadfd>Объем двигателя:</th><td data-v-94edadfd>${ssrInterpolate(props.input?.volume + " см3")}</td></tr>`);
       } else {
         _push(`<!---->`);
       }
       if (props.input?.mass) {
-        _push(`<tr data-v-1482946d><th scope="col" data-v-1482946d>Масса:</th><td data-v-1482946d>${ssrInterpolate(props.input?.mass + " тонн")}</td></tr>`);
+        _push(`<tr data-v-94edadfd><th scope="col" data-v-94edadfd>Масса:</th><td data-v-94edadfd>${ssrInterpolate(props.input?.mass + " тонн")}</td></tr>`);
       } else {
         _push(`<!---->`);
       }
-      _push(`</tbody></table></div><div class="result-output" data-v-1482946d><h3 data-v-1482946d>Расчет таможенных сборов ввоза тс на ${ssrInterpolate(new Date(Date.now()).toLocaleDateString("ru-RU"))}</h3><table data-v-1482946d><thead data-v-1482946d><tr data-v-1482946d><th scope="col" data-v-1482946d>Платеж</th><th scope="col" data-v-1482946d>Ставка</th><th scope="col" data-v-1482946d>Сумма (руб)</th></tr></thead><tbody data-v-1482946d><tr data-v-1482946d><th scope="row" data-v-1482946d>Таможенное оформление</th><td data-v-1482946d>${ssrInterpolate(prepareNumberInString(props.result?.tam_oform?.name))}</td><td data-v-1482946d>${ssrInterpolate(prepareNumberInString(props.result?.tam_oform?.name))}</td></tr>`);
+      _push(`</tbody></table></div><div class="result-output" data-v-94edadfd><h3 data-v-94edadfd>Расчет таможенных сборов ввоза тс на ${ssrInterpolate(new Date(Date.now()).toLocaleDateString("ru-RU"))}</h3><table data-v-94edadfd><thead data-v-94edadfd><tr data-v-94edadfd><th scope="col" data-v-94edadfd>Платеж</th><th scope="col" data-v-94edadfd>Ставка</th><th scope="col" data-v-94edadfd>Сумма (руб)</th></tr></thead><tbody data-v-94edadfd><tr data-v-94edadfd><th scope="row" data-v-94edadfd>Таможенное оформление</th><td data-v-94edadfd>${ssrInterpolate(prepareNumberInString(props.result?.tam_oform?.name))}</td><td data-v-94edadfd>${ssrInterpolate(prepareNumberInString(props.result?.tam_oform?.name))}</td></tr>`);
       if (props.input?.face === "nat") {
-        _push(`<tr data-v-1482946d><th scope="row" data-v-1482946d>Единая ставка</th><td data-v-1482946d>${ssrInterpolate(props.result?.poshl?.name)}</td><td data-v-1482946d>${ssrInterpolate(prepareNumber(props.result?.poshl?.value_rub))} руб.</td></tr>`);
+        _push(`<tr data-v-94edadfd><th scope="row" data-v-94edadfd>Единая ставка</th><td data-v-94edadfd>${ssrInterpolate(props.result?.poshl?.name)}</td><td data-v-94edadfd>${ssrInterpolate(prepareNumber(props.result?.poshl?.value_rub))} руб.</td></tr>`);
       } else {
         _push(`<!---->`);
       }
       if (props.input?.face === "jur" || props.input?.sequential === true || props.input?.engine_type === "electric") {
-        _push(`<tr data-v-1482946d><th scope="row" data-v-1482946d>Пошлина</th><td data-v-1482946d>${ssrInterpolate(props.result?.poshl?.name)}</td><td data-v-1482946d>${ssrInterpolate(prepareNumber(props.result?.poshl?.value_rub))} руб.</td></tr>`);
+        _push(`<tr data-v-94edadfd><th scope="row" data-v-94edadfd>Пошлина</th><td data-v-94edadfd>${ssrInterpolate(props.result?.poshl?.name)}</td><td data-v-94edadfd>${ssrInterpolate(prepareNumber(props.result?.poshl?.value_rub))} руб.</td></tr>`);
       } else {
         _push(`<!---->`);
       }
       if (props.input?.face === "jur" || props.input?.sequential === true || props.input?.engine_type === "electric") {
-        _push(`<tr data-v-1482946d><th scope="row" data-v-1482946d>Акциз</th><td data-v-1482946d>${ssrInterpolate(props.result?.akciz?.name)}</td><td data-v-1482946d>${ssrInterpolate(prepareNumber(props.result?.akciz?.value_rub))} руб.</td></tr>`);
+        _push(`<tr data-v-94edadfd><th scope="row" data-v-94edadfd>Акциз</th><td data-v-94edadfd>${ssrInterpolate(props.result?.akciz?.name)}</td><td data-v-94edadfd>${ssrInterpolate(prepareNumber(props.result?.akciz?.value_rub))} руб.</td></tr>`);
       } else {
         _push(`<!---->`);
       }
       if (props.input?.face === "jur" || props.input?.sequential === true || props.input?.engine_type === "electric") {
-        _push(`<tr data-v-1482946d><th scope="row" data-v-1482946d>НДС</th><td data-v-1482946d>${ssrInterpolate(props.result?.nds?.name)}</td><td data-v-1482946d>${ssrInterpolate(prepareNumber(props.result?.nds?.value_rub))} руб.</td></tr>`);
+        _push(`<tr data-v-94edadfd><th scope="row" data-v-94edadfd>НДС</th><td data-v-94edadfd>${ssrInterpolate(props.result?.nds?.name)}</td><td data-v-94edadfd>${ssrInterpolate(prepareNumber(props.result?.nds?.value_rub))} руб.</td></tr>`);
       } else {
         _push(`<!---->`);
       }
-      _push(`<tr data-v-1482946d><th scope="row" data-v-1482946d>Утиль сбор</th><td data-v-1482946d>${ssrInterpolate(prepareNumber(props.result?.util_sbor.value_base))} руб. x ${ssrInterpolate(props.result?.util_sbor.value_coef)}</td><td data-v-1482946d>${ssrInterpolate(prepareNumber(props.result?.util_sbor.value_rub))} руб.</td></tr></tbody><tfoot data-v-1482946d><tr data-v-1482946d><th class="result-sum-row-header" colspan="2" scope="row" data-v-1482946d>Итого c утилизационным сбором</th><td class="result-sum-row-td" data-v-1482946d>${ssrInterpolate(prepareNumber(props.result?.sum_util.value_rub))} руб.</td></tr></tfoot></table></div></div><div class="result-actions" data-v-1482946d>`);
+      _push(`<tr data-v-94edadfd><th scope="row" data-v-94edadfd>Утиль сбор</th><td data-v-94edadfd>${ssrInterpolate(prepareNumber(props.result?.util_sbor.value_base))} руб. x ${ssrInterpolate(props.result?.util_sbor.value_coef)}</td><td data-v-94edadfd>${ssrInterpolate(prepareNumber(props.result?.util_sbor.value_rub))} руб.</td></tr></tbody><tfoot data-v-94edadfd><tr data-v-94edadfd><th class="result-sum-row-header" colspan="2" scope="row" data-v-94edadfd>Итого c утилизационным сбором</th><td class="result-sum-row-td" data-v-94edadfd>${ssrInterpolate(prepareNumber(props.result?.sum_util.value_rub))} руб.</td></tr></tfoot></table></div></div><div class="result-actions" data-v-94edadfd>`);
       _push(ssrRenderComponent(_component_UButton, {
         variant: "solid",
         label: "Вернуться",
@@ -5987,7 +5976,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
         size: "xl",
         onClick: ($event) => emits("back")
       }, null, _parent));
-      _push(`</div><div class="hint" data-v-1482946d>Примерные результаты расчета. Для точного расчета обратитесь к нашим специалистам <span style="${ssrRenderStyle({ "color": "red" })}" data-v-1482946d>*</span></div></div>`);
+      _push(`</div><div class="hint" data-v-94edadfd>Примерные результаты расчета. Для точного расчета обратитесь к нашим специалистам <span style="${ssrRenderStyle({ "color": "red" })}" data-v-94edadfd>*</span></div></div>`);
     };
   }
 });
@@ -5997,7 +5986,7 @@ _sfc_main$1.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/calculator/Result.vue");
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
-const __nuxt_component_2 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$1, [["__scopeId", "data-v-1482946d"]]), { __name: "CalculatorResult" });
+const __nuxt_component_2 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$1, [["__scopeId", "data-v-94edadfd"]]), { __name: "CalculatorResult" });
 const _sfc_main = /* @__PURE__ */ defineComponent({
   __name: "tamozhennyy_kalkulyator",
   __ssrInlineRender: true,
@@ -6127,4 +6116,4 @@ _sfc_main.setup = (props, ctx) => {
 const tamozhennyy_kalkulyator = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-9b3a9b60"]]);
 
 export { tamozhennyy_kalkulyator as default };
-//# sourceMappingURL=tamozhennyy_kalkulyator-D_D9Whm6.mjs.map
+//# sourceMappingURL=tamozhennyy_kalkulyator-jD4tTuk4.mjs.map
