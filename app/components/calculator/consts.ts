@@ -88,4 +88,6 @@ export const initialState: IFormValues = {
 	offroad: false,
 	caravan: false, 
 	ts_type: '00_8703', 
+	power_hybrid_dvs_edizm: 'ls',
+	power_hybrid_electro_edizm: 'ls'
 }

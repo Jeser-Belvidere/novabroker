@@ -4458,7 +4458,9 @@ const initialState = {
   mass: "",
   offroad: false,
   caravan: false,
-  ts_type: "00_8703"
+  ts_type: "00_8703",
+  power_hybrid_dvs_edizm: "ls",
+  power_hybrid_electro_edizm: "ls"
 };
 const _sfc_main$2 = /* @__PURE__ */ defineComponent({
   __name: "Form",
@@ -6116,4 +6118,4 @@ _sfc_main.setup = (props, ctx) => {
 const tamozhennyy_kalkulyator = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-9b3a9b60"]]);
 
 export { tamozhennyy_kalkulyator as default };
-//# sourceMappingURL=tamozhennyy_kalkulyator-jD4tTuk4.mjs.map
+//# sourceMappingURL=tamozhennyy_kalkulyator-CZRuqJe3.mjs.map

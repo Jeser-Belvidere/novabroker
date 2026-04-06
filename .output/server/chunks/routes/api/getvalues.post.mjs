@@ -34,7 +34,10 @@ const tsTypes = [
   "10_871610",
   "11_890399",
   "12_8903",
-  "13_8702"
+  "13_8702",
+  "06_8711",
+  "06_8711",
+  "06_8711"
 ];
 const formValuesSchema = z.object({
   cost: z.string().min(1, "Cost is required"),
