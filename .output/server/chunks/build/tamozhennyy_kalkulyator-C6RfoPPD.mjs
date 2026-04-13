@@ -4532,7 +4532,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
       }
     });
     watch(() => formState.engine_type, () => {
-      Object.assign(formState, { ...formState, power: "", power_hybrid_dvs: "", power_hybrid_electro: "" });
+      Object.assign(formState, { ...formState, volume: "", power: "", power_hybrid_dvs: "", power_hybrid_electro: "" });
     });
     const isEngineTypeDisabled = computed(() => {
       if (formState.ts_type === "09_8716400000" || formState.ts_type === "10_871610") {
@@ -4598,7 +4598,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
       }, _attrs), {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`<div class="calculator-container" data-v-8361421e${_scopeId}><div class="calculator-row" data-v-8361421e${_scopeId}>`);
+            _push2(`<div class="calculator-container" data-v-ad707a92${_scopeId}><div class="calculator-row" data-v-ad707a92${_scopeId}>`);
             if (unref(formState).ts_type === "00_8703") {
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
@@ -4696,7 +4696,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`</div><div class="calculator-row" data-v-8361421e${_scopeId}><div class="cost-input" data-v-8361421e${_scopeId}>`);
+            _push2(`</div><div class="calculator-row" data-v-ad707a92${_scopeId}><div class="cost-input" data-v-ad707a92${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UFormField, {
               class: "text-md",
               required: "",
@@ -4831,7 +4831,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(`</div><div class="calculator-row" data-v-8361421e${_scopeId}>`);
+            _push2(`</div><div class="calculator-row" data-v-ad707a92${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UFormField, {
               class: "text-md",
               label: "Масса, тонн",
@@ -4866,7 +4866,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               _: 1
             }, _parent2, _scopeId));
             if (!unref(isHybridEngine)) {
-              _push2(`<div class="power-input" data-v-8361421e${_scopeId}>`);
+              _push2(`<div class="power-input" data-v-ad707a92${_scopeId}>`);
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
                 required: "",
@@ -4902,7 +4902,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                 }),
                 _: 1
               }, _parent2, _scopeId));
-              _push2(`<div class="power-type" data-v-8361421e${_scopeId}>`);
+              _push2(`<div class="power-type" data-v-ad707a92${_scopeId}>`);
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
                 name: "powerType",
@@ -4940,7 +4940,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               _push2(`<!---->`);
             }
             if (unref(isHybridEngine)) {
-              _push2(`<div class="power-input" data-v-8361421e${_scopeId}>`);
+              _push2(`<div class="power-input" data-v-ad707a92${_scopeId}>`);
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
                 required: "",
@@ -4973,7 +4973,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                 }),
                 _: 1
               }, _parent2, _scopeId));
-              _push2(`<div class="power-type" data-v-8361421e${_scopeId}>`);
+              _push2(`<div class="power-type" data-v-ad707a92${_scopeId}>`);
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
                 name: "powerType"
@@ -5008,7 +5008,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
               _push2(`<!---->`);
             }
             if (unref(isHybridEngine)) {
-              _push2(`<div class="power-input" data-v-8361421e${_scopeId}>`);
+              _push2(`<div class="power-input" data-v-ad707a92${_scopeId}>`);
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
                 required: "",
@@ -5041,7 +5041,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
                 }),
                 _: 1
               }, _parent2, _scopeId));
-              _push2(`<div class="power-type" data-v-8361421e${_scopeId}>`);
+              _push2(`<div class="power-type" data-v-ad707a92${_scopeId}>`);
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md",
                 name: "power_hybrid_electro_edizm"
@@ -5075,7 +5075,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
             } else {
               _push2(`<!---->`);
             }
-            _push2(`</div><div class="calculator-row" data-v-8361421e${_scopeId}>`);
+            _push2(`</div><div class="calculator-row" data-v-ad707a92${_scopeId}>`);
             if (unref(formState).ts_type === "00_8703") {
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md mx-4",
@@ -5314,7 +5314,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
             } else {
               _push2(`<!---->`);
             }
-            _push2(`</div><div class="bus-eco-class" data-v-8361421e${_scopeId}>`);
+            _push2(`</div><div class="bus-eco-class" data-v-ad707a92${_scopeId}>`);
             if (unref(formState).ts_type === "13_8702") {
               _push2(ssrRenderComponent(_component_UFormField, {
                 class: "text-md mx-4",
@@ -5378,7 +5378,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
             } else {
               _push2(`<!---->`);
             }
-            _push2(`</div><div class="actions" data-v-8361421e${_scopeId}>`);
+            _push2(`</div><div class="actions" data-v-ad707a92${_scopeId}>`);
             _push2(ssrRenderComponent(_component_UButton, {
               loading: props.isLoading,
               size: "xl",
@@ -5894,7 +5894,7 @@ _sfc_main$2.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/calculator/Form.vue");
   return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
 };
-const __nuxt_component_1 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$2, [["__scopeId", "data-v-8361421e"]]), { __name: "CalculatorForm" });
+const __nuxt_component_1 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$2, [["__scopeId", "data-v-ad707a92"]]), { __name: "CalculatorForm" });
 const _sfc_main$1 = /* @__PURE__ */ defineComponent({
   __name: "Result",
   __ssrInlineRender: true,
@@ -6118,4 +6118,4 @@ _sfc_main.setup = (props, ctx) => {
 const tamozhennyy_kalkulyator = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-9b3a9b60"]]);
 
 export { tamozhennyy_kalkulyator as default };
-//# sourceMappingURL=tamozhennyy_kalkulyator-CZRuqJe3.mjs.map
+//# sourceMappingURL=tamozhennyy_kalkulyator-C6RfoPPD.mjs.map

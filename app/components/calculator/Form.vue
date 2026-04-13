@@ -98,7 +98,7 @@ watch (() => formState.caravan, (newValue) => {
 })
 
 watch (() => formState.engine_type, () => {
-	Object.assign(formState, {...formState, power: '', power_hybrid_dvs: '', power_hybrid_electro: ''})
+	Object.assign(formState, {...formState, volume: '', power: '', power_hybrid_dvs: '', power_hybrid_electro: ''})
 })
 
 const isEngineTypeDisabled = computed(() => {
