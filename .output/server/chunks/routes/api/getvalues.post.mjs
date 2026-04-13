@@ -14,7 +14,14 @@ import 'node:url';
 import '@iconify/utils';
 import 'consola';
 
-const engineTypes = ["petrol", "diesel", "petrol_electric", "diesel_electric", "electric", "no_engine"];
+const engineTypes = [
+  "petrol",
+  "diesel",
+  "petrol_electric",
+  "diesel_electric",
+  "electric",
+  "no_engine"
+];
 const powerUnits = ["kvt", "ls"];
 const ages = ["3", "35", "57", "7"];
 const faceTypes = ["nat", "jur"];
@@ -35,24 +42,22 @@ const tsTypes = [
   "11_890399",
   "12_8903",
   "13_8702",
-  "06_8711",
-  "06_8711",
   "06_8711"
 ];
 const formValuesSchema = z.object({
   cost: z.string().min(1, "Cost is required"),
-  volume: z.string().min(1, "Volume is required"),
-  currency: z.string().min(1, "Currency is required"),
+  currency: z.string(),
+  face: z.enum(faceTypes),
+  ts_type: z.enum(tsTypes),
+  age: z.enum(ages).optional(),
+  volume: z.string().optional(),
   power: z.string().optional(),
-  engine_type: z.enum(engineTypes),
+  engine_type: z.enum(engineTypes).optional(),
   power_edizm: z.enum(powerUnits).optional(),
   power_hybrid_dvs: z.string().optional(),
   power_hybrid_dvs_edizm: z.enum(powerUnits).optional(),
   power_hybrid_electro: z.string().optional(),
   power_hybrid_electro_edizm: z.enum(powerUnits).optional(),
-  age: z.enum(ages),
-  face: z.enum(faceTypes),
-  ts_type: z.enum(tsTypes),
   mass: z.string().optional(),
   offroad: z.boolean().optional(),
   caravan: z.boolean().optional(),
@@ -89,7 +94,11 @@ const getTKSData = async (data) => {
     }
     return await res.json();
   } catch (error) {
-    log("error", "Error in /api/getvalues.post", `${error}, data: ${JSON.stringify(data)}`);
+    log(
+      "error",
+      "Error in /api/getvalues.post",
+      `${error}, data: ${JSON.stringify(data)}`
+    );
     return {
       error: error.message
     };
