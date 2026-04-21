@@ -4,7 +4,7 @@ import { _ as _export_sfc, u as useNuxtApp, a as __nuxt_component_0$2$1 } from '
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel/dist/carousel';
 import { _ as __nuxt_component_0$1 } from './Icon-C3o1L2MT.mjs';
 import { _ as __nuxt_component_0$2 } from './Link-gmOukgFG.mjs';
-import { g as getNewsFeed } from './newsFeed-uQb9QgwB.mjs';
+import { g as getNewsFeed } from './newsFeed-DKUkDILv.mjs';
 import '../nitro/nitro.mjs';
 import 'nodemailer';
 import 'node:http';
@@ -1249,4 +1249,4 @@ _sfc_main.setup = (props, ctx) => {
 const index = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender], ["__scopeId", "data-v-a9e1eb32"]]);
 
 export { index as default };
-//# sourceMappingURL=index-BmmuxFkw.mjs.map
+//# sourceMappingURL=index-D5cnnY3m.mjs.map

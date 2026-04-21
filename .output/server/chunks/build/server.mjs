@@ -483,7 +483,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-BmmuxFkw.mjs')
+    component: () => import('./index-D5cnnY3m.mjs')
   },
   {
     name: "privacy",
@@ -503,7 +503,7 @@ const _routes = [
   {
     name: "news",
     path: "/news",
-    component: () => import('./index-Kaf_68rb.mjs')
+    component: () => import('./index-DEbOb0AJ.mjs')
   },
   {
     name: "personaldata",
@@ -513,7 +513,7 @@ const _routes = [
   {
     name: "news-newsId",
     path: "/news/:newsId()",
-    component: () => import('./_newsId_-DwyGvymc.mjs')
+    component: () => import('./_newsId_-DxAtKZ-k.mjs')
   },
   {
     name: "tamozhennyy_kalkulyator",

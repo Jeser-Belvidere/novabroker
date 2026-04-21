@@ -1,7 +1,7 @@
 import { _ as _export_sfc, d as useRoute, n as navigateTo, b as useHead, c as useSeoMeta, a as __nuxt_component_0$2 } from './server.mjs';
 import { defineComponent, withCtx, createTextVNode, toDisplayString, unref, mergeProps, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrInterpolate, ssrRenderStyle, ssrRenderList } from 'vue/server-renderer';
-import { g as getNewsFeed } from './newsFeed-uQb9QgwB.mjs';
+import { g as getNewsFeed } from './newsFeed-DKUkDILv.mjs';
 import '../nitro/nitro.mjs';
 import 'nodemailer';
 import 'node:http';
@@ -187,4 +187,4 @@ _sfc_main.setup = (props, ctx) => {
 const _newsId_ = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-a1c79675"]]);
 
 export { _newsId_ as default };
-//# sourceMappingURL=_newsId_-DwyGvymc.mjs.map
+//# sourceMappingURL=_newsId_-DxAtKZ-k.mjs.map
