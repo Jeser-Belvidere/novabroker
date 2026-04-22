@@ -1,4 +1,4 @@
-import { defineComponent, ref, reactive, mergeModels, unref, withCtx, createVNode, isRef, useSlots, useModel, computed, mergeProps, renderSlot, createBlock, openBlock, Fragment, createTextVNode, toDisplayString, createCommentVNode, renderList, watch, withDirectives, useId, inject, provide, readonly, resolveDynamicComponent, toRef, useTemplateRef, useSSRContext } from 'vue';
+import { defineComponent, ref, mergeModels, unref, withCtx, createVNode, isRef, useSlots, useModel, computed, mergeProps, renderSlot, createBlock, openBlock, Fragment, createTextVNode, toDisplayString, createCommentVNode, renderList, reactive, watch, withDirectives, useId, inject, provide, readonly, resolveDynamicComponent, toRef, useTemplateRef, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrRenderClass, ssrRenderList, ssrRenderSlot, ssrInterpolate, ssrRenderStyle, ssrGetDirectiveProps, ssrRenderVNode, ssrRenderAttr } from 'vue/server-renderer';
 import { useForwardProps, StepperRoot, StepperItem, StepperTrigger, StepperIndicator, StepperSeparator, StepperTitle, StepperDescription, Primitive, Label, useForwardPropsEmits, RadioGroupRoot, RadioGroupItem, RadioGroupIndicator, SelectRoot, SelectTrigger, SelectPortal, SelectContent, SelectGroup, SelectLabel, SelectSeparator, SelectItem, SelectItemText, SelectItemIndicator, SelectArrow, CheckboxRoot, CheckboxIndicator } from 'reka-ui';
 import { reactivePick, useEventBus, useVModel } from '@vueuse/core';
@@ -5989,6 +5989,30 @@ _sfc_main$1.setup = (props, ctx) => {
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
 const __nuxt_component_2 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$1, [["__scopeId", "data-v-94edadfd"]]), { __name: "CalculatorResult" });
+const composeCalculatorFormData = (data) => {
+  const dataClone = JSON.parse(JSON.stringify(data));
+  dataClone.cost = dataClone.cost.replaceAll(" ", "").trim();
+  dataClone.volume = dataClone.volume.replaceAll(" ", "").trim();
+  if (dataClone.mass) {
+    dataClone.mass = dataClone.mass.replaceAll(" ", "").trim();
+  }
+  if (dataClone.power) {
+    dataClone.power = dataClone.power.replaceAll(" ", "").trim();
+  }
+  if (dataClone.power_hybrid_dvs) {
+    dataClone.power_hybrid_dvs = dataClone.power_hybrid_dvs.replaceAll(" ", "").trim();
+  }
+  if (dataClone.power_hybrid_electro) {
+    dataClone.power_hybrid_electro = dataClone.power_hybrid_electro.replaceAll(" ", "").trim();
+  }
+  if (dataClone.sequential) {
+    dataClone.power = dataClone.power_hybrid_electro;
+    dataClone.power_edizm = dataClone.power_hybrid_electro_edizm;
+    delete dataClone.power_hybrid_dvs;
+    delete dataClone.power_hybrid_electro;
+  }
+  return dataClone;
+};
 const _sfc_main = /* @__PURE__ */ defineComponent({
   __name: "tamozhennyy_kalkulyator",
   __ssrInlineRender: true,
@@ -6005,7 +6029,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     const isLoading = ref(false);
     const computeResults = ref(null);
     const stepperValue = ref(0);
-    const formData = reactive({
+    const formData = ref({
       face: "nat",
       cost: "",
       currency: "643",
@@ -6039,8 +6063,9 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       }
     };
     const handleSubmit = async (updatedFormData) => {
-      Object.assign(formData, updatedFormData);
-      const response = await getData(formData);
+      formData.value = updatedFormData;
+      const composedData = composeCalculatorFormData(formData.value);
+      const response = await getData(composedData);
       if (!response || "error" in response) {
         toast.add({
           title: "Упс, что-то пошло не так",
@@ -6058,7 +6083,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       const _component_UStepper = _sfc_main$9;
       const _component_CalculatorForm = __nuxt_component_1;
       const _component_CalculatorResult = __nuxt_component_2;
-      _push(`<main${ssrRenderAttrs(_attrs)} data-v-9b3a9b60><div class="header" data-v-9b3a9b60><h1 data-v-9b3a9b60>Таможенный калькулятор</h1><h2 data-v-9b3a9b60> Рассчитайте стоймость ввоза вашего автомобиля, без регистраций и заявок </h2></div>`);
+      _push(`<main${ssrRenderAttrs(_attrs)} data-v-c8390268><div class="header" data-v-c8390268><h1 data-v-c8390268>Таможенный калькулятор</h1><h2 data-v-c8390268> Рассчитайте стоймость ввоза вашего автомобиля, без регистраций и заявок </h2></div>`);
       _push(ssrRenderComponent(_component_UStepper, {
         class: "stepper",
         disabled: "",
@@ -6115,7 +6140,7 @@ _sfc_main.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/tamozhennyy_kalkulyator.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-const tamozhennyy_kalkulyator = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-9b3a9b60"]]);
+const tamozhennyy_kalkulyator = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-c8390268"]]);
 
 export { tamozhennyy_kalkulyator as default };
-//# sourceMappingURL=tamozhennyy_kalkulyator-C6RfoPPD.mjs.map
+//# sourceMappingURL=tamozhennyy_kalkulyator-3ctCyUrR.mjs.map

@@ -16,7 +16,7 @@ const computeResults = ref<TKSResponse | null>(null)
 const stepperValue = ref<0 | 1>(0)
 
 
-const formData = reactive<IFormValues>({
+const formData = ref<IFormValues>({
 	face: 'nat', 
 	cost: '',
 	currency: '643',
@@ -54,9 +54,10 @@ const getData = async (data: IFormValues) => {
 }
 
 const handleSubmit = async (updatedFormData: IFormValues) => {
-	Object.assign(formData, updatedFormData)
-  
-	const response = await getData(formData)
+	formData.value = updatedFormData
+	const composedData = composeCalculatorFormData(formData.value)
+	const response = await getData(composedData)
+
 	if (!response || 'error' in response) {
 		toast.add({
 			title: 'Упс, что-то пошло не так',
