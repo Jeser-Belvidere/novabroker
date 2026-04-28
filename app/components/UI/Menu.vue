@@ -30,6 +30,7 @@ onClickOutside(menuRef, () => {
         <UILink :to="{ path: '/', hash: '#intro' }">Главная</UILink>
         <UILink to="/news">Новости</UILink>
         <UILink to="/tamozhennyy_kalkulyator">Таможенный калькулятор</UILink>
+        <UILink href="https://customs.gov.ru/recycling-fee">Проверка оплаты утильсбора</UILink>
         <UILink to="/contacts">Контакты</UILink>
         <UILink :to="{ path: '/', hash: '#application' }">Оставить заявку</UILink>
       </div>
@@ -88,10 +89,10 @@ onClickOutside(menuRef, () => {
 }
 
 .dropdown {
-  padding: 16px 32px;
+  padding: 16px 16px;
   position: absolute;
   bottom: 0;
-  width: 130px;
+  width: 180px;
   border: 1px solid var(--warm-beige);
   background-color: var(--dark-forest-green);
   display: flex;

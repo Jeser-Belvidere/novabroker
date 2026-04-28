@@ -18,6 +18,7 @@ if (data.value) {
         <UILink to="/">Главная</UILink>
         <UILink to="/news">Новости</UILink>
         <UILink to="/tamozhennyy_kalkulyator">Таможенный калькулятор</UILink>
+        <UILink href="https://customs.gov.ru/recycling-fee">Проверка оплаты утильсбора</UILink>
         <UILink to="/contacts">Контакты</UILink>
       </div>
       <div class="header-content__contacts">
@@ -76,6 +77,7 @@ if (data.value) {
 .header-content {
   display: flex;
   flex-direction: row;
+  gap: 6px;
   justify-content: space-between;
   width: 100%;
   max-width: 1400px;
@@ -96,6 +98,7 @@ if (data.value) {
 }
 
 .header-content__links {
+  text-align: center;
   font-size: 1.2rem;
   display: flex;
   flex-direction: row;
@@ -109,14 +112,14 @@ if (data.value) {
     font-size: 1rem;
   }
 
-  @media screen and (max-width: 852px) {
+  @media screen and (max-width: 1232px) {
     display: none;
   }
 }
 
 .header-content__contacts {
   font-size: 1.2rem;
-  padding: 16px 24px;
+  padding: 10px 24px;
   border-radius: 100px;
   color: var(--light-grey);
   background-color: rgba(108, 108, 108, 0.102);
@@ -125,13 +128,13 @@ if (data.value) {
     font-size: 1rem;
   }
 
-  @media screen and (max-width: 852px) {
+  @media screen and (max-width: 1232px) {
     display: none;
   }
 }
 
 .mobile-menu {
-  @media screen and (min-width: 852px) {
+  @media screen and (min-width: 1232px) {
     display: none;
   }
 }

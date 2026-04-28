@@ -1,21 +1,24 @@
 <script setup lang="ts">
-interface IProps {
+type IProps = {
   to?: string | { path: string; hash: string };
   type?: 'primary' | 'secondary' | 'default';
   href?: string;
 }
+
 const props = withDefaults(defineProps<IProps>(), {
 	type: 'primary',
+	to: undefined,
+	href: undefined
 });
 </script>
 
 <template>
-  <nuxt-link v-if="props.to" class="link" :class="props.type" :to="props.to">
-    <slot />
-  </nuxt-link>
-  <a v-else class="link" :class="props.type" :href="props.href">
-    <slot />
-  </a>
+    <nuxt-link v-if="props.to" class="link" :class="props.type" :to="props.to">
+      <slot />
+    </nuxt-link>
+    <a v-else class="link" :class="props.type" :href="props.href">
+      <slot />
+    </a>
 </template>
 
 <style lang="css" scoped>

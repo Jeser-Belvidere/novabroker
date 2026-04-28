@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import type { FormSubmitEvent } from '@nuxt/ui'
+import type { MaskInputOptions } from 'maska'
+import { vMaska } from 'maska/vue'
 import { 
 	AGE_OPTIONS, 
 	CHASSIS_TYPES_OPTIONS, 
@@ -12,11 +14,8 @@ import {
 	BUS_ECO_CLASS_OPTIONS,
 	initialState,
 } from './consts'
-import { vMaska } from 'maska/vue'
-import type { MaskInputOptions } from 'maska'
-// import type * as zod from 'zod'
-// const { id, emitFormBlur, emitFormInput, emitFormChange } = useFormField()
-// const formModel = defineModel<IFormValues>()
+
+
 
 const props = defineProps<{
     isLoading: boolean
@@ -79,6 +78,22 @@ watch (() => formState.ts_type, () => {
 	}
 })
 
+watch (() => formState.engine_type, (newValue, oldValue) => {
+	if ((oldValue === 'diesel_electric' || oldValue === 'petrol_electric') && (newValue === 'diesel' || newValue === 'petrol' || newValue === 'electric')) {
+		Object.assign(formState, {...formState, volume: '', power: '', power_hybrid_dvs: '', power_hybrid_electro: ''})
+    
+	}
+
+	if ((oldValue === 'diesel' || oldValue === 'petrol' || oldValue === 'electric') && (newValue === 'diesel_electric' || newValue === 'petrol_electric')) {
+		Object.assign(formState, {...formState, volume: '', power: '', power_hybrid_dvs: '', power_hybrid_electro: ''})
+    
+	}
+
+	if (newValue === 'electric') {
+		Object.assign(formState, {...formState, volume: '', power: '', power_hybrid_dvs: '', power_hybrid_electro: ''})
+	}
+})
+
 watch (() => formState.engine_type, () => {
 	if (formState.engine_type !== 'diesel_electric' && formState.engine_type !== 'petrol_electric') {
 		Object.assign(formState, {...formState, mdvs_gt_m30ed: false, sequential: false})
@@ -97,9 +112,7 @@ watch (() => formState.caravan, (newValue) => {
 	}
 })
 
-watch (() => formState.engine_type, () => {
-	Object.assign(formState, {...formState, volume: '', power: '', power_hybrid_dvs: '', power_hybrid_electro: ''})
-})
+
 
 const isEngineTypeDisabled = computed(() => {
 	if (

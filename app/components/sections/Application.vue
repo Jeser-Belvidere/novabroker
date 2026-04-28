@@ -15,6 +15,13 @@ const { isMobile } = useDevice();
 let mapLibre = null;
 let map: null | Map = null;
 
+const route = useRoute()
+const isApplication = route.query.application
+
+if (isApplication) {
+	currentTab.value = 1
+}
+
 if (!isMobile) {
 	mapLibre = await import('maplibre-gl');
 	await import('maplibre-gl/dist/maplibre-gl.css');
@@ -55,18 +62,6 @@ nuxtApp.hook('page:transition:finish', () => {
 		renderMap();
 	}
 });
-
-const openYandex = () => {
-	window.open('https://yandex.ru/maps/-/CHxum8Zx', '_blank');
-};
-
-const openVK = () => {
-	window.open('https://vk.com/club232237455', '_blank');
-};
-
-const openMax = () => {
-	window.open('https://max.ru/u/f9LHodD0cOKBqEeIpYjND9OaKCNPmPbINwy0_Gnyht8zLxKdPCu_OZzK96Y', '_blank');
-}
 
 async function handleFormSubmit() {
 	try {
