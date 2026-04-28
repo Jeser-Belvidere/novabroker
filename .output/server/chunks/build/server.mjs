@@ -1,4 +1,4 @@
-import { useSlots, ref, inject, computed, mergeProps, unref, withCtx, renderSlot, createBlock, createCommentVNode, openBlock, toDisplayString, createVNode, toValue, getCurrentInstance, onServerPrefetch, defineComponent, shallowRef, h, resolveComponent, hasInjectionContext, resolveDynamicComponent, provide, watch, mergeModels, useModel, createTextVNode, toRef, isRef, nextTick, createElementBlock, cloneVNode, defineAsyncComponent, useSSRContext, shallowReactive, Suspense, Fragment, createApp, renderList, useId, onErrorCaptured, reactive, effectScope, isReadonly, isShallow, isReactive, toRaw, useTemplateRef, withModifiers, getCurrentScope, markRaw } from 'vue';
+import { useSlots, ref, inject, computed, mergeProps, unref, withCtx, renderSlot, createBlock, createCommentVNode, openBlock, toDisplayString, createVNode, toValue, getCurrentInstance, onServerPrefetch, hasInjectionContext, defineComponent, shallowRef, h, resolveComponent, resolveDynamicComponent, provide, watch, mergeModels, useModel, createTextVNode, toRef, isRef, nextTick, createElementBlock, cloneVNode, defineAsyncComponent, useSSRContext, shallowReactive, Suspense, Fragment, createApp, renderList, useId, onErrorCaptured, reactive, effectScope, isReadonly, isShallow, isReactive, toRaw, useTemplateRef, withModifiers, getCurrentScope, markRaw } from 'vue';
 import { o as serialize, q as defu, t as parseQuery, v as klona, w as defuFn, x as hasProtocol, y as isScriptProtocol, z as joinURL, A as isEqual, B as withQuery, C as sanitizeStatusCode, a as createError$1, D as withTrailingSlash, E as withoutTrailingSlash, F as getContext, $ as $fetch$1, G as baseURL, H as createHooks, I as executeAsync, J as toRouteMatcher, K as createRouter$1, L as getRequestHeaders, M as camelCase, N as parseURL, O as withLeadingSlash, P as withBase } from '../nitro/nitro.mjs';
 import { useRoute as useRoute$1, RouterView, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
 import colors from 'tailwindcss/colors';
@@ -483,7 +483,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-D5cnnY3m.mjs')
+    component: () => import('./index-CRSaTYBD.mjs')
   },
   {
     name: "privacy",
@@ -493,17 +493,17 @@ const _routes = [
   {
     name: "contacts",
     path: "/contacts",
-    component: () => import('./contacts-Qpx4IE6c.mjs')
+    component: () => import('./contacts-C7dO6urc.mjs')
   },
   {
     name: "slug",
     path: "/:slug(.*)*",
-    component: () => import('./_...slug_-C2B-tdO3.mjs')
+    component: () => import('./_...slug_-DPY5vCVm.mjs')
   },
   {
     name: "news",
     path: "/news",
-    component: () => import('./index-DEbOb0AJ.mjs')
+    component: () => import('./index-BnxC_FSh.mjs')
   },
   {
     name: "personaldata",
@@ -513,12 +513,12 @@ const _routes = [
   {
     name: "news-newsId",
     path: "/news/:newsId()",
-    component: () => import('./_newsId_-DxAtKZ-k.mjs')
+    component: () => import('./_newsId_-CLhpCYsy.mjs')
   },
   {
     name: "tamozhennyy_kalkulyator",
     path: "/tamozhennyy_kalkulyator",
-    component: () => import('./tamozhennyy_kalkulyator-3ctCyUrR.mjs')
+    component: () => import('./tamozhennyy_kalkulyator-xukyxKuB.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -5811,7 +5811,7 @@ _sfc_main$3.setup = (props, ctx) => {
 };
 const __nuxt_component_2 = Object.assign(_sfc_main$3, { __name: "UApp" });
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-CS7tRLmg.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-CZDlC8MB.mjs').then((m) => m.default || m))
 };
 const LayoutLoader = defineComponent({
   name: "LayoutLoader",
@@ -6171,5 +6171,5 @@ let entry;
 }
 const entry$1 = (ssrContext) => entry(ssrContext);
 
-export { getDisplayValue as A, _sfc_main$8 as B, useToast as C, fetchDefaults as D, useAsyncData as E, useRequestFetch as F, _export_sfc as _, __nuxt_component_0$2 as a, useHead as b, useSeoMeta as c, useRoute as d, entry$1 as default, useAppConfig as e, _sfc_main$d as f, get as g, formBusInjectionKey as h, formStateInjectionKey as i, formErrorsInjectionKey as j, formInputsInjectionKey as k, formLoadingInjectionKey as l, formOptionsInjectionKey as m, navigateTo as n, inputIdInjectionKey as o, formFieldInjectionKey as p, useFormField as q, usePortal as r, useFieldGroup as s, tv as t, useNuxtApp as u, useComponentIcons as v, isArrayOfArray as w, _sfc_main$b as x, _sfc_main$c as y, looseToNumber as z };
+export { getDisplayValue as A, _sfc_main$8 as B, useToast as C, fetchDefaults as D, useAsyncData as E, useRequestFetch as F, _export_sfc as _, useRoute as a, __nuxt_component_0$2 as b, useHead as c, useSeoMeta as d, entry$1 as default, useAppConfig as e, _sfc_main$d as f, get as g, formBusInjectionKey as h, formStateInjectionKey as i, formErrorsInjectionKey as j, formInputsInjectionKey as k, formLoadingInjectionKey as l, formOptionsInjectionKey as m, navigateTo as n, inputIdInjectionKey as o, formFieldInjectionKey as p, useFormField as q, usePortal as r, useFieldGroup as s, tv as t, useNuxtApp as u, useComponentIcons as v, isArrayOfArray as w, _sfc_main$b as x, _sfc_main$c as y, looseToNumber as z };
 //# sourceMappingURL=server.mjs.map
