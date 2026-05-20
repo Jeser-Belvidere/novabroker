@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<IProps>(), {
     <nuxt-link v-if="props.to" class="link" :class="props.type" :to="props.to">
       <slot />
     </nuxt-link>
-    <a v-else class="link" :class="props.type" :href="props.href">
+    <a v-else class="link" :class="props.type" :href="props.href" target="_blank">
       <slot />
     </a>
 </template>
