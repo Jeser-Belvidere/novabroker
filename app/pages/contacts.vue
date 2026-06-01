@@ -97,7 +97,7 @@
               <div class="item-text__title">Адрес</div>
               <div class="item-text__description">
                 Город Москва, ш. Калужское, км 22-Й, <br>
-                дом 10, строение 23, 14 этаж, Офис 1407
+                дом 10, строение 23
               </div>
             </div>
           </div>
@@ -160,7 +160,7 @@
             <div class="details-item__description">
               108802, Город Москва, вн. тер. г Муниципальный Округ Коммунарка,
               ш. Калужское,<span style="white-space: nowrap"> км 22-Й</span>,
-              дом 10, строение 23, 14 этаж, Офис 1407
+              дом 10, строение 23
             </div>
           </div>
           <div class="details-item">
