@@ -77,11 +77,6 @@ useSeoMeta({
           <li>Подготовка автомобиля к прохождению лаборатории</li>
           <li>Сопровождение при оформлении транспортного средства</li>
         </ul>
-        <p>
-          Наши специалисты помогут определить, требуется ли установка УВЭОС
-          именно для вашего автомобиля, а также подскажут порядок прохождения
-          всех процедур.
-        </p>
       </div>
 
       <div class="text-block">
@@ -95,7 +90,9 @@ useSeoMeta({
         <p>
           Компания НоваБрокер помогает клиентам разобраться во всех требованиях
           и организовать процесс установки ЭРА-ГЛОНАСС максимально быстро и
-          удобно.
+          удобно. Наши специалисты помогут определить, требуется ли установка
+          УВЭОС именно для вашего автомобиля, а также подскажут порядок
+          прохождения всех процедур
         </p>
       </div>
 
@@ -206,6 +203,7 @@ main {
   border-radius: 10px;
   padding: 40px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
   h2 {
     font-size: 2rem;
     color: var(--dark-forest-green);
@@ -214,9 +212,9 @@ main {
     display: inline-block;
 
     &::after {
-      content: '';
+      content: "";
       display: block;
-      width: 60%;
+      width: 100%;
       height: 3px;
       background-color: var(--warm-beige);
       margin-top: 4px;
@@ -245,6 +243,7 @@ main {
     line-height: 1.6;
     margin-bottom: 16px;
     text-indent: 2em;
+    text-align: left;
   }
 
   ul {
@@ -252,6 +251,7 @@ main {
     padding-left: 24px;
     width: fit-content;
     margin: 0 auto;
+    text-align: left;
 
     li {
       font-size: 1.1rem;
