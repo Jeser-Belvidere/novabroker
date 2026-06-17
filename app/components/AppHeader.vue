@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { TCurrencyData } from '~~/server/utils/CurrencyStorage'
+import { onClickOutside } from '@vueuse/core'
 
 const { data, error } = await useFetch('/api/currency')
 
@@ -9,6 +10,21 @@ if (data.value) {
 	currencies.value = data.value
 }
 
+const servicesOpen = ref(false)
+const servicesRef = useTemplateRef('servicesRef')
+
+function toggleServices() {
+	servicesOpen.value = !servicesOpen.value
+}
+
+function closeServices() {
+	servicesOpen.value = false
+}
+
+onClickOutside(servicesRef, () => {
+	servicesOpen.value = false
+})
+
 </script>
 <template>
   <header class="header">
@@ -16,6 +32,19 @@ if (data.value) {
       <nuxt-link class="header-content__logo" to="/">NOVABROKER</nuxt-link>
       <div class="header-content__links">
         <UILink to="/">Главная</UILink>
+        <div ref="servicesRef" class="services-dropdown">
+          <button class="services-btn" :class="{ active: servicesOpen }" @click="toggleServices">Услуги</button>
+          <Transition name="fade">
+            <div v-if="servicesOpen" class="services-menu">
+              <UILink to="/services/soprovozhdenie-rastamozhki-avto" @click="closeServices">Сопровождение по растаможке</UILink>
+              <UILink to="/services/konsultatsii-tamozhnya-ts" @click="closeServices">Консультации по таможне ТС</UILink>
+              <UILink to="/services/otsenka-i-tekhnicheskoe-zaklyuchenie-ts" @click="closeServices">Оценка ТС и техзаключение</UILink>
+              <UILink to="/services/sbkts-i-epts" @click="closeServices">СБКТС и ЭПТС</UILink>
+              <UILink to="/services/uveos-glonass" @click="closeServices">УВЭОС — ГЛОНАСС</UILink>
+              <UILink to="/services/pomoshch-tekhnicheskoe-zaklyuchenie" @click="closeServices">Техническое заключение</UILink>
+            </div>
+          </Transition>
+        </div>
         <UILink to="/news">Новости</UILink>
         <UILink to="/tamozhennyy_kalkulyator">Таможенный калькулятор</UILink>
         <UILink href="https://customs.gov.ru/recycling-fee">Проверка оплаты утильсбора</UILink>
@@ -115,6 +144,53 @@ if (data.value) {
   @media screen and (max-width: 1232px) {
     display: none;
   }
+}
+
+.services-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.services-btn {
+  background: none;
+  border: none;
+  color: var(--warm-beige);
+  font-size: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.services-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: var(--dark-forest-green);
+  border: 1px solid var(--warm-beige);
+  white-space: nowrap;
+  z-index: 20;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.15s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 .header-content__contacts {
