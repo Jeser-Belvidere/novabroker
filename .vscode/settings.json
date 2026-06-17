@@ -1,12 +1,15 @@
 {
+  "eslint.useFlatConfig": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "eslint.validate": ["javascript", "css", "typescript", "vue"],
   "editor.formatOnPaste": false,
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
   "editor.formatOnSave": false,
   "eslint.format.enable": true,
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
   //   // "editor.codeActionsOnSave": ["source.fixAll.eslint"],
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  "eslint.useFlatConfig": true,
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -14,6 +17,9 @@
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[ts]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[js]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   }
 }

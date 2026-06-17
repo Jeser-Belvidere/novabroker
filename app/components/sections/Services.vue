@@ -12,17 +12,20 @@ const services: {
   iconComponent: Component;
   title: string;
   description: string;
+  to: string;
 }[] = [
 	{
 		iconComponent: UIIconsBadgeCheck,
 		title: 'Сопровождение по растаможке автомобилей',
 		description:
       'Пошлины, проверки, договоры - все берем на себя, вам не нужно беспокоиться',
+		to: '/services/soprovozhdenie-rastamozhki-avto',
 	},
 	{
 		iconComponent: UIIconsBookOpen,
 		title: 'Консультации по таможенному оформлению ТС',
 		description: 'Работаем с ТС из любой страны',
+		to: '/services/konsultatsii-tamozhnya-ts',
 	},
 
 	{
@@ -31,22 +34,26 @@ const services: {
       'Услуги оформления документов для оценки ТС и техническому заключению',
 		description:
       'Определите реальную стоимость авто на рынке и защититесь от переплат',
+		to: '/services/otsenka-i-tekhnicheskoe-zaklyuchenie-ts',
 	},
 	{
 		iconComponent: UIIconsCardSim,
 		title: 'Консультирование по оформлению СБКТС и ЭПТС',
 		description: 'Быстро. Надежно. С гарантией.',
+		to: '/services/sbkts-i-epts',
 	},
 	{
 		iconComponent: UIIconsSatteliteFly,
 		title: 'Консультации по установке УВЭОС - ГЛОНАСС',
 		description:
       'Ваше надежное плечо в экстренных случаях. Будьте спокойны за местоположение вашего автомобиля',
+		to: '/services/uveos-glonass',
 	},
 	{
 		iconComponent: UIIconsCarGear,
 		title: 'Помощь в оформлении технического заключения',
 		description: 'Будьте уверены в технических характеристиках вашего ТС',
+		to: '/services/pomoshch-tekhnicheskoe-zaklyuchenie',
 	},
 ];
 
@@ -69,13 +76,13 @@ const carouselConfig = {
     <div v-if="$device.isMobile" class="cards-mobile">
       <Carousel v-bind="carouselConfig">
         <Slide v-for="(service, index) in services" :key="index">
-          <div class="card carousel__item">
+          <nuxt-link :to="service.to" class="card carousel__item">
             <div class="card-image">
               <component :is="service.iconComponent" />
             </div>
             <div class="card-title">{{ service.title }}</div>
             <div class="card-description">{{ service.description }}</div>
-          </div>
+          </nuxt-link>
         </Slide>
         <template #addons>
           <Pagination />
@@ -84,11 +91,16 @@ const carouselConfig = {
       </Carousel>
     </div>
     <div v-if="$device.isDesktop" class="cards-desktop">
-      <div v-for="service in services" :key="service.title" class="card">
+      <nuxt-link
+        v-for="service in services"
+        :key="service.title"
+        :to="service.to"
+        class="card"
+      >
         <component :is="service.iconComponent" />
         <div class="card-title">{{ service.title }}</div>
         <div class="card-description">{{ service.description }}</div>
-      </div>
+      </nuxt-link>
     </div>
   </section>
 </template>
@@ -150,13 +162,19 @@ section {
   border-radius: 10px;
   background-color: var(--white);
   cursor: pointer;
-  transition: all 0.4s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+
+  .card-image {
+    transition: transform 0.3s ease;
+  }
 
   .card-title {
     font-size: 1.25rem;
     font-weight: 800;
     text-align: center;
     color: var(--dark-forest-green);
+    transition: color 0.3s ease;
   }
 
   .card-description {
@@ -166,10 +184,18 @@ section {
   }
 }
 
-.card:hover {
-  box-shadow: 0px 10px 10px var(--warm-beige);
-  @media screen and (max-width: 768px) {
-    box-shadow: none;
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+
+    .card-image {
+      transform: scale(1.1);
+    }
+
+    .card-title {
+      color: var(--warm-beige);
+    }
   }
 }
 </style>
