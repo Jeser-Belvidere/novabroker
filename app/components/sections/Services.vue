@@ -162,7 +162,9 @@ section {
   border-radius: 10px;
   background-color: var(--white);
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   text-decoration: none;
 
   .card-image {
@@ -181,6 +183,9 @@ section {
     margin-top: 12px;
     text-align: center;
     color: var(--medium-taupe);
+  }
+  > * {
+    cursor: pointer;
   }
 }
 

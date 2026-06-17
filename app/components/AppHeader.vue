@@ -33,7 +33,7 @@ onClickOutside(servicesRef, () => {
       <div class="header-content__links">
         <UILink to="/">Главная</UILink>
         <div ref="servicesRef" class="services-dropdown">
-          <button class="services-btn" :class="{ active: servicesOpen }" @click="toggleServices">Услуги</button>
+          <button class="services-btn" :class="{ active: servicesOpen }" @click="toggleServices"><span class="services-btn-text">Услуги</span> <span class="services-arrow" :class="{ open: servicesOpen }">></span></button>
           <Transition name="fade">
             <div v-if="servicesOpen" class="services-menu">
               <UILink to="/services/soprovozhdenie-rastamozhki-avto" @click="closeServices">Сопровождение по растаможке</UILink>
@@ -161,10 +161,25 @@ onClickOutside(servicesRef, () => {
   font-family: inherit;
   padding: 0;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
 
-  &:hover {
-    text-decoration: underline;
-  }
+.services-btn-text:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.services-arrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+  text-decoration: none;
+}
+
+.services-arrow.open {
+  transform: rotate(90deg);
 }
 
 .services-menu {
