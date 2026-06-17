@@ -204,13 +204,40 @@ main {
 }
 
 .text-block {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   h2 {
     font-size: 2rem;
     color: var(--dark-forest-green);
     margin-bottom: 16px;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: var(--warm-beige);
+      margin-top: 4px;
+      border-radius: 2px;
+    }
 
     @media screen and (max-width: 768px) {
       font-size: 1.5rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: var(--dark-forest-green);
+    margin-bottom: 12px;
+    margin-top: 24px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.25rem;
     }
   }
 
@@ -219,11 +246,14 @@ main {
     color: var(--black);
     line-height: 1.6;
     margin-bottom: 16px;
+    text-indent: 2em;
   }
 
   ul {
     list-style-type: disc;
     padding-left: 24px;
+    width: fit-content;
+    margin: 0 auto;
 
     li {
       font-size: 1.1rem;
