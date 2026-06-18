@@ -518,12 +518,12 @@ const _routes = [
   {
     name: "services-sbkts-i-epts",
     path: "/services/sbkts-i-epts",
-    component: () => import('./sbkts-i-epts-Ci-N6P_t.mjs')
+    component: () => import('./sbkts-i-epts-BizRuzyd.mjs')
   },
   {
     name: "services-uveos-glonass",
     path: "/services/uveos-glonass",
-    component: () => import('./uveos-glonass-Cq4h51LL.mjs')
+    component: () => import('./uveos-glonass-Cgsk7eKf.mjs')
   },
   {
     name: "tamozhennyy_kalkulyator",
@@ -533,22 +533,22 @@ const _routes = [
   {
     name: "services-konsultatsii-tamozhnya-ts",
     path: "/services/konsultatsii-tamozhnya-ts",
-    component: () => import('./konsultatsii-tamozhnya-ts-DjgxbaIr.mjs')
+    component: () => import('./konsultatsii-tamozhnya-ts-CZQT8FiQ.mjs')
   },
   {
     name: "services-soprovozhdenie-rastamozhki-avto",
     path: "/services/soprovozhdenie-rastamozhki-avto",
-    component: () => import('./soprovozhdenie-rastamozhki-avto-8lCZZBiX.mjs')
+    component: () => import('./soprovozhdenie-rastamozhki-avto-CkZNP1bj.mjs')
   },
   {
     name: "services-pomoshch-tekhnicheskoe-zaklyuchenie",
     path: "/services/pomoshch-tekhnicheskoe-zaklyuchenie",
-    component: () => import('./pomoshch-tekhnicheskoe-zaklyuchenie-FSg3cGc7.mjs')
+    component: () => import('./pomoshch-tekhnicheskoe-zaklyuchenie-CLAMC-Wr.mjs')
   },
   {
     name: "services-otsenka-i-tekhnicheskoe-zaklyuchenie-ts",
     path: "/services/otsenka-i-tekhnicheskoe-zaklyuchenie-ts",
-    component: () => import('./otsenka-i-tekhnicheskoe-zaklyuchenie-ts-CkpCKBe9.mjs')
+    component: () => import('./otsenka-i-tekhnicheskoe-zaklyuchenie-ts-B4Mkpove.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {

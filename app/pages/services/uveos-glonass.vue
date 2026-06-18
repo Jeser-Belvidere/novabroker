@@ -23,7 +23,7 @@ useSeoMeta({
 <template>
   <main>
     <section class="breadcrumbs">
-      <nuxt-link to="/">{{ "< Главная" }}</nuxt-link>
+      <nuxt-link class="breadcrumbs-main" to="/">{{ "< Главная" }}</nuxt-link>
       <span class="separator">/</span>
       <span class="current">Консультации по установке УВЭОС «ЭРА-ГЛОНАСС»</span>
     </section>
@@ -298,5 +298,10 @@ main {
       font-size: 1.3rem;
     }
   }
+}
+
+.breadcrumbs-main {
+  display: inline-block;
+  width: 80px;
 }
 </style>
