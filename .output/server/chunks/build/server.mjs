@@ -483,72 +483,72 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-BCFlqDPi.mjs')
+    component: () => import('./index-S6d8kCKa.mjs')
   },
   {
     name: "privacy",
     path: "/privacy",
-    component: () => import('./privacy-ci-GzWnE.mjs')
+    component: () => import('./privacy-CwrBWfHi.mjs')
   },
   {
     name: "contacts",
     path: "/contacts",
-    component: () => import('./contacts-DIRJKeZS.mjs')
+    component: () => import('./contacts-03g88fb2.mjs')
   },
   {
     name: "slug",
     path: "/:slug(.*)*",
-    component: () => import('./_...slug_-chbGbn-t.mjs')
+    component: () => import('./_...slug_-B_GUGLjG.mjs')
   },
   {
     name: "news",
     path: "/news",
-    component: () => import('./index-DehICJfc.mjs')
+    component: () => import('./index-7o5MIQR5.mjs')
   },
   {
     name: "personaldata",
     path: "/personaldata",
-    component: () => import('./personaldata-D_2qfYYj.mjs')
+    component: () => import('./personaldata-CiNAIb6O.mjs')
   },
   {
     name: "news-newsId",
     path: "/news/:newsId()",
-    component: () => import('./_newsId_-BSdbMFiQ.mjs')
+    component: () => import('./_newsId_-CoiBmdH8.mjs')
   },
   {
     name: "services-sbkts-i-epts",
     path: "/services/sbkts-i-epts",
-    component: () => import('./sbkts-i-epts-CoAxVu4-.mjs')
+    component: () => import('./sbkts-i-epts-BizRuzyd.mjs')
   },
   {
     name: "services-uveos-glonass",
     path: "/services/uveos-glonass",
-    component: () => import('./uveos-glonass-ywGZNPMC.mjs')
+    component: () => import('./uveos-glonass-Cgsk7eKf.mjs')
   },
   {
     name: "tamozhennyy_kalkulyator",
     path: "/tamozhennyy_kalkulyator",
-    component: () => import('./tamozhennyy_kalkulyator-xukyxKuB.mjs')
+    component: () => import('./tamozhennyy_kalkulyator-FpbWR7Zz.mjs')
   },
   {
     name: "services-konsultatsii-tamozhnya-ts",
     path: "/services/konsultatsii-tamozhnya-ts",
-    component: () => import('./konsultatsii-tamozhnya-ts-CISswI4L.mjs')
+    component: () => import('./konsultatsii-tamozhnya-ts-CZQT8FiQ.mjs')
   },
   {
     name: "services-soprovozhdenie-rastamozhki-avto",
     path: "/services/soprovozhdenie-rastamozhki-avto",
-    component: () => import('./soprovozhdenie-rastamozhki-avto-Dh1Sag2T.mjs')
+    component: () => import('./soprovozhdenie-rastamozhki-avto-CkZNP1bj.mjs')
   },
   {
     name: "services-pomoshch-tekhnicheskoe-zaklyuchenie",
     path: "/services/pomoshch-tekhnicheskoe-zaklyuchenie",
-    component: () => import('./pomoshch-tekhnicheskoe-zaklyuchenie-CnuZUhJ2.mjs')
+    component: () => import('./pomoshch-tekhnicheskoe-zaklyuchenie-CLAMC-Wr.mjs')
   },
   {
     name: "services-otsenka-i-tekhnicheskoe-zaklyuchenie-ts",
     path: "/services/otsenka-i-tekhnicheskoe-zaklyuchenie-ts",
-    component: () => import('./otsenka-i-tekhnicheskoe-zaklyuchenie-ts-DM3F3yWA.mjs')
+    component: () => import('./otsenka-i-tekhnicheskoe-zaklyuchenie-ts-B4Mkpove.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -5841,7 +5841,7 @@ _sfc_main$3.setup = (props, ctx) => {
 };
 const __nuxt_component_2 = Object.assign(_sfc_main$3, { __name: "UApp" });
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-BXjvPhcG.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-C4Nz4Kyq.mjs').then((m) => m.default || m))
 };
 const LayoutLoader = defineComponent({
   name: "LayoutLoader",
