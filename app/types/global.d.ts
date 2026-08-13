@@ -1,7 +1,7 @@
-export {};
+export {}
 
 declare global {
-  type TIconNames =
+	type TIconNames =
     | 'badge-check'
     | 'book-open'
     | 'car-gear'
@@ -23,5 +23,5 @@ declare global {
     | 'vk'
     | 'mail'
     | 'map-pin'
-    | 'max' ;
+    | 'max'
 }

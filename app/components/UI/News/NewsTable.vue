@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { INewsTableColumn, INewsTableData } from '~/types/news';
+import type { INewsTableColumn, INewsTableData } from '~/types/news'
 
 interface IProps {
-    columns: INewsTableColumn[]
-    data: INewsTableData[];
-    caption?: string
+	columns: INewsTableColumn[]
+	data: INewsTableData[];
+	caption?: string
 }
 
 const props = defineProps<IProps>()

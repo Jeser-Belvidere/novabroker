@@ -1,6 +1,6 @@
 export const composeCalculatorFormData = (data: IFormValues) => {
 	const dataClone = JSON.parse(JSON.stringify(data)) as IFormValues
-	
+
 	dataClone.cost = dataClone.cost.replaceAll(' ', '').trim()
 	dataClone.volume = dataClone.volume.replaceAll(' ', '').trim()
 
@@ -23,10 +23,10 @@ export const composeCalculatorFormData = (data: IFormValues) => {
 	if (dataClone.sequential) {
 		dataClone.power = dataClone.power_hybrid_electro
 		dataClone.power_edizm = dataClone.power_hybrid_electro_edizm
-		
+
 		delete dataClone.power_hybrid_dvs
 		delete dataClone.power_hybrid_electro
 	}
-	
+
 	return dataClone
 }

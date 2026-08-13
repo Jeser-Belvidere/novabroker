@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {CURRENCY_OPTIONS_MAP, AGE_OPTIONS_MAP, POWER_TYPES_MAP, ENGINE_TYPES_MAP} from './consts'
 const props = defineProps<{
-    result: TKSResponse | null
-    input: IFormValues | null
+	result: TKSResponse | null
+	input: IFormValues | null
 }>()
 
 const emits = defineEmits(['back'])
@@ -201,12 +201,12 @@ const prepareNumberInString = (string: string | undefined) => {
             }
 
             table {
-                
+
                 width: 100%;
-                border-collapse: separate; 
+                border-collapse: separate;
                 border-spacing: 0;
                 border: 1px solid var(--warm-beige);
-                border-radius: 10px;       
+                border-radius: 10px;
                 > tbody {
                     > tr {
                         td, th {
@@ -233,7 +233,7 @@ const prepareNumberInString = (string: string | undefined) => {
             align-items: flex-start;
             justify-content: center;
             gap: 16px;
-	
+
 			table {
 
 				th {
@@ -241,10 +241,10 @@ const prepareNumberInString = (string: string | undefined) => {
 				}
 
 				width: 100%;
-                border-collapse: separate; 
+                border-collapse: separate;
                 border-spacing: 0;
                 border: 1px solid var(--warm-beige);
-                border-radius: 10px;       
+                border-radius: 10px;
 				* {
                     padding: 8px;
 					border-bottom: solid 1px var(--warm-beige);

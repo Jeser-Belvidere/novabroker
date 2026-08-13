@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	colorMode: {
-		preference: 'dark'
+		preference: 'dark',
 	},
 	compatibilityDate: '2025-07-15',
 	devtools: { enabled: true },
@@ -16,7 +16,14 @@ export default defineNuxtConfig({
 		},
 	},
 	ssr: true,
-	modules: ['@nuxt/eslint', 'nuxt-schema-org', 'vue3-carousel-nuxt', '@nuxtjs/device', '@nuxt/ui', '@nuxtjs/seo' ],
+	modules: [
+		'@nuxt/eslint',
+		'nuxt-schema-org',
+		'vue3-carousel-nuxt',
+		'@nuxtjs/device',
+		'@nuxt/ui',
+		'@nuxtjs/seo',
+	],
 	ui: {
 		fonts: false,
 	},
@@ -77,12 +84,12 @@ export default defineNuxtConfig({
 				{
 					name: 'keywords',
 					content:
-            'ВЭД, консалтинг, Таможенный брокер, Сертификация, Сопровождение сделок, Новаброкер, Novabroker',
+						'ВЭД, консалтинг, Таможенный брокер, Сертификация, Сопровождение сделок, Новаброкер, Novabroker',
 				},
 				{
 					name: 'description',
 					content:
-            'NOVABROKER - Мы предоставляем полный спектр услуг по ВЭД-консалтингу. Оптимизация логистики, таможенное оформление и сопровождение сделок. Снизьте риски и экономьте время с нашими экспертами.',
+						'NOVABROKER - Мы предоставляем полный спектр услуг по ВЭД-консалтингу. Оптимизация логистики, таможенное оформление и сопровождение сделок. Снизьте риски и экономьте время с нашими экспертами.',
 				},
 				{
 					property: 'og:title',
@@ -91,7 +98,7 @@ export default defineNuxtConfig({
 				{
 					property: 'og:description',
 					content:
-            'NOVABROKER - Мы предоставляем полный спектр услуг по ВЭД-консалтингу. Оптимизация логистики, таможенное оформление и сопровождение сделок. Снизьте риски и экономьте время с нашими экспертами.',
+						'NOVABROKER - Мы предоставляем полный спектр услуг по ВЭД-консалтингу. Оптимизация логистики, таможенное оформление и сопровождение сделок. Снизьте риски и экономьте время с нашими экспертами.',
 				},
 				{
 					property: 'og:image',

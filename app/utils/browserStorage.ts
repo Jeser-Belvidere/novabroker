@@ -2,14 +2,14 @@ type BrowserStorageStorageType = Storage
 type BrowserStorageReturnValueType<T> = T | undefined
 
 interface BrowserStorageConstructorParamsType {
-  storage?: 'sessionStorage' | 'localStorage'
+	storage?: 'sessionStorage' | 'localStorage'
 }
 
 interface BrowserStorageClassType {
-  clear(): void
-  get<T>(key: string): BrowserStorageReturnValueType<T>
-  set(key: string, value: unknown): void
-  remove(key: string): void
+	clear(): void
+	get<T>(key: string): BrowserStorageReturnValueType<T>
+	set(key: string, value: unknown): void
+	remove(key: string): void
 }
 
 /**

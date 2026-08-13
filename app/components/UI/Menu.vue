@@ -1,18 +1,18 @@
 <script lang="ts" setup>
-import { onClickOutside } from '@vueuse/core';
-const isActive = ref(false);
-const menuRef = useTemplateRef('menu');
-const servicesOpen = ref(false);
+import { onClickOutside } from '@vueuse/core'
+const isActive = ref(false)
+const menuRef = useTemplateRef('menu')
+const servicesOpen = ref(false)
 
 function toggleServices(e: MouseEvent) {
-	e.stopPropagation();
-	servicesOpen.value = !servicesOpen.value;
+	e.stopPropagation()
+	servicesOpen.value = !servicesOpen.value
 }
 
 onClickOutside(menuRef, () => {
-	isActive.value = false;
-	servicesOpen.value = false;
-});
+	isActive.value = false
+	servicesOpen.value = false
+})
 </script>
 <template>
   <div ref="menu" @click="isActive = !isActive">

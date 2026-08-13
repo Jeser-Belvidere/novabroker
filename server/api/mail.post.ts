@@ -1,9 +1,9 @@
-import { sendMailError } from '../utils/sendMailError';
-import { sendMailClientRequest } from '../utils/sendMailClientRequest';
+import { sendMailError } from '../utils/sendMailError'
+import { sendMailClientRequest } from '../utils/sendMailClientRequest'
 
 export default defineEventHandler(async (event) => {
 	try {
-		const { mail, phone, name } = await readBody(event);
+		const { mail, phone, name } = await readBody(event)
 
 		if (!mail || !phone || !name) {
 			throw createError({
@@ -23,4 +23,4 @@ export default defineEventHandler(async (event) => {
 		log('error', 'Error in /api/mail.post', e)
 		throw e
 	}
-});
+})

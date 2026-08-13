@@ -42,12 +42,12 @@ const slides = [
 		rank: 5,
 		text: 'Всё отлично, надёжные продавцы👍',
 	},
-];
+]
 
 const carouselConfig = {
 	gap: 30,
 	itemsToShow: 1,
-};
+}
 </script>
 <template>
   <section id="reviews">

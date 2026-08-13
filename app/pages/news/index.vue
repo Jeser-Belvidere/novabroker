@@ -9,19 +9,19 @@ useHead({
         'ВЭД, новости, Таможенный брокер, Сертификация, Новаброкер, Novabroker',
 		},
 	],
-});
+})
 useSeoMeta({
 	title: 'NOVABROKER - новости ВЭД',
 	ogTitle: 'НОВАБРОКЕР. Новости ВЭД консалтинга',
 	description: 'НОВАБРОКЕР. Новости ВЭД консалтинга',
 	ogDescription:
     'НОВАБРОКЕР. Оформление, сертификация, законодательство - все новости ВЭД консалтинга',
-});
+})
 
-const feed = getNewsFeed();
+const feed = getNewsFeed()
 
-const lastNews = feed[feed.length - 1];
-const restNews = feed.slice(0, feed.length - 1).reverse();
+const lastNews = feed[feed.length - 1]
+const restNews = feed.slice(0, feed.length - 1).reverse()
 </script>
 
 <template>

@@ -2,15 +2,15 @@
 import type { FormSubmitEvent } from '@nuxt/ui'
 import type { MaskInputOptions } from 'maska'
 import { vMaska } from 'maska/vue'
-import { 
-	AGE_OPTIONS, 
-	CHASSIS_TYPES_OPTIONS, 
-	CURRENCY_OPTIONS, 
-	ENGINE_TYPES_OPTIONS, 
-	FACE_TYPES_OPTIONS, 
-	POWER_TYPES_OPTIONS, 
-	TS_TYPES_OPTIONS, 
-	BUS_CAPACITY_OPTIONS, 
+import {
+	AGE_OPTIONS,
+	CHASSIS_TYPES_OPTIONS,
+	CURRENCY_OPTIONS,
+	ENGINE_TYPES_OPTIONS,
+	FACE_TYPES_OPTIONS,
+	POWER_TYPES_OPTIONS,
+	TS_TYPES_OPTIONS,
+	BUS_CAPACITY_OPTIONS,
 	BUS_ECO_CLASS_OPTIONS,
 	initialState,
 } from './consts'
@@ -18,8 +18,8 @@ import {
 
 
 const props = defineProps<{
-    isLoading: boolean
-    modelValue: IFormValues
+	isLoading: boolean
+	modelValue: IFormValues
 }>()
 
 const emits = defineEmits(['submit', 'update:modelValue'])
@@ -81,12 +81,12 @@ watch (() => formState.ts_type, () => {
 watch (() => formState.engine_type, (newValue, oldValue) => {
 	if ((oldValue === 'diesel_electric' || oldValue === 'petrol_electric') && (newValue === 'diesel' || newValue === 'petrol' || newValue === 'electric')) {
 		Object.assign(formState, {...formState, volume: '', power: '', power_hybrid_dvs: '', power_hybrid_electro: ''})
-    
+
 	}
 
 	if ((oldValue === 'diesel' || oldValue === 'petrol' || oldValue === 'electric') && (newValue === 'diesel_electric' || newValue === 'petrol_electric')) {
 		Object.assign(formState, {...formState, volume: '', power: '', power_hybrid_dvs: '', power_hybrid_electro: ''})
-    
+
 	}
 
 	if (newValue === 'electric') {
@@ -116,7 +116,7 @@ watch (() => formState.caravan, (newValue) => {
 
 const isEngineTypeDisabled = computed(() => {
 	if (
-		formState.ts_type === '09_8716400000' || 
+		formState.ts_type === '09_8716400000' ||
     formState.ts_type === '10_871610'
 	) {
 		Object.assign(formState, {...formState, engine_type: 'no_engine'})
@@ -127,9 +127,9 @@ const isEngineTypeDisabled = computed(() => {
 })
 
 const isMassInputDisabled = computed(() => {
-	if (formState.ts_type === '01_8703' 
+	if (formState.ts_type === '01_8703'
   || formState.ts_type === '04_8704'
-  || formState.ts_type === '00_8704' 
+  || formState.ts_type === '00_8704'
   || formState.ts_type === '05_870410') {
 		return false
 	} else {
@@ -148,13 +148,13 @@ const isMassInputRequired = computed(() => {
 
 const isVolumeDisabled = computed(() => {
 	if (
-		formState.ts_type === '09_8716400000' || 
-    formState.ts_type === '10_871610' || 
-    formState.ts_type === '11_890399' || 
-    formState.ts_type === '12_8903' || 
-    formState.engine_type === 'no_engine' || 
+		formState.ts_type === '09_8716400000' ||
+    formState.ts_type === '10_871610' ||
+    formState.ts_type === '11_890399' ||
+    formState.ts_type === '12_8903' ||
+    formState.engine_type === 'no_engine' ||
     formState.engine_type === 'electric'
-	) { 
+	) {
 		return true
 	} else {
 		return false
@@ -162,14 +162,14 @@ const isVolumeDisabled = computed(() => {
 })
 
 const isPowerDisabled = computed(() => {
-	// выбор мощности невозможнен если выбраны мощности для двигателей с эд и двс 
+	// выбор мощности невозможнен если выбраны мощности для двигателей с эд и двс
 	if (formState.power_hybrid_dvs || formState.power_hybrid_electro) return true
 
 	if (
-		formState.ts_type === '09_8716400000' || 
-    formState.ts_type === '10_871610' || 
-    formState.ts_type === '11_890399' || 
-    formState.ts_type === '12_8903' || 
+		formState.ts_type === '09_8716400000' ||
+    formState.ts_type === '10_871610' ||
+    formState.ts_type === '11_890399' ||
+    formState.ts_type === '12_8903' ||
     formState.ts_type === '13_8702'
 	) {
 		return true
@@ -304,7 +304,7 @@ const isHybridEngine = computed(() => {
             <UFormField v-if="formState.ts_type === '13_8702'" class="text-md" label="Вместимость" size="xl" name="chassis">
               <URadioGroup v-model="formState.buscap" size="xs" variant="table" orientation="horizontal" :items="BUS_CAPACITY_OPTIONS" />
             </UFormField>
-            
+
           </div>
           <div class="bus-eco-class">
             <UFormField v-if="formState.ts_type === '13_8702'" class="text-md mx-4"  size="xl" name="bus_municipal_cb">
@@ -314,7 +314,7 @@ const isHybridEngine = computed(() => {
               <URadioGroup v-model="formState.buscap" size="xs" variant="table" orientation="vertical" :items="BUS_ECO_CLASS_OPTIONS" />
             </UFormField>
           </div>
-          
+
           <div class="actions">
             <UButton :loading="props.isLoading" size="xl" type="submit" variant="solid" label="Расчитать" color="primary" />
             <UButton :disabled="props.isLoading" size="xl" type="reset" variant="subtle" label="Сбросить" color="primary" />

@@ -5,7 +5,7 @@ export default defineTask({
 	},
 	run() {
 		CurrencyStorage.updateCurrencyData()
-		log('info', 'Running task to update currency...');
-		return { result: 'Success' };
+		log('info', 'Running task to update currency...')
+		return { result: 'Success' }
 	},
-});
+})

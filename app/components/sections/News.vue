@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const feed = getNewsFeed();
+const feed = getNewsFeed()
 
-const lastThreeNews = feed.slice(feed.length - 3, feed.length).reverse();
+const lastThreeNews = feed.slice(feed.length - 3, feed.length).reverse()
 </script>
 
 <template>

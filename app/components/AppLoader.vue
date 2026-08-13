@@ -12,13 +12,13 @@
       <linearGradient id="linear-gradient"  gradientTransform="rotate(0)"  >
        <stop style="stop-color:#dabb8d; stop-opacity: 1;" offset="0%"/>
        <stop style="stop-color:#fffae8; stop-opacity: 1;" offset="40%"/>
-          <animateTransform 
-          attributeName="gradientTransform" 
-          type="rotate" 
-          from:="200 320 0" 
+          <animateTransform
+          attributeName="gradientTransform"
+          type="rotate"
+          from:="200 320 0"
           to="360"
-          repeatCount="indefinite" 
-          dur="2s" 
+          repeatCount="indefinite"
+          dur="2s"
         />
 	  </linearGradient>
      </defs>

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const advantagesFirstGrid: {
-  icon: TIconNames;
-  title: string;
-  description: string;
+	icon: TIconNames;
+	title: string;
+	description: string;
 }[] = [
 	{
 		icon: 'person-check',
@@ -20,12 +20,12 @@ const advantagesFirstGrid: {
 		title: 'Проверенная логистика',
 		description: 'Надёжная транспортировка по Москве и МО',
 	},
-];
+]
 
 const advantageSecondGrid: {
-  icon: TIconNames;
-  title: string;
-  description: string;
+	icon: TIconNames;
+	title: string;
+	description: string;
 }[] = [
 	{
 		icon: 'experiment',
@@ -43,12 +43,12 @@ const advantageSecondGrid: {
 		title: 'Прямые контракты',
 		description: 'Работаем без посредников. Экономим бюджет и время',
 	},
-];
+]
 
 const carouselConfig = {
 	gap: 30,
 	itemsToShow: 1,
-};
+}
 </script>
 
 <template>

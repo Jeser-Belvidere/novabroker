@@ -115,7 +115,7 @@
             Работа начинается
           </text>
            <text transform="translate(880, 130)" class="svg-text_small">
-            Оформление, лаборатория, логистика - 
+            Оформление, лаборатория, логистика -
           </text>
           <text transform="translate(960, 150)" class="svg-text_small">
             все берем на себя

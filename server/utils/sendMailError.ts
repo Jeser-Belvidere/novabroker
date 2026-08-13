@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+import nodemailer from 'nodemailer'
 
 export const sendMailError = async (error: string | unknown) => {
 	try {
@@ -10,7 +10,7 @@ export const sendMailError = async (error: string | unknown) => {
 				user: process.env.MAIL_USER,
 				pass: process.env.MAIL_PASSWORD,
 			},
-		});
+		})
 
 		await transporter.sendMail({
 			from: '"novabroker" <novabroker@yandex.ru>',
@@ -77,9 +77,9 @@ export const sendMailError = async (error: string | unknown) => {
       </body>
     </html>
   `,
-		});
+		})
 	} catch (e) {
-		console.error(e);
-		throw e;
+		console.error(e)
+		throw e
 	}
-};
+}

@@ -1,13 +1,13 @@
-import nodemailer from 'nodemailer';
+import nodemailer from 'nodemailer'
 
 export const sendMailClientRequest = async ({
 	name,
 	mail,
 	phone,
 }: {
-  name: string;
-  mail: string;
-  phone: string;
+	name: string;
+	mail: string;
+	phone: string;
 }) => {
 	try {
 		const transporter = nodemailer.createTransport({
@@ -18,7 +18,7 @@ export const sendMailClientRequest = async ({
 				user: process.env.MAIL_USER,
 				pass: process.env.MAIL_PASSWORD,
 			},
-		});
+		})
 
 		await transporter.sendMail({
 			from: '"novabroker" <novabroker@yandex.ru>',
@@ -87,9 +87,9 @@ export const sendMailClientRequest = async ({
       </body>
     </html>
   `,
-		});
+		})
 	} catch (e) {
-		log('error', 'Error in sendMailClientRequest' , e);
-		throw e;
+		log('error', 'Error in sendMailClientRequest' , e)
+		throw e
 	}
-};
+}

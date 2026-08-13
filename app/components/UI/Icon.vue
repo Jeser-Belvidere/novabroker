@@ -1,17 +1,17 @@
 <script lang="ts" setup>
 interface Props {
-  name: TIconNames;
-  size?: 'sm' | 'md' | 'lg';
-  pointer?: boolean;
+	name: TIconNames;
+	size?: 'sm' | 'md' | 'lg';
+	pointer?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
 	size: 'md',
-});
+})
 
 const className = computed(() => {
-	return `${props.name} ${props.size} ${props.pointer ? 'pointer' : ''}`;
-});
+	return `${props.name} ${props.size} ${props.pointer ? 'pointer' : ''}`
+})
 </script>
 
 <template>

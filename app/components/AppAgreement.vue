@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 const isAgreed = ref<boolean>(
 	browserStorage.get<boolean>('agreement') ?? false
-);
+)
 
 const handleAgree = () => {
-	isAgreed.value = true;
-	browserStorage.set('agreement', true);
-};
+	isAgreed.value = true
+	browserStorage.set('agreement', true)
+}
 
 const handleDisagree = () => {
 	window.location.href = 'https://yandex.ru/'
-  
-};
+
+}
 </script>
 
 <template>

@@ -1,15 +1,15 @@
 <script setup lang="ts">
 type IProps = {
-  to?: string | { path: string; hash: string };
-  type?: 'primary' | 'secondary' | 'default';
-  href?: string;
+	to?: string | { path: string; hash: string };
+	type?: 'primary' | 'secondary' | 'default';
+	href?: string;
 }
 
 const props = withDefaults(defineProps<IProps>(), {
 	type: 'primary',
 	to: undefined,
 	href: undefined
-});
+})
 </script>
 
 <template>

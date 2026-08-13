@@ -1,0 +1,7 @@
+.nuxt
+.output
+.nitro
+.data
+dist
+node_modules
+public/

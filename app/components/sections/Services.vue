@@ -6,13 +6,13 @@ import {
 	UIIconsCarGear,
 	UIIconsRubleRounded,
 	UIIconsSatteliteFly,
-} from '#components';
+} from '#components'
 
 const services: {
-  iconComponent: Component;
-  title: string;
-  description: string;
-  to: string;
+	iconComponent: Component;
+	title: string;
+	description: string;
+	to: string;
 }[] = [
 	{
 		iconComponent: UIIconsBadgeCheck,
@@ -55,13 +55,13 @@ const services: {
 		description: 'Будьте уверены в технических характеристиках вашего ТС',
 		to: '/services/pomoshch-tekhnicheskoe-zaklyuchenie',
 	},
-];
+]
 
 const carouselConfig = {
 	gap: 30,
 	itemsToShow: 1,
 	autoPlay: true,
-};
+}
 </script>
 
 <template>

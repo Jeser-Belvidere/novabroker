@@ -1,7 +1,7 @@
 <script setup lang="ts">
 interface IProps {
-  heading?: string
-  paragraph: string;
+	heading?: string
+	paragraph: string;
 }
 
 const props = defineProps<IProps>()

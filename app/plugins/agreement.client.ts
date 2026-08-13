@@ -3,12 +3,12 @@ export default defineNuxtPlugin((nuxtApp) => {
 		window.addEventListener(
 			'showAgreement',
 			() => {
-				const agreement = document.getElementById('agreement');
+				const agreement = document.getElementById('agreement')
 				if (agreement) {
-					agreement.classList.add('show');
+					agreement.classList.add('show')
 				}
 			},
 			{ once: true }
-		);
-	});
-});
+		)
+	})
+})

@@ -1,25 +1,21 @@
 {
   "eslint.useFlatConfig": true,
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  "eslint.validate": ["javascript", "css", "typescript", "vue"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": false,
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
-  "editor.formatOnSave": false,
-  "eslint.format.enable": true,
-  "prettier.singleQuote": true,
-  "prettier.jsxSingleQuote": true,
-  //   // "editor.codeActionsOnSave": ["source.fixAll.eslint"],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": ["source.fixAll.eslint"],
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[vue]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[ts]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[js]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
