@@ -483,7 +483,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-B-uP1kuw.mjs')
+    component: () => import('./index-Bbo1T76q.mjs')
   },
   {
     name: "privacy",
@@ -503,7 +503,7 @@ const _routes = [
   {
     name: "news",
     path: "/news",
-    component: () => import('./index-D1cOvWOw.mjs')
+    component: () => import('./index-DvykkE-l.mjs')
   },
   {
     name: "personaldata",
@@ -513,7 +513,7 @@ const _routes = [
   {
     name: "news-newsId",
     path: "/news/:newsId()",
-    component: () => import('./_newsId_-DZZmTVUO.mjs')
+    component: () => import('./_newsId_-DmdcY5T-.mjs')
   },
   {
     name: "services-sbkts-i-epts",
@@ -528,7 +528,7 @@ const _routes = [
   {
     name: "tamozhennyy_kalkulyator",
     path: "/tamozhennyy_kalkulyator",
-    component: () => import('./tamozhennyy_kalkulyator-CSYcdxbo.mjs')
+    component: () => import('./tamozhennyy_kalkulyator-D6aYeX_C.mjs')
   },
   {
     name: "services-konsultatsii-tamozhnya-ts",
