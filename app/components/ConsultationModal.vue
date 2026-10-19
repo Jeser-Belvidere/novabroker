@@ -22,6 +22,139 @@ const PAUSE_AFTER_ERASED_MS = 800
 const typedText = ref('')
 
 let typingSession = 0
+let traceObserver: ResizeObserver | null = null
+
+/* Светящиеся трассы: пути строятся по реальным координатам кнопок */
+const TRACE_SIDES = ['left', 'top', 'bottom', 'right'] as const
+const TRACE_PAD = 4
+const TRACE_CORNER_RADIUS = 7
+
+const contactCardRef = ref<HTMLElement | null>(null)
+const tracePaths = ref<string[]>([])
+const traceViewBox = ref('0 0 350 170')
+
+type IPoint = [number, number]
+
+const buildTracePath = (
+	edge: IPoint,
+	start: IPoint,
+	corners: IPoint[],
+	radius: number,
+) => {
+	const points: IPoint[] = [start, ...corners, start]
+	let d = `M ${edge[0]} ${edge[1]} L ${start[0]} ${start[1]}`
+
+	for (let i = 1; i < points.length - 1; i++) {
+		const prev = points[i - 1]
+		const current = points[i]
+		const next = points[i + 1]
+		if (!prev || !current || !next) continue
+
+		const [px, py] = prev
+		const [cx, cy] = current
+		const [nx, ny] = next
+		const inLen = Math.hypot(cx - px, cy - py) || 1
+		const outLen = Math.hypot(nx - cx, ny - cy) || 1
+		const r = Math.min(radius, inLen / 2, outLen / 2)
+
+		d += ` L ${cx - ((cx - px) / inLen) * r} ${cy - ((cy - py) / inLen) * r}`
+		d += ` Q ${cx} ${cy} ${cx + ((nx - cx) / outLen) * r} ${cy + ((ny - cy) / outLen) * r}`
+	}
+
+	return d
+}
+
+const recalcTraces = () => {
+	const card = contactCardRef.value
+	if (!card) return
+
+	traceViewBox.value = `0 0 ${card.clientWidth} ${card.clientHeight}`
+
+	const icons = [
+		card.querySelector('.contact-button__icon--vk'),
+		card.querySelector('.contact-button__icon--max'),
+		card.querySelector('.contact-button__icon--phone'),
+		card.querySelector('.contact-button__icon--mail'),
+	]
+
+	tracePaths.value = icons.map((icon, index) => {
+		const button = icon?.parentElement
+		if (!button) return ''
+
+		// offsetLeft/offsetTop не зависят от transform, поэтому анимация
+		// появления карточки (scale) не искажает координаты кнопок
+		let bx = 0
+		let by = 0
+		let node: HTMLElement | null = button
+		while (node && node !== card) {
+			bx += node.offsetLeft
+			by += node.offsetTop
+			node = node.offsetParent as HTMLElement | null
+		}
+		if (node !== card) return ''
+
+		const lx = bx - TRACE_PAD
+		const ly = by - TRACE_PAD
+		const lw = button.offsetWidth + TRACE_PAD * 2
+		const lh = button.offsetHeight + TRACE_PAD * 2
+		const x2 = lx + lw
+		const y2 = ly + lh
+		const cx = lx + lw / 2
+		const cy = ly + lh / 2
+
+		const loops: Record<
+			(typeof TRACE_SIDES)[number],
+			{ edge: IPoint; start: IPoint; corners: IPoint[] }
+		> = {
+			left: {
+				edge: [0, cy],
+				start: [lx, cy],
+				corners: [
+					[lx, ly],
+					[x2, ly],
+					[x2, y2],
+					[lx, y2],
+				],
+			},
+			top: {
+				edge: [cx, 0],
+				start: [cx, ly],
+				corners: [
+					[x2, ly],
+					[x2, y2],
+					[lx, y2],
+					[lx, ly],
+				],
+			},
+			bottom: {
+				edge: [cx, card.clientHeight],
+				start: [cx, y2],
+				corners: [
+					[lx, y2],
+					[lx, ly],
+					[x2, ly],
+					[x2, y2],
+				],
+			},
+			right: {
+				edge: [card.clientWidth, cy],
+				start: [x2, cy],
+				corners: [
+					[x2, y2],
+					[lx, y2],
+					[lx, ly],
+					[x2, ly],
+				],
+			},
+		}
+
+		const side = TRACE_SIDES[index]
+		if (!side) return ''
+
+		const { edge, start, corners } = loops[side]
+		return buildTracePath(edge, start, corners, TRACE_CORNER_RADIUS)
+	})
+}
 
 const wait = (ms: number) =>
 	new Promise<void>((resolve) => setTimeout(resolve, ms))
@@ -69,6 +202,16 @@ onMounted(() => {
 	window.addEventListener('keydown', onKeydown)
 	document.body.style.overflow = 'hidden'
 
+	// трассы пересчитываются при любом изменении размера карточки
+	traceObserver = new ResizeObserver(recalcTraces)
+	if (contactCardRef.value) {
+		traceObserver.observe(contactCardRef.value)
+	}
+	recalcTraces()
+
+	// загрузка веб-шрифтов сдвигает раскладку карточки после монтирования
+	document.fonts?.ready.then(recalcTraces)
+
 	// при reduced motion текст показывается целиком, без анимации набора
 	if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 		typedText.value = TYPED_PHRASES.at(0) ?? ''
@@ -80,6 +223,8 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
 	typingSession++
+	traceObserver?.disconnect()
+	traceObserver = null
 	window.removeEventListener('keydown', onKeydown)
 	document.body.style.overflow = ''
 })
@@ -111,7 +256,33 @@ onBeforeUnmount(() => {
 						Мы всегда на связи, чтобы ответить на ваши вопросы и помочь
 						рассчитать стоимость растаможки автомобиля.
 					</p>
-					<div class="contact-card">
+					<div ref="contactCardRef" class="contact-card">
+						<!-- Светящиеся трассы: от края карточки к кнопкам, огибают их и гаснут -->
+						<svg
+							class="contact-trace"
+							:viewBox="traceViewBox"
+							preserveAspectRatio="none"
+							fill="none"
+							aria-hidden="true"
+						>
+							<g class="contact-trace__base">
+								<path
+									v-for="(d, index) in tracePaths"
+									:key="`trace-base-${index}`"
+									:d="d"
+								/>
+							</g>
+							<g class="contact-trace__pulse">
+								<path
+									v-for="(d, index) in tracePaths"
+									:key="`trace-pulse-${index}`"
+									class="contact-trace__comet"
+									:class="`contact-trace__comet--${index}`"
+									pathLength="100"
+									:d="d"
+								/>
+							</g>
+						</svg>
 						<div class="contact-card__tag">Мы на связи</div>
 						<div class="contact-card__row">
 							<button
@@ -279,6 +450,7 @@ onBeforeUnmount(() => {
 /* --- Карточка с кнопками контактов --- */
 
 .contact-card {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -314,6 +486,60 @@ onBeforeUnmount(() => {
 	width: 1px;
 	height: 30px;
 	background-color: rgba(4, 40, 29, 0.15);
+}
+
+/* --- Светящиеся трассы: от края карточки к кнопкам контактов --- */
+
+.contact-trace {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+/* едва заметные трафареты трасс на фоне карточки */
+.contact-trace__base path {
+	stroke: rgba(200, 155, 75, 0.22);
+	stroke-width: 1.5;
+	stroke-linejoin: round;
+	fill: none;
+}
+
+/* бегущий световой импульс вдоль трассы */
+.contact-trace__comet {
+	stroke: #c89b4b;
+	stroke-width: 2.5;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	fill: none;
+	stroke-dasharray: 14 100;
+	stroke-dashoffset: 14;
+	filter: drop-shadow(0 0 5px rgba(200, 155, 75, 0.85));
+	animation: trace-pulse 3.6s linear infinite;
+}
+
+.contact-trace__comet--1 {
+	animation-delay: -0.9s;
+}
+
+.contact-trace__comet--2 {
+	animation-delay: -1.8s;
+}
+
+.contact-trace__comet--3 {
+	animation-delay: -2.7s;
+}
+
+/* импульс входит у края карточки, обегает кнопку и сходит с трассы */
+@keyframes trace-pulse {
+	0% {
+		stroke-dashoffset: 14;
+	}
+	70%,
+	100% {
+		stroke-dashoffset: -100;
+	}
 }
 
 /* --- Кнопки-иконки с эффектом "выстрела" при наведении --- */
@@ -730,6 +956,7 @@ onBeforeUnmount(() => {
 	.car__headlight,
 	.car__cone,
 	.typebox__caret,
+	.contact-trace__comet,
 	.consultation-modal,
 	.consultation-modal__card {
 		animation: none;
