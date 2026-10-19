@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import bmwX6Svg from '~/assets/icons/BMWX6.svg?raw'
+import { openMax, openVK } from '~/utils/mediaLinks'
 
 interface IContactOption {
 	icon: 'whatsapp' | 'phone' | 'mail'
@@ -105,6 +106,24 @@ onBeforeUnmount(() => {
 									/>
 								</a>
 							</template>
+							<div class="contact-card__separator" />
+							<button
+								class="contact-button"
+								type="button"
+								aria-label="Написать в VK"
+								@click="openVK()"
+							>
+								<span class="contact-button__icon contact-button__icon--vk" />
+							</button>
+							<div class="contact-card__separator" />
+							<button
+								class="contact-button"
+								type="button"
+								aria-label="Написать в MAX"
+								@click="openMax()"
+							>
+								<span class="contact-button__icon contact-button__icon--max" />
+							</button>
 						</div>
 					</div>
 				</div>
@@ -218,7 +237,7 @@ onBeforeUnmount(() => {
 	flex-direction: column;
 	justify-content: space-between;
 	gap: 8px;
-	padding: 20px 16px;
+	padding: 20px 0;
 	overflow: hidden;
 	background-color: var(--warm-beige);
 }
@@ -380,6 +399,14 @@ onBeforeUnmount(() => {
 
 .contact-button__icon--mail {
 	background-image: url('~/assets/icons/mail.svg');
+}
+
+.contact-button__icon--vk {
+	background-image: url('~/assets/icons/vk.svg');
+}
+
+.contact-button__icon--max {
+	background-image: url('~/assets/icons/max.svg');
 }
 
 @keyframes muzzle-flash {
