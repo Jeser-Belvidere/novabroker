@@ -3,29 +3,29 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 import bmwX6Svg from '~/assets/icons/BMWX6.svg?raw'
 import { openMax, openVK } from '~/utils/mediaLinks'
 
-interface IContactOption {
-	icon: 'whatsapp' | 'phone' | 'mail'
-	label: string
-	href: string
-}
+// interface IContactOption {
+// 	icon: 'whatsapp' | 'phone' | 'mail'
+// 	label: string
+// 	href: string
+// }
 
-const contactOptions: IContactOption[] = [
-	{
-		icon: 'whatsapp',
-		label: 'Написать в WhatsApp',
-		href: 'https://wa.me/79585000286',
-	},
-	{
-		icon: 'phone',
-		label: '+7 495 778-30-50',
-		href: 'tel:+74957783050',
-	},
-	{
-		icon: 'mail',
-		label: 'anna@novabroker.ru',
-		href: 'mailto:anna@novabroker.ru',
-	},
-]
+// const contactOptions: IContactOption[] = [
+// 	{
+// 		icon: 'whatsapp',
+// 		label: 'Написать в WhatsApp',
+// 		href: 'https://wa.me/79585000286',
+// 	},
+// 	{
+// 		icon: 'phone',
+// 		label: '+7 495 778-30-50',
+// 		href: 'tel:+74957783050',
+// 	},
+// 	{
+// 		icon: 'mail',
+// 		label: 'anna@novabroker.ru',
+// 		href: 'mailto:anna@novabroker.ru',
+// 	},
+// ]
 
 const isVisible = ref(true)
 
@@ -84,7 +84,7 @@ onBeforeUnmount(() => {
 					<div class="contact-card">
 						<div class="contact-card__tag">Мы на связи</div>
 						<div class="contact-card__row">
-							<template
+							<!-- <template
 								v-for="(option, index) in contactOptions"
 								:key="option.href"
 							>
@@ -93,7 +93,7 @@ onBeforeUnmount(() => {
 									class="contact-button"
 									:href="option.href"
 									:aria-label="option.label"
-									:target="option.icon === 'whatsapp' ? '_blank' : undefined"
+									target="_blank"
 									:rel="
 										option.icon === 'whatsapp'
 											? 'noopener noreferrer'
@@ -105,7 +105,15 @@ onBeforeUnmount(() => {
 										:class="`contact-button__icon--${option.icon}`"
 									/>
 								</a>
-							</template>
+							</template> -->
+							<a
+								class="contact-button"
+								href="mailto:anna@novabroker.ru"
+								aria-label="Написать на почту"
+								target="_blank"
+							>
+								<span class="contact-button__icon contact-button__icon--mail" />
+							</a>
 							<div class="contact-card__separator" />
 							<button
 								class="contact-button"
@@ -124,6 +132,17 @@ onBeforeUnmount(() => {
 							>
 								<span class="contact-button__icon contact-button__icon--max" />
 							</button>
+						</div>
+						<div class="contact-card__row">
+							<a
+								class="contact-button"
+								href="tel:+74957783050"
+								aria-label="Позвонить нам"
+							>
+								<span
+									class="contact-button__icon contact-button__icon--phone"
+								/>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -382,6 +401,7 @@ onBeforeUnmount(() => {
 }
 
 .contact-button__icon {
+	cursor: pointer;
 	width: 24px;
 	height: 24px;
 	background-size: contain;
@@ -663,7 +683,6 @@ onBeforeUnmount(() => {
 	);
 	clip-path: polygon(100% 0%, 0 0, 0 20%, 100% 100%);
 	animation: headlight-cone 5s linear infinite;
-	/* clip-path: polygon(100% 0%, 0 0, 0 20%, 100% 100%); */
 }
 
 @keyframes car-ride {
@@ -675,13 +694,13 @@ onBeforeUnmount(() => {
 	7% {
 		opacity: 1;
 	}
-	26% {
+	26%,
+	62% {
 		right: 50%;
-		transform: translateX(50%);
+		/* transform: translateX(50%); */
 	}
 	62% {
-		right: -50%;
-		transform: translateX(-50%);
+		right: 50%;
 		animation-timing-function: ease-in;
 	}
 	96% {

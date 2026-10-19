@@ -151,7 +151,7 @@
 							pointer
 							@click="openYandex()"
 						/>
-						<UIIcon name="max" size="lg" pointer @click="openMax()" />
+						<UIIcon name="max" pointer @click="openMax()" />
 					</div>
 				</div>
 				<div class="divider" />
