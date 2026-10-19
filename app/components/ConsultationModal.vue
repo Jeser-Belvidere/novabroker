@@ -3,31 +3,52 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 import bmwX6Svg from '~/assets/icons/BMWX6.svg?raw'
 import { openMax, openVK } from '~/utils/mediaLinks'
 
-// interface IContactOption {
-// 	icon: 'whatsapp' | 'phone' | 'mail'
-// 	label: string
-// 	href: string
-// }
-
-// const contactOptions: IContactOption[] = [
-// 	{
-// 		icon: 'whatsapp',
-// 		label: 'Написать в WhatsApp',
-// 		href: 'https://wa.me/79585000286',
-// 	},
-// 	{
-// 		icon: 'phone',
-// 		label: '+7 495 778-30-50',
-// 		href: 'tel:+74957783050',
-// 	},
-// 	{
-// 		icon: 'mail',
-// 		label: 'anna@novabroker.ru',
-// 		href: 'mailto:anna@novabroker.ru',
-// 	},
-// ]
-
 const isVisible = ref(true)
+
+/* Эмуляция набора вопроса: текст печатается и стирается по символу */
+const TYPED_PHRASES = [
+	'Здравствуйте, сколько стоит растаможка BMWX6?',
+	'Сколько будет стоить установка ГЛОНАСС?',
+	'У меня застряла машина на таможне, что делать?',
+	'Какие документы нужны для растаможки?',
+	'Мне срочно требуется оценка ТС и техническое заключение!',
+]
+
+const TYPE_DELAY_MS = 75
+const ERASE_DELAY_MS = 40
+const PAUSE_AFTER_TYPED_MS = 1600
+const PAUSE_AFTER_ERASED_MS = 800
+
+const typedText = ref('')
+
+let typingSession = 0
+
+const wait = (ms: number) =>
+	new Promise<void>((resolve) => setTimeout(resolve, ms))
+
+const runTypingLoop = async (session: number) => {
+	while (session === typingSession) {
+		for (const phrase of TYPED_PHRASES) {
+			for (const char of phrase) {
+				if (session !== typingSession) return
+
+				typedText.value += char
+				await wait(TYPE_DELAY_MS)
+			}
+
+			await wait(PAUSE_AFTER_TYPED_MS)
+
+			while (typedText.value.length > 0 && session === typingSession) {
+				typedText.value = typedText.value.slice(0, -1)
+				await wait(ERASE_DELAY_MS)
+			}
+
+			if (session !== typingSession) return
+
+			await wait(PAUSE_AFTER_ERASED_MS)
+		}
+	}
+}
 
 const closeModal = () => {
 	isVisible.value = false
@@ -47,9 +68,18 @@ const handleAfterLeave = () => {
 onMounted(() => {
 	window.addEventListener('keydown', onKeydown)
 	document.body.style.overflow = 'hidden'
+
+	// при reduced motion текст показывается целиком, без анимации набора
+	if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+		typedText.value = TYPED_PHRASES.at(0) ?? ''
+		return
+	}
+
+	runTypingLoop(++typingSession)
 })
 
 onBeforeUnmount(() => {
+	typingSession++
 	window.removeEventListener('keydown', onKeydown)
 	document.body.style.overflow = ''
 })
@@ -84,37 +114,6 @@ onBeforeUnmount(() => {
 					<div class="contact-card">
 						<div class="contact-card__tag">Мы на связи</div>
 						<div class="contact-card__row">
-							<!-- <template
-								v-for="(option, index) in contactOptions"
-								:key="option.href"
-							>
-								<div v-if="index > 0" class="contact-card__separator" />
-								<a
-									class="contact-button"
-									:href="option.href"
-									:aria-label="option.label"
-									target="_blank"
-									:rel="
-										option.icon === 'whatsapp'
-											? 'noopener noreferrer'
-											: undefined
-									"
-								>
-									<span
-										class="contact-button__icon"
-										:class="`contact-button__icon--${option.icon}`"
-									/>
-								</a>
-							</template> -->
-							<a
-								class="contact-button"
-								href="mailto:anna@novabroker.ru"
-								aria-label="Написать на почту"
-								target="_blank"
-							>
-								<span class="contact-button__icon contact-button__icon--mail" />
-							</a>
-							<div class="contact-card__separator" />
 							<button
 								class="contact-button"
 								type="button"
@@ -143,57 +142,34 @@ onBeforeUnmount(() => {
 									class="contact-button__icon contact-button__icon--phone"
 								/>
 							</a>
+							<div class="contact-card__separator" />
+
+							<a
+								class="contact-button"
+								href="mailto:anna@novabroker.ru"
+								aria-label="Написать на почту"
+								target="_blank"
+							>
+								<span class="contact-button__icon contact-button__icon--mail" />
+							</a>
 						</div>
 					</div>
 				</div>
 				<div class="consultation-modal__right">
-					<!-- Документы в левом углу правой части: ручка пишет строки -->
-					<div class="papers-stage">
-						<svg
-							class="papers__svg"
-							viewBox="0 0 220 160"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-							aria-hidden="true"
-						>
-							<g class="papers__back">
-								<rect x="72" y="16" width="92" height="118" rx="8" />
-							</g>
-							<g class="papers__front">
-								<path
-									d="M52 30 h62 l24 24 v72 a8 8 0 0 1 -8 8 h-70 a8 8 0 0 1 -8 -8 v-88 a8 8 0 0 1 8 -8 z"
-								/>
-								<path d="M114 30 v24 h24" />
-								<line
-									class="papers__line papers__line--1"
-									pathLength="1"
-									x1="66"
-									y1="66"
-									x2="124"
-									y2="66"
-								/>
-								<line
-									class="papers__line papers__line--2"
-									pathLength="1"
-									x1="66"
-									y1="82"
-									x2="134"
-									y2="82"
-								/>
-								<line
-									class="papers__line papers__line--3"
-									pathLength="1"
-									x1="66"
-									y1="98"
-									x2="112"
-									y2="98"
-								/>
-							</g>
-							<g class="papers__pen">
-								<path d="M0 0 l14 -5 l-3.5 10.5 z" />
-								<path d="M10.5 5 L34 -18" />
-							</g>
-						</svg>
+					<!-- Текстовое окно: эмуляция набора вопроса пользователем -->
+					<div class="chat-stage">
+						<div class="typebox" aria-hidden="true">
+							<span class="typebox__label">Какой ваш вопрос?</span>
+							<div class="typebox__field">
+								<span v-if="typedText" class="typebox__text">{{
+									typedText
+								}}</span>
+								<span v-else class="typebox__placeholder">
+									Спросите нас о чём угодно…
+								</span>
+								<span class="typebox__caret" />
+							</div>
+						</div>
 					</div>
 					<!-- BMW X6: заезд справа, остановка с миганием фар, отъезд влево, бесконечный цикл -->
 					<div class="car-stage">
@@ -263,13 +239,13 @@ onBeforeUnmount(() => {
 
 .consultation-modal__close {
 	position: absolute;
-	top: 8px;
+	top: 2px;
 	right: 12px;
 	z-index: 3;
 	border: none;
 	background-color: transparent;
 	color: var(--dark-green);
-	font-size: 1.6rem;
+	font-size: 2rem;
 	line-height: 1;
 	cursor: pointer;
 	transition:
@@ -448,173 +424,82 @@ onBeforeUnmount(() => {
 	}
 }
 
-/* --- Документы с пишущей ручкой --- */
+/* --- Текстовое окно с эмуляцией набора вопроса --- */
 
-.papers-stage {
+.chat-stage {
 	position: relative;
+	top: 10px;
 	z-index: 1;
 	display: flex;
 	justify-content: flex-start;
-}
-
-.papers__svg {
-	width: min(190px, 72%);
-	height: auto;
-	overflow: visible;
-}
-
-.papers__back rect,
-.papers__front path {
-	stroke: rgba(4, 40, 29, 0.85);
-	stroke-width: 2.5;
-	stroke-linecap: round;
-	stroke-linejoin: round;
-	fill: none;
-}
-
-.papers__line {
-	stroke: rgba(4, 40, 29, 0.7);
-	stroke-width: 2.5;
-	stroke-linecap: round;
-	stroke-dasharray: 1;
-	stroke-dashoffset: 1;
-}
-
-.papers__line--1 {
-	animation: write-line-1 9s linear infinite;
-}
-
-.papers__line--2 {
-	animation: write-line-2 9s linear infinite;
-}
-
-.papers__line--3 {
-	animation: write-line-3 9s linear infinite;
-}
-
-.papers__front {
-	animation: paper-shift 9s linear infinite;
-}
-
-.papers__back {
-	animation: paper-shift-back 9s linear infinite;
-}
-
-.papers__pen {
-	stroke: rgba(4, 40, 29, 0.9);
-	stroke-width: 2.5;
-	stroke-linecap: round;
-	stroke-linejoin: round;
-	fill: none;
-	animation: pen-write 9s linear infinite;
-}
-
-@keyframes write-line-1 {
-	0% {
-		stroke-dashoffset: 1;
-	}
-	24% {
-		stroke-dashoffset: 0;
-	}
-	100% {
-		stroke-dashoffset: 0;
+	@media (max-width: 700px) {
+		top: 0;
 	}
 }
 
-@keyframes write-line-2 {
-	0%,
-	30% {
-		stroke-dashoffset: 1;
-	}
-	54% {
-		stroke-dashoffset: 0;
-	}
-	100% {
-		stroke-dashoffset: 0;
-	}
-}
-
-@keyframes write-line-3 {
-	0%,
-	60% {
-		stroke-dashoffset: 1;
-	}
-	82% {
-		stroke-dashoffset: 0;
-	}
-	100% {
-		stroke-dashoffset: 0;
+.typebox {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	width: 100%;
+	margin-left: 16px;
+	margin-right: 16px;
+	padding: 14px;
+	border: 1px solid rgba(149, 150, 150, 0.932);
+	border-radius: 12px;
+	background-color: var(--white);
+	box-shadow: 0 10px 26px rgba(4, 40, 29, 0.18);
+	@media (max-width: 700px) {
+		width: 100%;
+		margin-left: 28px;
+		margin-right: 28px;
 	}
 }
 
-/* лист сдвигается под ручкой на каждой новой строке */
-@keyframes paper-shift {
-	0%,
-	24% {
-		transform: translate(0, 0);
-	}
-	30% {
-		transform: translate(3px, 1px);
-	}
-	54% {
-		transform: translate(0, 0);
-	}
-	60% {
-		transform: translate(-3px, 1px);
-	}
-	82%,
-	100% {
-		transform: translate(0, 0);
-	}
+.typebox__label {
+	align-self: flex-start;
+	padding: 4px 10px;
+	border: 1px solid rgba(4, 40, 29, 0.25);
+	border-radius: 8px;
+	background-color: rgba(218, 187, 141, 0.25);
+	color: var(--dark-green);
+	font-size: 0.8rem;
+	letter-spacing: 1px;
 }
 
-@keyframes paper-shift-back {
-	0%,
-	24% {
-		transform: translate(0, 0);
-	}
-	30% {
-		transform: translate(-2px, 0);
-	}
-	54% {
-		transform: translate(0, 0);
-	}
-	60% {
-		transform: translate(2px, 0);
-	}
-	82%,
-	100% {
-		transform: translate(0, 0);
-	}
+.typebox__field {
+	min-height: 60px;
+	padding: 8px 12px;
+	border: 1px solid rgba(4, 40, 29, 0.18);
+	border-radius: 8px;
+	background-color: var(--warm-ligth);
 }
 
-/* ручка пишет строки, затем отрывается от бумаги */
-@keyframes pen-write {
-	0% {
-		transform: translate(66px, 66px);
-		opacity: 0;
-	}
-	4% {
-		opacity: 1;
-	}
-	24% {
-		transform: translate(124px, 66px);
-	}
-	30% {
-		transform: translate(66px, 82px);
-	}
-	54% {
-		transform: translate(134px, 82px);
-	}
-	60% {
-		transform: translate(66px, 98px);
-	}
-	82% {
-		transform: translate(112px, 98px);
-	}
-	90%,
-	100% {
-		transform: translate(150px, 48px);
+.typebox__text,
+.typebox__placeholder {
+	color: var(--dark-green);
+	font-size: 0.9rem;
+	letter-spacing: 0.5px;
+	line-height: 1.5;
+	word-break: break-word;
+}
+
+.typebox__placeholder {
+	color: rgba(4, 40, 29, 0.45);
+}
+
+/* мигающий курсор следует за последним символом */
+.typebox__caret {
+	display: inline-block;
+	width: 2px;
+	height: 1.2em;
+	vertical-align: baseline;
+	background-color: var(--dark-green);
+	animation: caret-blink 1s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+	50% {
 		opacity: 0;
 	}
 }
@@ -741,7 +626,7 @@ onBeforeUnmount(() => {
 	62% {
 		opacity: 0.35;
 	}
-	64%,
+	/* 64%, */
 	100% {
 		opacity: 1;
 	}
@@ -754,7 +639,7 @@ onBeforeUnmount(() => {
 	}
 	27%,
 	32% {
-		opacity: 0.7;
+		opacity: 0.8;
 	}
 	33%,
 	37% {
@@ -762,7 +647,7 @@ onBeforeUnmount(() => {
 	}
 	38%,
 	42% {
-		opacity: 0.7;
+		opacity: 0.8;
 	}
 	43%,
 	47% {
@@ -770,14 +655,14 @@ onBeforeUnmount(() => {
 	}
 	48%,
 	61% {
-		opacity: 0.7;
+		opacity: 0.8;
 	}
 	62% {
 		opacity: 0;
 	}
-	64%,
+	/* 64%, */
 	100% {
-		opacity: 0.7;
+		opacity: 0;
 	}
 }
 
@@ -844,21 +729,10 @@ onBeforeUnmount(() => {
 	.car :deep(svg > g:nth-of-type(3)),
 	.car__headlight,
 	.car__cone,
-	.papers__line,
-	.papers__front,
-	.papers__back,
-	.papers__pen,
+	.typebox__caret,
 	.consultation-modal,
 	.consultation-modal__card {
 		animation: none;
-	}
-
-	.papers__line {
-		stroke-dashoffset: 0;
-	}
-
-	.papers__pen {
-		transform: translate(150px, 48px);
 	}
 
 	.car {
