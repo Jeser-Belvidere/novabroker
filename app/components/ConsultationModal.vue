@@ -385,6 +385,9 @@ onBeforeUnmount(() => {
 	border-radius: 14px;
 	box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
 	animation: card-in 0.35s ease-out;
+	@media (max-width: 700px) {
+		height: fit-content;
+	}
 }
 
 .consultation-modal__left {
@@ -394,6 +397,10 @@ onBeforeUnmount(() => {
 	gap: 12px;
 	padding: 28px;
 	background-color: var(--warm-ligth);
+	@media (max-width: 700px) {
+		gap: 6px;
+		padding: 12px;
+	}
 }
 
 .consultation-modal__right {
@@ -401,11 +408,14 @@ onBeforeUnmount(() => {
 	display: flex;
 	flex: 1;
 	flex-direction: column;
-	justify-content: space-between;
 	gap: 8px;
 	padding: 20px 0;
 	overflow: hidden;
 	background-color: var(--warm-beige);
+	@media (max-width: 700px) {
+		gap: 6px;
+		padding: 10px 0;
+	}
 }
 
 .consultation-modal__close {
@@ -460,6 +470,10 @@ onBeforeUnmount(() => {
 	border: 1px solid rgba(4, 40, 29, 0.18);
 	border-radius: 12px;
 	background-color: var(--white);
+	@media (max-width: 700px) {
+		gap: 6px;
+		padding: 8px;
+	}
 }
 
 .contact-card__tag {
