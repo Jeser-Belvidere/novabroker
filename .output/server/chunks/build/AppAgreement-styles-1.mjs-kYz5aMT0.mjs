@@ -1,4 +1,0 @@
-const AppAgreement_vue_vue_type_style_index_0_scoped_0b3b3b8e_lang = ".agreement__text[data-v-0b3b3b8e]{font-size:1rem;letter-spacing:1.5px;text-align:center}.agreement__action[data-v-0b3b3b8e]{display:flex;gap:16px;justify-content:center;margin-top:10px}#agreement[data-v-0b3b3b8e]{background-color:var(--warm-beige);border:1px solid var(--warm-beige);border-radius:5px;bottom:0;display:none;left:50%;max-height:200px;padding:10px;position:fixed;transform:translate(-50%,-50%);width:300px;z-index:100}.show[data-v-0b3b3b8e]{display:block!important}";
-
-export { AppAgreement_vue_vue_type_style_index_0_scoped_0b3b3b8e_lang as A };
-//# sourceMappingURL=AppAgreement-styles-1.mjs-kYz5aMT0.mjs.map

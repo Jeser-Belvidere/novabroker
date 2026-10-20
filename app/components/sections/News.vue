@@ -5,185 +5,189 @@ const lastThreeNews = feed.slice(feed.length - 3, feed.length).reverse()
 </script>
 
 <template>
-  <section id="news">
-    <div class="title">
-      <p class="title-head">Новости и обновления</p>
-      <p class="title-description">
-        Оформление, сертификация, законодательство - все по делу
-      </p>
-    </div>
-    <div class="grid">
-      <div v-for="(news, index) in lastThreeNews" :key="index" :class="`card card-${index + 1}`">
-        <nuxt-link class="first-card" :to="`/news/${news.listIndex}`">
-          <div class="card-image">
-            <img :src="news.imgSrc" loading="lazy" :alt="news.title">
-          </div>
-          <div class="card-info">
-            <div class="card-title">{{ news.title }}</div>
-            <div class="card-date">{{ news.date }}</div>
-          </div>
-        </nuxt-link>
-      </div>
-    </div>
-    <div class="all-news-button">
-      <UILink to="/news">Читать больше новостей →</UILink>
-    </div>
-  </section>
+	<section id="news">
+		<div class="title">
+			<p class="title-head">Новости и обновления</p>
+			<p class="title-description">
+				Оформление, сертификация, законодательство - все по делу
+			</p>
+		</div>
+		<div class="grid">
+			<div
+				v-for="(news, index) in lastThreeNews"
+				:key="index"
+				:class="`card card-${index + 1}`"
+			>
+				<nuxt-link class="first-card" :to="`/news/${news.listIndex}`">
+					<div class="card-image">
+						<img :src="news.imgSrc" loading="lazy" :alt="news.title" />
+					</div>
+					<div class="card-info">
+						<div class="card-title">{{ news.title }}</div>
+						<div class="card-date">{{ news.date }}</div>
+					</div>
+				</nuxt-link>
+			</div>
+		</div>
+		<div class="all-news-button">
+			<UILink to="/news">Читать больше новостей →</UILink>
+		</div>
+	</section>
 </template>
 
 <style lang="css" scoped>
 section {
-  height: 100%;
-  background-color: var(--light-grey);
-  padding: 32px 32px;
+	height: 100%;
+	background-color: var(--light-grey);
+	padding: 32px 32px;
 }
 
 .title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  color: var(--black);
-  text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	color: var(--black);
+	text-align: center;
 
-  .title-head {
-    font-size: 4rem;
+	.title-head {
+		font-size: 4rem;
 
-    @media screen and (max-width: 768px) {
-      font-size: 2rem;
-    }
-  }
+		@media screen and (max-width: 768px) {
+			font-size: 2rem;
+		}
+	}
 
-  .title-description {
-    font-size: 1.5rem;
+	.title-description {
+		font-size: 1.5rem;
 
-    @media screen and (max-width: 768px) {
-      font-size: 1rem;
-    }
-  }
+		@media screen and (max-width: 768px) {
+			font-size: 1rem;
+		}
+	}
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 12px;
-  grid-row-gap: 12px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-column-gap: 12px;
+	grid-row-gap: 12px;
+	margin-top: 40px;
+	margin-bottom: 40px;
 
-  @media screen and (max-width: 868px) {
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-  }
+	@media screen and (max-width: 868px) {
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+	}
 }
 
 .card {
-  cursor: pointer;
-  position: relative;
-  border-radius: 16px;
-  width: 100%;
-  height: 100%;
+	cursor: pointer;
+	position: relative;
+	border-radius: 16px;
+	width: 100%;
+	height: 100%;
 
-  .card-image {
-    width: 100%;
-    height: 100%;
-    filter: brightness(0.4);
+	.card-image {
+		width: 100%;
+		height: 100%;
+		filter: brightness(0.4);
 
-    img {
-      cursor: pointer;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.8);
-      border-radius: 16px;
-    }
-  }
+		img {
+			cursor: pointer;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			filter: brightness(0.8);
+			border-radius: 16px;
+		}
+	}
 
-  .card-info {
-    cursor: pointer;
-    position: absolute;
-    bottom: 32px;
-    left: 32px;
+	.card-info {
+		cursor: pointer;
+		position: absolute;
+		bottom: 32px;
+		left: 32px;
 
-    @media screen and (max-width: 440px) {
-      bottom: 16px;
-      left: 16px;
-    }
+		@media screen and (max-width: 440px) {
+			bottom: 16px;
+			left: 16px;
+		}
 
-    .card-title {
-      cursor: pointer;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      max-width: 100%;
-      max-height: 100%;
-      font-size: 2rem;
-      color: var(--white);
-      margin-bottom: 5px;
+		.card-title {
+			cursor: pointer;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			max-width: 100%;
+			max-height: 100%;
+			font-size: 2rem;
+			color: var(--white);
+			margin-bottom: 5px;
 
-      @media screen and (max-width: 868px) {
-        font-size: 1.5rem;
-      }
+			@media screen and (max-width: 868px) {
+				font-size: 1.5rem;
+			}
 
-      @media screen and (max-width: 440px) {
-        font-size: 1.2rem;
-      }
-    }
+			@media screen and (max-width: 440px) {
+				font-size: 1.2rem;
+			}
+		}
 
-    .card-date {
-      cursor: pointer;
-      font-size: 0.9rem;
-      color: var(--medium-taupe-light);
-    }
-  }
+		.card-date {
+			cursor: pointer;
+			font-size: 0.9rem;
+			color: var(--medium-taupe-light);
+		}
+	}
 }
 
 .all-news-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  color: var(--black);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+	color: var(--black);
 }
 
 .card-1 {
-  grid-area: 1 / 1 / 3 / 3;
+	grid-area: 1 / 1 / 3 / 3;
 
-  @media screen and (max-width: 868px) {
-    grid-area: auto;
-  }
+	@media screen and (max-width: 868px) {
+		grid-area: auto;
+	}
 }
 
 .card-2 {
-  grid-area: 1 / 3 / 2 / 4;
+	grid-area: 1 / 3 / 2 / 4;
 
-  .card-info {
-    .card-title {
-      @media screen and (max-width: 1200px) {
-        font-size: 1.5rem;
-      }
-    }
-  }
+	.card-info {
+		.card-title {
+			@media screen and (max-width: 1200px) {
+				font-size: 1.5rem;
+			}
+		}
+	}
 
-  @media screen and (max-width: 868px) {
-    grid-area: auto;
-  }
+	@media screen and (max-width: 868px) {
+		grid-area: auto;
+	}
 }
 
 .card-3 {
-  grid-area: 2 / 3 / 3 / 4;
+	grid-area: 2 / 3 / 3 / 4;
 
-  .card-info {
-    .card-title {
-      @media screen and (max-width: 1200px) {
-        font-size: 1.5rem;
-      }
-    }
-  }
+	.card-info {
+		.card-title {
+			@media screen and (max-width: 1200px) {
+				font-size: 1.5rem;
+			}
+		}
+	}
 
-  @media screen and (max-width: 868px) {
-    grid-area: auto;
-  }
+	@media screen and (max-width: 868px) {
+		grid-area: auto;
+	}
 }
 </style>

@@ -35,7 +35,8 @@ class BrowserStorage implements BrowserStorageClassType {
 
 	public constructor({ storage }: BrowserStorageConstructorParamsType = {}) {
 		if (typeof window !== 'undefined') {
-			this.storage = storage === 'sessionStorage' ? sessionStorage : localStorage
+			this.storage =
+				storage === 'sessionStorage' ? sessionStorage : localStorage
 		} else {
 			// Если конструктор вызван на SSR стороне - проставляем fallback-реализацию
 			this.storage = new NoopStorage()

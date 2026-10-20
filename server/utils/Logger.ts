@@ -5,7 +5,7 @@ const LOG_PATH = './novabroker-logs.log'
 export function log(
 	level: 'info' | 'warn' | 'error',
 	message: string,
-	error?: Error | unknown
+	error?: Error | unknown,
 ): void {
 	const messageLog = `[${level}] ${new Date(Date.now()).toISOString()} --> ${message} ${
 		error ? `--> ErrorLog: ${error}` : ''

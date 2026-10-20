@@ -5,9 +5,9 @@ export const sendMailClientRequest = async ({
 	mail,
 	phone,
 }: {
-	name: string;
-	mail: string;
-	phone: string;
+	name: string
+	mail: string
+	phone: string
 }) => {
 	try {
 		const transporter = nodemailer.createTransport({
@@ -89,7 +89,7 @@ export const sendMailClientRequest = async ({
   `,
 		})
 	} catch (e) {
-		log('error', 'Error in sendMailClientRequest' , e)
+		log('error', 'Error in sendMailClientRequest', e)
 		throw e
 	}
 }

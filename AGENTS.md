@@ -11,6 +11,7 @@ NovaBroker is a Russian-language brokerage/logistics website built with Nuxt 4 +
 ## Commands
 
 ### Development
+
 ```bash
 npm run dev              # Start dev server with host binding
 npm run build           # Production build
@@ -19,18 +20,22 @@ npm run preview         # Preview production build
 ```
 
 ### Linting
+
 ```bash
 npm run lint            # Run ESLint
 npm run lint:fix        # Fix ESLint errors automatically
 ```
 
 ### Testing
+
 This project does not currently have a test framework configured. If adding tests:
+
 - Use **Vitest** for unit tests (recommended for Nuxt/Vue projects)
 - Run a single test file: `npx vitest run --test-name-pattern "test-name" path/to/test.spec.ts`
 - Or use: `npx vitest path/to/test.spec.ts`
 
 ### Other
+
 ```bash
 npm run postinstall     # Runs nuxt prepare (auto-installed after npm install)
 ```
@@ -54,14 +59,14 @@ npm run postinstall     # Runs nuxt prepare (auto-installed after npm install)
    ```vue
    <script setup lang="ts">
    interface IProps {
-     type?: 'primary' | 'secondary' | 'outline';
-     loading?: boolean;
+   	type?: 'primary' | 'secondary' | 'outline'
+   	loading?: boolean
    }
 
    const props = withDefaults(defineProps<IProps>(), {
-     type: 'primary',
-     loading: false,
-   });
+   	type: 'primary',
+   	loading: false,
+   })
    </script>
    ```
 3. **Component Organization:**
@@ -97,36 +102,39 @@ npm run postinstall     # Runs nuxt prepare (auto-installed after npm install)
 ### API/Server Routes
 
 1. **Error Handling:** Always wrap in try/catch
+
    ```typescript
    export default defineEventHandler(async (event) => {
-     try {
-       const body = await readBody(event);
-       // logic
-       return { status: 'ok' };
-     } catch (e) {
-       log('error', 'Error in /api/endpoint', e);
-       throw e;
-     }
-   });
+   	try {
+   		const body = await readBody(event)
+   		// logic
+   		return { status: 'ok' }
+   	} catch (e) {
+   		log('error', 'Error in /api/endpoint', e)
+   		throw e
+   	}
+   })
    ```
 
 2. **Request Validation:** Use Zod for validation
+
    ```typescript
-   import { z } from 'zod';
-   
+   import { z } from 'zod'
+
    const schema = z.object({
-     mail: z.string().email(),
-     phone: z.string().min(10),
-     name: z.string().min(1),
-   });
+   	mail: z.string().email(),
+   	phone: z.string().min(10),
+   	name: z.string().min(1),
+   })
    ```
 
 3. **Client Errors:** Use `createError` from Nuxt
+
    ```typescript
    throw createError({
-     statusCode: 400,
-     statusMessage: 'Not correct request'
-   });
+   	statusCode: 400,
+   	statusMessage: 'Not correct request',
+   })
    ```
 
 4. **Async/Await:** Always use `async/await` for handlers
@@ -134,8 +142,9 @@ npm run postinstall     # Runs nuxt prepare (auto-installed after npm install)
 ### Imports
 
 1. **Absolute Imports:** Use `~/` for app root, `@/` works too
+
    ```typescript
-   import { sendMailError } from '~/server/utils/sendMailError';
+   import { sendMailError } from '~/server/utils/sendMailError'
    ```
 
 2. **Nuxt Auto-imports:** Composables like `defineEventHandler`, `readBody`, `createError` are auto-imported
@@ -144,14 +153,14 @@ npm run postinstall     # Runs nuxt prepare (auto-installed after npm install)
 
 ### Naming Conventions
 
-| Type | Convention | Example |
-|------|------------|---------|
-| Components | PascalCase | `AppHeader.vue`, `NewsTable.vue` |
-| Props | camelCase | `isLoading`, `userName` |
-| Interfaces | PascalCase with `I` prefix | `IProps`, `IUser` |
-| Variables | camelCase | `const mailBody = ...` |
-| Constants | UPPER_SNAKE_CASE | `const MAX_RETRY_COUNT = 3` |
-| CSS Variables | kebab-case | `--warm-beige`, `--dark-green` |
+| Type          | Convention                 | Example                          |
+| ------------- | -------------------------- | -------------------------------- |
+| Components    | PascalCase                 | `AppHeader.vue`, `NewsTable.vue` |
+| Props         | camelCase                  | `isLoading`, `userName`          |
+| Interfaces    | PascalCase with `I` prefix | `IProps`, `IUser`                |
+| Variables     | camelCase                  | `const mailBody = ...`           |
+| Constants     | UPPER_SNAKE_CASE           | `const MAX_RETRY_COUNT = 3`      |
+| CSS Variables | kebab-case                 | `--warm-beige`, `--dark-green`   |
 
 ### CSS/Styling
 
@@ -188,16 +197,19 @@ nuxt-app/
 ## Common Tasks
 
 ### Adding a New Page
+
 1. Create file in `app/pages/` (e.g., `about.vue`)
 2. Use `<script setup lang="ts">` template
 3. Add to navigation in `AppHeader.vue`
 
 ### Adding a New API Endpoint
+
 1. Create file in `server/api/` (e.g., `users.get.ts`)
 2. Use `defineEventHandler` with try/catch
 3. Return JSON response
 
 ### Adding a Component
+
 1. Place in appropriate directory under `app/components/`
 2. Follow naming: `ComponentName.vue`
 3. Use `<script setup lang="ts">` with `IProps` interface

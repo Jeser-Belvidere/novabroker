@@ -12,8 +12,8 @@ module.exports = {
 				HOST: '0.0.0.0',
 				MAIL_USER: '',
 				MAIL_PASSWORD: '',
-				TKS_KEY: ''
-			}
-		}
-	]
+				TKS_KEY: '',
+			},
+		},
+	],
 }

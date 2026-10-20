@@ -13,11 +13,15 @@ export const composeCalculatorFormData = (data: IFormValues) => {
 	}
 
 	if (dataClone.power_hybrid_dvs) {
-		dataClone.power_hybrid_dvs = dataClone.power_hybrid_dvs.replaceAll(' ', '').trim()
+		dataClone.power_hybrid_dvs = dataClone.power_hybrid_dvs
+			.replaceAll(' ', '')
+			.trim()
 	}
 
 	if (dataClone.power_hybrid_electro) {
-		dataClone.power_hybrid_electro = dataClone.power_hybrid_electro.replaceAll(' ', '').trim()
+		dataClone.power_hybrid_electro = dataClone.power_hybrid_electro
+			.replaceAll(' ', '')
+			.trim()
 	}
 
 	if (dataClone.sequential) {

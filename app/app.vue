@@ -1,26 +1,26 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div id="app">
-    <AppLoader />
-    <AppAgreement />
-    <UApp>
-      <NuxtLayout>
-        <NuxtPage />
-      </NuxtLayout>
-    </UApp>
-  </div>
+	<div id="app">
+		<AppLoader />
+		<AppAgreement />
+		<UApp>
+			<NuxtLayout>
+				<NuxtPage />
+			</NuxtLayout>
+		</UApp>
+	</div>
 </template>
 
 <style lang="css">
 .page-enter-active,
 .page-leave-active {
-  transition: all 0.4s;
+	transition: all 0.4s;
 }
 
 .page-enter-from,
 .page-leave-to {
-  opacity: 0;
-  filter: blur(1rem);
+	opacity: 0;
+	filter: blur(1rem);
 }
 </style>

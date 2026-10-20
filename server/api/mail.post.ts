@@ -8,16 +8,15 @@ export default defineEventHandler(async (event) => {
 		if (!mail || !phone || !name) {
 			throw createError({
 				statusCode: 400,
-				statusMessage: 'Not correct request'
+				statusMessage: 'Not correct request',
 			})
 		}
 
 		sendMailClientRequest({ mail, phone, name })
 
 		return {
-			status: 'ok'
+			status: 'ok',
 		}
-
 	} catch (e) {
 		sendMailError(e)
 		log('error', 'Error in /api/mail.post', e)

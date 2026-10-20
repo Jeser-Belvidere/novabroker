@@ -88,178 +88,220 @@ onMounted(() => {
 </script>
 
 <template>
-  <section id="intro">
-    <div class="wrapper">
-      <div class="text-container">
-        <svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid slice">
-          <text x="70" y="25" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="8"
-            fill="rgb(218, 187, 141)">
-            ОЦЕНКА ТС
-          </text>
-        </svg>
-      </div>
-      <div class="text-container">
-        <svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid slice">
-          <text x="30" y="25" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="8"
-            fill="rgb(218, 187, 141)">
-            Услуги сертификации
-          </text>
-        </svg>
-      </div>
-      <div class="text-container">
-        <svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid slice">
-          <text x="40" y="25" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="8"
-            fill="rgb(218, 187, 141)">
-            УВЭОС - ГЛОНАСС
-          </text>
-        </svg>
-      </div>
-      <div class="text-container">
-        <svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid slice">
-          <text x="70" y="25" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="8"
-            fill="rgb(218, 187, 141)">
-            ЛАБОРАТОРИЯ
-          </text>
-        </svg>
-      </div>
-      <div class="text-container">
-        <svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid slice">
-          <text x="30" y="25" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="8"
-            fill="rgb(218, 187, 141)">
-            СБКТС
-          </text>
-        </svg>
-      </div>
-      <div class="text-container">
-        <svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid slice">
-          <text x="60" y="25" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="8"
-            fill="rgb(218, 187, 141)">
-            ЭПТС
-          </text>
-        </svg>
-      </div>
-    </div>
-    <canvas id="flashlight" ref="flashlight" />
-    <div class="title-wrapper">
-      <div class="title">
-        <h1>NOVABROKER</h1>
-        <br>
-        <h2>ВЭД КОНСАЛТИНГ</h2>
-        <br>
-      </div>
-    </div>
-  </section>
+	<section id="intro">
+		<div class="wrapper">
+			<div class="text-container">
+				<svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid slice">
+					<text
+						x="70"
+						y="25"
+						text-anchor="middle"
+						dominant-baseline="middle"
+						font-family="Arial"
+						font-size="8"
+						fill="rgb(218, 187, 141)"
+					>
+						ОЦЕНКА ТС
+					</text>
+				</svg>
+			</div>
+			<div class="text-container">
+				<svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid slice">
+					<text
+						x="30"
+						y="25"
+						text-anchor="middle"
+						dominant-baseline="middle"
+						font-family="Arial"
+						font-size="8"
+						fill="rgb(218, 187, 141)"
+					>
+						Услуги сертификации
+					</text>
+				</svg>
+			</div>
+			<div class="text-container">
+				<svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid slice">
+					<text
+						x="40"
+						y="25"
+						text-anchor="middle"
+						dominant-baseline="middle"
+						font-family="Arial"
+						font-size="8"
+						fill="rgb(218, 187, 141)"
+					>
+						УВЭОС - ГЛОНАСС
+					</text>
+				</svg>
+			</div>
+			<div class="text-container">
+				<svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid slice">
+					<text
+						x="70"
+						y="25"
+						text-anchor="middle"
+						dominant-baseline="middle"
+						font-family="Arial"
+						font-size="8"
+						fill="rgb(218, 187, 141)"
+					>
+						ЛАБОРАТОРИЯ
+					</text>
+				</svg>
+			</div>
+			<div class="text-container">
+				<svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid slice">
+					<text
+						x="30"
+						y="25"
+						text-anchor="middle"
+						dominant-baseline="middle"
+						font-family="Arial"
+						font-size="8"
+						fill="rgb(218, 187, 141)"
+					>
+						СБКТС
+					</text>
+				</svg>
+			</div>
+			<div class="text-container">
+				<svg viewBox="0 0 100 50" preserveAspectRatio="xMidYMid slice">
+					<text
+						x="60"
+						y="25"
+						text-anchor="middle"
+						dominant-baseline="middle"
+						font-family="Arial"
+						font-size="8"
+						fill="rgb(218, 187, 141)"
+					>
+						ЭПТС
+					</text>
+				</svg>
+			</div>
+		</div>
+		<canvas id="flashlight" ref="flashlight" />
+		<div class="title-wrapper">
+			<div class="title">
+				<h1>NOVABROKER</h1>
+				<br />
+				<h2>ВЭД КОНСАЛТИНГ</h2>
+				<br />
+			</div>
+		</div>
+	</section>
 </template>
 
 <style lang="css" scoped>
 section {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - var(--header-height));
-  margin-top: var(--header-height);
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(100vh - var(--header-height));
+	margin-top: var(--header-height);
 
-  @media screen and (max-width: 852px) {
-    /* margin-top: var(--header-height-mobile); */
-    height: calc(100vh - var(--header-height-mobile));
-  }
+	@media screen and (max-width: 852px) {
+		/* margin-top: var(--header-height-mobile); */
+		height: calc(100vh - var(--header-height-mobile));
+	}
 }
 
 .title-wrapper {
-  z-index: 2;
-  .title {
-    max-width: 1300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	z-index: 2;
+	.title {
+		max-width: 1300px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 
-    h1 {
-      color: var(--warm-beige);
-      font-weight: 600;
-      font-size: 5rem;
-      letter-spacing: 10px;
-      text-align: center;
+		h1 {
+			color: var(--warm-beige);
+			font-weight: 600;
+			font-size: 5rem;
+			letter-spacing: 10px;
+			text-align: center;
 
-      @media screen and (max-width: 852px) {
-        font-size: 2rem;
-      }
-    }
+			@media screen and (max-width: 852px) {
+				font-size: 2rem;
+			}
+		}
 
-    h2 {
-      color: var(--light-grey);
-      font-weight: 400;
-      letter-spacing: 10px;
-      text-align: center;
+		h2 {
+			color: var(--light-grey);
+			font-weight: 400;
+			letter-spacing: 10px;
+			text-align: center;
 
-      @media screen and (max-width: 852px) {
-        font-size: 20px;
-      }
-    }
+			@media screen and (max-width: 852px) {
+				font-size: 20px;
+			}
+		}
 
-    h3 {
-      color: var(--light-grey);
-      font-weight: 200;
-      letter-spacing: 8px;
-      text-align: center;
+		h3 {
+			color: var(--light-grey);
+			font-weight: 200;
+			letter-spacing: 8px;
+			text-align: center;
 
-      @media screen and (max-width: 852px) {
-        font-size: 20px;
-      }
-    }
-  }
+			@media screen and (max-width: 852px) {
+				font-size: 20px;
+			}
+		}
+	}
 }
 
 .wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--dark-forest-green);
-  z-index: 0;
-  display: grid;
-  grid-template-rows: auto;
-  width: 100vw;
-  height: calc(100vh - var(--header-height));
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: var(--dark-forest-green);
+	z-index: 0;
+	display: grid;
+	grid-template-rows: auto;
+	width: 100vw;
+	height: calc(100vh - var(--header-height));
 }
 
 .text-container {
-  display: flex;
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
+	display: flex;
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
 }
 
 .text-container svg {
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 
-  text {
-    @media screen and (max-width: 1200px) {
-      font-size: 13px;
-    }
+	text {
+		@media screen and (max-width: 1200px) {
+			font-size: 13px;
+		}
 
-    @media screen and (max-width: 852px) {
-      display: none;
-    }
-  }
+		@media screen and (max-width: 852px) {
+			display: none;
+		}
+	}
 }
 
 .green-bkg {
-  background-color: var(--dark-forest-green);
+	background-color: var(--dark-forest-green);
 }
 
 #flashlight {
-  display: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100vw;
-  height: calc(100vh - var(--header-height));
+	display: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100vw;
+	height: calc(100vh - var(--header-height));
 
-  @media screen and (max-width: 852px) {
-    display: none;
-  }
+	@media screen and (max-width: 852px) {
+		display: none;
+	}
 }
 </style>

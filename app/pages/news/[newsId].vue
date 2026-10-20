@@ -7,8 +7,8 @@ const idFromParams: string = route?.params?.newsId as string
 
 if (
 	!idFromParams ||
-  typeof idFromParams !== 'string' ||
-  isNaN(parseInt(idFromParams))
+	typeof idFromParams !== 'string' ||
+	isNaN(parseInt(idFromParams))
 ) {
 	navigateTo('/news')
 }
@@ -32,8 +32,7 @@ useHead({
 		},
 		{
 			name: 'keywords',
-			content:
-        `${currentNews?.keywords ?? 'ВЭД, новости, Таможенный брокер, Сертификация, Новаброкер, Novabroker'}`,
+			content: `${currentNews?.keywords ?? 'ВЭД, новости, Таможенный брокер, Сертификация, Новаброкер, Novabroker'}`,
 		},
 	],
 })
@@ -48,75 +47,90 @@ useSeoMeta({
 </script>
 
 <template>
-  <main>
-    <section>
-      <div class="breadcrumbs margin-bottom">
-        <nuxt-link class="breadcrumbs" to="/news">{{ "< Новости" }}</nuxt-link>
-      </div>
-      <h1 class="margin-bottom">{{ currentNews?.title }}</h1>
-      <div class="image margin-bottom" :style="`background-image: url(${currentNews?.imgSrc})`" />
-      <div class="image-subtitle margin-bottom">{{ currentNews?.date }}</div>
-      <div class="content">
-        <div v-for="(newsBlock, index) in currentNews?.newsBlocks" :key="index" class="margin-bottom">
-          <UINewsText v-if="newsBlock.tag === 'text'" :heading="newsBlock?.heading" :paragraph="newsBlock.paragraph" />
-          <UINewsTable v-if="newsBlock.tag === 'table'" :caption="newsBlock.caption" :columns="newsBlock.columns"
-            :data="newsBlock.data" />
-        </div>
-      </div>
-    </section>
-  </main>
+	<main>
+		<section>
+			<div class="breadcrumbs margin-bottom">
+				<nuxt-link class="breadcrumbs" to="/news">{{ '< Новости' }}</nuxt-link>
+			</div>
+			<h1 class="margin-bottom">{{ currentNews?.title }}</h1>
+			<div
+				class="image margin-bottom"
+				:style="`background-image: url(${currentNews?.imgSrc})`"
+			/>
+			<div class="image-subtitle margin-bottom">{{ currentNews?.date }}</div>
+			<div class="content">
+				<div
+					v-for="(newsBlock, index) in currentNews?.newsBlocks"
+					:key="index"
+					class="margin-bottom"
+				>
+					<UINewsText
+						v-if="newsBlock.tag === 'text'"
+						:heading="newsBlock?.heading"
+						:paragraph="newsBlock.paragraph"
+					/>
+					<UINewsTable
+						v-if="newsBlock.tag === 'table'"
+						:caption="newsBlock.caption"
+						:columns="newsBlock.columns"
+						:data="newsBlock.data"
+					/>
+				</div>
+			</div>
+		</section>
+	</main>
 </template>
 
 <style lang="css" scoped>
 main {
-  width: 100%;
-  min-height: 100vh;
-  padding: 32px 32px;
-  background-color: var(--light-grey);
-  margin-top: var(--header-height);
-  min-height: calc(100vh);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+	width: 100%;
+	min-height: 100vh;
+	padding: 32px 32px;
+	background-color: var(--light-grey);
+	margin-top: var(--header-height);
+	min-height: calc(100vh);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .breadcrumbs {
-  width: fit-content;
-  text-decoration: none;
-  font-size: 1.5rem;
-  color: var(--black);
-  cursor: pointer;
+	width: fit-content;
+	text-decoration: none;
+	font-size: 1.5rem;
+	color: var(--black);
+	cursor: pointer;
 
-  @media screen and (max-width: 440px) {
-    font-size: 0.8rem;
-  }
+	@media screen and (max-width: 440px) {
+		font-size: 0.8rem;
+	}
 }
 
 h1 {
-  font-size: 4rem;
-  color: var(--black);
-  line-height: 60px;
-  @media screen and (max-width: 440px) {
-    line-height: 36px;
-    font-size: 2rem;
-  }
+	font-size: 4rem;
+	color: var(--black);
+	line-height: 60px;
+	@media screen and (max-width: 440px) {
+		line-height: 36px;
+		font-size: 2rem;
+	}
 }
 
 .image {
-  width: 100%;
-  height: 400px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 16px;
+	width: 100%;
+	height: 400px;
+	background-size: cover;
+	background-position: center;
+	border-radius: 16px;
 }
 
 .image-subtitle {
-  font-size: 1rem;
-  color: var(--black);
+	font-size: 1rem;
+	color: var(--black);
 }
 
 .margin-bottom {
-  margin-bottom: 16px;
+	margin-bottom: 16px;
 }
 </style>

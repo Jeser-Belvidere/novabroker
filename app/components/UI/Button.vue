@@ -1,8 +1,8 @@
 <script setup lang="ts">
 interface IProps {
-	type?: 'primary' | 'secondary' | 'outline';
-	href?: '_self' | '_blank' | '_parent' | '_top';
-	loading?: boolean;
+	type?: 'primary' | 'secondary' | 'outline'
+	href?: '_self' | '_blank' | '_parent' | '_top'
+	loading?: boolean
 }
 
 const props = withDefaults(defineProps<IProps>(), {
@@ -13,42 +13,42 @@ const props = withDefaults(defineProps<IProps>(), {
 </script>
 
 <template>
-  <button class="button" :class="props.type">
-    <slot />
-  </button>
+	<button class="button" :class="props.type">
+		<slot />
+	</button>
 </template>
 
 <style lang="css" scoped>
 .button {
-  background-color: var(--warm-beige);
-  color: var(--dark-green);
-  border: 1px solid var(--warm-beige);
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 1rem;
-  letter-spacing: 1.5px;
-  cursor: pointer;
+	background-color: var(--warm-beige);
+	color: var(--dark-green);
+	border: 1px solid var(--warm-beige);
+	padding: 12px;
+	border-radius: 8px;
+	font-size: 1rem;
+	letter-spacing: 1.5px;
+	cursor: pointer;
 }
 
 .button:hover {
-  background-color: var(--dark-forest-green);
-  color: var(--warm-beige);
+	background-color: var(--dark-forest-green);
+	color: var(--warm-beige);
 }
 
 .secondary {
-  background-color: var(--dark-forest-green);
-  color: var(--warm-beige);
-  border-color: var(--dark-green);
+	background-color: var(--dark-forest-green);
+	color: var(--warm-beige);
+	border-color: var(--dark-green);
 }
 
 .primary {
-  background-color: var(--warm-beige);
-  color: var(--dark-green);
+	background-color: var(--warm-beige);
+	color: var(--dark-green);
 }
 
 .outline {
-  background-color: transparent;
-  color: var(--dark-green);
-  border-color: var(--dark-green);
+	background-color: transparent;
+	color: var(--dark-green);
+	border-color: var(--dark-green);
 }
 </style>

@@ -6,16 +6,17 @@ const CURRENCY_CODES = ['USD', 'CNY', 'EUR', 'KRW'] as const
 
 type currencyCode = (typeof CURRENCY_CODES)[number]
 interface IValute {
-	NumCode: [string];
-	CharCode: [string];
-	Name: [string];
-	Value: [string];
-	Nominal: ['1' | '10' | '100' | '1000' | '10000' | '100000'];
+	NumCode: [string]
+	CharCode: [string]
+	Name: [string]
+	Value: [string]
+	Nominal: ['1' | '10' | '100' | '1000' | '10000' | '100000']
 }
 
-export type TCurrencyData =
-  | (Record<currencyCode, { name: string; value: string, diff?: 'bigger' | 'smaller' | 'equal' }>)
-  | null
+export type TCurrencyData = Record<
+	currencyCode,
+	{ name: string; value: string; diff?: 'bigger' | 'smaller' | 'equal' }
+> | null
 
 class CurrencyStorage {
 	private instance: null | boolean = null
@@ -24,7 +25,7 @@ class CurrencyStorage {
 	constructor() {
 		if (this.instance) {
 			throw new Error(
-				'Cannot instantiate Currency Storage Singleton multiple times.'
+				'Cannot instantiate Currency Storage Singleton multiple times.',
 			)
 		}
 
@@ -46,12 +47,7 @@ class CurrencyStorage {
 
 			let valuteValue: number | string = Number(Value[0].replace(',', '.'))
 			const nominalValue = Number(Nominal[0]) as
-        | 1
-        | 10
-        | 100
-        | 1000
-        | 10000
-        | 100000
+				1 | 10 | 100 | 1000 | 10000 | 100000
 
 			if (nominalValue !== 1) {
 				valuteValue /= nominalValue
@@ -71,9 +67,7 @@ class CurrencyStorage {
 	 */
 	private async fetchCurrency(dateString: string): Promise<TCurrencyData> {
 		return new Promise((resolve, reject) => {
-			fetch(
-				`https://www.cbr.ru/scripts/XML_daily.asp?date_req=${dateString}`
-			)
+			fetch(`https://www.cbr.ru/scripts/XML_daily.asp?date_req=${dateString}`)
 				.then((res) => res.text())
 				.then((data) => {
 					convert.parseString(data, {}, (err, result) => {
@@ -111,13 +105,12 @@ class CurrencyStorage {
 					})
 				})
 		})
-
-
-
 	}
 
 	public async updateCurrencyData() {
-		const todayDate = new Date(new Date().setDate(new Date().getDate() + 1)).toLocaleDateString('ru-RU')
+		const todayDate = new Date(
+			new Date().setDate(new Date().getDate() + 1),
+		).toLocaleDateString('ru-RU')
 		const previousDate = new Date().toLocaleDateString('ru-RU')
 		try {
 			if (this.errorTimeout) {
@@ -132,8 +125,12 @@ class CurrencyStorage {
 
 			if (previousCurrencyData) {
 				for (const key in this.currencyData) {
-					const previousValue = Number(previousCurrencyData[key as currencyCode].value)
-					const todayValue = Number(this.currencyData[key as currencyCode].value)
+					const previousValue = Number(
+						previousCurrencyData[key as currencyCode].value,
+					)
+					const todayValue = Number(
+						this.currencyData[key as currencyCode].value,
+					)
 
 					if (todayValue > previousValue) {
 						this.currencyData[key as currencyCode].diff = 'bigger'
@@ -142,19 +139,27 @@ class CurrencyStorage {
 					} else {
 						this.currencyData[key as currencyCode].diff = 'equal'
 					}
-
 				}
 			} else {
-				log('error', 'Error during comparing currency data, previousCurrencyData is null')
+				log(
+					'error',
+					'Error during comparing currency data, previousCurrencyData is null',
+				)
 			}
 
-			log('info', `Previous currency data: ${JSON.stringify(previousCurrencyData)}, DATE: ${previousDate}`)
-			log('info', `Currency data updated: ${JSON.stringify(todayCurrencyData)}, DATE: ${todayDate}`)
+			log(
+				'info',
+				`Previous currency data: ${JSON.stringify(previousCurrencyData)}, DATE: ${previousDate}`,
+			)
+			log(
+				'info',
+				`Currency data updated: ${JSON.stringify(todayCurrencyData)}, DATE: ${todayDate}`,
+			)
 		} catch (e) {
 			log(
 				'error',
 				'Error during updating currency data, will try again in 5 minute',
-				e
+				e,
 			)
 
 			this.errorTimeout = setTimeout(() => {

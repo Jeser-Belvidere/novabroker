@@ -6,7 +6,7 @@ useHead({
 		{
 			name: 'keywords',
 			content:
-        'ВЭД, новости, Таможенный брокер, Сертификация, Новаброкер, Novabroker',
+				'ВЭД, новости, Таможенный брокер, Сертификация, Новаброкер, Novabroker',
 		},
 	],
 })
@@ -15,7 +15,7 @@ useSeoMeta({
 	ogTitle: 'НОВАБРОКЕР. Новости ВЭД консалтинга',
 	description: 'НОВАБРОКЕР. Новости ВЭД консалтинга',
 	ogDescription:
-    'НОВАБРОКЕР. Оформление, сертификация, законодательство - все новости ВЭД консалтинга',
+		'НОВАБРОКЕР. Оформление, сертификация, законодательство - все новости ВЭД консалтинга',
 })
 
 const feed = getNewsFeed()
@@ -25,259 +25,259 @@ const restNews = feed.slice(0, feed.length - 1).reverse()
 </script>
 
 <template>
-  <main>
-    <div class="breadcrumbs margin-bottom">
-      <nuxt-link class="breadcrumbs" to="/">{{ "< Главная" }}</nuxt-link>
-    </div>
-    <div class="title margin-bottom">
-      <div class="title-head">Новости и обновления</div>
-      <div class="title-description">
-        Оформление, сертификация, законодательство - все по делу
-      </div>
-    </div>
-    <!-- <div> -->
-      <div class="first-card margin-bottom">
-        <nuxt-link class="first-card" :to="`/news/${lastNews?.listIndex}`">
-          <div
-            class="card-image"
-            :style="`background-image: url(${lastNews?.imgSrc})`"
-          />
-          <div class="card-info">
-            <div class="card-title">{{ lastNews?.title }}</div>
-            <div class="card-date">{{ lastNews?.date }}</div>
-          </div>
-        </nuxt-link>
-      </div>
-    <!-- </div> -->
-    <div class="grid">
-      <div
-        v-for="(news, index) in restNews"
-        :key="index"
-        :class="`card card-${index + 1}`"
-        :title="news.title"
-      >
-        <nuxt-link class="card" :to="`/news/${news.listIndex}`">
-          <div
-            class="card-image"
-            :style="`background-image: url(${news.imgSrc})`"
-          />
-          <div class="card-info">
-            <div class="card-title">{{ news.title }}</div>
-            <div class="card-date">{{ news.date }}</div>
-          </div>
-        </nuxt-link>
-      </div>
-    </div>
-  </main>
+	<main>
+		<div class="breadcrumbs margin-bottom">
+			<nuxt-link class="breadcrumbs" to="/">{{ '< Главная' }}</nuxt-link>
+		</div>
+		<div class="title margin-bottom">
+			<div class="title-head">Новости и обновления</div>
+			<div class="title-description">
+				Оформление, сертификация, законодательство - все по делу
+			</div>
+		</div>
+		<!-- <div> -->
+		<div class="first-card margin-bottom">
+			<nuxt-link class="first-card" :to="`/news/${lastNews?.listIndex}`">
+				<div
+					class="card-image"
+					:style="`background-image: url(${lastNews?.imgSrc})`"
+				/>
+				<div class="card-info">
+					<div class="card-title">{{ lastNews?.title }}</div>
+					<div class="card-date">{{ lastNews?.date }}</div>
+				</div>
+			</nuxt-link>
+		</div>
+		<!-- </div> -->
+		<div class="grid">
+			<div
+				v-for="(news, index) in restNews"
+				:key="index"
+				:class="`card card-${index + 1}`"
+				:title="news.title"
+			>
+				<nuxt-link class="card" :to="`/news/${news.listIndex}`">
+					<div
+						class="card-image"
+						:style="`background-image: url(${news.imgSrc})`"
+					/>
+					<div class="card-info">
+						<div class="card-title">{{ news.title }}</div>
+						<div class="card-date">{{ news.date }}</div>
+					</div>
+				</nuxt-link>
+			</div>
+		</div>
+	</main>
 </template>
 
 <style lang="css" scoped>
 main {
-  width: 100%;
-  min-height: 100vh;
-  padding: 32px 32px;
-  background-color: var(--light-grey);
-  margin-top: var(--header-height);
-  min-height: calc(100vh);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+	width: 100%;
+	min-height: 100vh;
+	padding: 32px 32px;
+	background-color: var(--light-grey);
+	margin-top: var(--header-height);
+	min-height: calc(100vh);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .breadcrumbs {
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
-  text-decoration: none;
-  font-size: 1.5rem;
-  color: var(--black);
-  cursor: pointer;
-  @media screen and (max-width: 868px) {
-    font-size: 1rem;
-  }
+	display: flex;
+	justify-content: flex-start;
+	width: 100%;
+	text-decoration: none;
+	font-size: 1.5rem;
+	color: var(--black);
+	cursor: pointer;
+	@media screen and (max-width: 868px) {
+		font-size: 1rem;
+	}
 }
 
 .title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  color: var(--black);
-  text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+	color: var(--black);
+	text-align: center;
 
-  @media screen and (max-width: 868px) {
-    align-items: center;
-  }
+	@media screen and (max-width: 868px) {
+		align-items: center;
+	}
 
-  .title-head {
-    font-size: 4rem;
+	.title-head {
+		font-size: 4rem;
 
-    @media screen and (max-width: 768px) {
-      font-size: 2rem;
-    }
-  }
+		@media screen and (max-width: 768px) {
+			font-size: 2rem;
+		}
+	}
 
-  .title-description {
-    font-size: 1.5rem;
+	.title-description {
+		font-size: 1.5rem;
 
-    @media screen and (max-width: 768px) {
-      font-size: 1rem;
-    }
-  }
+		@media screen and (max-width: 768px) {
+			font-size: 1rem;
+		}
+	}
 }
 
 .grid {
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: space-around;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+	justify-content: space-around;
 }
 
 .first-card {
-  cursor: pointer;
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  border-radius: 16px;
-  width: 100%;
-  height: 400px;
-  cursor: pointer;
-  text-decoration: none;
+	cursor: pointer;
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	border-radius: 16px;
+	width: 100%;
+	height: 400px;
+	cursor: pointer;
+	text-decoration: none;
 
-  .card-image {
-    cursor: pointer;
-    border-radius: inherit;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.7);
-  }
+	.card-image {
+		cursor: pointer;
+		border-radius: inherit;
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-position: center;
+		filter: brightness(0.7);
+	}
 
-  .card-info {
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+	.card-info {
+		cursor: pointer;
+		position: relative;
+		display: flex;
+		flex-direction: column;
 
-    .card-title {
-      cursor: pointer;
-      font-size: 2rem;
-      color: var(--black);
-      margin-bottom: 5px;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
-      overflow: hidden;
+		.card-title {
+			cursor: pointer;
+			font-size: 2rem;
+			color: var(--black);
+			margin-bottom: 5px;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 2;
+			line-clamp: 2;
+			overflow: hidden;
 
-      @media screen and (max-width: 440px) {
-        font-size: 1.5rem;
-        color: var(--white);
-      }
-    }
+			@media screen and (max-width: 440px) {
+				font-size: 1.5rem;
+				color: var(--white);
+			}
+		}
 
-    .card-date {
-      cursor: pointer;
-      font-size: 0.9rem;
-      color: var(--black);
+		.card-date {
+			cursor: pointer;
+			font-size: 0.9rem;
+			color: var(--black);
 
-      @media screen and (max-width: 440px) {
-        color: var(--white);
-      }
-    }
+			@media screen and (max-width: 440px) {
+				color: var(--white);
+			}
+		}
 
-    @media screen and (max-width: 440px) {
-      position: absolute;
-      bottom: 32px;
-      left: 32px;
-    }
-  }
+		@media screen and (max-width: 440px) {
+			position: absolute;
+			bottom: 32px;
+			left: 32px;
+		}
+	}
 }
 
 .card {
-  cursor: pointer;
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  border-radius: 16px;
-  width: 600px;
-  height: 400px;
-  text-decoration: none;
+	cursor: pointer;
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	border-radius: 16px;
+	width: 600px;
+	height: 400px;
+	text-decoration: none;
 
-  @media screen and (max-width: 1300px) {
-    width: 350px;
-    height: 250px;
-  }
+	@media screen and (max-width: 1300px) {
+		width: 350px;
+		height: 250px;
+	}
 
-  .card-image {
-    cursor: pointer;
-    border-radius: inherit;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.4);
+	.card-image {
+		cursor: pointer;
+		border-radius: inherit;
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-position: center;
+		filter: brightness(0.4);
 
-    &:hover {
-      filter: brightness(0.7);
-    }
-  }
+		&:hover {
+			filter: brightness(0.7);
+		}
+	}
 
-  .card-info {
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+	.card-info {
+		cursor: pointer;
+		position: relative;
+		display: flex;
+		flex-direction: column;
 
-    .card-title {
-      cursor: pointer;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
-      overflow: hidden;
-      font-size: 2rem;
-      color: var(--black);
-      margin-bottom: 5px;
+		.card-title {
+			cursor: pointer;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 2;
+			line-clamp: 2;
+			overflow: hidden;
+			font-size: 2rem;
+			color: var(--black);
+			margin-bottom: 5px;
 
-      @media screen and (max-width: 1300px) {
-        font-size: 1.2rem;
-      }
+			@media screen and (max-width: 1300px) {
+				font-size: 1.2rem;
+			}
 
-      @media screen and (max-width: 440px) {
-        font-size: 1.5rem;
-        color: var(--white);
-      }
-    }
+			@media screen and (max-width: 440px) {
+				font-size: 1.5rem;
+				color: var(--white);
+			}
+		}
 
-    .card-date {
-      cursor: pointer;
-      font-size: 0.9rem;
-      color: var(--black);
+		.card-date {
+			cursor: pointer;
+			font-size: 0.9rem;
+			color: var(--black);
 
-      @media screen and (max-width: 440px) {
-        color: var(--white);
-      }
-    }
+			@media screen and (max-width: 440px) {
+				color: var(--white);
+			}
+		}
 
-    @media screen and (max-width: 440px) {
-      position: absolute;
-      bottom: 32px;
-      left: 32px;
-    }
-  }
+		@media screen and (max-width: 440px) {
+			position: absolute;
+			bottom: 32px;
+			left: 32px;
+		}
+	}
 }
 
 .margin-bottom {
-  margin-bottom: 24px;
-    @media screen and (max-width: 868px) {
-    margin-bottom: 12px;
-  }
+	margin-bottom: 24px;
+	@media screen and (max-width: 868px) {
+		margin-bottom: 12px;
+	}
 }
 </style>

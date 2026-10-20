@@ -1,21 +1,21 @@
 {
-  "eslint.useFlatConfig": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnPaste": false,
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": true,
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": ["source.fixAll.eslint"],
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[ts]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[js]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+	"eslint.useFlatConfig": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnPaste": false,
+	"editor.bracketPairColorization.enabled": true,
+	"editor.guides.bracketPairs": true,
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": ["source.fixAll.eslint"],
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[vue]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[ts]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[js]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }

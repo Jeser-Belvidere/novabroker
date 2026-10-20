@@ -1,1 +1,1 @@
-export type {IFormValues} from './types/calculator'
+export type { IFormValues } from './types/calculator'

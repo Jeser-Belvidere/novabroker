@@ -8,7 +8,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 					agreement.classList.add('show')
 				}
 			},
-			{ once: true }
+			{ once: true },
 		)
 	})
 })

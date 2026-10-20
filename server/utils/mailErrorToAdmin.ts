@@ -1,6 +1,9 @@
 import nodemailer from 'nodemailer'
 
-export const mailErrorToAdmin = async (error: string | unknown, message?: string) => {
+export const mailErrorToAdmin = async (
+	error: string | unknown,
+	message?: string,
+) => {
 	try {
 		const transporter = nodemailer.createTransport({
 			host: 'smtp.yandex.ru',
