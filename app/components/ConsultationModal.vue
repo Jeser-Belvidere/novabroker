@@ -386,7 +386,7 @@ onBeforeUnmount(() => {
 	box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
 	animation: card-in 0.35s ease-out;
 	@media (max-width: 700px) {
-		height: fit-content;
+		min-height: 600px;
 	}
 }
 
@@ -408,6 +408,7 @@ onBeforeUnmount(() => {
 	display: flex;
 	flex: 1;
 	flex-direction: column;
+	justify-content: space-between;
 	gap: 8px;
 	padding: 20px 0;
 	overflow: hidden;
@@ -691,8 +692,8 @@ onBeforeUnmount(() => {
 	box-shadow: 0 10px 26px rgba(4, 40, 29, 0.18);
 	@media (max-width: 700px) {
 		width: 100%;
-		margin-left: 28px;
-		margin-right: 28px;
+		margin-left: 12px;
+		margin-right: 12px;
 	}
 }
 
@@ -955,7 +956,7 @@ onBeforeUnmount(() => {
 	.consultation-modal__card {
 		flex-direction: column;
 		max-height: 92vh;
-		overflow-y: auto;
+		overflow-y: hidden;
 	}
 
 	.consultation-modal__right {
