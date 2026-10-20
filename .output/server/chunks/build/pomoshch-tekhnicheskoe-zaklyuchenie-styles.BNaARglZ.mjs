@@ -1,0 +1,6 @@
+import { p as pomoshchTekhnicheskoeZaklyuchenie_vue_vue_type_style_index_0_scoped_299f48fc_lang } from './pomoshch-tekhnicheskoe-zaklyuchenie-styles-1.mjs-DBjvviXk.mjs';
+
+const pomoshchTekhnicheskoeZaklyuchenieStyles_BNaARglZ = [pomoshchTekhnicheskoeZaklyuchenie_vue_vue_type_style_index_0_scoped_299f48fc_lang, pomoshchTekhnicheskoeZaklyuchenie_vue_vue_type_style_index_0_scoped_299f48fc_lang];
+
+export { pomoshchTekhnicheskoeZaklyuchenieStyles_BNaARglZ as default };
+//# sourceMappingURL=pomoshch-tekhnicheskoe-zaklyuchenie-styles.BNaARglZ.mjs.map
