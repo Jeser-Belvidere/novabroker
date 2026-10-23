@@ -28,11 +28,11 @@
 							</div>
 						</div>
 						<div class="managers-item bottom-border">
-							<div class="managers-item__name">Елена</div>
+							<div class="managers-item__name">Марк</div>
 							<div class="managers-item__contacts">
-								<a class="link" href="tel:+797774095969">+7 977 409-59-69</a>
-								<a class="link" href="mailto:diana@novabroker.ru"
-									>elenaruban@novabroker.ru</a
+								<a class="link" href="tel:+797774095899">+7 977 409-58-99</a>
+								<a class="link" href="mailto:mark@novabroker.ru"
+									>mark@novabroker.ru</a
 								>
 							</div>
 						</div>

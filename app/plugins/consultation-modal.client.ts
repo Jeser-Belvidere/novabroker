@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import ConsultationModal from '~/components/ConsultationModal.vue'
 
-const SHOW_DELAY_MS = 10_000
+const SHOW_DELAY_MS = 20_000
 
 export default defineNuxtPlugin(() => {
 	let isShown = false

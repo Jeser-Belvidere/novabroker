@@ -493,7 +493,7 @@ const _routes = [
   {
     name: "contacts",
     path: "/contacts",
-    component: () => import('./contacts-Cm8enKcj.mjs')
+    component: () => import('./contacts-CvUvk9D3.mjs')
   },
   {
     name: "slug",
