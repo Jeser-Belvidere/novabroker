@@ -2,8 +2,31 @@ import { createApp } from 'vue'
 import ConsultationModal from '~/components/ConsultationModal.vue'
 
 const SHOW_DELAY_MS = 20_000
+const STORAGE_KEY = 'consultation-modal-shown'
+
+/* localStorage может быть недоступен в приватном режиме браузера */
+function hasBeenShown(): boolean {
+	try {
+		return window.localStorage.getItem(STORAGE_KEY) === '1'
+	} catch {
+		return false
+	}
+}
+
+function markAsShown(): void {
+	try {
+		window.localStorage.setItem(STORAGE_KEY, '1')
+	} catch {
+		// без сохранения окно просто покажется повторно
+	}
+}
 
 export default defineNuxtPlugin(() => {
+	// окно показывается один раз для посетителя, а не на каждый заход на сайт
+	if (hasBeenShown()) {
+		return
+	}
+
 	let isShown = false
 
 	function showModal(): void {
@@ -12,6 +35,7 @@ export default defineNuxtPlugin(() => {
 		}
 		isShown = true
 		stopTriggers()
+		markAsShown()
 
 		const container = document.createElement('div')
 		container.id = 'consultation-modal-root'

@@ -11,7 +11,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "vBQfrFyU.js",
+    "file": "9Wjxcpkm.js",
     "name": "entry",
     "src": "../node_modules/nuxt/dist/app/entry.js",
     "isEntry": true,
@@ -28,17 +28,6 @@ const client_manifest = {
     "prefetch": true,
     "preload": true
   },
-  "_BZhY_iaf.js": {
-    "resourceType": "script",
-    "module": true,
-    "prefetch": true,
-    "preload": true,
-    "file": "BZhY_iaf.js",
-    "name": "index",
-    "imports": [
-      "../node_modules/nuxt/dist/app/entry.js"
-    ]
-  },
   "_BzPtgy5V.js": {
     "resourceType": "script",
     "module": true,
@@ -48,12 +37,12 @@ const client_manifest = {
     "name": "maplibre-gl",
     "isDynamicEntry": true
   },
-  "_C1mCypun.js": {
+  "_CBhX_25P.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "C1mCypun.js",
+    "file": "CBhX_25P.js",
     "name": "Icon",
     "imports": [
       "../node_modules/nuxt/dist/app/entry.js"
@@ -76,6 +65,17 @@ const client_manifest = {
     "resourceType": "image",
     "prefetch": true,
     "mimeType": "image/svg+xml"
+  },
+  "_CZ5e8BQw.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "CZ5e8BQw.js",
+    "name": "index",
+    "imports": [
+      "../node_modules/nuxt/dist/app/entry.js"
+    ]
   },
   "_DSwrSJpJ.js": {
     "resourceType": "script",
@@ -111,13 +111,13 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "qZ3zcK1U.js",
+    "file": "XFyd-73P.js",
     "name": "default",
     "src": "layouts/default.vue",
     "isDynamicEntry": true,
     "imports": [
       "../node_modules/nuxt/dist/app/entry.js",
-      "_BZhY_iaf.js"
+      "_CZ5e8BQw.js"
     ],
     "css": []
   },
@@ -132,7 +132,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "B2FMDO-D.js",
+    "file": "D0n15aks.js",
     "name": "_...slug_",
     "src": "pages/[...slug].vue",
     "isDynamicEntry": true,
@@ -152,12 +152,12 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "B2tFQzxC.js",
+    "file": "DP6XYsS4.js",
     "name": "contacts",
     "src": "pages/contacts.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_C1mCypun.js",
+      "_CBhX_25P.js",
       "../node_modules/nuxt/dist/app/entry.js"
     ],
     "css": []
@@ -173,13 +173,13 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "DcBN9OXr.js",
+    "file": "CY5UsYzw.js",
     "name": "index",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "../node_modules/nuxt/dist/app/entry.js",
-      "_C1mCypun.js",
+      "_CBhX_25P.js",
       "_DSwrSJpJ.js"
     ],
     "dynamicImports": [
@@ -207,7 +207,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "-W9ZWxjH.js",
+    "file": "KbzN48x0.js",
     "name": "_newsId_",
     "src": "pages/news/[newsId].vue",
     "isDynamicEntry": true,
@@ -228,7 +228,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "D2A9c3SL.js",
+    "file": "DrdfXiWL.js",
     "name": "index",
     "src": "pages/news/index.vue",
     "isDynamicEntry": true,
@@ -249,7 +249,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "yMVp5_b1.js",
+    "file": "BIXxer6-.js",
     "name": "personaldata",
     "src": "pages/personaldata.vue",
     "isDynamicEntry": true,
@@ -269,7 +269,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "CvVbTs3A.js",
+    "file": "DnRfqpQD.js",
     "name": "privacy",
     "src": "pages/privacy.vue",
     "isDynamicEntry": true,
@@ -289,7 +289,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "CXO9UiB4.js",
+    "file": "DY4EImF4.js",
     "name": "konsultatsii-tamozhnya-ts",
     "src": "pages/services/konsultatsii-tamozhnya-ts.vue",
     "isDynamicEntry": true,
@@ -309,7 +309,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "BU-c7zEV.js",
+    "file": "D5QtNWS7.js",
     "name": "otsenka-i-tekhnicheskoe-zaklyuchenie-ts",
     "src": "pages/services/otsenka-i-tekhnicheskoe-zaklyuchenie-ts.vue",
     "isDynamicEntry": true,
@@ -329,7 +329,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "VLRmgFL6.js",
+    "file": "B0mv3I-K.js",
     "name": "pomoshch-tekhnicheskoe-zaklyuchenie",
     "src": "pages/services/pomoshch-tekhnicheskoe-zaklyuchenie.vue",
     "isDynamicEntry": true,
@@ -349,7 +349,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "COzCWTuU.js",
+    "file": "DlyjpyS4.js",
     "name": "sbkts-i-epts",
     "src": "pages/services/sbkts-i-epts.vue",
     "isDynamicEntry": true,
@@ -369,7 +369,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "DW4MOb53.js",
+    "file": "b1o0pbWB.js",
     "name": "soprovozhdenie-rastamozhki-avto",
     "src": "pages/services/soprovozhdenie-rastamozhki-avto.vue",
     "isDynamicEntry": true,
@@ -389,7 +389,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "HBdVf4I9.js",
+    "file": "DUkM7w6a.js",
     "name": "uveos-glonass",
     "src": "pages/services/uveos-glonass.vue",
     "isDynamicEntry": true,
@@ -409,13 +409,13 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "C_pw1QS9.js",
+    "file": "C_YPgm-C.js",
     "name": "tamozhennyy_kalkulyator",
     "src": "pages/tamozhennyy_kalkulyator.vue",
     "isDynamicEntry": true,
     "imports": [
       "../node_modules/nuxt/dist/app/entry.js",
-      "_BZhY_iaf.js"
+      "_CZ5e8BQw.js"
     ],
     "css": []
   },
